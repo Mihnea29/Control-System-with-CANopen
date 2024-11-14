@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: signal_gen.elf secondary-outputs
 
 # Tool invocations
-signal_gen.elf signal_gen.map: $(OBJS) $(USER_OBJS) /home/mihneadorcu/Desktop/EmbeddedC/signal_gen/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "signal_gen.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mihneadorcu/Desktop/EmbeddedC/signal_gen/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="signal_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+signal_gen.elf signal_gen.map: $(OBJS) $(USER_OBJS) E:\Licenta\signal_gen\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "signal_gen.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Licenta\signal_gen\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="signal_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

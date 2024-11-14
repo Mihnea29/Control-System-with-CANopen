@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: can_rxz.elf secondary-outputs
 
 # Tool invocations
-can_rxz.elf can_rxz.map: $(OBJS) $(USER_OBJS) /home/mihneadorcu/Desktop/EmbeddedC/can_rxz/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "can_rxz.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mihneadorcu/Desktop/EmbeddedC/can_rxz/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_rxz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+can_rxz.elf can_rxz.map: $(OBJS) $(USER_OBJS) E:\Licenta\can_rxz\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "can_rxz.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Licenta\can_rxz\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_rxz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
