@@ -1,0 +1,43 @@
+10:47:01 **** Incremental Build of configuration Debug for project can_uart ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c:243:6: error: conflicting types for 'UART_SendMessage'; have 'void(uint32_t,  uint8_t *, uint8_t)' {aka 'void(long unsigned int,  unsigned char *, unsigned char)'}
+  243 | void UART_SendMessage(uint32_t can_id, uint8_t* data, uint8_t dlc)
+      |      ^~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:20:
+../Core/Inc/main.h:62:6: note: previous declaration of 'UART_SendMessage' with type 'void(int,  uint8_t *, int)' {aka 'void(int,  unsigned char *, int)'}
+   62 | void UART_SendMessage(int can_id, uint8_t* data, int dlc);
+      |      ^~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'UART_SendMessage':
+../Core/Src/main.c:246:53: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  246 |     int len = snprintf(buffer, sizeof(buffer), "ID:%d DLC:%d Data:", can_id, dlc);
+      |                                                    ~^                ~~~~~~
+      |                                                     |                |
+      |                                                     int              uint32_t {aka long unsigned int}
+      |                                                    %ld
+../Core/Src/main.c:252:5: warning: implicit declaration of function 'strcat' [-Wimplicit-function-declaration]
+  252 |     strcat(buffer, "\r\n");
+      |     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strcat'
+   21 | #include <stdio.h>
+  +++ |+#include <string.h>
+   22 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:252:5: warning: incompatible implicit declaration of built-in function 'strcat' [-Wbuiltin-declaration-mismatch]
+  252 |     strcat(buffer, "\r\n");
+      |     ^~~~~~
+../Core/Src/main.c:252:5: note: include '<string.h>' or provide a declaration of 'strcat'
+../Core/Src/main.c:254:50: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  254 |     HAL_UART_Transmit(&huart6, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+      |                                                  ^~~~~~
+../Core/Src/main.c:254:50: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:254:50: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:254:50: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+
+10:47:01 Build Failed. 3 errors, 5 warnings. (took 441ms)
+

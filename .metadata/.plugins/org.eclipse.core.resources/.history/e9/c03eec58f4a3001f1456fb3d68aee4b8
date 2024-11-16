@@ -1,0 +1,162 @@
+#include "main.h"
+
+// CAN and UART handle structures
+CAN_HandleTypeDef hcan1;
+UART_HandleTypeDef huart6;
+
+// CAN message structures
+CAN_TxHeaderTypeDef TxHeader;
+CAN_RxHeaderTypeDef RxHeader;
+uint8_t TxData[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+uint8_t RxData[8];
+uint32_t TxMailbox;
+
+// UART buffer
+char uart_buffer[50];
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_CAN1_Init(void);
+static void MX_USART6_UART_Init(void);
+
+int main(void) {
+    // HAL initialization
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_CAN1_Init();
+    MX_USART6_UART_Init();
+
+    // Start CAN module
+    if (HAL_CAN_Start(&hcan1) != HAL_OK) {
+        Error_Handler();  // Handle initialization failure
+    }
+
+    // Activate CAN RX notifications (optional)
+    if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
+        Error_Handler();
+    }
+
+    // Prepare CAN message
+    TxHeader.StdId = 0x123;       // Standard ID
+    TxHeader.ExtId = 0x01;        // Extended ID (not used in this case)
+    TxHeader.RTR = CAN_RTR_DATA;  // Data frame
+    TxHeader.IDE = CAN_ID_STD;    // Standard ID
+    TxHeader.DLC = 8;             // Data length: 8 bytes
+    TxHeader.TransmitGlobalTime = DISABLE;
+
+    // Transmit CAN message
+    if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox) != HAL_OK) {
+        Error_Handler();  // Handle transmission failure
+    }
+
+    // Wait for reception
+    while (HAL_CAN_GetRxFifoFillLevel(&hcan1, CAN_RX_FIFO0) == 0) {
+        // Wait until a message is received
+    }
+
+    // Retrieve the received CAN message
+    if (HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK) {
+        Error_Handler();  // Handle reception failure
+    }
+
+    // Format received message for UART transmission
+    sprintf(uart_buffer, "CAN RX: ID=0x%03X DLC=%d Data=", RxHeader.StdId, RxHeader.DLC);
+    for (int i = 0; i < RxHeader.DLC; i++) {
+        char byte_str[5];
+        sprintf(byte_str, "%02X ", RxData[i]);
+        strcat(uart_buffer, byte_str);
+    }
+    strcat(uart_buffer, "\r\n");
+
+    // Send the message over UART6
+    if (HAL_UART_Transmit(&huart6, (uint8_t*)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY) != HAL_OK) {
+        Error_Handler();  // Handle UART transmission failure
+    }
+
+    // Infinite loop
+    while (1) {
+        HAL_Delay(100);  // Prevent CPU starvation
+    }
+}
+
+/**
+ * @brief CAN1 Initialization Function
+ */
+static void MX_CAN1_Init(void) {
+    hcan1.Instance = CAN1;
+    hcan1.Init.Prescaler = 16;  // Adjust based on desired baud rate
+    hcan1.Init.Mode = CAN_MODE_LOOPBACK;  // Loopback mode
+    hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
+    hcan1.Init.TimeSeg1 = CAN_BS1_13TQ;
+    hcan1.Init.TimeSeg2 = CAN_BS2_2TQ;
+    hcan1.Init.TimeTriggeredMode = DISABLE;
+    hcan1.Init.AutoBusOff = DISABLE;
+    hcan1.Init.AutoWakeUp = DISABLE;
+    hcan1.Init.AutoRetransmission = ENABLE;
+    hcan1.Init.ReceiveFifoLocked = DISABLE;
+    hcan1.Init.TransmitFifoPriority = DISABLE;
+
+    if (HAL_CAN_Init(&hcan1) != HAL_OK) {
+        Error_Handler();
+    }
+
+    // Configure CAN filter
+    CAN_FilterTypeDef filterConfig;
+    filterConfig.FilterBank = 0;
+    filterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+    filterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+    filterConfig.FilterIdHigh = 0x0000;
+    filterConfig.FilterIdLow = 0x0000;
+    filterConfig.FilterMaskIdHigh = 0x0000;
+    filterConfig.FilterMaskIdLow = 0x0000;
+    filterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+    filterConfig.FilterActivation = ENABLE;
+    filterConfig.SlaveStartFilterBank = 14;
+
+    if (HAL_CAN_ConfigFilter(&hcan1, &filterConfig) != HAL_OK) {
+        Error_Handler();
+    }
+}
+
+/**
+ * @brief USART6 Initialization Function
+ */
+static void MX_USART6_UART_Init(void) {
+    huart6.Instance = USART6;
+    huart6.Init.BaudRate = 115200;
+    huart6.Init.WordLength = UART_WORDLENGTH_8B;
+    huart6.Init.StopBits = UART_STOPBITS_1;
+    huart6.Init.Parity = UART_PARITY_NONE;
+    huart6.Init.Mode = UART_MODE_TX_RX;
+    huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+
+    if (HAL_UART_Init(&huart6) != HAL_OK) {
+        Error_Handler();
+    }
+}
+
+/**
+ * @brief GPIO Initialization Function
+ */
+static void MX_GPIO_Init(void) {
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+}
+
+/**
+ * @brief System Clock Configuration
+ */
+void SystemClock_Config(void) {
+    // Add system clock configuration code here as per your setup
+}
+
+/**
+ * @brief Error Handler
+ */
+void Error_Handler(void) {
+    while (1) {
+        // Stay here for error
+    }
+}
