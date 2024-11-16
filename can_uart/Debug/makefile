@@ -60,8 +60,8 @@ all: main-build
 main-build: can_uart.elf secondary-outputs
 
 # Tool invocations
-can_uart.elf can_uart.map: $(OBJS) $(USER_OBJS) E:\Licenta\can_uart\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "can_uart.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Licenta\can_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+can_uart.elf can_uart.map: $(OBJS) $(USER_OBJS) /home/mihneadorcu/Desktop/Licenta/can_uart/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "can_uart.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mihneadorcu/Desktop/Licenta/can_uart/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

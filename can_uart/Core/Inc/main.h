@@ -59,7 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-void UART_SendMessage(uint32_t can_id, uint8_t* data, uint8_t dlc);
+void UART_SendMessage(int can_id, uint8_t* data, int dlc);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
