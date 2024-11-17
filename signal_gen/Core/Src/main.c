@@ -135,6 +135,7 @@ int main(void)
 		{
 			HAL_TIM_Base_Stop_IT(&htim4);
 			idx = 0;
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 		}
     /* USER CODE END WHILE */
 
@@ -203,7 +204,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 834;
+  htim4.Init.Prescaler = 412;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 1;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -266,6 +267,7 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
