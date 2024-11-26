@@ -1,4 +1,4 @@
-/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:54:5:main	2
-/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:98:19:CAN_Polling	13
-/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:214:13:SystemClock_Config	4
-/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:272:13:Error_Handler	1
+/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:54:5:main	3
+/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:91:19:CAN_Polling	4
+/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:185:13:SystemClock_Config	4
+/home/mihneadorcu/Desktop/Licenta/CAN_Loopback/Src/main.c:243:13:Error_Handler	1

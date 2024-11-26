@@ -65,29 +65,22 @@ int main(void)
        - Low Level Initialization: global MSP (MCU Support Package) initialization
      */
   HAL_Init();
-
+  CAN_Polling();
   /* Configure the system clock to 180 MHz */
   SystemClock_Config();
   
   /* Configure LED1 and LED3 */
-  BSP_LED_Init(LED1);
-  BSP_LED_Init(LED3);
-
-  if(CAN_Polling() == HAL_OK)
-  {
-    /* OK: Turn on LED1 */
-    BSP_LED_On(LED1);
-  }
-  else
-  {
-    /* KO: Turn on LED3 */
-    BSP_LED_On(LED3);
-  }
-  
   /* Infinite loop */
   while (1)
   {
-  } 
+	  if(HAL_CAN_GetRxFifoFillLevel(&CanHandle, CAN_RX_FIFO0) >= 1)
+		  if(HAL_CAN_GetRxMessage(&CanHandle, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+		  {
+			  /* Reception Error */
+			  	  Error_Handler();
+		  }
+
+  }
 }
 
 /**
@@ -105,14 +98,14 @@ HAL_StatusTypeDef CAN_Polling(void)
   CanHandle.Init.TimeTriggeredMode = DISABLE;
   CanHandle.Init.AutoBusOff = DISABLE;
   CanHandle.Init.AutoWakeUp = DISABLE;
-  CanHandle.Init.AutoRetransmission = ENABLE;
+  CanHandle.Init.AutoRetransmission = DISABLE;
   CanHandle.Init.ReceiveFifoLocked = DISABLE;
   CanHandle.Init.TransmitFifoPriority = DISABLE;
-  CanHandle.Init.Mode = CAN_MODE_LOOPBACK;
+  CanHandle.Init.Mode = CAN_MODE_NORMAL;
   CanHandle.Init.SyncJumpWidth = CAN_SJW_1TQ;
   CanHandle.Init.TimeSeg1 = CAN_BS1_6TQ;
   CanHandle.Init.TimeSeg2 = CAN_BS2_2TQ;
-  CanHandle.Init.Prescaler = 5;
+  CanHandle.Init.Prescaler = 250;
   
   if(HAL_CAN_Init(&CanHandle) != HAL_OK)
   {
@@ -135,7 +128,7 @@ HAL_StatusTypeDef CAN_Polling(void)
   if(HAL_CAN_ConfigFilter(&CanHandle, &sFilterConfig) != HAL_OK)
   {
     /* Filter configuration Error */
-    Error_Handler();
+   Error_Handler();
   }
 
   /*##-3- Start the CAN peripheral ###########################################*/
@@ -155,39 +148,17 @@ HAL_StatusTypeDef CAN_Polling(void)
   TxData[1] = 0xFE;
   
   /* Request transmission */
-  if(HAL_CAN_AddTxMessage(&CanHandle, &TxHeader, TxData, &TxMailbox) != HAL_OK)
-  {
-    /* Transmission request Error */
-    Error_Handler();
-  }
-  
-  /* Wait transmission complete */
-  while(HAL_CAN_GetTxMailboxesFreeLevel(&CanHandle) != 3) {}
+// // if(HAL_CAN_AddTxMessage(&CanHandle, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+//  {
+//    /* Transmission request Error */
+//    Error_Handler();
+//  }
+//
+//  /* Wait transmission complete */
+//  while(HAL_CAN_GetTxMailboxesFreeLevel(&CanHandle) != 3) {}
 
   /*##-5- Start the Reception process ########################################*/
-  if(HAL_CAN_GetRxFifoFillLevel(&CanHandle, CAN_RX_FIFO0) != 1)
-  {
-    /* Reception Missing */
-    Error_Handler();
-  }
-
-  if(HAL_CAN_GetRxMessage(&CanHandle, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
-  {
-    /* Reception Error */
-    Error_Handler();
-  }
-
-  if((RxHeader.StdId != 0x11)                     ||
-     (RxHeader.RTR != CAN_RTR_DATA)               ||
-     (RxHeader.IDE != CAN_ID_STD)                 ||
-     (RxHeader.DLC != 2)                          ||
-     ((RxData[0]<<8 | RxData[1]) != 0xCAFE))
-  {
-    /* Rx message Error */
-    return HAL_ERROR;
-  }
-
-  return HAL_OK; /* Test Passed */
+  return HAL_OK;
 }
 
 /**
@@ -253,7 +224,7 @@ static void SystemClock_Config(void)
   RCC_ClkInitStruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;  
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV8;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;  
   
   ret = HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
