@@ -26,7 +26,9 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+//#define TRANSMIT
 
+#define RECEIVE
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -42,14 +44,22 @@
 /* Private variables ---------------------------------------------------------*/
 CAN_HandleTypeDef hcan1;
 
-/* USER CODE BEGIN PV */
+UART_HandleTypeDef huart6;
 
+/* USER CODE BEGIN PV */
+uint8_t RxData[8];
+uint8_t TxData[8] = {0xAB, 0xCD, 0xEF, 0x01, 0x23, 0x45, 0x67, 0x89};
+uint32_t TxMailBox;
+CAN_TxHeaderTypeDef TxHeader;
+CAN_RxHeaderTypeDef RxHeader;
+char uartBuffer[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN1_Init(void);
+static void MX_USART6_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -73,7 +83,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -89,11 +99,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CAN1_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
- CAN_TxHeaderTypeDef TxHeader;
- uint8_t TxData[8] = {0xAB, 0xCD, 0xEF, 0x01, 0x23, 0x45, 0x67, 0x89};
- uint32_t TxMailBox;
+
 
  TxHeader.StdId = 0x321;
  TxHeader.ExtId = 0x01;
@@ -106,16 +115,58 @@ int main(void)
  {
 	 Error_Handler();
  }
+#ifdef RECEIVE
+/* Interupere RX */
+ if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK)
+ {
+     Error_Handler();
+ }
+#endif
+
+#ifdef TRANSMIT
+ /* Intrerupere Tx*/
+ if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK)
+ {
+     Error_Handler();
+ }
+#endif
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+#ifdef TRANSMIT
+
 	  if(HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
 	  {
 		  Error_Handler();
 	  }
+
+#endif
+
+#ifdef RECEIVE
+
+      if (RxHeader.DLC > 0)
+       {
+           int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", RxHeader.StdId, RxHeader.DLC);
+
+           for (int i = 0; i < RxHeader.DLC; i++)
+           {
+               length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", RxData[i]);
+           }
+
+           strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
+
+           HAL_UART_Transmit(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer), HAL_MAX_DELAY);
+           RxHeader.DLC = 0;
+       }
+
+#endif
+
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -191,11 +242,17 @@ static void MX_CAN1_Init(void)
 
   /* USER CODE END CAN1_Init 1 */
   hcan1.Instance = CAN1;
-  hcan1.Init.Prescaler = 6;
-  hcan1.Init.Mode = CAN_MODE_NORMAL;
+  hcan1.Init.Prescaler = 3;
+#ifdef TRANSMIT
+  hcan1.Init.Mode = CAN_MODE_LOOPBACK;
+#endif
+
+#ifdef RECEIVE
+  hcan1.Init.Mode = CAN_MODE_SILENT;
+#endif
   hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan1.Init.TimeSeg1 = CAN_BS1_3TQ;
-  hcan1.Init.TimeSeg2 = CAN_BS2_2TQ;
+  hcan1.Init.TimeSeg1 = CAN_BS1_7TQ;
+  hcan1.Init.TimeSeg2 = CAN_BS2_7TQ;
   hcan1.Init.TimeTriggeredMode = DISABLE;
   hcan1.Init.AutoBusOff = DISABLE;
   hcan1.Init.AutoWakeUp = DISABLE;
@@ -227,6 +284,39 @@ static void MX_CAN1_Init(void)
 }
 
 /**
+  * @brief USART6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART6_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART6_Init 0 */
+
+  /* USER CODE END USART6_Init 0 */
+
+  /* USER CODE BEGIN USART6_Init 1 */
+
+  /* USER CODE END USART6_Init 1 */
+  huart6.Instance = USART6;
+  huart6.Init.BaudRate = 115200;
+  huart6.Init.WordLength = UART_WORDLENGTH_8B;
+  huart6.Init.StopBits = UART_STOPBITS_1;
+  huart6.Init.Parity = UART_PARITY_NONE;
+  huart6.Init.Mode = UART_MODE_TX_RX;
+  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART6_Init 2 */
+
+  /* USER CODE END USART6_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -239,6 +329,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
@@ -257,6 +348,45 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
+/* CAN RX Interrupt Callback */
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+    /* Read the received CAN message */
+	if(RxHeader.DLC == 0)
+	{
+		if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+  	 {
+			Error_Handler();
+  	 }
+	}
+	else
+	{
+		Error_Handler();
+	}
+    /* Process the received message */
+    // For example, toggle an LED or log the received data
+}
+
+
+
+
+#ifdef RECEIVE
+/* CAN TX Interrupt Callback */
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+    // Transmission completed successfully
+}
+
+/* CAN TX Error Callback */
+void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan)
+{
+    // Handle CAN error
+    Error_Handler();
+}
+#endif
+
 
 /* USER CODE END 4 */
 
