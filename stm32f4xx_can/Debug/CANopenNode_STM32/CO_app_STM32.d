@@ -1,10 +1,9 @@
-CANopenNode_STM32/CO_app_STM32.o: \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_app_STM32.c \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_app_STM32.h \
+CANopenNode_STM32/CO_app_STM32.o: ../CANopenNode_STM32/CO_app_STM32.c \
+ ../CANopenNode_STM32/CO_app_STM32.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_driver_target.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -64,14 +63,14 @@ CANopenNode_STM32/CO_app_STM32.o: \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_storageBlank.h \
+ ../CANopenNode_STM32/CO_storageBlank.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storage.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/OD.h
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_app_STM32.h:
+ ../CANopenNode_STM32/OD.h
+../CANopenNode_STM32/CO_app_STM32.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_driver_target.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -132,6 +131,6 @@ CANopenNode_STM32/CO_app_STM32.o: \
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_storageBlank.h:
+../CANopenNode_STM32/CO_storageBlank.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storage.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/OD.h:
+../CANopenNode_STM32/OD.h:

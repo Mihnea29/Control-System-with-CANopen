@@ -99,10 +99,6 @@ void Error_Handler(void);
 #define VBUS_FS_GPIO_Port GPIOA
 #define OTG_FS_ID_Pin GPIO_PIN_10
 #define OTG_FS_ID_GPIO_Port GPIOA
-#define OTG_FS_DM_Pin GPIO_PIN_11
-#define OTG_FS_DM_GPIO_Port GPIOA
-#define OTG_FS_DP_Pin GPIO_PIN_12
-#define OTG_FS_DP_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
@@ -123,6 +119,7 @@ void Error_Handler(void);
 #define Audio_SDA_GPIO_Port GPIOB
 #define MEMS_INT2_Pin GPIO_PIN_1
 #define MEMS_INT2_GPIO_Port GPIOE
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -30,11 +30,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_app_STM32.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_app_STM32.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_driver_target.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
@@ -95,11 +95,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_app_STM32.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_app_STM32.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode_STM32/CO_driver_target.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
