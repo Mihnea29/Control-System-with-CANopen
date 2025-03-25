@@ -652,17 +652,7 @@ HAL_FDCAN_TxBufferCompleteCallback(FDCAN_HandleTypeDef* hfdcan, uint32_t BufferI
 void
 HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef* hcan) {
     prv_read_can_received_msg(hcan, CAN_RX_FIFO0, 0);
-	if(RxHeader.DLC == 0)
-	{
-		if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
-  	 {
-			Error_Handler();
-  	 }
-	}
-	else
-	{
-		Error_Handler();
-	}
+
 }
 
 /**

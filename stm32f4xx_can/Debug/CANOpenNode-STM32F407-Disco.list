@@ -19060,6 +19060,7 @@ HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef* hcan) {
  8007802:	2100      	movs	r1, #0
  8007804:	6878      	ldr	r0, [r7, #4]
  8007806:	f7ff ff8b 	bl	8007720 <prv_read_can_received_msg>
+
 }
  800780a:	bf00      	nop
  800780c:	3708      	adds	r7, #8
