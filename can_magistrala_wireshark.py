@@ -10,7 +10,7 @@ def parse_uart_message(uart_message):
         
         dlc = int(parts[3].strip(":"))
         
-        data = [int(byte.replace("0x", ""), 16) for byte in parts[5:4 + dlc]]
+        data = [int(byte.replace("0x", ""), 16) for byte in parts[5:5 + dlc]]
         
         return {
             'id': frame_id,
