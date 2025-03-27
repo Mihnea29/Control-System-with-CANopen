@@ -35,6 +35,7 @@ CANopenNode/309/CO_gateway_ascii.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
@@ -80,6 +81,7 @@ CANopenNode/309/CO_gateway_ascii.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:

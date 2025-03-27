@@ -35,6 +35,7 @@ CANopenNode/extra/CO_trace.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h:
@@ -73,5 +74,6 @@ CANopenNode/extra/CO_trace.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:

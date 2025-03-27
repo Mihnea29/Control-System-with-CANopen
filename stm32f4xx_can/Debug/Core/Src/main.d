@@ -30,6 +30,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_app_STM32.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h \
  /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
@@ -95,6 +96,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_app_STM32.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h:
 /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:

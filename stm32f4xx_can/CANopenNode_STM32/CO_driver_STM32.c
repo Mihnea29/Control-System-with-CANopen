@@ -31,12 +31,21 @@
 #include "301/CO_driver.h"
 #include "CO_app_STM32.h"
 
+#include <stdio.h>
+
 /* Local CAN module object */
 static CO_CANmodule_t* CANModule_local = NULL; /* Local instance of global CAN module */
 
 /* CAN masks for identifiers */
 #define CANID_MASK 0x07FF /*!< CAN standard ID mask */
 #define FLAG_RTR   0x8000 /*!< RTR flag, part of identifier */
+
+//UART IMPLEMENT
+#define RECEIVE
+#define UART_BUFFER_SIZE 256
+extern UART_HandleTypeDef huart6;
+extern volatile uint8_t uart_tx_busy;
+
 
 /******************************************************************************/
 void
@@ -482,63 +491,18 @@ CO_CANmodule_process(CO_CANmodule_t* CANmodule) {
  * \param[in]       fifo: Fifo number to use for read
  * \param[in]       fifo_isrs: List of interrupts for respected FIFO
  */
-#ifdef CO_STM32_FDCAN_Driver
-static void
-prv_read_can_received_msg(FDCAN_HandleTypeDef* hfdcan, uint32_t fifo, uint32_t fifo_isrs)
-#else
+
 static void
 prv_read_can_received_msg(CAN_HandleTypeDef* hcan, uint32_t fifo, uint32_t fifo_isrs)
-#endif
-{
 
+{
     CO_CANrxMsg_t rcvMsg;
     CO_CANrx_t* buffer = NULL; /* receive message buffer from CO_CANmodule_t object. */
     uint16_t index;            /* index of received message */
     uint32_t rcvMsgIdent;      /* identifier of the received message */
     uint8_t messageFound = 0;
 
-#ifdef CO_STM32_FDCAN_Driver
-    static FDCAN_RxHeaderTypeDef rx_hdr;
-    /* Read received message from FIFO */
-    if (HAL_FDCAN_GetRxMessage(hfdcan, fifo, &rx_hdr, rcvMsg.data) != HAL_OK) {
-        return;
-    }
-    /* Setup identifier (with RTR) and length */
-    rcvMsg.ident = rx_hdr.Identifier | (rx_hdr.RxFrameType == FDCAN_REMOTE_FRAME ? FLAG_RTR : 0x00);
-    switch (rx_hdr.DataLength) {
-        case FDCAN_DLC_BYTES_0:
-            rcvMsg.dlc = 0;
-            break;
-        case FDCAN_DLC_BYTES_1:
-            rcvMsg.dlc = 1;
-            break;
-        case FDCAN_DLC_BYTES_2:
-            rcvMsg.dlc = 2;
-            break;
-        case FDCAN_DLC_BYTES_3:
-            rcvMsg.dlc = 3;
-            break;
-        case FDCAN_DLC_BYTES_4:
-            rcvMsg.dlc = 4;
-            break;
-        case FDCAN_DLC_BYTES_5:
-            rcvMsg.dlc = 5;
-            break;
-        case FDCAN_DLC_BYTES_6:
-            rcvMsg.dlc = 6;
-            break;
-        case FDCAN_DLC_BYTES_7:
-            rcvMsg.dlc = 7;
-            break;
-        case FDCAN_DLC_BYTES_8:
-            rcvMsg.dlc = 8;
-            break;
-        default:
-            rcvMsg.dlc = 0;
-            break; /* Invalid length when more than 8 */
-    }
-    rcvMsgIdent = rcvMsg.ident;
-#else
+
     static CAN_RxHeaderTypeDef rx_hdr;
     /* Read received message from FIFO */
     if (HAL_CAN_GetRxMessage(hcan, fifo, &rx_hdr, rcvMsg.data) != HAL_OK) {
@@ -548,7 +512,41 @@ prv_read_can_received_msg(CAN_HandleTypeDef* hcan, uint32_t fifo, uint32_t fifo_
     rcvMsg.ident = rx_hdr.StdId | (rx_hdr.RTR == CAN_RTR_REMOTE ? FLAG_RTR : 0x00);
     rcvMsg.dlc = rx_hdr.DLC;
     rcvMsgIdent = rcvMsg.ident;
+
+#ifdef RECEIVE
+    char uartBuffer[UART_BUFFER_SIZE];
+    if(uart_tx_busy == 0)
+    {
+    	uart_tx_busy = 1;
+    }
+
+    memset(uartBuffer, 0, UART_BUFFER_SIZE);
+
+    int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
+
+    for(int i = 0; i < rcvMsg.dlc; i++)
+     {
+     	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
+     }
+
+    strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
+    HAL_UART_Transmit_IT(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer));
+//    char uartBuffer[256];
+//    memset(uartBuffer, 0, sizeof(uartBuffer));
+//
+//    int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
+//
+//    for(int i = 0; i < rcvMsg.dlc; i++)
+//    {
+//    	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
+//    }
+//
+//    strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
+//    HAL_UART_Transmit(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer), HAL_MAX_DELAY);
 #endif
+
+
+
 
     /*
      * Hardware filters are not used for the moment

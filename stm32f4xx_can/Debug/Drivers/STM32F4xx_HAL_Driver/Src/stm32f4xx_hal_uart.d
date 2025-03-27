@@ -1,10 +1,6 @@
-CANopenNode/301/CO_SDOclient.o: \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.c \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h \
- ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o: \
+ ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -35,15 +31,7 @@ CANopenNode/301/CO_SDOclient.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h:
-../Core/Inc/main.h:
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -76,6 +64,3 @@ CANopenNode/301/CO_SDOclient.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h:
