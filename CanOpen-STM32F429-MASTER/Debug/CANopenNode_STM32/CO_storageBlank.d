@@ -1,10 +1,10 @@
 CANopenNode_STM32/CO_storageBlank.o: \
  ../CANopenNode_STM32/CO_storageBlank.c \
  ../CANopenNode_STM32/CO_storageBlank.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storage.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/storage/CO_storage.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_config.h \
+ /home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/CO_driver_target.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -39,12 +39,12 @@ CANopenNode_STM32/CO_storageBlank.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h
 ../CANopenNode_STM32/CO_storageBlank.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storage.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/storage/CO_storage.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_config.h:
+/home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/CO_driver_target.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -80,4 +80,4 @@ CANopenNode_STM32/CO_storageBlank.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h:

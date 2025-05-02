@@ -1,9 +1,9 @@
 CANopenNode/CANopen.o: \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.c \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/CANopen.c \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/CANopen.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_config.h \
+ /home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/CO_driver_target.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -38,39 +38,39 @@ CANopenNode/CANopen.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_HBconsumer.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Node_Guarding.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_TIME.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_GFC.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_SRDO.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSS.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/309/CO_gateway_ascii.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h \
- /home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/OD.h
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/CO_driver_target.h:
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Emergency.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_HBconsumer.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Node_Guarding.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Emergency.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_fifo.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SYNC.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_PDO.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SYNC.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_TIME.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/303/CO_LEDs.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/304/CO_GFC.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/304/CO_SRDO.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSslave.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSS.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/309/CO_gateway_ascii.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/303/CO_LEDs.h \
+ /home/mihneadorcu/Desktop/Licenta/CANopenNode/extra/CO_trace.h \
+ /home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/OD.h
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/CANopen.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_config.h:
+/home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/CO_driver_target.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -106,32 +106,32 @@ CANopenNode/CANopen.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_HBconsumer.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Node_Guarding.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_TIME.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_GFC.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_SRDO.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSS.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/309/CO_gateway_ascii.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h:
-/home/mihneadorcu/Desktop/PROIECT/Licenta/stm32f4xx_can/CANopenNode_STM32/OD.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_driver.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Emergency.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_HBconsumer.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Node_Guarding.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_Emergency.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_fifo.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SYNC.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_PDO.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SYNC.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_TIME.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/303/CO_LEDs.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/304/CO_GFC.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/304/CO_SRDO.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSslave.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSS.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/309/CO_gateway_ascii.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/303/CO_LEDs.h:
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/extra/CO_trace.h:
+/home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32/OD.h:
