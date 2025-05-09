@@ -2,16 +2,11 @@ import can
 import serial
 
 def parse_uart_message(uart_message):
-
     try:
         parts = uart_message.split()
-        
         frame_id = int(parts[1].replace("0x", ""), 16)
-        
         dlc = int(parts[3].strip(":"))
-        
         data = [int(byte.replace("0x", ""), 16) for byte in parts[5:5 + dlc]]
-        
         return {
             'id': frame_id,
             'dlc': dlc,
@@ -22,27 +17,21 @@ def parse_uart_message(uart_message):
         return None
 
 def read_uart_and_send_to_vcan(uart_port, baudrate=115200):
-
     try:
- 
-        ser = serial.Serial(uart_port, baudrate, timeout=1)
-
-        bus = can.interface.Bus(channel='vcan0', interface='socketcan')
-
+        ser = serial.Serial(uart_port, baudrate, timeout=None)
+        bus = can.interface.Bus(channel='vcan0', interface='socketcan', receive_own_messages=False)
         while True:
-            if ser.in_waiting > 0:  
-                uart_message = ser.readline().decode('utf-8').strip()
-                print(f"UART Received: {uart_message}")
-
-                frame = parse_uart_message(uart_message)
-                if frame:
-                    message = can.Message(
-                        arbitration_id=frame['id'],
-                        data=frame['data'],
-                        is_extended_id=False
-                    )
-                    bus.send(message)
-                    print(f"Sent to CAN: ID={frame['id']:03X}, DLC={frame['dlc']}, Data={frame['data']}")
+            uart_message = ser.readline().decode('utf-8', errors='ignore').strip()
+            print(f"UART Received: {uart_message}")
+            frame = parse_uart_message(uart_message)
+            if frame:
+                message = can.Message(
+                    arbitration_id=frame['id'],
+                    data=frame['data'],
+                    is_extended_id=False
+                )
+                bus.send(message)
+                print(f"Sent to CAN: ID={frame['id']:03X}, DLC={frame['dlc']}, Data={frame['data']}")
     except KeyboardInterrupt:
         print("CTRL+C")
     except Exception as e:
@@ -55,3 +44,4 @@ def read_uart_and_send_to_vcan(uart_port, baudrate=115200):
 
 if __name__ == "__main__":
     read_uart_and_send_to_vcan(uart_port='/dev/ttyUSB0', baudrate=115200)
+

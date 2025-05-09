@@ -1,0 +1,5 @@
+/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_TIME.h:137:1:CO_TIME_set	24	static
+../CANopenNode_STM32/CO_app_STM32.c:60:1:canopen_app_init	32	static
+../CANopenNode_STM32/CO_app_STM32.c:119:1:canopen_app_resetCommunication	72	static
+../CANopenNode_STM32/CO_app_STM32.c:207:1:canopen_app_process	16	static
+../CANopenNode_STM32/CO_app_STM32.c:236:1:canopen_app_interrupt	24	static,ignoring_inline_asm

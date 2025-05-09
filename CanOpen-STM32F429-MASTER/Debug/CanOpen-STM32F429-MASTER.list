@@ -20254,7 +20254,7 @@ static void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 2 */
   /* Parse time string */
    sTime.Hours = ((__TIME__[0] - '0') * 10) + (__TIME__[1] - '0');
- 8007f2a:	2331      	movs	r3, #49	@ 0x31
+ 8007f2a:	2332      	movs	r3, #50	@ 0x32
  8007f2c:	3b30      	subs	r3, #48	@ 0x30
  8007f2e:	b2db      	uxtb	r3, r3
  8007f30:	461a      	mov	r2, r3
@@ -20262,14 +20262,14 @@ static void MX_RTC_Init(void)
  8007f34:	4413      	add	r3, r2
  8007f36:	005b      	lsls	r3, r3, #1
  8007f38:	b2db      	uxtb	r3, r3
- 8007f3a:	2239      	movs	r2, #57	@ 0x39
+ 8007f3a:	2231      	movs	r2, #49	@ 0x31
  8007f3c:	4413      	add	r3, r2
  8007f3e:	b2db      	uxtb	r3, r3
  8007f40:	3b30      	subs	r3, #48	@ 0x30
  8007f42:	b2db      	uxtb	r3, r3
  8007f44:	713b      	strb	r3, [r7, #4]
    sTime.Minutes = ((__TIME__[3] - '0') * 10) + (__TIME__[4] - '0');
- 8007f46:	2334      	movs	r3, #52	@ 0x34
+ 8007f46:	2331      	movs	r3, #49	@ 0x31
  8007f48:	3b30      	subs	r3, #48	@ 0x30
  8007f4a:	b2db      	uxtb	r3, r3
  8007f4c:	461a      	mov	r2, r3
@@ -20277,14 +20277,14 @@ static void MX_RTC_Init(void)
  8007f50:	4413      	add	r3, r2
  8007f52:	005b      	lsls	r3, r3, #1
  8007f54:	b2db      	uxtb	r3, r3
- 8007f56:	2230      	movs	r2, #48	@ 0x30
+ 8007f56:	2235      	movs	r2, #53	@ 0x35
  8007f58:	4413      	add	r3, r2
  8007f5a:	b2db      	uxtb	r3, r3
  8007f5c:	3b30      	subs	r3, #48	@ 0x30
  8007f5e:	b2db      	uxtb	r3, r3
  8007f60:	717b      	strb	r3, [r7, #5]
    sTime.Seconds = ((__TIME__[6] - '0') * 10) + (__TIME__[7] - '0');
- 8007f62:	2333      	movs	r3, #51	@ 0x33
+ 8007f62:	2332      	movs	r3, #50	@ 0x32
  8007f64:	3b30      	subs	r3, #48	@ 0x30
  8007f66:	b2db      	uxtb	r3, r3
  8007f68:	461a      	mov	r2, r3
@@ -20292,7 +20292,7 @@ static void MX_RTC_Init(void)
  8007f6c:	4413      	add	r3, r2
  8007f6e:	005b      	lsls	r3, r3, #1
  8007f70:	b2db      	uxtb	r3, r3
- 8007f72:	2236      	movs	r2, #54	@ 0x36
+ 8007f72:	2239      	movs	r2, #57	@ 0x39
  8007f74:	4413      	add	r3, r2
  8007f76:	b2db      	uxtb	r3, r3
  8007f78:	3b30      	subs	r3, #48	@ 0x30

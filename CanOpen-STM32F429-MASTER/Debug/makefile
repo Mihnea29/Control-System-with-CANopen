@@ -56,7 +56,7 @@ MAP_FILES += \
 CanOpen-STM32F429-MASTER.map \
 
 SIZE_OUTPUT += \
-default.size.stdout \
+CanOpen-STM32F429-MASTER.size.stdout \
 
 OBJDUMP_LIST += \
 CanOpen-STM32F429-MASTER.list \
@@ -74,7 +74,7 @@ CanOpen-STM32F429-MASTER.elf CanOpen-STM32F429-MASTER.map: $(OBJS) $(USER_OBJS) 
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+CanOpen-STM32F429-MASTER.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-size  $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
@@ -86,7 +86,7 @@ CanOpen-STM32F429-MASTER.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_T
 
 # Other Targets
 clean:
-	-$(RM) CanOpen-STM32F429-MASTER.elf CanOpen-STM32F429-MASTER.list CanOpen-STM32F429-MASTER.map default.size.stdout
+	-$(RM) CanOpen-STM32F429-MASTER.elf CanOpen-STM32F429-MASTER.list CanOpen-STM32F429-MASTER.map CanOpen-STM32F429-MASTER.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
