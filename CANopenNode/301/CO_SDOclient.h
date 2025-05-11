@@ -29,7 +29,7 @@
 
 /* default configuration, see CO_config.h */
 #ifndef CO_CONFIG_SDO_CLI
-#define CO_CONFIG_SDO_CLI (0)
+#define CO_CONFIG_SDO_CLI (1)
 #endif
 
 #ifndef CO_DOXYGEN
@@ -192,7 +192,7 @@ typedef struct {
 #if (((CO_CONFIG_SDO_CLI)&CO_CONFIG_SDO_CLI_SEGMENTED) != 0) || defined CO_DOXYGEN
     uint8_t toggle; /**< Toggle bit toggled in each segment in segmented transfer */
 #endif
-#if (((CO_CONFIG_SDO_CLI)&CO_CONFIG_SDO_CLI_BLOCK) != 0) || defined CO_DOXYGEN
+#if (((CO_CONFIG_SDO_CLI) && CO_CONFIG_SDO_CLI_BLOCK) != 0) || defined CO_DOXYGEN
     uint32_t block_SDOtimeoutTime_us; /**< Timeout time for SDO sub-block upload, half of #SDOtimeoutTime_us */
     uint32_t block_timeoutTimer;      /**< Timeout timer for SDO sub-block upload */
     uint8_t block_seqno;              /**< Sequence number of segment in block, 1..127 */

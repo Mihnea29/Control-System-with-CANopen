@@ -393,7 +393,7 @@ extern "C" {
  *   (Writing to object 0x1280+ re-configures the client).
  */
 #ifdef CO_DOXYGEN
-#define CO_CONFIG_SDO_CLI (0)
+#define CO_CONFIG_SDO_CLI (1)
 #endif
 #define CO_CONFIG_SDO_CLI_ENABLE    0x01
 #define CO_CONFIG_SDO_CLI_SEGMENTED 0x02

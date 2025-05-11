@@ -25,7 +25,7 @@
 
 /* default configuration, see CO_config.h */
 #ifndef CO_CONFIG_FIFO
-#define CO_CONFIG_FIFO (0)
+#define CO_CONFIG_FIFO (1)
 #endif
 
 #if (((CO_CONFIG_FIFO)&CO_CONFIG_FIFO_ENABLE) != 0) || defined CO_DOXYGEN
