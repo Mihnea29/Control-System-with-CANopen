@@ -39,7 +39,8 @@ def read_uart_and_send_to_vcan(uart_port, baudrate=115200):
                 print(f"Trimis la vcan0: ID={frame['id']:03X}, DLC={frame['dlc']}, Data={frame['data']}")
     except KeyboardInterrupt:
         print("CTRL+C")
-
+    except Exception as e:
+        print(f"An error occurred: {e}")
     finally:
         if 'ser' in locals() and ser.is_open:
             ser.close()
@@ -47,5 +48,5 @@ def read_uart_and_send_to_vcan(uart_port, baudrate=115200):
             bus.shutdown()
 
 if __name__ == "__main__":
-    read_uart_and_send_to_vcan(uart_port='/dev/ttyUSB1', baudrate=115200)
+    read_uart_and_send_to_vcan(uart_port='/dev/ttyUSB2', baudrate=115200)
 
