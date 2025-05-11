@@ -107,11 +107,6 @@ canopen_app_init(CANopenNodeSTM32* _canopenNodeSTM32) {
 #endif
 
     canopen_app_resetCommunication();
-    uint32_t ms;
-    uint16_t days;
-    log_printf("TIME message sent: %u ms, %u days\n", ms, days);
-    CO_TIME_set(CO->TIME, ms, days, TIME_PRODUCER_INTERVAL_MS);
-
     return 0;
 }
 

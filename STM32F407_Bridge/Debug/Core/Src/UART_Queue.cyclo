@@ -1,0 +1,2 @@
+../Core/Src/UART_Queue.c:20:9:EnqueueUartMessage	3
+../Core/Src/UART_Queue.c:41:6:ProcessUartQueue	3

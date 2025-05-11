@@ -9,4 +9,4 @@
 ../Core/Src/main.c:380:13:MX_GPIO_Init	56	static
 ../Core/Src/main.c:510:26:My_ITM_SendChar	16	static,ignoring_inline_asm
 ../Core/Src/main.c:524:5:_write	32	static
-../Core/Src/main.c:537:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:538:6:Error_Handler	4	static,ignoring_inline_asm

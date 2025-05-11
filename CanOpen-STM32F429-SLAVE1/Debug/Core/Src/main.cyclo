@@ -9,4 +9,4 @@
 ../Core/Src/main.c:380:13:MX_GPIO_Init	1
 ../Core/Src/main.c:510:26:My_ITM_SendChar	4
 ../Core/Src/main.c:524:5:_write	2
-../Core/Src/main.c:537:6:Error_Handler	1
+../Core/Src/main.c:538:6:Error_Handler	1

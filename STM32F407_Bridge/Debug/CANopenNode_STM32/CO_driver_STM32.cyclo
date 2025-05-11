@@ -1,0 +1,17 @@
+../CANopenNode_STM32/CO_driver_STM32.c:48:1:CO_CANsetConfigurationMode	2
+../CANopenNode_STM32/CO_driver_STM32.c:61:1:CO_CANsetNormalMode	3
+../CANopenNode_STM32/CO_driver_STM32.c:77:1:CO_CANmodule_init	9
+../CANopenNode_STM32/CO_driver_STM32.c:188:1:CO_CANmodule_disable	3
+../CANopenNode_STM32/CO_driver_STM32.c:201:1:CO_CANrxBufferInit	7
+../CANopenNode_STM32/CO_driver_STM32.c:233:1:CO_CANtxBufferInit	4
+../CANopenNode_STM32/CO_driver_STM32.c:257:1:prv_send_can_message	4
+../CANopenNode_STM32/CO_driver_STM32.c:361:1:CO_CANsend	4
+../CANopenNode_STM32/CO_driver_STM32.c:392:1:CO_CANclearPendingSyncPDOs	7
+../CANopenNode_STM32/CO_driver_STM32.c:427:1:CO_CANmodule_process	5
+../CANopenNode_STM32/CO_driver_STM32.c:514:1:prv_read_can_received_msg	10
+../CANopenNode_STM32/CO_driver_STM32.c:647:1:HAL_CAN_RxFifo0MsgPendingCallback	1
+../CANopenNode_STM32/CO_driver_STM32.c:657:1:HAL_CAN_RxFifo1MsgPendingCallback	1
+../CANopenNode_STM32/CO_driver_STM32.c:668:1:CO_CANinterrupt_TX	5
+../CANopenNode_STM32/CO_driver_STM32.c:702:1:HAL_CAN_TxMailbox0CompleteCallback	1
+../CANopenNode_STM32/CO_driver_STM32.c:707:1:HAL_CAN_TxMailbox1CompleteCallback	1
+../CANopenNode_STM32/CO_driver_STM32.c:712:1:HAL_CAN_TxMailbox2CompleteCallback	1

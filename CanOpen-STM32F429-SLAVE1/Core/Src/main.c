@@ -121,7 +121,7 @@ int main(void)
   canOpenNodeSTM32.CANHandle = &hcan1;
   canOpenNodeSTM32.HWInitFunction = MX_CAN1_Init;
   canOpenNodeSTM32.timerHandle = &htim14;
-  canOpenNodeSTM32.desiredNodeID = 1;
+  canOpenNodeSTM32.desiredNodeID = CANOPEN_ID;
   canOpenNodeSTM32.baudrate = 100;
   canopen_app_init(&canOpenNodeSTM32);
   /* USER CODE END 2 */
@@ -526,6 +526,7 @@ int _write(int file, char *ptr, int len) {
 	for(i = 0; i < len; i++) {
 		My_ITM_SendChar(*ptr++);
 	}
+	return len;
 }
 
 /* USER CODE END 4 */

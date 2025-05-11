@@ -41,8 +41,6 @@ static CO_CANmodule_t* CANModule_local = NULL; /* Local instance of global CAN m
 #define FLAG_RTR   0x8000 /*!< RTR flag, part of identifier */
 
 //UART IMPLEMENT
-#define RECEIVE
-#define UART_BUFFER_SIZE 256
 extern UART_HandleTypeDef huart6;
 extern volatile uint8_t uart_tx_busy;
 
