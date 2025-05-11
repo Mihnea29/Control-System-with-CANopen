@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 #include "CO_app_STM32.h"
 #include "UART_Queue.h"
 /* USER CODE END Includes */
