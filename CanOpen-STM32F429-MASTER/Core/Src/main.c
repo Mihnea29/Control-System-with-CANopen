@@ -34,11 +34,7 @@
 #define UART_NODE
 #define log_printf(macropar_message, ...) printf(macropar_message, ##__VA_ARGS__)
 
-#ifdef UART_NODE
 #define CANOPEN_ID 1
-#else
-#define CANOPEN_ID 3
-#endif
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -127,7 +123,7 @@ int main(void)
   canOpenNodeSTM32.CANHandle = &hcan1;
   canOpenNodeSTM32.HWInitFunction = MX_CAN1_Init;
   canOpenNodeSTM32.timerHandle = &htim14;
-  canOpenNodeSTM32.desiredNodeID = 1;
+  canOpenNodeSTM32.desiredNodeID = CANOPEN_ID;
   canOpenNodeSTM32.baudrate = 100;
   canopen_app_init(&canOpenNodeSTM32);
   /* USER CODE END 2 */
@@ -139,7 +135,6 @@ int main(void)
 	  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
-	  RTC_Monitor();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -635,23 +630,7 @@ int _write(int file, char *ptr, int len) {
 	for(i = 0; i < len; i++) {
 		My_ITM_SendChar(*ptr++);
 	}
-}
-
-void RTC_Monitor(void)
-{
-  static uint32_t lastPrintTime = 0;
-  uint32_t currentTime = HAL_GetTick();
-  if (currentTime - lastPrintTime >= 1000)
-  {
-    lastPrintTime = currentTime;
-    RTC_TimeTypeDef sTime;
-    RTC_DateTypeDef sDate;
-    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-    log_printf("Current time: %02d:%02d:%02d  Date: %02d-%02d-20%02d\r\n",
-              sTime.Hours, sTime.Minutes, sTime.Seconds,
-              sDate.Date, sDate.Month, sDate.Year);
-  }
+	return len;
 }
 
 /* USER CODE END 4 */

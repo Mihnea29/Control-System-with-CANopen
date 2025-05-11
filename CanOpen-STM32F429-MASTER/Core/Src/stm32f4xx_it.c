@@ -41,7 +41,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-volatile uint8_t uart_tx_busy = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -285,19 +285,5 @@ void USART6_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if(huart->Instance == USART6){
-		uart_tx_busy = 0;
-	}
-}
 
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
-{
-	if(huart->Instance == USART6) {
-		uart_tx_busy = 0;
-		HAL_UART_DeInit(huart);
-		HAL_UART_Init(huart);
-	}
-}
 /* USER CODE END 1 */

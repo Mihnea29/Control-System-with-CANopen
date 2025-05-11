@@ -69,8 +69,6 @@ void canopen_app_interrupt(void);
 
 void ProcessTimeProducer(void);
 
-void GetCANopenTimeStamp(uint32_t *ms, uint16_t *days);
-
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

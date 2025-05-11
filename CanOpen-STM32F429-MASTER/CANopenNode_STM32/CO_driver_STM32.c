@@ -40,13 +40,6 @@ static CO_CANmodule_t* CANModule_local = NULL; /* Local instance of global CAN m
 #define CANID_MASK 0x07FF /*!< CAN standard ID mask */
 #define FLAG_RTR   0x8000 /*!< RTR flag, part of identifier */
 
-//UART IMPLEMENT
-//#define RECEIVE
-#define UART_BUFFER_SIZE 256
-extern UART_HandleTypeDef huart6;
-extern volatile uint8_t uart_tx_busy;
-
-
 /******************************************************************************/
 void
 CO_CANsetConfigurationMode(void* CANptr) {
@@ -512,41 +505,6 @@ prv_read_can_received_msg(CAN_HandleTypeDef* hcan, uint32_t fifo, uint32_t fifo_
     rcvMsg.ident = rx_hdr.StdId | (rx_hdr.RTR == CAN_RTR_REMOTE ? FLAG_RTR : 0x00);
     rcvMsg.dlc = rx_hdr.DLC;
     rcvMsgIdent = rcvMsg.ident;
-
-#ifdef RECEIVE
-    char uartBuffer[UART_BUFFER_SIZE];
-    if(uart_tx_busy == 0)
-    {
-    	uart_tx_busy = 1;
-    }
-
-    memset(uartBuffer, 0, UART_BUFFER_SIZE);
-
-    int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
-
-    for(int i = 0; i < rcvMsg.dlc; i++)
-     {
-     	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
-     }
-
-    strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
-    HAL_UART_Transmit_IT(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer));
-//    char uartBuffer[256];
-//    memset(uartBuffer, 0, sizeof(uartBuffer));
-//
-//    int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
-//
-//    for(int i = 0; i < rcvMsg.dlc; i++)
-//    {
-//    	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
-//    }
-//
-//    strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
-//    HAL_UART_Transmit(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer), HAL_MAX_DELAY);
-#endif
-
-
-
 
     /*
      * Hardware filters are not used for the moment
