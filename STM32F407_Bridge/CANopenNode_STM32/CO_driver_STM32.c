@@ -30,7 +30,7 @@
  */
 #include "301/CO_driver.h"
 #include "CO_app_STM32.h"
-
+#include <stdio.h>
 /* Local CAN module object */
 static CO_CANmodule_t* CANModule_local = NULL; /* Local instance of global CAN module */
 
@@ -333,24 +333,7 @@ prv_send_can_message(CO_CANmodule_t* CANmodule, CO_CANtx_t* buffer) {
                                        &TxMailboxNum)
                   == HAL_OK;
 
-        char uartBuffer[UART_BUFFER_SIZE];
-         if(uart_tx_busy == 0)
-         {
-         	uart_tx_busy = 1;
-         }
-
-         memset(uartBuffer, 0, UART_BUFFER_SIZE);
-
-         int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", tx_hdr.StdId, tx_hdr.DLC);
-
-         for(int i = 0; i < tx_hdr.DLC; i++)
-          {
-          	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)buffer->data[i]);
-          }
-
-         log_printf("MESAJ %s \n", uartBuffer);
-         strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
-         EnqueueUartMessage(uartBuffer, strlen(uartBuffer));
+        ProcessTxMessage(tx_hdr,buffer);
     }
 #endif
     return success;
@@ -531,20 +514,7 @@ prv_read_can_received_msg(CAN_HandleTypeDef* hcan, uint32_t fifo, uint32_t fifo_
     rcvMsg.dlc = rx_hdr.DLC;
     rcvMsgIdent = rcvMsg.ident;
 
-    char uartBuffer[UART_BUFFER_SIZE];
-
-    memset(uartBuffer, 0, UART_BUFFER_SIZE);
-
-    int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
-
-    for(int i = 0; i < rcvMsg.dlc; i++)
-     {
-     	length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
-     }
-    log_printf("MESAJ %s \n", uartBuffer);
-    strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
-
-    HAL_UART_Transmit_IT(&huart6, (uint8_t *)uartBuffer, strlen(uartBuffer));
+    ProcessRxMessage(rcvMsg);
 
     /*
      * Hardware filters are not used for the moment
@@ -712,4 +682,38 @@ void
 HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef* hcan) {
     CO_CANinterrupt_TX(CANModule_local, CAN_TX_MAILBOX0);
 }
+
+void
+ProcessRxMessage(CO_CANrxMsg_t rcvMsg) {
+	char uartBuffer[UART_BUFFER_SIZE];
+
+	int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", rcvMsg.ident, rcvMsg.dlc);
+
+	for(int i = 0; i < rcvMsg.dlc; i++)
+	{
+		length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)rcvMsg.data[i]);
+	}
+	log_printf("MESAJ %s \n", uartBuffer);
+	strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
+
+	EnqueueUartMessage(uartBuffer, strlen(uartBuffer));
+}
+
+void
+ProcessTxMessage(CAN_TxHeaderTypeDef tx_hdr, CO_CANtx_t* buffer) {
+	char uartBuffer[UART_BUFFER_SIZE];
+	memset(uartBuffer, 0, UART_BUFFER_SIZE);
+
+	int length = snprintf(uartBuffer, sizeof(uartBuffer), "ID: 0x%03X DLC: %d Data: ", tx_hdr.StdId, tx_hdr.DLC);
+
+	for(int i = 0; i < tx_hdr.DLC; i++)
+	{
+		length += snprintf(uartBuffer + length, sizeof(uartBuffer) - length, "0x%02X ", (unsigned char)buffer->data[i]);
+	}
+
+	log_printf("MESAJ %s \n", uartBuffer);
+	strncat(uartBuffer, "\r\n", sizeof(uartBuffer) - length - 1);
+	EnqueueUartMessage(uartBuffer, strlen(uartBuffer));
+}
+
 #endif

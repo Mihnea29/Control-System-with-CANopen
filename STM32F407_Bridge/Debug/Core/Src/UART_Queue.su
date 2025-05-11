@@ -1,2 +1,0 @@
-../Core/Src/UART_Queue.c:20:9:EnqueueUartMessage	16	static
-../Core/Src/UART_Queue.c:41:6:ProcessUartQueue	8	static

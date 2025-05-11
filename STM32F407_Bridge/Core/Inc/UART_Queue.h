@@ -6,6 +6,7 @@
  */
 #include "main.h"
 
+
 #ifndef SRC_UART_QUEUE_H_
 #define SRC_UART_QUEUE_H_
 #define UART_BUFFER_SIZE 512

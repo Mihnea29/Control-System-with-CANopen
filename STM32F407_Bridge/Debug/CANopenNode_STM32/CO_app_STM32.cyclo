@@ -1,6 +1,0 @@
-/home/mihneadorcu/Desktop/Licenta/CANopenNode/301/CO_TIME.h:137:1:CO_TIME_set	2
-../CANopenNode_STM32/CO_app_STM32.c:61:1:canopen_app_init	2
-../CANopenNode_STM32/CO_app_STM32.c:122:1:canopen_app_resetCommunication	9
-../CANopenNode_STM32/CO_app_STM32.c:210:1:canopen_app_process	4
-../CANopenNode_STM32/CO_app_STM32.c:240:1:canopen_app_interrupt	3
-../CANopenNode_STM32/CO_app_STM32.c:262:6:GetCANopenTimeStamp	10
