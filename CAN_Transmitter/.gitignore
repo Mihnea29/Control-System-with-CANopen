@@ -1,40 +1,52 @@
-# STM32CubeIDE/STM32CubeMX
-*.launch
-*.elf
-*.bin
-*.hex
-*.map
-*.list
-*.log
-*.o
-*.d
-*.a
-*.su
+#settings
+.settings/
 
-# Build output folders
-build/
+#metadata
+.metadata/
+
+#Debug
 Debug/
 debug/
 Release/
-release/
+release
 
-# IDE project files
-.cproject
-.project
-.settings/
-*.mxproject
-*.ioc
+# Prerequisites
+*.d
 
-# Auto-generated config/linker files (if not manually maintained)
-*.ld
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
 
-# Backup or temp files
-*~
-*.swp
-*.bak
-*.tmp
-*.old
+# Linker output
+*.ilk
+*.map
+*.exp
 
-# Other OS-specific files
-.DS_Store
-Thumbs.db
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
