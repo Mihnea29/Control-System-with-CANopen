@@ -50,7 +50,10 @@ CANopenNodeSTM32*
 #define TIME_PRODUCER_INTERVAL_MS 1000
 /* Global variables and objects */
 CO_t* CO = NULL; /* CANopen object */
-
+int i;
+void callback_time_rcv(void* object) {
+	++i;
+}
 // Global variables
 uint32_t time_old, time_current;
 CO_ReturnError_t err;
@@ -195,6 +198,7 @@ canopen_app_resetCommunication() {
     log_printf("CANopenNode - Running...\n");
     fflush(stdout);
     time_old = time_current = HAL_GetTick();
+    CO_TIME_initCallbackPre(CO->TIME, CO->TIME, callback_time_rcv);
     return 0;
 }
 

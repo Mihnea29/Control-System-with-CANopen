@@ -220,7 +220,7 @@ int main(void)
 		    uint32_t dt = now - lastTick;
 		    lastTick = now;
 		    elapsed += dt;
-		if(elapsed >= 10000) {
+		if(elapsed == 10000) {
 			HB_TIME = 1000;
 			write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
 			log_printf("HB_TIME: %d\r\n", HB_TIME);
