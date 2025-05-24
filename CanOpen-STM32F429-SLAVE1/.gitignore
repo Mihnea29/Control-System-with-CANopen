@@ -50,7 +50,3 @@ release
 *.su
 *.idb
 *.pdb
-.cproject
-.mxproject
-.project
-CanOpen-STM32F429-SLAVE1.launch
