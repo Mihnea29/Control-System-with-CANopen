@@ -57,8 +57,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define CS_I2C_SPI_Pin GPIO_PIN_3
-#define CS_I2C_SPI_GPIO_Port GPIOE
 #define PC14_OSC32_IN_Pin GPIO_PIN_14
 #define PC14_OSC32_IN_GPIO_Port GPIOC
 #define PC15_OSC32_OUT_Pin GPIO_PIN_15
@@ -71,8 +69,6 @@ void Error_Handler(void);
 #define OTG_FS_PowerSwitchOn_GPIO_Port GPIOC
 #define PDM_OUT_Pin GPIO_PIN_3
 #define PDM_OUT_GPIO_Port GPIOC
-#define B1_Pin GPIO_PIN_0
-#define B1_GPIO_Port GPIOA
 #define I2S3_WS_Pin GPIO_PIN_4
 #define I2S3_WS_GPIO_Port GPIOA
 #define SPI1_SCK_Pin GPIO_PIN_5
@@ -86,11 +82,11 @@ void Error_Handler(void);
 #define CLK_IN_Pin GPIO_PIN_10
 #define CLK_IN_GPIO_Port GPIOB
 #define LD4_Pin GPIO_PIN_12
-#define LD4_GPIO_Port GPIOG
+#define LD4_GPIO_Port GPIOD
 #define LD3_Pin GPIO_PIN_13
-#define LD3_GPIO_Port GPIOG
+#define LD3_GPIO_Port GPIOD
 #define LD5_Pin GPIO_PIN_14
-#define LD5_GPIO_Port GPIOG
+#define LD5_GPIO_Port GPIOD
 #define LD6_Pin GPIO_PIN_15
 #define LD6_GPIO_Port GPIOD
 #define VBUS_FS_Pin GPIO_PIN_9

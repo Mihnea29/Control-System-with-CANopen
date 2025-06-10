@@ -48,8 +48,8 @@
 									<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
-									<listOptionValue builtIn="false" value="/home/mihneadorcu/Desktop/Licenta/CANopenNode"/>
-									<listOptionValue builtIn="false" value="/home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-MASTER/CANopenNode_STM32"/>
+									<listOptionValue builtIn="false" value="../../CANopenNode"/>
+									<listOptionValue builtIn="false" value="../CANopenNode_STM32"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.672443024" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
