@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include "CO_app_STM32.h"
 #include "CANopen.h"
+#include "OD.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -209,6 +210,7 @@ int main(void)
 	log_printf("BYTES_READ: %d\r\n", bytesRead);
 	uint32_t elapsed = 0;
 	uint32_t lastTick = HAL_GetTick();
+	int i = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -230,6 +232,12 @@ int main(void)
 		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, canOpenNodeSTM32.outStatusLEDGreen);
 		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, canOpenNodeSTM32.outStatusLEDRed);
 		canopen_app_process();
+
+		//OD_PERSIST_COMM.x6000_counter++;
+		OD_set_u32(OD_find(OD, 0x6000), 0x00, i++, false);
+		//if(OD_PERSIST_COMM.x6000_counter != old_counter)
+		//CO_TPDOsendRequest(&canopenNodeSTM32->canOpenStack->TPDO[0]);
+		HAL_Delay(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
