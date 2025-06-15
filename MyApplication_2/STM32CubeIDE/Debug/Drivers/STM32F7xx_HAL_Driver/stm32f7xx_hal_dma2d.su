@@ -1,4 +1,4 @@
-D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c:2069:13:DMA2D_SetConfig	16	static
+D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c:2069:13:DMA2D_SetConfig	20	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c:406:13:HAL_DMA2D_MspInit	0	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c:238:19:HAL_DMA2D_Init	8	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c:422:13:HAL_DMA2D_MspDeInit	0	static

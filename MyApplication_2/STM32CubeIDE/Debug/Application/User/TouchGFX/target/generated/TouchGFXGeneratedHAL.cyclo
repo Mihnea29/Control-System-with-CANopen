@@ -36,6 +36,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:310:44:virtual touchgfx::AbstractPainterLinearGradient& touchgfx::CWRVectorRendererRGB565::getLinearPainter()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:315:35:virtual touchgfx::AbstractPainterColor& touchgfx::CWRVectorRendererRGB565::getColorPainterColor()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:320:30:virtual touchgfx::AbstractPainter& touchgfx::CWRVectorRendererRGB565::getColorPainter()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:197:11:touchgfx::CWRVectorRenderer::CanvasWidgetProxy::~CanvasWidgetProxy()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:308:7:touchgfx::CWRVectorRendererRGB565::~CWRVectorRendererRGB565()	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:47:36:void __tcf_1()	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:80:6:virtual void TouchGFXGeneratedHAL::configureInterrupts()	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:98:6:virtual void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()	1
@@ -43,8 +45,6 @@ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGe
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:124:6:virtual void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t*)	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:142:6:virtual void TouchGFXGeneratedHAL::InvalidateCache()	4
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:32:7:DirectFrameBufferVideoController<1, touchgfx::Bitmap::RGB565>::~DirectFrameBufferVideoController()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:308:7:touchgfx::CWRVectorRendererRGB565::~CWRVectorRendererRGB565()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:197:11:touchgfx::CWRVectorRenderer::CanvasWidgetProxy::~CanvasWidgetProxy()	1
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:30:7:TouchGFXGeneratedHAL::~TouchGFXGeneratedHAL()	1
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:58:18:void DirectFrameBufferVideoController<no_streams, output_format>::unregisterVideoWidget(touchgfx::VideoController::Handle) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	1
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:297:18:void DirectFrameBufferVideoController<no_streams, output_format>::setVideoFrameRateCompensation(bool) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	1
@@ -73,8 +73,8 @@ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGe
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:63:18:void DirectFrameBufferVideoController<no_streams, output_format>::setFrameRate(touchgfx::VideoController::Handle, uint32_t, uint32_t) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:232:18:void DirectFrameBufferVideoController<no_streams, output_format>::draw(touchgfx::VideoController::Handle, const touchgfx::Rect&, const touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	2
-../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:44:20:touchgfx::VideoController::Handle DirectFrameBufferVideoController<no_streams, output_format>::registerVideoWidget(touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:356:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	2
+../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:44:20:touchgfx::VideoController::Handle DirectFrameBufferVideoController<no_streams, output_format>::registerVideoWidget(touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:86:6:virtual void TouchGFXGeneratedHAL::enableInterrupts()	1
 D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:92:6:virtual void TouchGFXGeneratedHAL::disableInterrupts()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	4

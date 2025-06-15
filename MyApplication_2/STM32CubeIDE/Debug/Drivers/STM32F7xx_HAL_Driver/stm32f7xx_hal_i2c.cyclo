@@ -1,6 +1,6 @@
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6758:13:I2C_Flush_TXDR	3
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7354:13:I2C_TransferConfig	1
-D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7381:13:I2C_Enable_IRQ	13
+D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7381:13:I2C_Enable_IRQ	11
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7472:13:I2C_Disable_IRQ	5
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7213:26:I2C_IsErrorOccurred	17
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:7057:26:I2C_WaitOnTXISFlagUntilTimeout	7
@@ -64,13 +64,13 @@ D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6179:13:I2C_ITMasterCplt	12
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:4939:26:I2C_Master_ISR_IT	24
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5545:26:I2C_Mem_ISR_DMA	17
-D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5397:26:I2C_Master_ISR_DMA	18
+D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5397:26:I2C_Master_ISR_DMA	19
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6947:13:I2C_DMAError	5
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6779:13:I2C_DMAMasterTransmitCplt	4
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6859:13:I2C_DMAMasterReceiveCplt	4
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5098:26:I2C_Mem_ISR_IT	19
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:4657:6:HAL_I2C_ER_IRQHandler	8
-D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6322:13:I2C_ITSlaveCplt.constprop	24
+D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6322:13:I2C_ITSlaveCplt.constprop	23
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5709:26:I2C_Slave_ISR_DMA	22
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:5257:26:I2C_Slave_ISR_IT	23
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c:6987:13:I2C_DMAAbort	3

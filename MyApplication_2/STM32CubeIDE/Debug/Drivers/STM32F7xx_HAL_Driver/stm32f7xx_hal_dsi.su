@@ -9,7 +9,7 @@ D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1008:13:HAL_DSI_ErrorCallback	0	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:856:6:HAL_DSI_IRQHandler	8	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1068:19:HAL_DSI_SetGenericVCID	0	static
-D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1091:19:HAL_DSI_ConfigVideoMode	16	static
+D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1091:19:HAL_DSI_ConfigVideoMode	12	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1241:19:HAL_DSI_ConfigAdaptedCommandMode	12	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1312:19:HAL_DSI_ConfigCommand	12	static
 D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c:1375:19:HAL_DSI_ConfigFlowControl	0	static

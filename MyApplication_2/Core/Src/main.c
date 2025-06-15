@@ -336,7 +336,7 @@ static void MX_CAN1_Init(void)
   /* USER CODE END CAN1_Init 1 */
   hcan1.Instance = CAN1;
   hcan1.Init.Prescaler = 21;
-  hcan1.Init.Mode = CAN_MODE_NORMAL;
+  hcan1.Init.Mode = CAN_MODE_LOOPBACK;
   hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
   hcan1.Init.TimeSeg1 = CAN_BS1_15TQ;
   hcan1.Init.TimeSeg2 = CAN_BS2_4TQ;
@@ -844,6 +844,7 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOJ_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -914,6 +915,14 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+int _write(int32_t file, uint8_t *ptr, int32_t len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        ITM_SendChar(*ptr++);
+    }
+    return len;
+}
 
     /**************************** LINK OTM8009A (Display driver) ******************/
     /**
@@ -1591,7 +1600,7 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_canopen_task */
 void canopen_task(void *argument)
 {
-	 /* USER CODE BEGIN canopen_task */
+  /* USER CODE BEGIN canopen_task */
 
 	  /* Infinite loop */
 	  for(;;)
@@ -1599,11 +1608,12 @@ void canopen_task(void *argument)
 //	       if (osSemaphoreAcquire(canSemHandle, 10) == osOK) {
 	//           canopen_app_interrupt();
 	  //     }
-		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, canOpenNodeSTM32.outStatusLEDGreen);
-		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, canOpenNodeSTM32.outStatusLEDRed);
+		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDGreen);
+		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDRed);
 		    canopen_app_process();
 	    osDelay(1);
 	  }
+  /* USER CODE END canopen_task */
 }
 
  /* MPU Configuration */
@@ -1701,6 +1711,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE END Callback 1 */
 }
+
 /**
   * @brief  This function is executed in case of error occurrence.
   * @retval None

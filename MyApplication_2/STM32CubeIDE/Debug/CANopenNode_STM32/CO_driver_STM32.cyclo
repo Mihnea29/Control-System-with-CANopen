@@ -8,7 +8,7 @@ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:196:1:CO_CANrxBu
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:228:1:CO_CANtxBufferInit	3
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:337:1:CO_CANsend	4
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:368:1:CO_CANclearPendingSyncPDOs	7
-D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:403:1:CO_CANmodule_process	5
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:403:1:CO_CANmodule_process	4
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:653:1:HAL_CAN_RxFifo0MsgPendingCallback	1
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:663:1:HAL_CAN_RxFifo1MsgPendingCallback	1
 D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_STM32.c:674:1:CO_CANinterrupt_TX	5
