@@ -1,0 +1,6 @@
+E:/CANopenNode/301/CO_HBconsumer.c:164:1:CO_HBconsumer_initEntry	11
+E:/CANopenNode/301/CO_HBconsumer.c:77:1:OD_write_1016	7
+E:/CANopenNode/301/CO_HBconsumer.c:38:1:CO_HBcons_receive	3
+E:/CANopenNode/301/CO_HBconsumer.c:100:1:CO_HBconsumer_init	12
+E:/CANopenNode/301/CO_HBconsumer.c:215:1:CO_HBconsumer_initCallbackPre	3
+E:/CANopenNode/301/CO_HBconsumer.c:299:1:CO_HBconsumer_process	15

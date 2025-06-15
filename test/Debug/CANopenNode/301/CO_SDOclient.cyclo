@@ -1,0 +1,16 @@
+E:/CANopenNode/301/CO_ODinterface.h:343:1:OD_getIndex	2
+E:/CANopenNode/301/CO_ODinterface.h:518:1:OD_get_u8	1
+E:/CANopenNode/301/CO_ODinterface.h:530:1:OD_get_u32	1
+E:/CANopenNode/301/CO_fifo.h:85:1:CO_fifo_reset	2
+E:/CANopenNode/301/CO_fifo.h:140:1:CO_fifo_getOccupied	2
+E:/CANopenNode/301/CO_SDOclient.c:57:1:CO_SDOclient_receive	5
+E:/CANopenNode/301/CO_SDOclient.c:215:1:CO_SDOclient_init	14
+E:/CANopenNode/301/CO_SDOclient.c:311:1:CO_SDOclient_setup	8
+E:/CANopenNode/301/CO_SDOclient.c:364:1:CO_SDOclientDownloadInitiate	3
+E:/CANopenNode/301/CO_SDOclient.c:403:1:CO_SDOclientDownloadInitSize	2
+E:/CANopenNode/301/CO_SDOclient.c:416:1:CO_SDOclientDownloadBufWrite	3
+E:/CANopenNode/301/CO_SDOclient.c:425:1:CO_SDOclientDownload	32
+E:/CANopenNode/301/CO_SDOclient.c:1043:1:CO_SDOclientUploadInitiate	3
+E:/CANopenNode/301/CO_SDOclient.c:1085:1:CO_SDOclientUpload	29
+E:/CANopenNode/301/CO_SDOclient.c:1760:1:CO_SDOclientUploadBufRead	3
+E:/CANopenNode/301/CO_SDOclient.c:1769:1:CO_SDOclientClose	2

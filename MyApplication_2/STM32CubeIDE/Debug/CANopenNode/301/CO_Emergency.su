@@ -1,0 +1,7 @@
+E:/CANopenNode/301/CO_Emergency.c:159:1:OD_read_1003	12	static
+E:/CANopenNode/301/CO_Emergency.c:195:1:OD_write_1003	8	static
+E:/CANopenNode/301/CO_Emergency.c:110:1:OD_read_1014_default	8	static
+E:/CANopenNode/301/CO_Emergency.c:300:1:CO_EM_init	56	static
+E:/CANopenNode/301/CO_Emergency.c:478:1:CO_EM_initCallbackPre	0	static
+E:/CANopenNode/301/CO_Emergency.c:639:1:CO_error	16	static,ignoring_inline_asm
+E:/CANopenNode/301/CO_Emergency.c:487:1:CO_EM_process	32	static

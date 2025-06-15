@@ -1,0 +1,7 @@
+E:/CANopenNode/301/CO_SDOserver.c:147:1:CO_SDOserver_init_canRxTx	40	static
+E:/CANopenNode/301/CO_SDOserver.c:191:1:OD_write_1201_additional	32	static
+E:/CANopenNode/301/CO_SDOserver.c:51:1:CO_SDO_receive	0	static
+E:/CANopenNode/301/CO_SDOserver.c:509:1:readFromOd.constprop	40	static,ignoring_inline_asm
+E:/CANopenNode/301/CO_SDOserver.c:254:1:CO_SDOserver_init	80	static
+E:/CANopenNode/301/CO_SDOserver.c:366:1:CO_SDOserver_initCallbackPre	0	static
+E:/CANopenNode/301/CO_SDOserver.c:592:1:CO_SDOserver_process	40	static,ignoring_inline_asm
