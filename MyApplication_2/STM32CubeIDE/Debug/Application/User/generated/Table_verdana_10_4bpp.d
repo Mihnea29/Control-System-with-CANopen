@@ -1,5 +1,5 @@
 Application/User/generated/Table_verdana_10_4bpp.o: \
- E:/stm32/MyApplication_2/TouchGFX/generated/fonts/src/Table_verdana_10_4bpp.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/fonts/src/Table_verdana_10_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

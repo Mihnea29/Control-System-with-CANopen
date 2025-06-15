@@ -1,5 +1,5 @@
 Application/User/generated/BitmapDatabase.o: \
- E:/stm32/MyApplication_2/TouchGFX/generated/images/src/BitmapDatabase.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/images/src/BitmapDatabase.cpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

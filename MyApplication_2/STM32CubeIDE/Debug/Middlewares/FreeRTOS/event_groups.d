@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/event_groups.o: \
- E:/stm32/MyApplication_2/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

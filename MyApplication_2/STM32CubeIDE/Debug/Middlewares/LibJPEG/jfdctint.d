@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jfdctint.o: \
- E:/stm32/MyApplication_2/Middlewares/Third_Party/LibJPEG/source/jfdctint.c \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/Middlewares/Third_Party/LibJPEG/source/jfdctint.c \
  ../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \

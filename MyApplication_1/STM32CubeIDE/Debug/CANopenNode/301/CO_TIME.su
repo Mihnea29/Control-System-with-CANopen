@@ -1,4 +1,0 @@
-E:/stm32/CANopenNode/301/CO_TIME.c:34:1:CO_TIME_receive	0	static
-E:/stm32/CANopenNode/301/CO_TIME.c:59:1:OD_write_1012	8	static
-E:/stm32/CANopenNode/301/CO_TIME.c:84:1:CO_TIME_init	48	static
-E:/stm32/CANopenNode/301/CO_TIME.c:155:1:CO_TIME_process	0	static

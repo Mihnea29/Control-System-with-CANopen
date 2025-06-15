@@ -1,5 +1,5 @@
 Application/User/generated/CachedFont.o: \
- E:/stm32/MyApplication_2/TouchGFX/generated/fonts/src/CachedFont.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/fonts/src/CachedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/CachedFont.hpp \
  ../../TouchGFX/generated/fonts/include/fonts/FontCache.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

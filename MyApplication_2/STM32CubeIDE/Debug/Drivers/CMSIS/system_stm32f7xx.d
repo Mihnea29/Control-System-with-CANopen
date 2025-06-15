@@ -1,5 +1,5 @@
 Drivers/CMSIS/system_stm32f7xx.o: \
- E:/stm32/MyApplication_2/Core/Src/system_stm32f7xx.c \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/Core/Src/system_stm32f7xx.c \
  ../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h \
  ../../Drivers/CMSIS/Include/core_cm7.h \

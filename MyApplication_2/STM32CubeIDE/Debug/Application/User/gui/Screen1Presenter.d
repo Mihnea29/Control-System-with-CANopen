@@ -1,5 +1,5 @@
 Application/User/gui/Screen1Presenter.o: \
- E:/stm32/MyApplication_2/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp \
  ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

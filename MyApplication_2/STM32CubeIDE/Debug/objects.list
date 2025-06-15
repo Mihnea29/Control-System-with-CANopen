@@ -51,7 +51,6 @@
 "./CANopenNode/301/CO_Emergency.o"
 "./CANopenNode/301/CO_HBconsumer.o"
 "./CANopenNode/301/CO_NMT_Heartbeat.o"
-"./CANopenNode/301/CO_Node_Guarding.o"
 "./CANopenNode/301/CO_ODinterface.o"
 "./CANopenNode/301/CO_PDO.o"
 "./CANopenNode/301/CO_SDOclient.o"

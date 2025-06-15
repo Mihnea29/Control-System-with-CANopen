@@ -1,7 +1,10 @@
-CANopenNode/304/CO_SRDO.o: E:/CANopenNode/304/CO_SRDO.c \
- E:/CANopenNode/304/CO_SRDO.h E:/CANopenNode/301/CO_Emergency.h \
- E:/CANopenNode/301/CO_driver.h E:/CANopenNode/301/CO_config.h \
- E:/CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
+CANopenNode/304/CO_SRDO.o: \
+ D:/workspace_DorcuM/Licenta/CANopenNode/304/CO_SRDO.c \
+ D:/workspace_DorcuM/Licenta/CANopenNode/304/CO_SRDO.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h \
+ ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -41,12 +44,14 @@ CANopenNode/304/CO_SRDO.o: E:/CANopenNode/304/CO_SRDO.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- E:/CANopenNode/301/CO_ODinterface.h
-E:/CANopenNode/304/CO_SRDO.h:
-E:/CANopenNode/301/CO_Emergency.h:
-E:/CANopenNode/301/CO_driver.h:
-E:/CANopenNode/301/CO_config.h:
-E:/CANopenNode_STM32/CO_driver_target.h:
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOserver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h
+D:/workspace_DorcuM/Licenta/CANopenNode/304/CO_SRDO.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h:
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -87,4 +92,7 @@ E:/CANopenNode_STM32/CO_driver_target.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-E:/CANopenNode/301/CO_ODinterface.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOserver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:

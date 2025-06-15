@@ -1,6 +1,9 @@
-CANopenNode/storage/CO_storage.o: E:/CANopenNode/storage/CO_storage.c \
- E:/CANopenNode/storage/CO_storage.h E:/CANopenNode/301/CO_driver.h \
- E:/CANopenNode/301/CO_config.h E:/CANopenNode_STM32/CO_driver_target.h \
+CANopenNode/storage/CO_storage.o: \
+ D:/workspace_DorcuM/Licenta/CANopenNode/storage/CO_storage.c \
+ D:/workspace_DorcuM/Licenta/CANopenNode/storage/CO_storage.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -41,11 +44,11 @@ CANopenNode/storage/CO_storage.o: E:/CANopenNode/storage/CO_storage.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- E:/CANopenNode/301/CO_ODinterface.h
-E:/CANopenNode/storage/CO_storage.h:
-E:/CANopenNode/301/CO_driver.h:
-E:/CANopenNode/301/CO_config.h:
-E:/CANopenNode_STM32/CO_driver_target.h:
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h
+D:/workspace_DorcuM/Licenta/CANopenNode/storage/CO_storage.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h:
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -86,4 +89,4 @@ E:/CANopenNode_STM32/CO_driver_target.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-E:/CANopenNode/301/CO_ODinterface.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h:

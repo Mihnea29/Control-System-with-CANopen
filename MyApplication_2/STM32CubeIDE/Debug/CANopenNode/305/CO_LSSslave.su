@@ -1,7 +1,6 @@
-E:/CANopenNode/305/CO_LSSslave.c:43:1:CO_LSSslave_receive	16	static
-E:/CANopenNode/305/CO_LSSslave.c:182:1:CO_LSSslave_init	48	static
-E:/CANopenNode/305/CO_LSSslave.c:224:1:CO_LSSslave_initCallbackPre	0	static
-E:/CANopenNode/305/CO_LSSslave.c:233:1:CO_LSSslave_initCkBitRateCall	0	static
-E:/CANopenNode/305/CO_LSSslave.c:242:1:CO_LSSslave_initActBitRateCall	0	static
-E:/CANopenNode/305/CO_LSSslave.c:251:1:CO_LSSslave_initCfgStoreCall	0	static
-E:/CANopenNode/305/CO_LSSslave.c:260:1:CO_LSSslave_process	16	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:52:13:CO_LSSslave_receive	16	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:206:18:CO_LSSslave_init	48	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:287:6:CO_LSSslave_initCheckBitRateCallback	0	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:300:6:CO_LSSslave_initActivateBitRateCallback	0	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:313:6:CO_LSSslave_initCfgStoreCallback	0	static
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSslave.c:326:8:CO_LSSslave_process	16	static

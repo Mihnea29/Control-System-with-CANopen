@@ -10,11 +10,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp:461:45:virtual const touchgfx::FontContextualFormsTable* touchgfx::Font::getContextualFormsTable() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp:471:18:virtual bool touchgfx::Font::isVectorBasedFont() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp:481:19:virtual float touchgfx::Font::getScaleFactor() const	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:13:10:) const	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:22:10:) const	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:31:32:touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(touchgfx::TextDirection)	5
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:45:6:void touchgfx::TextProvider::initializeInternal()	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:50:6:)	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:87:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	4
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:117:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	1
-E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:122:39:const touchgfx::Unicode::UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:13:10:) const	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:22:10:) const	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:31:32:touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(touchgfx::TextDirection)	5
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:45:6:void touchgfx::TextProvider::initializeInternal()	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:50:6:)	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:87:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	4
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:117:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	1
+D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/Texts.cpp:122:39:const touchgfx::Unicode::UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	1

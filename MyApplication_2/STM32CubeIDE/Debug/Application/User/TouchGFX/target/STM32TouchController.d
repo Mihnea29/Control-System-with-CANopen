@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/STM32TouchController.o: \
- E:/stm32/MyApplication_2/TouchGFX/target/STM32TouchController.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/target/STM32TouchController.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

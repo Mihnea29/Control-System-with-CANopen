@@ -1,5 +1,5 @@
 Application/User/generated/TypedTextDatabase.o: \
- E:/stm32/MyApplication_2/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

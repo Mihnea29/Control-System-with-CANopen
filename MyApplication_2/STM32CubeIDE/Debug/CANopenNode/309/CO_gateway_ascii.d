@@ -1,6 +1,9 @@
-CANopenNode/309/CO_gateway_ascii.o: E:/CANopenNode/309/CO_gateway_ascii.c \
- E:/CANopenNode/309/CO_gateway_ascii.h E:/CANopenNode/301/CO_driver.h \
- E:/CANopenNode/301/CO_config.h E:/CANopenNode_STM32/CO_driver_target.h \
+CANopenNode/309/CO_gateway_ascii.o: \
+ D:/workspace_DorcuM/Licenta/CANopenNode/309/CO_gateway_ascii.c \
+ D:/workspace_DorcuM/Licenta/CANopenNode/309/CO_gateway_ascii.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -41,15 +44,19 @@ CANopenNode/309/CO_gateway_ascii.o: E:/CANopenNode/309/CO_gateway_ascii.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- E:/CANopenNode/301/CO_fifo.h E:/CANopenNode/301/CO_SDOclient.h \
- E:/CANopenNode/301/CO_ODinterface.h E:/CANopenNode/301/CO_SDOserver.h \
- E:/CANopenNode/301/CO_NMT_Heartbeat.h E:/CANopenNode/301/CO_Emergency.h \
- E:/CANopenNode/305/CO_LSSmaster.h E:/CANopenNode/305/CO_LSS.h \
- E:/CANopenNode/303/CO_LEDs.h
-E:/CANopenNode/309/CO_gateway_ascii.h:
-E:/CANopenNode/301/CO_driver.h:
-E:/CANopenNode/301/CO_config.h:
-E:/CANopenNode_STM32/CO_driver_target.h:
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_fifo.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOclient.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOserver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSmaster.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSS.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/303/CO_LEDs.h
+D:/workspace_DorcuM/Licenta/CANopenNode/309/CO_gateway_ascii.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h:
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -90,12 +97,12 @@ E:/CANopenNode_STM32/CO_driver_target.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-E:/CANopenNode/301/CO_fifo.h:
-E:/CANopenNode/301/CO_SDOclient.h:
-E:/CANopenNode/301/CO_ODinterface.h:
-E:/CANopenNode/301/CO_SDOserver.h:
-E:/CANopenNode/301/CO_NMT_Heartbeat.h:
-E:/CANopenNode/301/CO_Emergency.h:
-E:/CANopenNode/305/CO_LSSmaster.h:
-E:/CANopenNode/305/CO_LSS.h:
-E:/CANopenNode/303/CO_LEDs.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_fifo.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOclient.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SDOserver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSmaster.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSS.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/303/CO_LEDs.h:

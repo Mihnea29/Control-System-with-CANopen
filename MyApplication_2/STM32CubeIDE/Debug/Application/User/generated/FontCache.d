@@ -1,5 +1,5 @@
 Application/User/generated/FontCache.o: \
- E:/stm32/MyApplication_2/TouchGFX/generated/fonts/src/FontCache.cpp \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/TouchGFX/generated/fonts/src/FontCache.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TextProvider.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

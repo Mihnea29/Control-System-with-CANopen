@@ -1,7 +1,11 @@
-CANopenNode/305/CO_LSSmaster.o: E:/CANopenNode/305/CO_LSSmaster.c \
- E:/CANopenNode/305/CO_LSSmaster.h E:/CANopenNode/305/CO_LSS.h \
- E:/CANopenNode/301/CO_driver.h E:/CANopenNode/301/CO_config.h \
- E:/CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
+CANopenNode/305/CO_LSSmaster.o: \
+ D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSmaster.c \
+ D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSmaster.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSS.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h \
+ ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -41,11 +45,11 @@ CANopenNode/305/CO_LSSmaster.o: E:/CANopenNode/305/CO_LSSmaster.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h
-E:/CANopenNode/305/CO_LSSmaster.h:
-E:/CANopenNode/305/CO_LSS.h:
-E:/CANopenNode/301/CO_driver.h:
-E:/CANopenNode/301/CO_config.h:
-E:/CANopenNode_STM32/CO_driver_target.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSSmaster.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/305/CO_LSS.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h:
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:

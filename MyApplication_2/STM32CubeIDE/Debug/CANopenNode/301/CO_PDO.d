@@ -1,7 +1,11 @@
-CANopenNode/301/CO_PDO.o: E:/CANopenNode/301/CO_PDO.c \
- E:/CANopenNode/301/CO_PDO.h E:/CANopenNode/301/CO_ODinterface.h \
- E:/CANopenNode/301/CO_driver.h E:/CANopenNode/301/CO_config.h \
- E:/CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
+CANopenNode/301/CO_PDO.o: \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_PDO.c \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_PDO.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h \
+ ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -41,12 +45,13 @@ CANopenNode/301/CO_PDO.o: E:/CANopenNode/301/CO_PDO.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- E:/CANopenNode/301/CO_Emergency.h E:/CANopenNode/301/CO_SYNC.h
-E:/CANopenNode/301/CO_PDO.h:
-E:/CANopenNode/301/CO_ODinterface.h:
-E:/CANopenNode/301/CO_driver.h:
-E:/CANopenNode/301/CO_config.h:
-E:/CANopenNode_STM32/CO_driver_target.h:
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h \
+ D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SYNC.h
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_PDO.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_ODinterface.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_driver.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_config.h:
+D:/workspace_DorcuM/Licenta/CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -87,5 +92,5 @@ E:/CANopenNode_STM32/CO_driver_target.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-E:/CANopenNode/301/CO_Emergency.h:
-E:/CANopenNode/301/CO_SYNC.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_Emergency.h:
+D:/workspace_DorcuM/Licenta/CANopenNode/301/CO_SYNC.h:

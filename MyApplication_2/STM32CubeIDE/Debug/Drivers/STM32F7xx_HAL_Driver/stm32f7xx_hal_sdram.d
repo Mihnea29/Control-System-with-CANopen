@@ -1,5 +1,5 @@
 Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.o: \
- E:/stm32/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \

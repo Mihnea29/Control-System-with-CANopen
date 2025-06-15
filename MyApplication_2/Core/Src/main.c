@@ -58,7 +58,7 @@
 #define QSPI_BUSY          ((uint8_t)0x02)
 #define QSPI_NOT_SUPPORTED ((uint8_t)0x04)
 #define QSPI_SUSPENDED     ((uint8_t)0x08)
-
+#define RTOS_EN
 /**
  * @brief  LCD Display OTM8009A ID
  */
@@ -142,6 +142,7 @@ static uint8_t QSPI_WriteEnable(QSPI_HandleTypeDef *hqspi);
 static uint8_t QSPI_AutoPollingMemReady  (QSPI_HandleTypeDef *hqspi, uint32_t Timeout);
 static uint8_t BSP_QSPI_EnableMemoryMappedMode(QSPI_HandleTypeDef *hqspi);
 osSemaphoreId_t canSemHandle;
+CANopenNodeSTM32 canOpenNodeSTM32;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -203,7 +204,13 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-  canopen_app_init(canopenNodeSTM32);
+	  canOpenNodeSTM32.timerHandle = &htim14;
+	  canOpenNodeSTM32.CANHandle      = &hcan1;
+	  canOpenNodeSTM32.HWInitFunction = MX_CAN1_Init;
+	  canOpenNodeSTM32.desiredNodeID  = 1;
+	  canOpenNodeSTM32.baudrate       = 100;
+	  canopen_app_init(&canOpenNodeSTM32);
+#ifdef RTOS_EN
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -214,7 +221,7 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-  canSemHandle = osSemaphoreNew(1, 0, NULL);
+  //canSemHandle = osSemaphoreNew(1, 0, NULL);
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
@@ -251,8 +258,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+#endif
   while (1)
   {
+#ifndef RTOS_EN
+	    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDGreen);
+	    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
+	    canopen_app_process();
+#endif
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -1579,21 +1592,15 @@ void StartDefaultTask(void *argument)
 void canopen_task(void *argument)
 {
 	 /* USER CODE BEGIN canopen_task */
-		  CANopenNodeSTM32 canOpenNodeSTM32;
-		  canOpenNodeSTM32.timerHandle = &htim14;
-		  canOpenNodeSTM32.CANHandle      = &hcan1;
-		  canOpenNodeSTM32.HWInitFunction = MX_CAN1_Init;
-		  canOpenNodeSTM32.desiredNodeID  = 1;
-		  canOpenNodeSTM32.baudrate       = 100;
-	    canopen_app_init(&canOpenNodeSTM32);
+
 	  /* Infinite loop */
 	  for(;;)
 	  {
-	       if (osSemaphoreAcquire(canSemHandle, 10) == osOK) {
-	           canopen_app_interrupt();
-	       }
-		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDGreen);
-		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
+//	       if (osSemaphoreAcquire(canSemHandle, 10) == osOK) {
+	//           canopen_app_interrupt();
+	  //     }
+		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, canOpenNodeSTM32.outStatusLEDGreen);
+		    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, canOpenNodeSTM32.outStatusLEDRed);
 		    canopen_app_process();
 	    osDelay(1);
 	  }
@@ -1689,8 +1696,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim == canopenNodeSTM32->timerHandle) {
-	  //canopen_app_interrupt();
-      osSemaphoreRelease(canSemHandle);
+	  canopen_app_interrupt();
+      //osSemaphoreRelease(canSemHandle);
   }
   /* USER CODE END Callback 1 */
 }

@@ -1,4 +1,5 @@
-Application/User/freertos.o: E:/stm32/MyApplication_2/Core/Src/freertos.c \
+Application/User/freertos.o: \
+ D:/workspace_DorcuM/Licenta/MyApplication_2/Core/Src/freertos.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
