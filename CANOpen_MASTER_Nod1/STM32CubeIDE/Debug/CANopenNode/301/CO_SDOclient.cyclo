@@ -1,0 +1,11 @@
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:57:1:CO_SDOclient_receive	5
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:311:1:CO_SDOclient_setup	8
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:215:1:CO_SDOclient_init	9
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:364:1:CO_SDOclientDownloadInitiate	3
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:403:1:CO_SDOclientDownloadInitSize	2
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:416:1:CO_SDOclientDownloadBufWrite	3
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:425:1:CO_SDOclientDownload	29
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:1043:1:CO_SDOclientUploadInitiate	3
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:1085:1:CO_SDOclientUpload	26
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:1760:1:CO_SDOclientUploadBufRead	3
+C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.c:1769:1:CO_SDOclientClose	2
