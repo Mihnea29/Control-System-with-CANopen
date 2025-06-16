@@ -1,6 +1,6 @@
 CANopenNode_STM32/CO_app_STM32.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h \
  ../../../CANopenNode/CANopen.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
@@ -65,10 +65,10 @@ CANopenNode_STM32/CO_app_STM32.o: \
  ../../../CANopenNode/301/CO_SDOclient.h \
  ../../../CANopenNode/305/CO_LSSmaster.h \
  ../../../CANopenNode/303/CO_LEDs.h ../../../CANopenNode/extra/CO_trace.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h \
  ../../../CANopenNode/storage/CO_storage.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/OD.h
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h:
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/OD.h
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h:
 ../../../CANopenNode/CANopen.h:
 ../../../CANopenNode/301/CO_driver.h:
 ../../../CANopenNode/301/CO_config.h:
@@ -141,6 +141,6 @@ C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_
 ../../../CANopenNode/305/CO_LSSmaster.h:
 ../../../CANopenNode/303/CO_LEDs.h:
 ../../../CANopenNode/extra/CO_trace.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h:
 ../../../CANopenNode/storage/CO_storage.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/OD.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/OD.h:

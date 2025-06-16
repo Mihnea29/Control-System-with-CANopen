@@ -1,5 +1,5 @@
 CANopenNode/301/crc16-ccitt.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/crc16-ccitt.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/crc16-ccitt.c \
  ../../../CANopenNode/301/crc16-ccitt.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

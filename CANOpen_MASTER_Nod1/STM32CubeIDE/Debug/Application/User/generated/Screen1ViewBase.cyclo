@@ -16,11 +16,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<Screen1Presenter>::~View()	1
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:19:1:Screen1ViewBase::~Screen1ViewBase()	1
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:24:6:virtual void Screen1ViewBase::setupScreen()	1
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:19:1:Screen1ViewBase::~Screen1ViewBase()	1
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:24:6:virtual void Screen1ViewBase::setupScreen()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<Screen1Presenter>::~View()	1
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:19:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:19:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:8:1:Screen1ViewBase::Screen1ViewBase()	1
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:8:1:Screen1ViewBase::Screen1ViewBase()	1

@@ -1,5 +1,5 @@
 CANopenNode/extra/CO_trace.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/extra/CO_trace.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.c \
  ../../../CANopenNode/extra/CO_trace.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

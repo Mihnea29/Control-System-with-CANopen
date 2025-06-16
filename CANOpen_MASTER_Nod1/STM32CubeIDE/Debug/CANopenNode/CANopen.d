@@ -1,8 +1,8 @@
 CANopenNode/CANopen.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/CANopen.c \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/CANopen.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_driver.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_config.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -43,38 +43,38 @@ CANopenNode/CANopen.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h \
  ../../../CANopenNode/301/CO_driver.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h \
  ../../../CANopenNode/301/CO_ODinterface.h \
  ../../../CANopenNode/301/CO_Emergency.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_HBconsumer.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_HBconsumer.h \
  ../../../CANopenNode/301/CO_NMT_Heartbeat.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_Node_Guarding.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_Emergency.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Node_Guarding.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h \
  ../../../CANopenNode/301/CO_SDOserver.h \
  ../../../CANopenNode/301/CO_fifo.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SYNC.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.h \
  ../../../CANopenNode/301/CO_SYNC.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_TIME.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/303/CO_LEDs.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/304/CO_GFC.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/304/CO_SRDO.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/305/CO_LSSslave.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_TIME.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_GFC.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_SRDO.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.h \
  ../../../CANopenNode/305/CO_LSS.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/309/CO_gateway_ascii.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/309/CO_gateway_ascii.h \
  ../../../CANopenNode/301/CO_SDOclient.h \
  ../../../CANopenNode/305/CO_LSSmaster.h \
  ../../../CANopenNode/303/CO_LEDs.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/extra/CO_trace.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h \
  ../../CANopenNode_STM32/OD.h
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/CANopen.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_driver.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_config.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/CANopen.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_driver.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_config.h:
 ../../CANopenNode_STM32/CO_driver_target.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
@@ -116,32 +116,32 @@ C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_config.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.h:
 ../../../CANopenNode/301/CO_driver.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.h:
 ../../../CANopenNode/301/CO_ODinterface.h:
 ../../../CANopenNode/301/CO_Emergency.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_HBconsumer.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_HBconsumer.h:
 ../../../CANopenNode/301/CO_NMT_Heartbeat.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_Node_Guarding.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_Emergency.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOclient.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Node_Guarding.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOclient.h:
 ../../../CANopenNode/301/CO_SDOserver.h:
 ../../../CANopenNode/301/CO_fifo.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SYNC.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SYNC.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.h:
 ../../../CANopenNode/301/CO_SYNC.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_TIME.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/303/CO_LEDs.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/304/CO_GFC.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/304/CO_SRDO.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/305/CO_LSSslave.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_TIME.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_GFC.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_SRDO.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.h:
 ../../../CANopenNode/305/CO_LSS.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/309/CO_gateway_ascii.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/309/CO_gateway_ascii.h:
 ../../../CANopenNode/301/CO_SDOclient.h:
 ../../../CANopenNode/305/CO_LSSmaster.h:
 ../../../CANopenNode/303/CO_LEDs.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/extra/CO_trace.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/extra/CO_trace.h:
 ../../CANopenNode_STM32/OD.h:

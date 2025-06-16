@@ -1,5 +1,5 @@
 CANopenNode/storage/CO_storageEeprom.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/storage/CO_storageEeprom.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storageEeprom.c \
  ../../../CANopenNode/storage/CO_storageEeprom.h \
  ../../../CANopenNode/storage/CO_storage.h \
  ../../../CANopenNode/301/CO_driver.h \

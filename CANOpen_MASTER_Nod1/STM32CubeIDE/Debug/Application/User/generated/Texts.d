@@ -1,5 +1,5 @@
 Application/User/generated/Texts.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/texts/src/Texts.cpp \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/texts/src/Texts.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TextProvider.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

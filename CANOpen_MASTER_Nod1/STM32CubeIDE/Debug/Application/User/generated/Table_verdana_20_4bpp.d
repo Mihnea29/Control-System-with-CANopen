@@ -1,5 +1,5 @@
 Application/User/generated/Table_verdana_20_4bpp.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/fonts/src/Table_verdana_20_4bpp.cpp \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/generated/fonts/src/Table_verdana_20_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

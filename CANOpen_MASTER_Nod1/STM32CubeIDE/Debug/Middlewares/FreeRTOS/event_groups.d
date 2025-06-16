@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/event_groups.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

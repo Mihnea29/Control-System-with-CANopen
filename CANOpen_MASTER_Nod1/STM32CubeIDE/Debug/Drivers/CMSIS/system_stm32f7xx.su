@@ -1,2 +1,2 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c:150:6:SystemInit	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c:219:6:SystemCoreClockUpdate	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c:150:6:SystemInit	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c:219:6:SystemCoreClockUpdate	0	static

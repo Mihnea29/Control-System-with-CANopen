@@ -1,7 +1,7 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:147:1:CO_SDOserver_init_canRxTx	5
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:191:1:OD_write_1201_additional	30
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:51:1:CO_SDO_receive	5
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:509:1:readFromOd.constprop	10
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:254:1:CO_SDOserver_init	15
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:366:1:CO_SDOserver_initCallbackPre	2
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c:592:1:CO_SDOserver_process	96
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:147:1:CO_SDOserver_init_canRxTx	5
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:191:1:OD_write_1201_additional	30
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:51:1:CO_SDO_receive	5
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:509:1:readFromOd.constprop	10
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:254:1:CO_SDOserver_init	15
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:366:1:CO_SDOserver_initCallbackPre	2
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c:592:1:CO_SDOserver_process	94

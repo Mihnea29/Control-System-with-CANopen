@@ -1,2 +1,2 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/LibJPEG/source/jddctmgr.c:90:1:start_pass	48	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/LibJPEG/source/jddctmgr.c:362:1:jinit_inverse_dct	24	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/LibJPEG/source/jddctmgr.c:90:1:start_pass	48	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Middlewares/Third_Party/LibJPEG/source/jddctmgr.c:362:1:jinit_inverse_dct	24	static

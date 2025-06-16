@@ -1,5 +1,5 @@
 CANopenNode/storage/CO_storage.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/storage/CO_storage.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/storage/CO_storage.c \
  ../../../CANopenNode/storage/CO_storage.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

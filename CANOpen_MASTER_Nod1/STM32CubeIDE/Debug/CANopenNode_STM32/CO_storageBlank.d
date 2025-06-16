@@ -1,6 +1,6 @@
 CANopenNode_STM32/CO_storageBlank.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.c \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h \
  ../../../CANopenNode/storage/CO_storage.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
@@ -45,7 +45,7 @@ CANopenNode_STM32/CO_storageBlank.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
  ../../../CANopenNode/301/CO_ODinterface.h
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_storageBlank.h:
 ../../../CANopenNode/storage/CO_storage.h:
 ../../../CANopenNode/301/CO_driver.h:
 ../../../CANopenNode/301/CO_config.h:

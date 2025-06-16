@@ -1,4 +1,4 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:115:1:canopen_app_resetCommunication	9
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:60:1:canopen_app_init	2
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:203:1:canopen_app_process	4
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:232:1:canopen_app_interrupt	3
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:115:1:canopen_app_resetCommunication	9
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:60:1:canopen_app_init	2
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:203:1:canopen_app_process	4
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:232:1:canopen_app_interrupt	3

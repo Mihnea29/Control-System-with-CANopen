@@ -1,5 +1,5 @@
 CANopenNode/303/CO_LEDs.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/303/CO_LEDs.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/303/CO_LEDs.c \
  ../../../CANopenNode/303/CO_LEDs.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \

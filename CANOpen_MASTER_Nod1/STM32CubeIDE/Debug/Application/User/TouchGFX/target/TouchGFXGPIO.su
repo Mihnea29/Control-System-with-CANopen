@@ -1,5 +1,5 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:77:6:static void touchgfx::GPIO::set(GPIO_ID)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:107:6:static void touchgfx::GPIO::clear(GPIO_ID)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:137:6:static void touchgfx::GPIO::toggle(GPIO_ID)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:167:6:static bool touchgfx::GPIO::get(GPIO_ID)	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:60:6:static void touchgfx::GPIO::init()	16	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:77:6:static void touchgfx::GPIO::set(GPIO_ID)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:107:6:static void touchgfx::GPIO::clear(GPIO_ID)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:137:6:static void touchgfx::GPIO::toggle(GPIO_ID)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:167:6:static bool touchgfx::GPIO::get(GPIO_ID)	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXGPIO.cpp:60:6:static void touchgfx::GPIO::init()	16	static

@@ -1,5 +1,5 @@
 CANopenNode_STM32/CO_driver_STM32.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_driver_STM32.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_driver_STM32.c \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
@@ -42,7 +42,7 @@ CANopenNode_STM32/CO_driver_STM32.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h \
  ../../../CANopenNode/CANopen.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_ODinterface.h \
  ../../../CANopenNode/301/CO_NMT_Heartbeat.h \
@@ -108,7 +108,7 @@ CANopenNode_STM32/CO_driver_STM32.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.h:
 ../../../CANopenNode/CANopen.h:
 ../../../CANopenNode/301/CO_driver.h:
 ../../../CANopenNode/301/CO_ODinterface.h:

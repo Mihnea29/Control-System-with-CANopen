@@ -1,5 +1,5 @@
 CANopenNode/301/CO_NMT_Heartbeat.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_NMT_Heartbeat.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_NMT_Heartbeat.c \
  ../../../CANopenNode/301/CO_NMT_Heartbeat.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

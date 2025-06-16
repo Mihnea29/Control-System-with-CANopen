@@ -37,12 +37,12 @@
 		<link>
 			<name>CANopenNode</name>
 			<type>2</type>
-			<location>C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode</location>
+			<location>/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode</location>
 		</link>
 		<link>
 			<name>CANopenNode_STM32</name>
 			<type>2</type>
-			<location>C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32</location>
+			<location>/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32</location>
 		</link>
 		<link>
 			<name>STM32F769I_DISCO.ioc</name>

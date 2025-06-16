@@ -1,5 +1,5 @@
 CANopenNode/304/CO_SRDO.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/304/CO_SRDO.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/304/CO_SRDO.c \
  ../../../CANopenNode/304/CO_SRDO.h \
  ../../../CANopenNode/301/CO_Emergency.h \
  ../../../CANopenNode/301/CO_driver.h \

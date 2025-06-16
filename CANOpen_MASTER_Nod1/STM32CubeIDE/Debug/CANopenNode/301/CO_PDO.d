@@ -1,5 +1,5 @@
 CANopenNode/301/CO_PDO.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c \
  ../../../CANopenNode/301/CO_PDO.h \
  ../../../CANopenNode/301/CO_ODinterface.h \
  ../../../CANopenNode/301/CO_driver.h \

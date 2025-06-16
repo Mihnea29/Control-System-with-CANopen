@@ -9,27 +9,27 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1143:21:virtual touchgfx::DMAType touchgfx::HAL::getDMAType()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1290:18:virtual void touchgfx::HAL::partialLTDCDeadlineMissed()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1388:18:virtual void touchgfx::HAL::InvalidateTextureCache()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:77:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:77:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:36:7:TouchGFXHAL::~TouchGFXHAL()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:57:6:virtual void TouchGFXHAL::initialize()	16	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:92:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:110:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	16	static,ignoring_inline_asm
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:131:6:virtual bool TouchGFXHAL::blockCopy(void*, const void*, uint32_t)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:140:6:virtual void TouchGFXHAL::configureInterrupts()	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:158:6:virtual void TouchGFXHAL::enableInterrupts()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:206:6:virtual bool TouchGFXHAL::beginFrame()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:211:6:virtual void TouchGFXHAL::endFrame()	24	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:57:6:virtual void TouchGFXHAL::initialize()	16	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:92:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:110:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	16	static,ignoring_inline_asm
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:131:6:virtual bool TouchGFXHAL::blockCopy(void*, const void*, uint32_t)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:140:6:virtual void TouchGFXHAL::configureInterrupts()	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:158:6:virtual void TouchGFXHAL::enableInterrupts()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:206:6:virtual bool TouchGFXHAL::beginFrame()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:211:6:virtual void TouchGFXHAL::endFrame()	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:683:18:virtual void touchgfx::HAL::backPorchExited()	8	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:108:18:virtual void TouchGFXHAL::flushFrameBuffer()	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:36:7:virtual TouchGFXHAL::~TouchGFXHAL()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1341:18:virtual void touchgfx::HAL::performDisplayOrientationChange()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:765:18:virtual void touchgfx::HAL::setFrameBufferStartAddresses(void*, void*, void*)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:161:18:virtual void touchgfx::HAL::setFrameBufferSize(uint16_t, uint16_t)	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:173:6:virtual void TouchGFXHAL::disableInterrupts()	0	static,ignoring_inline_asm
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:173:6:virtual void TouchGFXHAL::disableInterrupts()	0	static,ignoring_inline_asm
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:356:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:231:6:void LCD_ReqTear()	16	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:189:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:237:6:void HAL_DSI_TearingEffectCallback(DSI_HandleTypeDef*)	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:250:6:void HAL_DSI_EndOfRefreshCallback(DSI_HandleTypeDef*)	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:259:19:long int IdleTaskHook(void*)	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:271:1:cpp)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:231:6:void LCD_ReqTear()	16	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:189:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:237:6:void HAL_DSI_TearingEffectCallback(DSI_HandleTypeDef*)	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:250:6:void HAL_DSI_EndOfRefreshCallback(DSI_HandleTypeDef*)	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:259:19:long int IdleTaskHook(void*)	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/TouchGFXHAL.cpp:271:1:cpp)	0	static

@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/Buttons.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/Buttons.cpp \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/Buttons.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Buttons.hpp \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \

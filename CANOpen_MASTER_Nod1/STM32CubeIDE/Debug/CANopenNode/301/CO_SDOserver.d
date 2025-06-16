@@ -1,5 +1,5 @@
 CANopenNode/301/CO_SDOserver.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_SDOserver.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_SDOserver.c \
  ../../../CANopenNode/301/CO_SDOserver.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

@@ -1,5 +1,5 @@
 CANopenNode/301/CO_ODinterface.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c \
  ../../../CANopenNode/301/CO_ODinterface.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

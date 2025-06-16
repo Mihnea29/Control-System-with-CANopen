@@ -1,5 +1,5 @@
 CANopenNode/301/CO_TIME.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_TIME.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_TIME.c \
  ../../../CANopenNode/301/CO_TIME.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \

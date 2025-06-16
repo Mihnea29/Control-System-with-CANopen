@@ -1,5 +1,5 @@
 CANopenNode/301/CO_fifo.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_fifo.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_fifo.c \
  ../../../CANopenNode/301/CO_fifo.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
  ../../CANopenNode_STM32/CO_driver_target.h ../../Core/Inc/main.h \
@@ -42,7 +42,7 @@ CANopenNode/301/CO_fifo.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/crc16-ccitt.h
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/crc16-ccitt.h
 ../../../CANopenNode/301/CO_fifo.h:
 ../../../CANopenNode/301/CO_driver.h:
 ../../../CANopenNode/301/CO_config.h:
@@ -87,4 +87,4 @@ CANopenNode/301/CO_fifo.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h:
-C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/crc16-ccitt.h:
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/crc16-ccitt.h:

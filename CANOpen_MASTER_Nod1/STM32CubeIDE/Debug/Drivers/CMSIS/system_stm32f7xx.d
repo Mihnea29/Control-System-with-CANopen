@@ -1,5 +1,5 @@
 Drivers/CMSIS/system_stm32f7xx.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Core/Src/system_stm32f7xx.c \
  ../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h \
  ../../Drivers/CMSIS/Include/core_cm7.h \

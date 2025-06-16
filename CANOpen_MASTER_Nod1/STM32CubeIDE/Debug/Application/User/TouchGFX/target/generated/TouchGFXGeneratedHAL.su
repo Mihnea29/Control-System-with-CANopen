@@ -36,15 +36,15 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:310:44:virtual touchgfx::AbstractPainterLinearGradient& touchgfx::CWRVectorRendererRGB565::getLinearPainter()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:315:35:virtual touchgfx::AbstractPainterColor& touchgfx::CWRVectorRendererRGB565::getColorPainterColor()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:320:30:virtual touchgfx::AbstractPainter& touchgfx::CWRVectorRendererRGB565::getColorPainter()	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:197:11:touchgfx::CWRVectorRenderer::CanvasWidgetProxy::~CanvasWidgetProxy()	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:308:7:touchgfx::CWRVectorRendererRGB565::~CWRVectorRendererRGB565()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:47:36:void __tcf_1()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:80:6:virtual void TouchGFXGeneratedHAL::configureInterrupts()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:98:6:virtual void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:119:11:virtual uint16_t* TouchGFXGeneratedHAL::getTFTFrameBuffer() const	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:124:6:virtual void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t*)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:142:6:virtual void TouchGFXGeneratedHAL::InvalidateCache()	16	static,ignoring_inline_asm
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:47:36:void __tcf_1()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:80:6:virtual void TouchGFXGeneratedHAL::configureInterrupts()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:98:6:virtual void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:119:11:virtual uint16_t* TouchGFXGeneratedHAL::getTFTFrameBuffer() const	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:124:6:virtual void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t*)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:142:6:virtual void TouchGFXGeneratedHAL::InvalidateCache()	16	static,ignoring_inline_asm
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:32:7:DirectFrameBufferVideoController<1, touchgfx::Bitmap::RGB565>::~DirectFrameBufferVideoController()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:308:7:touchgfx::CWRVectorRendererRGB565::~CWRVectorRendererRGB565()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:197:11:touchgfx::CWRVectorRenderer::CanvasWidgetProxy::~CanvasWidgetProxy()	0	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:30:7:TouchGFXGeneratedHAL::~TouchGFXGeneratedHAL()	0	static
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:58:18:void DirectFrameBufferVideoController<no_streams, output_format>::unregisterVideoWidget(touchgfx::VideoController::Handle) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	0	static
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:297:18:void DirectFrameBufferVideoController<no_streams, output_format>::setVideoFrameRateCompensation(bool) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	0	static
@@ -53,11 +53,11 @@ C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/targ
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:197:11:virtual touchgfx::CWRVectorRenderer::CanvasWidgetProxy::~CanvasWidgetProxy()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:308:7:virtual touchgfx::CWRVectorRendererRGB565::~CWRVectorRendererRGB565()	8	static
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:168:18:bool DirectFrameBufferVideoController<no_streams, output_format>::updateFrame(touchgfx::VideoController::Handle, touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	24	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:67:6:virtual void TouchGFXGeneratedHAL::initialize()	16	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:109:6:virtual bool TouchGFXGeneratedHAL::beginFrame()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:114:6:virtual void TouchGFXGeneratedHAL::endFrame()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:132:6:virtual void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect&)	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:137:6:virtual bool TouchGFXGeneratedHAL::blockCopy(void*, const void*, uint32_t)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:67:6:virtual void TouchGFXGeneratedHAL::initialize()	16	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:109:6:virtual bool TouchGFXGeneratedHAL::beginFrame()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:114:6:virtual void TouchGFXGeneratedHAL::endFrame()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:132:6:virtual void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect&)	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:137:6:virtual bool TouchGFXGeneratedHAL::blockCopy(void*, const void*, uint32_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:683:18:virtual void touchgfx::HAL::backPorchExited()	8	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:106:18:virtual void TouchGFXGeneratedHAL::flushFrameBuffer()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
@@ -73,11 +73,11 @@ C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/targ
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:63:18:void DirectFrameBufferVideoController<no_streams, output_format>::setFrameRate(touchgfx::VideoController::Handle, uint32_t, uint32_t) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:232:18:void DirectFrameBufferVideoController<no_streams, output_format>::draw(touchgfx::VideoController::Handle, const touchgfx::Rect&, const touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	32	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:356:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	0	static
 ../../TouchGFX/target/generated/DirectFrameBufferVideoController.hpp:44:20:touchgfx::VideoController::Handle DirectFrameBufferVideoController<no_streams, output_format>::registerVideoWidget(touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	8	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:86:6:virtual void TouchGFXGeneratedHAL::enableInterrupts()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:92:6:virtual void TouchGFXGeneratedHAL::disableInterrupts()	0	static,ignoring_inline_asm
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:356:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:86:6:virtual void TouchGFXGeneratedHAL::enableInterrupts()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:92:6:virtual void TouchGFXGeneratedHAL::disableInterrupts()	0	static,ignoring_inline_asm
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	16	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:38:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:45:17:static touchgfx::VectorRenderer* touchgfx::VectorRenderer::getInstance()	16	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:166:1:cpp)	8	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:38:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:45:17:static touchgfx::VectorRenderer* touchgfx::VectorRenderer::getInstance()	16	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:166:1:cpp)	8	static

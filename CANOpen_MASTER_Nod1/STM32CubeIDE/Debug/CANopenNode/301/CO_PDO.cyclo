@@ -1,14 +1,14 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:40:1:OD_write_dummy	2
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:82:1:PDOconfigMap	11
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:217:1:OD_write_PDO_mapping	16
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:488:1:OD_write_14xx	27
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:434:1:CO_PDO_receive	6
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:877:1:OD_write_18xx	29
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:152:1:PDO_initMapping.constprop	17
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:380:1:OD_read_PDO_commParam	7
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:55:1:OD_read_dummy	4
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:1127:1:CO_TPDOsend.isra	8
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:583:1:CO_RPDO_init	20
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:705:1:CO_RPDO_process	19
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:989:1:CO_TPDO_init	21
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_PDO.c:1230:1:CO_TPDO_process	24
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:40:1:OD_write_dummy	2
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:82:1:PDOconfigMap	11
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:217:1:OD_write_PDO_mapping	16
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:488:1:OD_write_14xx	27
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:434:1:CO_PDO_receive	6
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:877:1:OD_write_18xx	29
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:152:1:PDO_initMapping.constprop	17
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:380:1:OD_read_PDO_commParam	7
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:55:1:OD_read_dummy	4
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:1127:1:CO_TPDOsend.isra	8
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:583:1:CO_RPDO_init	20
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:705:1:CO_RPDO_process	19
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:989:1:CO_TPDO_init	21
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_PDO.c:1230:1:CO_TPDO_process	24

@@ -1,10 +1,10 @@
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:121:1:OD_readDisabled	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:25:1:OD_readOriginal	24	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:66:1:OD_writeOriginal	24	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:131:1:OD_writeDisabled	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:140:1:OD_find	20	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:177:1:OD_getSub	20	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:272:1:OD_getSDOabCode	0	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:306:1:OD_get_value	64	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:328:1:OD_set_value	64	static
-C:/Users/Dorcu Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_ODinterface.c:350:1:OD_getPtr	48	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:121:1:OD_readDisabled	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:25:1:OD_readOriginal	24	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:66:1:OD_writeOriginal	24	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:131:1:OD_writeDisabled	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:140:1:OD_find	20	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:177:1:OD_getSub	20	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:272:1:OD_getSDOabCode	0	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:306:1:OD_get_value	64	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:328:1:OD_set_value	64	static
+/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_ODinterface.c:350:1:OD_getPtr	48	static

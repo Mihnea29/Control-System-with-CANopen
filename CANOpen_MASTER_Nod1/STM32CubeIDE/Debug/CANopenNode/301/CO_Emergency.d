@@ -1,5 +1,5 @@
 CANopenNode/301/CO_Emergency.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/301/CO_Emergency.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/301/CO_Emergency.c \
  ../../../CANopenNode/301/CO_Emergency.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \

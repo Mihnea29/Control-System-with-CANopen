@@ -1,5 +1,5 @@
 Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_gpio.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANOpen_MASTER_Nod1/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \

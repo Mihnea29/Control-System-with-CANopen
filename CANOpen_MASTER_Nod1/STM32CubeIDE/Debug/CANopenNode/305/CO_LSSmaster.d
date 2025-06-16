@@ -1,5 +1,5 @@
 CANopenNode/305/CO_LSSmaster.o: \
- C:/Users/Dorcu\ Mihnea/OneDrive/Desktop/Licenta/CANopenNode/305/CO_LSSmaster.c \
+ /home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSmaster.c \
  ../../../CANopenNode/305/CO_LSSmaster.h \
  ../../../CANopenNode/305/CO_LSS.h ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
