@@ -55,6 +55,8 @@ Application/User/main.o: \
  ../../Middlewares/Third_Party/LibJPEG/include/jpeglib.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../LIBJPEG/Target/jmorecfg.h ../../TouchGFX/App/app_touchgfx.h \
+ ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h \
+ ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h \
  ../../CANopenNode_STM32/CO_app_STM32.h ../../../CANopenNode/CANopen.h \
  ../../../CANopenNode/301/CO_driver.h \
  ../../../CANopenNode/301/CO_config.h \
@@ -81,8 +83,7 @@ Application/User/main.o: \
  ../../../CANopenNode/301/CO_SDOclient.h \
  ../../../CANopenNode/305/CO_LSSmaster.h \
  ../../../CANopenNode/303/CO_LEDs.h ../../../CANopenNode/extra/CO_trace.h \
- ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h \
- ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h
+ ../../CANopenNode_STM32/OD.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -140,6 +141,8 @@ Application/User/main.o: \
 ../../LIBJPEG/Target/jdata_conf.h:
 ../../LIBJPEG/Target/jmorecfg.h:
 ../../TouchGFX/App/app_touchgfx.h:
+../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h:
+../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h:
 ../../CANopenNode_STM32/CO_app_STM32.h:
 ../../../CANopenNode/CANopen.h:
 ../../../CANopenNode/301/CO_driver.h:
@@ -173,5 +176,4 @@ Application/User/main.o: \
 ../../../CANopenNode/305/CO_LSSmaster.h:
 ../../../CANopenNode/303/CO_LEDs.h:
 ../../../CANopenNode/extra/CO_trace.h:
-../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h:
-../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h:
+../../CANopenNode_STM32/OD.h:

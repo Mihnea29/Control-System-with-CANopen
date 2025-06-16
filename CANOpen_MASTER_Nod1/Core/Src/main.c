@@ -22,11 +22,13 @@
 #include "cmsis_os.h"
 #include "libjpeg.h"
 #include "app_touchgfx.h"
-#include "CO_app_STM32.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "../mx25l512/mx25l512.h"
 #include "../otm8009a/otm8009a.h"
+#include "CO_app_STM32.h"
+#include "CANopen.h"
+#include "OD.h"
 
 /* USER CODE END Includes */
 
@@ -142,11 +144,91 @@ static uint8_t QSPI_WriteEnable(QSPI_HandleTypeDef *hqspi);
 static uint8_t QSPI_AutoPollingMemReady  (QSPI_HandleTypeDef *hqspi, uint32_t Timeout);
 static uint8_t BSP_QSPI_EnableMemoryMappedMode(QSPI_HandleTypeDef *hqspi);
 CANopenNodeSTM32 canOpenNodeSTM32;
+uint32_t elapsed = 0;
+uint32_t lastTick = 0;
+uint16_t HB_TIME = 5000;
+uint16_t HB_VALUE = 0;
+size_t bytesRead = 0;
+int i =0;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+CO_SDO_abortCode_t
+read_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subIndex, uint8_t* buf, size_t bufSize,
+		size_t* readSize) {
+	CO_SDO_return_t SDO_ret;
 
+	// setup client (this can be skipped, if remote device don't change)
+	SDO_ret = CO_SDOclient_setup(SDO_C, CO_CAN_ID_SDO_CLI + nodeId, CO_CAN_ID_SDO_SRV + nodeId, nodeId);
+	if (SDO_ret != CO_SDO_RT_ok_communicationEnd) {
+		return CO_SDO_AB_GENERAL;
+	}
+
+	// initiate upload
+	SDO_ret = CO_SDOclientUploadInitiate(SDO_C, index, subIndex, 1000, false);
+	if (SDO_ret != CO_SDO_RT_ok_communicationEnd) {
+		return CO_SDO_AB_GENERAL;
+	}
+
+	// upload data
+	do {
+		uint32_t timeDifference_us = 10000;
+		CO_SDO_abortCode_t abortCode = CO_SDO_AB_NONE;
+
+		SDO_ret = CO_SDOclientUpload(SDO_C, timeDifference_us, false, &abortCode, NULL, NULL, NULL);
+		if (SDO_ret < 0) {
+			return abortCode;
+		}
+
+		HAL_Delay(1);
+	} while (SDO_ret > 0);
+
+	// copy data to the user buffer (for long data function must be called several times inside the loop)
+	*readSize = CO_SDOclientUploadBufRead(SDO_C, buf, bufSize);
+
+	return CO_SDO_AB_NONE;
+}
+
+CO_SDO_abortCode_t
+write_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subIndex, uint8_t* data, size_t dataSize) {
+	CO_SDO_return_t SDO_ret;
+	bool_t bufferPartial = false;
+
+	// setup client (this can be skipped, if remote device is the same)
+	SDO_ret = CO_SDOclient_setup(SDO_C, CO_CAN_ID_SDO_CLI + nodeId, CO_CAN_ID_SDO_SRV + nodeId, nodeId);
+	if (SDO_ret != CO_SDO_RT_ok_communicationEnd) {
+		return -1;
+	}
+
+	// initiate download
+	SDO_ret = CO_SDOclientDownloadInitiate(SDO_C, index, subIndex, dataSize, 1000, false);
+	if (SDO_ret != CO_SDO_RT_ok_communicationEnd) {
+		return -1;
+	}
+
+	// fill data
+	size_t nWritten = CO_SDOclientDownloadBufWrite(SDO_C, data, dataSize);
+	if (nWritten < dataSize) {
+		bufferPartial = true;
+		// If SDO Fifo buffer is too small, data can be refilled in the loop.
+	}
+
+	// download data
+	do {
+		uint32_t timeDifference_us = 10000;
+		CO_SDO_abortCode_t abortCode = CO_SDO_AB_NONE;
+
+		SDO_ret = CO_SDOclientDownload(SDO_C, timeDifference_us, false, bufferPartial, &abortCode, NULL, NULL);
+		if (SDO_ret < 0) {
+			return abortCode;
+		}
+
+		HAL_Delay(1);
+	} while (SDO_ret > 0);
+
+	return CO_SDO_AB_NONE;
+}
 /* USER CODE END 0 */
 
 /**
@@ -1583,12 +1665,27 @@ void StartDefaultTask(void *argument)
 void canopen_task(void *argument)
 {
   /* USER CODE BEGIN canopen_task */
+	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
+	read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
   /* Infinite loop */
   for(;;)
   {
+	uint32_t now = HAL_GetTick();
+	uint32_t dt = now - lastTick;
+	lastTick = now;
+	elapsed += dt;
+	if(elapsed == 10000) {
+		HB_TIME = 1000;
+		write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
+		read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
+	}
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDGreen);
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDRed);
 	canopen_app_process();
+	//OD_PERSIST_COMM.x6000_counter++;
+	OD_set_u32(OD_find(OD, 0x6000), 0x00, i++, false);
+	//if(OD_PERSIST_COMM.x6000_counter != old_counter)
+	//CO_TPDOsendRequest(&canopenNodeSTM32->canOpenStack->TPDO[0]);
     osDelay(1);
   }
   /* USER CODE END canopen_task */
