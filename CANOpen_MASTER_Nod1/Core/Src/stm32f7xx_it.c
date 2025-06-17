@@ -23,6 +23,10 @@
 #include "stm32f7xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "CO_app_STM32.h"
+#include "CANopen.h"
+#include "OD.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,7 +46,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+//Variabile de debouce buton
+uint32_t currentTime = 0;
+uint32_t previousTime = 0;
+uint8_t flag = 0;
+uint8_t counter = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,7 +73,8 @@ extern TIM_HandleTypeDef htim14;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
-
+extern CANopenNodeSTM32 canOpenNodeSTM32;
+extern uint8_t LED_STATE_1_OLD, LED_STATE_2_OLD;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -170,7 +179,40 @@ void DebugMon_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
+	currentTime = HAL_GetTick();
+	if(currentTime - previousTime >5)
+	{
+		counter++;
+		switch (counter) {
+			case 1:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 1, false);
+				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				break;
+			case 2:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6001), 0x00, 1, false);
+				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				break;
+			case 3:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6002), 0x00, 1, false);
+				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				break;
+			case 4:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6003), 0x00, 1, false);
+				counter = 0;
+				break;
+		}
 
+		previousTime = currentTime;
+	}
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */

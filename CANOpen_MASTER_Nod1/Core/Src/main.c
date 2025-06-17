@@ -150,7 +150,8 @@ uint32_t lastTick = 0;
 uint16_t HB_TIME = 5000;
 uint16_t HB_VALUE = 0;
 size_t bytesRead = 0;
-int i =0;
+//Valori vechi PDO lumini
+uint8_t OLD_STATE_ON, OLD_STATE_LEFT, OLD_STATE_RIGHT, OLD_STATE_AVARII;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -998,7 +999,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
     /**************************** LINK OTM8009A (Display driver) ******************/
     /**
      * @brief  OTM8009A delay
@@ -1681,22 +1681,37 @@ void canopen_task(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	uint32_t now = HAL_GetTick();
-	uint32_t dt = now - lastTick;
-	lastTick = now;
-	elapsed += dt;
-	if(elapsed == 10000) {
-		HB_TIME = 1000;
-		write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
-		read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
-	}
+//	uint32_t now = HAL_GetTick();
+//	uint32_t dt = now - lastTick;
+//	lastTick = now;
+//	elapsed += dt;
+//	if(elapsed == 10000) {
+//		HB_TIME = 1000;
+//		write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
+//		read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
+//	}
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDGreen);
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDRed);
 	canopen_app_process();
-	//OD_PERSIST_COMM.x6000_counter++;
-	OD_set_u32(OD_find(OD, 0x6000), 0x00, i++, false);
-	//if(OD_PERSIST_COMM.x6000_counter != old_counter)
-	//CO_TPDOsendRequest(&canopenNodeSTM32->canOpenStack->TPDO[0]);
+
+	//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 2
+	if(OD_PERSIST_COMM.x6000_LED_STATE_ON != OLD_STATE_ON) {
+		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[0]);
+		OLD_STATE_ON = OD_PERSIST_COMM.x6000_LED_STATE_ON;
+	}
+	if(OD_PERSIST_COMM.x6001_LED_STATE_LEFT != OLD_STATE_LEFT) {
+		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[1]);
+		OLD_STATE_LEFT = OD_PERSIST_COMM.x6001_LED_STATE_LEFT;
+	}
+	if(OD_PERSIST_COMM.x6002_LED_STATE_RIGHT != OLD_STATE_RIGHT) {
+		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[2]);
+		OLD_STATE_RIGHT = OD_PERSIST_COMM.x6002_LED_STATE_RIGHT;
+	}
+	if(OD_PERSIST_COMM.x6003_LED_STATE_AVARII != OLD_STATE_AVARII) {
+		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[3]);
+		OLD_STATE_AVARII = OD_PERSIST_COMM.x6003_LED_STATE_AVARII;
+	}
+
     osDelay(1);
   }
   /* USER CODE END canopen_task */

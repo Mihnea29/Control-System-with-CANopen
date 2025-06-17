@@ -1,4 +1,0 @@
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:115:1:canopen_app_resetCommunication	80	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:60:1:canopen_app_init	24	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:203:1:canopen_app_process	16	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANOpen_MASTER_Nod1/CANopenNode_STM32/CO_app_STM32.c:232:1:canopen_app_interrupt	16	static,ignoring_inline_asm

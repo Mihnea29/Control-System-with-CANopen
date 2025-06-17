@@ -15,7 +15,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-16" fileModificationTime="23:31:34.0255312+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-17" fileModificationTime="10:06:43.7317236+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <q1:DeviceIdentity>
         <q1:vendorName></q1:vendorName>
         <q1:vendorID></q1:vendorID>
@@ -1482,7 +1482,7 @@
           <q1:parameter uniqueID="UID_SUB_180001" access="readWrite">
             <label lang="en">COB-ID used by TPDO</label>
             <UDINT />
-            <q1:defaultValue value="0x40000180" />
+            <q1:defaultValue value="$NODEID+0x40000180" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_180002" access="readWrite">
             <label lang="en">Transmission type</label>
@@ -1497,7 +1497,7 @@
           <q1:parameter uniqueID="UID_SUB_180005" access="readWrite">
             <label lang="en">Event timer</label>
             <UINT />
-            <q1:defaultValue value="1500" />
+            <q1:defaultValue value="0" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_180006" access="readWrite">
             <label lang="en">SYNC start value</label>
@@ -1518,7 +1518,7 @@
           <q1:parameter uniqueID="UID_SUB_180101" access="readWrite">
             <label lang="en">COB-ID used by TPDO</label>
             <UDINT />
-            <q1:defaultValue value="0xC0000280" />
+            <q1:defaultValue value="$NODEID+0x40000280" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_180102" access="readWrite">
             <label lang="en">Transmission type</label>
@@ -1554,7 +1554,7 @@
           <q1:parameter uniqueID="UID_SUB_180201" access="readWrite">
             <label lang="en">COB-ID used by TPDO</label>
             <UDINT />
-            <q1:defaultValue value="0xC0000380" />
+            <q1:defaultValue value="$NODEID+0x40000380" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_180202" access="readWrite">
             <label lang="en">Transmission type</label>
@@ -1590,7 +1590,7 @@
           <q1:parameter uniqueID="UID_SUB_180301" access="readWrite">
             <label lang="en">COB-ID used by TPDO</label>
             <UDINT />
-            <q1:defaultValue value="0xC0000480" />
+            <q1:defaultValue value="0x40000480" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_180302" access="readWrite">
             <label lang="en">Transmission type</label>
@@ -1670,12 +1670,12 @@
           <q1:parameter uniqueID="UID_SUB_1A0100" access="readWrite">
             <label lang="en">Number of mapped application objects in PDO</label>
             <USINT />
-            <q1:defaultValue value="0" />
+            <q1:defaultValue value="1" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0101" access="readWrite">
             <label lang="en">Application object 1</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x60010020" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0102" access="readWrite">
             <label lang="en">Application object 2</label>
@@ -1720,12 +1720,12 @@
           <q1:parameter uniqueID="UID_SUB_1A0200" access="readWrite">
             <label lang="en">Number of mapped application objects in PDO</label>
             <USINT />
-            <q1:defaultValue value="0" />
+            <q1:defaultValue value="1" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0201" access="readWrite">
             <label lang="en">Application object 1</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x60020020" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0202" access="readWrite">
             <label lang="en">Application object 2</label>
@@ -1770,12 +1770,12 @@
           <q1:parameter uniqueID="UID_SUB_1A0300" access="readWrite">
             <label lang="en">Number of mapped application objects in PDO</label>
             <USINT />
-            <q1:defaultValue value="0" />
+            <q1:defaultValue value="1" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0301" access="readWrite">
             <label lang="en">Application object 1</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x60030020" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_1A0302" access="readWrite">
             <label lang="en">Application object 2</label>
@@ -1813,7 +1813,25 @@
             <q1:defaultValue value="0x00000000" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_OBJ_6000" access="readWriteInput">
-            <label lang="en">counter</label>
+            <label lang="en">LED_STATE_ON</label>
+            <UDINT />
+            <q1:defaultValue value="0" />
+            <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
+          </q1:parameter>
+          <q1:parameter uniqueID="UID_OBJ_6001" access="readWriteInput">
+            <label lang="en">LED_STATE_LEFT</label>
+            <UDINT />
+            <q1:defaultValue value="0" />
+            <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
+          </q1:parameter>
+          <q1:parameter uniqueID="UID_OBJ_6002" access="readWriteInput">
+            <label lang="en">LED_STATE_RIGHT</label>
+            <UDINT />
+            <q1:defaultValue value="0" />
+            <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
+          </q1:parameter>
+          <q1:parameter uniqueID="UID_OBJ_6003" access="readWriteInput">
+            <label lang="en">LED_STATE_AVARII</label>
             <UDINT />
             <q1:defaultValue value="0" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
@@ -1835,7 +1853,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-16" fileModificationTime="23:31:34.0255312+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-17" fileModificationTime="10:06:43.7317236+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <ApplicationLayers>
         <q2:CANopenObjectList>
           <CANopenObject index="1000" name="Device type" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1000" />
@@ -2111,7 +2129,10 @@
             <CANopenSubObject subIndex="07" name="Application object 7" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_1A0307" />
             <CANopenSubObject subIndex="08" name="Application object 8" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_1A0308" />
           </CANopenObject>
-          <CANopenObject index="6000" name="counter" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6000" />
+          <CANopenObject index="6000" name="LED_STATE_ON" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6000" />
+          <CANopenObject index="6001" name="LED_STATE_LEFT" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6001" />
+          <CANopenObject index="6002" name="LED_STATE_RIGHT" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6002" />
+          <CANopenObject index="6003" name="LED_STATE_AVARII" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6003" />
         </q2:CANopenObjectList>
         <dummyUsage>
           <dummy entry="Dummy0001=0" />

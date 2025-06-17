@@ -118,12 +118,12 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .COB_IDUsedByTPDO = 0x40000180,
         .transmissionType = 0xFE,
         .inhibitTime = 0x0000,
-        .eventTimer = 0x05DC,
+        .eventTimer = 0x0000,
         .SYNCStartValue = 0x00
     },
     .x1801_TPDOCommunicationParameter = {
         .highestSub_indexSupported = 0x06,
-        .COB_IDUsedByTPDO = 0xC0000280,
+        .COB_IDUsedByTPDO = 0x40000280,
         .transmissionType = 0xFE,
         .inhibitTime = 0x0000,
         .eventTimer = 0x0000,
@@ -131,7 +131,7 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     },
     .x1802_TPDOCommunicationParameter = {
         .highestSub_indexSupported = 0x06,
-        .COB_IDUsedByTPDO = 0xC0000380,
+        .COB_IDUsedByTPDO = 0x40000380,
         .transmissionType = 0xFE,
         .inhibitTime = 0x0000,
         .eventTimer = 0x0000,
@@ -139,7 +139,7 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     },
     .x1803_TPDOCommunicationParameter = {
         .highestSub_indexSupported = 0x06,
-        .COB_IDUsedByTPDO = 0xC0000480,
+        .COB_IDUsedByTPDO = 0x40000480,
         .transmissionType = 0xFE,
         .inhibitTime = 0x0000,
         .eventTimer = 0x0000,
@@ -157,8 +157,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .applicationObject8 = 0x00000000
     },
     .x1A01_TPDOMappingParameter = {
-        .numberOfMappedApplicationObjectsInPDO = 0x00,
-        .applicationObject1 = 0x00000000,
+        .numberOfMappedApplicationObjectsInPDO = 0x01,
+        .applicationObject1 = 0x60010020,
         .applicationObject2 = 0x00000000,
         .applicationObject3 = 0x00000000,
         .applicationObject4 = 0x00000000,
@@ -168,8 +168,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .applicationObject8 = 0x00000000
     },
     .x1A02_TPDOMappingParameter = {
-        .numberOfMappedApplicationObjectsInPDO = 0x00,
-        .applicationObject1 = 0x00000000,
+        .numberOfMappedApplicationObjectsInPDO = 0x01,
+        .applicationObject1 = 0x60020020,
         .applicationObject2 = 0x00000000,
         .applicationObject3 = 0x00000000,
         .applicationObject4 = 0x00000000,
@@ -179,8 +179,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .applicationObject8 = 0x00000000
     },
     .x1A03_TPDOMappingParameter = {
-        .numberOfMappedApplicationObjectsInPDO = 0x00,
-        .applicationObject1 = 0x00000000,
+        .numberOfMappedApplicationObjectsInPDO = 0x01,
+        .applicationObject1 = 0x60030020,
         .applicationObject2 = 0x00000000,
         .applicationObject3 = 0x00000000,
         .applicationObject4 = 0x00000000,
@@ -189,7 +189,10 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .applicationObject7 = 0x00000000,
         .applicationObject8 = 0x00000000
     },
-    .x6000_counter = 0x00000000
+    .x6000_LED_STATE_ON = 0x00000000,
+    .x6001_LED_STATE_LEFT = 0x00000000,
+    .x6002_LED_STATE_RIGHT = 0x00000000,
+    .x6003_LED_STATE_AVARII = 0x00000000
 };
 
 OD_ATTR_RAM OD_RAM_t OD_RAM = {
@@ -244,7 +247,10 @@ typedef struct {
     OD_obj_record_t o_1A01_TPDOMappingParameter[9];
     OD_obj_record_t o_1A02_TPDOMappingParameter[9];
     OD_obj_record_t o_1A03_TPDOMappingParameter[9];
-    OD_obj_var_t o_6000_counter;
+    OD_obj_var_t o_6000_LED_STATE_ON;
+    OD_obj_var_t o_6001_LED_STATE_LEFT;
+    OD_obj_var_t o_6002_LED_STATE_RIGHT;
+    OD_obj_var_t o_6003_LED_STATE_AVARII;
 } ODObjs_t;
 
 static CO_PROGMEM ODObjs_t ODObjs = {
@@ -1112,8 +1118,23 @@ static CO_PROGMEM ODObjs_t ODObjs = {
             .dataLength = 4
         }
     },
-    .o_6000_counter = {
-        .dataOrig = &OD_PERSIST_COMM.x6000_counter,
+    .o_6000_LED_STATE_ON = {
+        .dataOrig = &OD_PERSIST_COMM.x6000_LED_STATE_ON,
+        .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
+        .dataLength = 4
+    },
+    .o_6001_LED_STATE_LEFT = {
+        .dataOrig = &OD_PERSIST_COMM.x6001_LED_STATE_LEFT,
+        .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
+        .dataLength = 4
+    },
+    .o_6002_LED_STATE_RIGHT = {
+        .dataOrig = &OD_PERSIST_COMM.x6002_LED_STATE_RIGHT,
+        .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
+        .dataLength = 4
+    },
+    .o_6003_LED_STATE_AVARII = {
+        .dataOrig = &OD_PERSIST_COMM.x6003_LED_STATE_AVARII,
         .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
         .dataLength = 4
     }
@@ -1157,7 +1178,10 @@ static OD_ATTR_OD OD_entry_t ODList[] = {
     {0x1A01, 0x09, ODT_REC, &ODObjs.o_1A01_TPDOMappingParameter, NULL},
     {0x1A02, 0x09, ODT_REC, &ODObjs.o_1A02_TPDOMappingParameter, NULL},
     {0x1A03, 0x09, ODT_REC, &ODObjs.o_1A03_TPDOMappingParameter, NULL},
-    {0x6000, 0x01, ODT_VAR, &ODObjs.o_6000_counter, NULL},
+    {0x6000, 0x01, ODT_VAR, &ODObjs.o_6000_LED_STATE_ON, NULL},
+    {0x6001, 0x01, ODT_VAR, &ODObjs.o_6001_LED_STATE_LEFT, NULL},
+    {0x6002, 0x01, ODT_VAR, &ODObjs.o_6002_LED_STATE_RIGHT, NULL},
+    {0x6003, 0x01, ODT_VAR, &ODObjs.o_6003_LED_STATE_AVARII, NULL},
     {0x0000, 0x00, 0, NULL, NULL}
 };
 

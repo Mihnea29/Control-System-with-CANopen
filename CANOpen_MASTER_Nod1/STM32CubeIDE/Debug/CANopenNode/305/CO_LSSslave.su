@@ -1,7 +1,0 @@
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:43:1:CO_LSSslave_receive	16	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:182:1:CO_LSSslave_init	48	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:224:1:CO_LSSslave_initCallbackPre	0	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:233:1:CO_LSSslave_initCkBitRateCall	0	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:242:1:CO_LSSslave_initActBitRateCall	0	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:251:1:CO_LSSslave_initCfgStoreCall	0	static
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode/305/CO_LSSslave.c:260:1:CO_LSSslave_process	16	static

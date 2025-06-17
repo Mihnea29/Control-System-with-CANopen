@@ -16,7 +16,7 @@
 
         Created:      6/10/2025 10:20:31 PM
         Created By:   
-        Modified:     6/16/2025 11:31:34 PM
+        Modified:     6/17/2025 10:06:43 AM
         Modified By:  
 
     Device Info:
@@ -229,7 +229,10 @@ typedef struct {
         uint32_t applicationObject7;
         uint32_t applicationObject8;
     } x1A03_TPDOMappingParameter;
-    uint32_t x6000_counter;
+    uint32_t x6000_LED_STATE_ON;
+    uint32_t x6001_LED_STATE_LEFT;
+    uint32_t x6002_LED_STATE_RIGHT;
+    uint32_t x6003_LED_STATE_AVARII;
 } OD_PERSIST_COMM_t;
 
 typedef struct {
@@ -298,6 +301,9 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1A02 &OD->list[31]
 #define OD_ENTRY_H1A03 &OD->list[32]
 #define OD_ENTRY_H6000 &OD->list[33]
+#define OD_ENTRY_H6001 &OD->list[34]
+#define OD_ENTRY_H6002 &OD->list[35]
+#define OD_ENTRY_H6003 &OD->list[36]
 
 
 /*******************************************************************************
@@ -336,7 +342,10 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[30]
 #define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[31]
 #define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[32]
-#define OD_ENTRY_H6000_counter &OD->list[33]
+#define OD_ENTRY_H6000_LED_STATE_ON &OD->list[33]
+#define OD_ENTRY_H6001_LED_STATE_LEFT &OD->list[34]
+#define OD_ENTRY_H6002_LED_STATE_RIGHT &OD->list[35]
+#define OD_ENTRY_H6003_LED_STATE_AVARII &OD->list[36]
 
 
 /*******************************************************************************
