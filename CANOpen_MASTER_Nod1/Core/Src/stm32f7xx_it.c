@@ -197,7 +197,7 @@ void EXTI0_IRQHandler(void)
 				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0100, false);
 				break;
 			case 5:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0000, false);
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 5, false);
 				counter = 0;
 			break;
 		}

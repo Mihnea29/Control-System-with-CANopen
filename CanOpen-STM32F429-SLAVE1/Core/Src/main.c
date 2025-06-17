@@ -110,6 +110,7 @@ int main(void)
   MX_CAN1_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim4);
   CANopenNodeSTM32 canOpenNodeSTM32;
   canOpenNodeSTM32.CANHandle = &hcan1;
   canOpenNodeSTM32.HWInitFunction = MX_CAN1_Init;
@@ -117,6 +118,9 @@ int main(void)
   canOpenNodeSTM32.desiredNodeID = CANOPEN_ID;
   canOpenNodeSTM32.baudrate = 100;
   canopen_app_init(&canOpenNodeSTM32);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -125,9 +129,6 @@ int main(void)
   {
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
-	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
 	  canopen_app_process();
 	  switch( OD_PERSIST_COMM.x6000_LED_CONTROL_r )
 	  {
@@ -137,22 +138,19 @@ int main(void)
 			  rightSignal = 0;
 			  break;
 		  case 2:
-			  HAL_TIM_Base_Start_IT(&htim4);
 			  leftSignal = 1;
 			  rightSignal = 0;
 			  break;
 		  case 3:
-			  HAL_TIM_Base_Start_IT(&htim4);
-			  leftSignal = 1;
-			  rightSignal = 0;
+			  leftSignal = 0;
+			  rightSignal = 1;
 			  break;
 		  case 4:
-			  HAL_TIM_Base_Start_IT(&htim4);
 			  leftSignal = 1;
 			  rightSignal = 1;
 			  break;
 		  case 5:
-			  HAL_TIM_Base_Stop_IT(&htim4);
+			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 			  leftSignal = 0;
 			  rightSignal = 0;
 			  break;
@@ -265,9 +263,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 16000;
-  htim4.Init.CounterMode = TIM_COUNTERMODE_DOWN;
-  htim4.Init.Period = 500;
+  htim4.Init.Prescaler = 839;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 63000;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)

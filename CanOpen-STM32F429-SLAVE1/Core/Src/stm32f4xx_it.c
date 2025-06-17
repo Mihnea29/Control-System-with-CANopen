@@ -42,6 +42,13 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 volatile uint8_t uart_tx_busy = 0;
+typedef enum {
+    MODE_OFF,
+    MODE_LEFT,
+    MODE_RIGHT,
+    MODE_HAZARD
+} BlinkMode;
+BlinkMode currentMode = MODE_OFF;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -262,24 +269,38 @@ void CAN1_SCE_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
-	if(leftSignal == 1 && rightSignal == 0)
-	{
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	}
-	if(leftSignal == 0 && rightSignal == 1)
-	{
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-	}
-	if(leftSignal == 1 && rightSignal == 1)
-	{
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	}
-	if(leftSignal == 0 && rightSignal == 0)
-	{
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	}
+    BlinkMode newMode;
+
+    if(leftSignal == 1 && rightSignal == 0)
+        newMode = MODE_LEFT;
+    else if(leftSignal == 0 && rightSignal == 1)
+        newMode = MODE_RIGHT;
+    else if(leftSignal == 1 && rightSignal == 1)
+        newMode = MODE_HAZARD;
+    else
+        newMode = MODE_OFF;
+
+    if(newMode != currentMode)
+    {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+        currentMode = newMode;
+    }
+
+    // Handle blinking based on current mode
+    if(currentMode == MODE_LEFT)
+    {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+    }
+    else if(currentMode == MODE_RIGHT)
+    {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    }
+    else if(currentMode == MODE_HAZARD)
+    {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    }
 
   /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
