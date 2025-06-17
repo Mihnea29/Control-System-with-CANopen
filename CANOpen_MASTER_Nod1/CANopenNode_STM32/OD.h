@@ -16,7 +16,7 @@
 
         Created:      6/10/2025 10:20:31 PM
         Created By:   
-        Modified:     6/17/2025 12:18:00 PM
+        Modified:     6/17/2025 9:29:19 PM
         Modified By:  
 
     Device Info:
@@ -173,6 +173,7 @@ typedef struct {
         uint32_t applicationObject8;
     } x1A00_TPDOMappingParameter;
     uint32_t x6000_LED_CONTROL;
+    uint32_t x6001_POT_VALUE_r;
 } OD_PERSIST_COMM_t;
 
 typedef struct {
@@ -235,6 +236,7 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1800 &OD->list[25]
 #define OD_ENTRY_H1A00 &OD->list[26]
 #define OD_ENTRY_H6000 &OD->list[27]
+#define OD_ENTRY_H6001 &OD->list[28]
 
 
 /*******************************************************************************
@@ -268,6 +270,7 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[25]
 #define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[26]
 #define OD_ENTRY_H6000_LED_CONTROL &OD->list[27]
+#define OD_ENTRY_H6001_POT_VALUE_r &OD->list[28]
 
 
 /*******************************************************************************

@@ -47,7 +47,7 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     },
     .x1400_RPDOCommunicationParameter = {
         .highestSub_indexSupported = 0x05,
-        .COB_IDUsedByRPDO = 0x80000200,
+        .COB_IDUsedByRPDO = 0x00000183,
         .transmissionType = 0xFE,
         .eventTimer = 0x0000
     },
@@ -70,8 +70,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .eventTimer = 0x0000
     },
     .x1600_RPDOMappingParameter = {
-        .numberOfMappedApplicationObjectsInPDO = 0x00,
-        .applicationObject1 = 0x00000000,
+        .numberOfMappedApplicationObjectsInPDO = 0x01,
+        .applicationObject1 = 0x60010020,
         .applicationObject2 = 0x00000000,
         .applicationObject3 = 0x00000000,
         .applicationObject4 = 0x00000000,
@@ -132,7 +132,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .applicationObject7 = 0x00000000,
         .applicationObject8 = 0x00000000
     },
-    .x6000_LED_CONTROL = 0x00000000
+    .x6000_LED_CONTROL = 0x00000000,
+    .x6001_POT_VALUE_r = 0x00000000
 };
 
 OD_ATTR_RAM OD_RAM_t OD_RAM = {
@@ -182,6 +183,7 @@ typedef struct {
     OD_obj_record_t o_1800_TPDOCommunicationParameter[6];
     OD_obj_record_t o_1A00_TPDOMappingParameter[9];
     OD_obj_var_t o_6000_LED_CONTROL;
+    OD_obj_var_t o_6001_POT_VALUE_r;
 } ODObjs_t;
 
 static CO_PROGMEM ODObjs_t ODObjs = {
@@ -771,6 +773,11 @@ static CO_PROGMEM ODObjs_t ODObjs = {
         .dataOrig = &OD_PERSIST_COMM.x6000_LED_CONTROL,
         .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
         .dataLength = 4
+    },
+    .o_6001_POT_VALUE_r = {
+        .dataOrig = &OD_PERSIST_COMM.x6001_POT_VALUE_r,
+        .attribute = ODA_SDO_RW | ODA_RPDO | ODA_MB,
+        .dataLength = 4
     }
 };
 
@@ -807,6 +814,7 @@ static OD_ATTR_OD OD_entry_t ODList[] = {
     {0x1800, 0x06, ODT_REC, &ODObjs.o_1800_TPDOCommunicationParameter, NULL},
     {0x1A00, 0x09, ODT_REC, &ODObjs.o_1A00_TPDOMappingParameter, NULL},
     {0x6000, 0x01, ODT_VAR, &ODObjs.o_6000_LED_CONTROL, NULL},
+    {0x6001, 0x01, ODT_VAR, &ODObjs.o_6001_POT_VALUE_r, NULL},
     {0x0000, 0x00, 0, NULL, NULL}
 };
 

@@ -33,7 +33,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define UART_NODE
 #define log_printf(macropar_message, ...) printf(macropar_message, ##__VA_ARGS__)
 
 
