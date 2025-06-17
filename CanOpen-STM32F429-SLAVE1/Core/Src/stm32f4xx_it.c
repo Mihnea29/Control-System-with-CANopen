@@ -56,9 +56,10 @@ volatile uint8_t uart_tx_busy = 0;
 
 /* External variables --------------------------------------------------------*/
 extern CAN_HandleTypeDef hcan1;
+extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim14;
 /* USER CODE BEGIN EV */
-
+extern uint8_t leftSignal, rightSignal;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -253,6 +254,38 @@ void CAN1_SCE_IRQHandler(void)
   /* USER CODE BEGIN CAN1_SCE_IRQn 1 */
 
   /* USER CODE END CAN1_SCE_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM4 global interrupt.
+  */
+void TIM4_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM4_IRQn 0 */
+	if(leftSignal == 1 && rightSignal == 0)
+	{
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+	}
+	if(leftSignal == 0 && rightSignal == 1)
+	{
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+	}
+	if(leftSignal == 1 && rightSignal == 1)
+	{
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+	}
+	if(leftSignal == 0 && rightSignal == 0)
+	{
+		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+	}
+
+  /* USER CODE END TIM4_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim4);
+  /* USER CODE BEGIN TIM4_IRQn 1 */
+
+  /* USER CODE END TIM4_IRQn 1 */
 }
 
 /**
