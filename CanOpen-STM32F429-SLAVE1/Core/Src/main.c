@@ -118,8 +118,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDGreen);
-	  HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, !canOpenNodeSTM32.outStatusLEDRed);
+	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, !canOpenNodeSTM32.outStatusLEDGreen);
+	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
     /* USER CODE END WHILE */
 
@@ -205,21 +205,7 @@ static void MX_CAN1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN1_Init 2 */
-//  CAN_FilterTypeDef sFilterConfig;
-//   sFilterConfig.FilterBank = 0;
-//   sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
-//   sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
-//   sFilterConfig.FilterIdHigh = 0x0000;
-//   sFilterConfig.FilterIdLow = 0x0000;
-//   sFilterConfig.FilterMaskIdHigh = 0x0000;
-//   sFilterConfig.FilterMaskIdLow = 0x0000;
-//   sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
-//   sFilterConfig.FilterActivation = ENABLE;
-//   sFilterConfig.SlaveStartFilterBank = 14;
-//   if(HAL_CAN_ConfigFilter(&hcan1, &sFilterConfig) != HAL_OK)
-//   {
-// 	  Error_Handler();
-//   }
+
   /* USER CODE END CAN1_Init 2 */
 
 }
@@ -263,8 +249,9 @@ static void MX_TIM14_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
@@ -281,7 +268,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(OTG_FS_PowerSwitchOn_GPIO_Port, OTG_FS_PowerSwitchOn_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, LD4_Pin|LD3_Pin|LD5_Pin|LD6_Pin
+  HAL_GPIO_WritePin(GPIOD, LD4_Pin|LD3_Pin|LD5_Pin|LD6_Pin
                           |Audio_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : CS_I2C_SPI_Pin */
@@ -401,8 +388,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(MEMS_INT2_GPIO_Port, &GPIO_InitStruct);
 
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+	GPIO_InitStruct.Pin = GPIO_PIN_13 | GPIO_PIN_14;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */

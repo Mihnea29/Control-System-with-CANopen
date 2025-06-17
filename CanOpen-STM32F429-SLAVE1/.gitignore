@@ -1,52 +1,23 @@
-#settings
+# STM32CubeIDE project files
+*.ioc
+*.mxproject
+*.cproject
+*.project
 .settings/
 
-#metadata
-.metadata/
+# Build output (all Debug folders and common obj/bin formats)
+**/Debug/
+**/*.o
+**/*.elf
+**/*.hex
+**/*.map
+**/*.list
+**/*.su
+**/*.cyclo
+**/*.d
 
-#Debug
-Debug/
-debug/
-Release/
-release
+# TouchGFX (if present)
+**/TouchGFX/target/
 
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-*.bin
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# User‑local files
+*.log
