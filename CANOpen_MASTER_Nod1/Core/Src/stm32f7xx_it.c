@@ -185,28 +185,16 @@ void EXTI0_IRQHandler(void)
 		counter++;
 		switch (counter) {
 			case 1:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 1, false);
-				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0001, false);
 				break;
 			case 2:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6001), 0x00, 1, false);
-				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0010, false);
 				break;
 			case 3:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6002), 0x00, 1, false);
-				OD_set_u32(OD_find(OD, 0x6003), 0x00, 0, false);
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0011, false);
 				break;
 			case 4:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6001), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
-				OD_set_u32(OD_find(OD, 0x6003), 0x00, 1, false);
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0100, false);
 				counter = 0;
 				break;
 		}

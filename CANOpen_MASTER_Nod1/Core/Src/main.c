@@ -151,7 +151,7 @@ uint16_t HB_TIME = 5000;
 uint16_t HB_VALUE = 0;
 size_t bytesRead = 0;
 //Valori vechi PDO lumini
-uint8_t OLD_STATE_ON, OLD_STATE_LEFT, OLD_STATE_RIGHT, OLD_STATE_AVARII;
+uint8_t OLD_STATE_LEDS;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -1695,21 +1695,9 @@ void canopen_task(void *argument)
 	canopen_app_process();
 
 	//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 2
-	if(OD_PERSIST_COMM.x6000_LED_STATE_ON != OLD_STATE_ON) {
+	if(OD_PERSIST_COMM.x6000_LED_CONTROL != OLD_STATE_LEDS) {
 		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[0]);
-		OLD_STATE_ON = OD_PERSIST_COMM.x6000_LED_STATE_ON;
-	}
-	if(OD_PERSIST_COMM.x6001_LED_STATE_LEFT != OLD_STATE_LEFT) {
-		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[1]);
-		OLD_STATE_LEFT = OD_PERSIST_COMM.x6001_LED_STATE_LEFT;
-	}
-	if(OD_PERSIST_COMM.x6002_LED_STATE_RIGHT != OLD_STATE_RIGHT) {
-		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[2]);
-		OLD_STATE_RIGHT = OD_PERSIST_COMM.x6002_LED_STATE_RIGHT;
-	}
-	if(OD_PERSIST_COMM.x6003_LED_STATE_AVARII != OLD_STATE_AVARII) {
-		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[3]);
-		OLD_STATE_AVARII = OD_PERSIST_COMM.x6003_LED_STATE_AVARII;
+		OLD_STATE_LEDS = OD_PERSIST_COMM.x6000_LED_CONTROL;
 	}
 
     osDelay(1);
