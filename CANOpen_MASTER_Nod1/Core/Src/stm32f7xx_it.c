@@ -198,8 +198,14 @@ void EXTI0_IRQHandler(void)
 				break;
 			case 5:
 				OD_set_u32(OD_find(OD, 0x6000), 0x00, 5, false);
+				break;
+			case 6:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 6, false);
+				break;
+			case 7:
+				OD_set_u32(OD_find(OD, 0x6000), 0x00, 7, false);
 				counter = 0;
-			break;
+				break;
 		}
 
 		previousTime = currentTime;

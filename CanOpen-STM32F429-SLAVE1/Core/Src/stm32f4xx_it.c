@@ -46,9 +46,11 @@ typedef enum {
     MODE_OFF,
     MODE_LEFT,
     MODE_RIGHT,
-    MODE_HAZARD
-} BlinkMode;
-BlinkMode currentMode = MODE_OFF;
+    MODE_HAZARD,
+	MODE_HIGHBEAM,
+	MODE_FLASH
+} LightMode;
+LightMode currentMode = MODE_OFF;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,9 +66,10 @@ BlinkMode currentMode = MODE_OFF;
 /* External variables --------------------------------------------------------*/
 extern CAN_HandleTypeDef hcan1;
 extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim7;
 extern TIM_HandleTypeDef htim14;
 /* USER CODE BEGIN EV */
-extern uint8_t leftSignal, rightSignal;
+extern int8_t leftSignal, rightSignal, high_beam, flash;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -269,7 +272,7 @@ void CAN1_SCE_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
-    BlinkMode newMode;
+    LightMode newMode;
 
     if(leftSignal == 1 && rightSignal == 0)
         newMode = MODE_LEFT;
@@ -277,13 +280,17 @@ void TIM4_IRQHandler(void)
         newMode = MODE_RIGHT;
     else if(leftSignal == 1 && rightSignal == 1)
         newMode = MODE_HAZARD;
+    else if (high_beam == 1)
+    	newMode = MODE_HIGHBEAM;
+    else if (flash == 1)
+    	newMode = MODE_FLASH;
     else
         newMode = MODE_OFF;
-
     if(newMode != currentMode)
     {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
         currentMode = newMode;
     }
 
@@ -300,6 +307,10 @@ void TIM4_IRQHandler(void)
     {
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    }
+    else if(currentMode == MODE_HIGHBEAM)
+    {
+    	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
     }
 
   /* USER CODE END TIM4_IRQn 0 */
@@ -321,6 +332,23 @@ void TIM8_TRG_COM_TIM14_IRQHandler(void)
   /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 1 */
 
   /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM7 global interrupt.
+  */
+void TIM7_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM7_IRQn 0 */
+	if(currentMode == MODE_FLASH)
+	    {
+	        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+	    }
+  /* USER CODE END TIM7_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim7);
+  /* USER CODE BEGIN TIM7_IRQn 1 */
+
+  /* USER CODE END TIM7_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
