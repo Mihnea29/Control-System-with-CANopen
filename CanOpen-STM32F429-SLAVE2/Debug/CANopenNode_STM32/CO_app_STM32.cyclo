@@ -1,5 +1,0 @@
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32/CO_app_STM32.c:54:6:callback_time_rcv	1
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32/CO_app_STM32.c:63:1:canopen_app_init	2
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32/CO_app_STM32.c:117:1:canopen_app_resetCommunication	9
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32/CO_app_STM32.c:206:1:canopen_app_process	4
-/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32/CO_app_STM32.c:235:1:canopen_app_interrupt	3
