@@ -156,7 +156,7 @@ uint16_t HB_TIME = 5000;
 uint16_t HB_VALUE = 0;
 size_t bytesRead = 0;
 //Valori vechi PDO lumini
-uint8_t OLD_STATE_LEDS;
+uint8_t OLD_STATE_LEDS, OLD_STATE_WIPERS;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -1813,6 +1813,11 @@ void canopen_task(void *argument)
 	if(OD_PERSIST_COMM.x6000_LED_CONTROL != OLD_STATE_LEDS) {
 		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[0]);
 		OLD_STATE_LEDS = OD_PERSIST_COMM.x6000_LED_CONTROL;
+	}
+	//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 3
+	if(OD_PERSIST_COMM.x6002_WIPER_SPPED != OLD_STATE_WIPERS) {
+		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[1]);
+		OLD_STATE_WIPERS = OD_PERSIST_COMM.x6002_WIPER_SPPED;
 	}
 
     osDelay(1);

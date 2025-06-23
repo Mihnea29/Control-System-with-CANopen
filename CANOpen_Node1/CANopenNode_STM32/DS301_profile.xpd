@@ -15,7 +15,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-17" fileModificationTime="21:29:19.5224775+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-23" fileModificationTime="18:12:00.6837797+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <q1:DeviceIdentity>
         <q1:vendorName></q1:vendorName>
         <q1:vendorID></q1:vendorID>
@@ -1408,13 +1408,19 @@
             <q1:defaultValue value="0x00000000" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_OBJ_6000" access="readWriteInput">
-            <label lang="en">LED_CONTROL</label>
+            <description lang="en">Trimite starea farurilor, faza scurta, semnalizari, faza lunga, flashuri.</description>
             <UDINT />
             <q1:defaultValue value="0" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_OBJ_6001" access="readWriteOutput">
             <description lang="en">Valoarea primita de la potentiometru, slave 2</description>
+            <UDINT />
+            <q1:defaultValue value="0" />
+            <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
+          </q1:parameter>
+          <q1:parameter uniqueID="UID_OBJ_6002" access="readWriteInput">
+            <label lang="en">WIPER_SPPED</label>
             <UDINT />
             <q1:defaultValue value="0" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
@@ -1436,7 +1442,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-17" fileModificationTime="21:29:19.5224775+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-23" fileModificationTime="18:12:00.6837797+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <ApplicationLayers>
         <q2:CANopenObjectList>
           <CANopenObject index="1000" name="Device type" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1000" />
@@ -1657,6 +1663,7 @@
           </CANopenObject>
           <CANopenObject index="6000" name="LED_CONTROL" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6000" />
           <CANopenObject index="6001" name="POT_VALUE_r" objectType="7" PDOmapping="RPDO" uniqueIDRef="UID_OBJ_6001" />
+          <CANopenObject index="6002" name="WIPER_SPPED" objectType="7" PDOmapping="TPDO" uniqueIDRef="UID_OBJ_6002" />
         </q2:CANopenObjectList>
         <dummyUsage>
           <dummy entry="Dummy0001=0" />

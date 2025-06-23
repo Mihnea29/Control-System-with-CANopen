@@ -16,7 +16,7 @@
 
         Created:      6/11/2025 8:14:14 PM
         Created By:   
-        Modified:     6/17/2025 9:21:19 PM
+        Modified:     6/23/2025 6:59:41 PM
         Modified By:  
 
     Device Info:
@@ -44,6 +44,7 @@
 #define OD_CNT_HB_PROD 1
 #define OD_CNT_SDO_SRV 1
 #define OD_CNT_SDO_CLI 1
+#define OD_CNT_RPDO 1
 #define OD_CNT_TPDO 4
 
 
@@ -84,6 +85,23 @@ typedef struct {
         uint32_t COB_IDServerToClientRx;
         uint8_t node_IDOfTheSDOServer;
     } x1280_SDOClientParameter;
+    struct {
+        uint8_t highestSub_indexSupported;
+        uint32_t COB_IDUsedByRPDO;
+        uint8_t transmissionType;
+        uint16_t eventTimer;
+    } x1400_RPDOCommunicationParameter;
+    struct {
+        uint8_t numberOfMappedApplicationObjectsInPDO;
+        uint32_t applicationObject1;
+        uint32_t applicationObject2;
+        uint32_t applicationObject3;
+        uint32_t applicationObject4;
+        uint32_t applicationObject5;
+        uint32_t applicationObject6;
+        uint32_t applicationObject7;
+        uint32_t applicationObject8;
+    } x1600_RPDOMappingParameter;
     struct {
         uint8_t highestSub_indexSupported;
         uint32_t COB_IDUsedByTPDO;
@@ -161,6 +179,7 @@ typedef struct {
         uint32_t applicationObject8;
     } x1A03_TPDOMappingParameter;
     uint32_t x6000_POT_VALUE;
+    uint32_t x6001_WIPER_SPEED_r;
 } OD_PERSIST_COMM_t;
 
 typedef struct {
@@ -212,15 +231,18 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1019 &OD->list[14]
 #define OD_ENTRY_H1200 &OD->list[15]
 #define OD_ENTRY_H1280 &OD->list[16]
-#define OD_ENTRY_H1800 &OD->list[17]
-#define OD_ENTRY_H1801 &OD->list[18]
-#define OD_ENTRY_H1802 &OD->list[19]
-#define OD_ENTRY_H1803 &OD->list[20]
-#define OD_ENTRY_H1A00 &OD->list[21]
-#define OD_ENTRY_H1A01 &OD->list[22]
-#define OD_ENTRY_H1A02 &OD->list[23]
-#define OD_ENTRY_H1A03 &OD->list[24]
-#define OD_ENTRY_H6000 &OD->list[25]
+#define OD_ENTRY_H1400 &OD->list[17]
+#define OD_ENTRY_H1600 &OD->list[18]
+#define OD_ENTRY_H1800 &OD->list[19]
+#define OD_ENTRY_H1801 &OD->list[20]
+#define OD_ENTRY_H1802 &OD->list[21]
+#define OD_ENTRY_H1803 &OD->list[22]
+#define OD_ENTRY_H1A00 &OD->list[23]
+#define OD_ENTRY_H1A01 &OD->list[24]
+#define OD_ENTRY_H1A02 &OD->list[25]
+#define OD_ENTRY_H1A03 &OD->list[26]
+#define OD_ENTRY_H6000 &OD->list[27]
+#define OD_ENTRY_H6001 &OD->list[28]
 
 
 /*******************************************************************************
@@ -243,15 +265,18 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1019_synchronousCounterOverflowValue &OD->list[14]
 #define OD_ENTRY_H1200_SDOServerParameter &OD->list[15]
 #define OD_ENTRY_H1280_SDOClientParameter &OD->list[16]
-#define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[17]
-#define OD_ENTRY_H1801_TPDOCommunicationParameter &OD->list[18]
-#define OD_ENTRY_H1802_TPDOCommunicationParameter &OD->list[19]
-#define OD_ENTRY_H1803_TPDOCommunicationParameter &OD->list[20]
-#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[21]
-#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[22]
-#define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[23]
-#define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[24]
-#define OD_ENTRY_H6000_POT_VALUE &OD->list[25]
+#define OD_ENTRY_H1400_RPDOCommunicationParameter &OD->list[17]
+#define OD_ENTRY_H1600_RPDOMappingParameter &OD->list[18]
+#define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[19]
+#define OD_ENTRY_H1801_TPDOCommunicationParameter &OD->list[20]
+#define OD_ENTRY_H1802_TPDOCommunicationParameter &OD->list[21]
+#define OD_ENTRY_H1803_TPDOCommunicationParameter &OD->list[22]
+#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[23]
+#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[24]
+#define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[25]
+#define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[26]
+#define OD_ENTRY_H6000_POT_VALUE &OD->list[27]
+#define OD_ENTRY_H6001_WIPER_SPEED_r &OD->list[28]
 
 
 /*******************************************************************************
@@ -281,9 +306,9 @@ extern OD_ATTR_OD OD_t *OD;
     (config).ENTRY_H1006 = OD_ENTRY_H1006;\
     (config).ENTRY_H1007 = OD_ENTRY_H1007;\
     (config).ENTRY_H1019 = OD_ENTRY_H1019;\
-    (config).CNT_RPDO = 0;\
-    (config).ENTRY_H1400 = NULL;\
-    (config).ENTRY_H1600 = NULL;\
+    (config).CNT_RPDO = OD_CNT_RPDO;\
+    (config).ENTRY_H1400 = OD_ENTRY_H1400;\
+    (config).ENTRY_H1600 = OD_ENTRY_H1600;\
     (config).CNT_TPDO = OD_CNT_TPDO;\
     (config).ENTRY_H1800 = OD_ENTRY_H1800;\
     (config).ENTRY_H1A00 = OD_ENTRY_H1A00;\

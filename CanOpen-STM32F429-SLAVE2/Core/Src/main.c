@@ -24,7 +24,7 @@
 #include "CO_app_STM32.h"
 #include "CANopen.h"
 #include "OD.h"
-
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,11 +49,17 @@ ADC_HandleTypeDef hadc1;
 
 CAN_HandleTypeDef hcan1;
 
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
 uint32_t adcValue;
 float test;
+volatile int currentPulse = 1000;
+volatile int targetPulse = 2000;
+volatile int stepSize = 0;
+volatile int stepInterval = 1;
+volatile int stepDirection = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,6 +68,7 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_TIM14_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -72,6 +79,43 @@ void
 HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     if (htim == canopenNodeSTM32->timerHandle) {
         canopen_app_interrupt();
+    }
+
+    if (htim->Instance == TIM2) {
+    	static uint16_t interruptCounter = 0;
+    	interruptCounter++;
+
+    	if (interruptCounter >= stepInterval) {
+    	    interruptCounter = 0;
+
+    	    if (currentPulse != targetPulse) {
+
+    	        if (abs(targetPulse - currentPulse) <= stepSize) {
+    	            currentPulse = targetPulse;
+    	        } else {
+    	            currentPulse += stepDirection * stepSize;
+    	        }
+
+    	        // Siguranță: limitează pulse-ul
+    	        if (currentPulse > 2000) {
+    	            currentPulse = 2000;
+    	        }
+    	        if (currentPulse < 1000) {
+    	            currentPulse = 1000;
+    	        }
+
+    	        __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulse);
+    	    }
+    	    else {
+    	        if (targetPulse == 2000) {
+    	            targetPulse = 1000;
+    	        }
+    	        else {
+    	            targetPulse = 2000;
+    	        }
+    	        stepDirection = (targetPulse > currentPulse) ? 1 : -1;
+    	    }
+    	}
     }
 }
 
@@ -122,7 +166,10 @@ int main(void)
   MX_ADC1_Init();
   MX_CAN1_Init();
   MX_TIM14_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start_IT(&htim2);
   HAL_ADC_Start_IT(&hadc1);
   CANopenNodeSTM32 canOpenNodeSTM32;
   canOpenNodeSTM32.CANHandle = &hcan1;
@@ -140,7 +187,11 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
-	  OD_PERSIST_COMM.x6000_POT_VALUE = adcValue;
+	  //OD_PERSIST_COMM.x6000_POT_VALUE = adcValue;
+	  //stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
+	  if (stepSize != OD_PERSIST_COMM.x6001_WIPER_SPEED_r) {
+		  stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -279,6 +330,65 @@ static void MX_CAN1_Init(void)
   /* USER CODE BEGIN CAN1_Init 2 */
 
   /* USER CODE END CAN1_Init 2 */
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 84;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_DOWN;
+  htim2.Init.Period = 20000;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+  HAL_TIM_MspPostInit(&htim2);
 
 }
 
