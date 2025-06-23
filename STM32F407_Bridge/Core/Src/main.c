@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
@@ -203,7 +204,7 @@ static void MX_CAN2_Init(void)
   hcan2.Instance = CAN2;
   hcan2.Init.Prescaler = 21;
   hcan2.Init.Mode = CAN_MODE_NORMAL;
-  hcan2.Init.SyncJumpWidth = CAN_SJW_2TQ;
+  hcan2.Init.SyncJumpWidth = CAN_SJW_1TQ;
   hcan2.Init.TimeSeg1 = CAN_BS1_14TQ;
   hcan2.Init.TimeSeg2 = CAN_BS2_5TQ;
   hcan2.Init.TimeTriggeredMode = DISABLE;
