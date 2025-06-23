@@ -28,17 +28,13 @@
 		<nature>com.st.stm32cube.ide.mcu.MCURootProjectNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
 	</natures>
 	<linkedResources>
 		<link>
 			<name>CANopenNode</name>
 			<type>2</type>
-			<location>/home/mihneadorcu/Desktop/PROIECT/Licenta/CANopenNode</location>
-		</link>
-		<link>
-			<name>CANopenNode_STM32</name>
-			<type>2</type>
-			<location>/home/mihneadorcu/Desktop/PROIECT/Licenta/CanOpen-STM32F429-SLAVE2/CANopenNode_STM32</location>
+			<locationURI>PARENT-1-PROJECT_LOC/CANopenNode</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
