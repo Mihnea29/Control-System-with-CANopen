@@ -1,19 +1,5 @@
-# STM32CubeIDE project files
+.metadata/.ide.log
+.metadata/.lock
+.metadata/
+Debug/
 .settings/
-
-# Build output (all Debug folders and common obj/bin formats)
-**/Debug/
-**/*.o
-**/*.elf
-**/*.hex
-**/*.map
-**/*.list
-**/*.su
-**/*.cyclo
-**/*.d
-
-# TouchGFX (if present)
-**/TouchGFX/target/
-
-# User‑local files
-*.log
