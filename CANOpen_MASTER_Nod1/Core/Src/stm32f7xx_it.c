@@ -174,50 +174,6 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles EXTI line0 interrupt.
-  */
-void EXTI0_IRQHandler(void)
-{
-  /* USER CODE BEGIN EXTI0_IRQn 0 */
-	currentTime = HAL_GetTick();
-	if(currentTime - previousTime >5)
-	{
-		counter++;
-		switch (counter) {
-			case 1:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0001, false);
-				break;
-			case 2:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0010, false);
-				break;
-			case 3:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0011, false);
-				break;
-			case 4:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0100, false);
-				break;
-			case 5:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 5, false);
-				break;
-			case 6:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 6, false);
-				break;
-			case 7:
-				OD_set_u32(OD_find(OD, 0x6000), 0x00, 7, false);
-				counter = 0;
-				break;
-		}
-
-		previousTime = currentTime;
-	}
-  /* USER CODE END EXTI0_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
-  /* USER CODE BEGIN EXTI0_IRQn 1 */
-
-  /* USER CODE END EXTI0_IRQn 1 */
-}
-
-/**
   * @brief This function handles CAN1 TX interrupts.
   */
 void CAN1_TX_IRQHandler(void)
