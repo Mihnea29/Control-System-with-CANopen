@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScratchFile FileVersion="3.0">
+  <FileVersion>3.0</FileVersion>
+  <Workspace>
+    <WorkspaceType>Single-project</WorkspaceType>
+    <WorkspacePath>C:\Users\Dorcu Mihnea\OneDrive\Desktop\Licenta\CANOpen_MASTER_Nod1\</WorkspacePath>
+    <underRoot>false</underRoot>
+    <TrustZone>0</TrustZone>
+    <HAL_Driver>C:\Users\Dorcu Mihnea\STM32Cube\Repository\STM32Cube_FW_F7_V1.17.3</HAL_Driver>
+    <CMSIS>Drivers/CMSIS</CMSIS>
+    <Toolchain>STM32CubeIDE</Toolchain>
+    <IocFile>STM32F769I_DISCO.ioc</IocFile>
+    <Project>
+              
+      <ProjectName>STM32F769I_DISCO</ProjectName>
+           
+      <ProjectNature>Cpp</ProjectNature>
+       
+      <Secure/>
+            
+      <filestoremove>                           </filestoremove>
+          
+      <configs>
+        <config>
+              
+          <name>STM32F769I_DISCO</name>
+          	 
+          <mainSourceRepo>Core</mainSourceRepo>
+             
+          <sourceStructure>Advanced</sourceStructure>
+           
+          <device>STM32F769NIHx</device>
+          		     
+          <cpucore>Arm Cortex-M7</cpucore>
+                  
+          <fpu>DP</fpu>
+                
+          <memories>
+                       
+            <memory access="xrw" name="RAM" size="524288" start="0x20000000"/>
+                    
+            <memory access="rx" name="FLASH" size="2097152" start="0x8000000"/>
+                
+          </memories>
+              
+          <startup>C:\Users\Dorcu Mihnea\STM32Cube\Repository\STM32Cube_FW_F7_V1.17.3\Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\gcc\startup_stm32f769xx.s</startup>
+                
+          <LinkSettings>
+            	
+            <LinkAdditionalLibs>	</LinkAdditionalLibs>
+          </LinkSettings>
+              
+          <heapSize>0x1000</heapSize>
+              
+          <stackSize>0x1000</stackSize>
+                  
+          <cpuclock>168</cpuclock>
+                  
+          <board>custom</board>
+              
+          <debugprobe/>
+              
+          <optimization/>
+              
+          <Aincludes>
+                                         
+            <include>Core\Inc</include>
+                                         
+            <include>LIBJPEG\App</include>
+                                         
+            <include>LIBJPEG\Target</include>
+                                         
+            <include>TouchGFX\App</include>
+                                         
+            <include>TouchGFX\target\generated</include>
+                                         
+            <include>TouchGFX\target</include>
+                                                  
+            <include>Drivers\STM32F7xx_HAL_Driver\Inc</include>
+                                                  
+            <include>Drivers\STM32F7xx_HAL_Driver\Inc\Legacy</include>
+                                                  
+            <include>Middlewares\Third_Party\FreeRTOS\Source\include</include>
+                                                  
+            <include>Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2</include>
+                                                  
+            <include>Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM7\r0p1</include>
+                                                  
+            <include>Middlewares\Third_Party\LibJPEG\include</include>
+                                                  
+            <include>Drivers\CMSIS\Device\ST\STM32F7xx\Include</include>
+                                                  
+            <include>Drivers\CMSIS\Include</include>
+                                                  
+            <include>Drivers\BSP\Components\Common</include>
+                    
+          </Aincludes>
+              
+          <Adefines>        </Adefines>
+                
+          <Cdefines>
+                    
+            <define>USE_HAL_DRIVER</define>
+                    
+            <define>STM32F769xx</define>
+                    
+          </Cdefines>
+              
+          <Ldefines>        </Ldefines>
+                  
+          <Cincludes>
+            		        
+            <include>Core\Inc</include>
+                    
+            <include>LIBJPEG\App</include>
+                    
+            <include>LIBJPEG\Target</include>
+                    
+            <include>TouchGFX\App</include>
+                    
+            <include>TouchGFX\target\generated</include>
+                    
+            <include>TouchGFX\target</include>
+                    
+            <include>Drivers\STM32F7xx_HAL_Driver\Inc</include>
+                    
+            <include>Drivers\STM32F7xx_HAL_Driver\Inc\Legacy</include>
+                    
+            <include>Middlewares\Third_Party\FreeRTOS\Source\include</include>
+                    
+            <include>Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2</include>
+                    
+            <include>Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM7\r0p1</include>
+                    
+            <include>Middlewares\Third_Party\LibJPEG\include</include>
+                    
+            <include>Drivers\CMSIS\Device\ST\STM32F7xx\Include</include>
+                    
+            <include>Drivers\CMSIS\Include</include>
+                    
+            <include>Drivers\BSP\Components\Common</include>
+                    
+          </Cincludes>
+              
+          <definestoremove>
+                    
+            <Adefines>            </Adefines>
+                    
+            <Cdefines>
+                                  
+              <define>USE_FULL_LL_DRIVER</define>
+                                  
+              <define>USE_FULL_ASSERT=1U</define>
+                          
+            </Cdefines>
+                     
+            <Ldefines>            </Ldefines>
+                     
+          </definestoremove>
+              
+          <inctoremove>
+                    
+            <Aincludes>
+                          
+              <include/>
+                          
+            </Aincludes>
+                    
+            <Cincludes>            </Cincludes>
+                    
+          </inctoremove>
+                 
+        </config>
+                
+      </configs>
+       
+      <copyAsReference>false</copyAsReference>
+       
+      <Groups>
+            
+        <group>
+                  
+          <name>Middlewares</name>
+           		        
+          <group>
+                        
+            <name>FreeRTOS</name>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\croutine.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\event_groups.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\list.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\queue.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\tasks.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\timers.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM7\r0p1\port.c</name>
+                              
+            </file>
+                        
+          </group>
+                  
+          <group>
+                        
+            <name>LibJPEG</name>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcapimin.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcapistd.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdapimin.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdapistd.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcomapi.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcparam.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jctrans.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdtrans.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcinit.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcmaster.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcmainct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcprepct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jccoefct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jccolor.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcsample.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcdctmgr.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jfdctint.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jfdctfst.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jfdctflt.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jchuff.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcarith.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jcmarker.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdatadst.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdmaster.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdinput.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdmainct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdcoefct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdpostct.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdmarker.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdhuff.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdarith.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jddctmgr.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jidctint.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jidctfst.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jidctflt.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdsample.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdcolor.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdmerge.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jquant1.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jquant2.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jdatasrc.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jaricom.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jerror.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jmemmgr.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jutils.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Middlewares\Third_Party\LibJPEG\source\jmemnobs.c</name>
+                              
+            </file>
+                        
+          </group>
+                  
+        </group>
+         
+        <group>
+               
+          <name>Application</name>
+          <group>
+                 
+            <name>User</name>
+            <group>
+                   
+              <name>TouchGFX</name>
+              <group>
+                     
+                <name>target</name>
+                        
+                <file>
+                              
+                  <name>../TouchGFX/target/CortexMMCUInstrumentation.cpp</name>
+                          
+                </file>
+                        
+                <file>
+                              
+                  <name>../TouchGFX/target/Buttons.cpp</name>
+                          
+                </file>
+                        
+                <file>
+                              
+                  <name>../TouchGFX/target/KeySampler.cpp</name>
+                          
+                </file>
+                    
+              </group>
+                  
+            </group>
+                
+          </group>
+              
+        </group>
+        <group>
+               
+          <name>Drivers</name>
+          <group>
+                 
+            <name>BSP</name>
+            <group>
+                   
+              <name>Components</name>
+                      
+              <file>
+                            
+                <name>Drivers/BSP/Components/otm8009a/otm8009a.c</name>
+                        
+              </file>
+                  
+            </group>
+                
+          </group>
+              
+        </group>
+            
+        <group>
+                  
+          <name>Drivers</name>
+                                       
+          <group>
+                        
+            <name>STM32F7xx_HAL_Driver</name>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_can.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_flash.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_flash_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_gpio.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_exti.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma2d.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dsi.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_fmc.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_nor.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sram.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_nand.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sdram.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc_ex.c</name>
+                              
+            </file>
+                        
+            <file>
+                              
+              <name>Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_qspi.c</name>
+                              
+            </file>
+                        
+          </group>
+                  
+          <group>
+                        
+            <name>CMSIS</name>
+                            
+            <file>
+                                          
+              <name>Core/Src/system_stm32f7xx.c</name>
+                                          
+            </file>
+                                    
+          </group>
+                  
+        </group>
+               
+        <group>
+                  
+          <name>Application</name>
+                  
+          <group>
+                        
+            <name>User</name>
+                              
+            <group>
+                              
+              <name>Core</name>
+                                
+              <file>
+                                    
+                <name>Core\Src\main.c</name>
+                                    
+              </file>
+                              
+              <file>
+                                    
+                <name>Core\Src\freertos.c</name>
+                                    
+              </file>
+                              
+              <file>
+                                    
+                <name>Core\Src\stm32f7xx_it.c</name>
+                                    
+              </file>
+                              
+              <file>
+                                    
+                <name>Core\Src\stm32f7xx_hal_msp.c</name>
+                                    
+              </file>
+                              
+              <file>
+                                    
+                <name>Core\Src\stm32f7xx_hal_timebase_tim.c</name>
+                                    
+              </file>
+                              
+            </group>
+                              
+            <group>
+                   
+              <name>TouchGFX</name>
+              <group>
+                     
+                <name>target</name>
+                <group>
+                       
+                  <name>generated</name>
+                          
+                  <file>
+                                
+                    <name>TouchGFX\target\generated\TouchGFXConfiguration.cpp</name>
+                            
+                  </file>
+                          
+                  <file>
+                                
+                    <name>TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp</name>
+                            
+                  </file>
+                          
+                  <file>
+                                
+                    <name>TouchGFX\target\generated\STM32DMA.cpp</name>
+                            
+                  </file>
+                          
+                  <file>
+                                
+                    <name>TouchGFX\target\generated\OSWrappers.cpp</name>
+                            
+                  </file>
+                          
+                  <file>
+                                
+                    <name>TouchGFX\target\generated\SoftwareMJPEGDecoder.cpp</name>
+                            
+                  </file>
+                      
+                </group>
+                    
+              </group>
+              <group>
+                     
+                <name>App</name>
+                        
+                <file>
+                              
+                  <name>TouchGFX\App\app_touchgfx.c</name>
+                          
+                </file>
+                    
+              </group>
+              <group>
+                     
+                <name>target</name>
+                        
+                <file>
+                              
+                  <name>TouchGFX\target\TouchGFXHAL.cpp</name>
+                          
+                </file>
+                        
+                <file>
+                              
+                  <name>TouchGFX\target\STM32TouchController.cpp</name>
+                          
+                </file>
+                        
+                <file>
+                              
+                  <name>TouchGFX\target\TouchGFXGPIO.cpp</name>
+                          
+                </file>
+                    
+              </group>
+                  
+            </group>
+            <group>
+                   
+              <name>LIBJPEG</name>
+              <group>
+                     
+                <name>App</name>
+                        
+                <file>
+                              
+                  <name>LIBJPEG\App\libjpeg.c</name>
+                          
+                </file>
+                    
+              </group>
+                  
+            </group>
+                        
+          </group>
+                   
+        </group>
+                
+      </Groups>
+    </Project>
+  </Workspace>
+</ScratchFile>
