@@ -1,8 +1,4 @@
 # STM32CubeIDE project files
-*.ioc
-*.mxproject
-*.cproject
-*.project
 .settings/
 
 # Build output (all Debug folders and common obj/bin formats)
