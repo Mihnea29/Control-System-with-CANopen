@@ -1815,9 +1815,9 @@ void canopen_task(void *argument)
 		OLD_STATE_LEDS = OD_PERSIST_COMM.x6000_LED_CONTROL;
 	}
 	//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 3
-	if(OD_PERSIST_COMM.x6002_WIPER_SPPED != OLD_STATE_WIPERS) {
+	if(OD_PERSIST_COMM.x6002_WIPER_SPEED != OLD_STATE_WIPERS) {
 		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[1]);
-		OLD_STATE_WIPERS = OD_PERSIST_COMM.x6002_WIPER_SPPED;
+		OLD_STATE_WIPERS = OD_PERSIST_COMM.x6002_WIPER_SPEED;
 	}
 
     osDelay(1);
