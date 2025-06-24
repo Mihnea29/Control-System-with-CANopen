@@ -37,12 +37,12 @@
 		<link>
 			<name>CANopenNode</name>
 			<type>2</type>
-			<location>E:/Licenta/CANopenNode</location>
+			<location>/home/mihneadorcu/Desktop/Licenta/CANopenNode</location>
 		</link>
 		<link>
 			<name>CANopenNode_STM32</name>
 			<type>2</type>
-			<location>E:/Licenta/CanOpen-STM32F429-SLAVE3/CANopenNode_STM32</location>
+			<location>/home/mihneadorcu/Desktop/Licenta/CanOpen-STM32F429-SLAVE3/CANopenNode_STM32</location>
 		</link>
 		<link>
 			<name>STM32F429I_DISCO_REV_D01.ioc</name>

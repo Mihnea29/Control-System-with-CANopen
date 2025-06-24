@@ -96,7 +96,6 @@ HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     	            currentPulse += stepDirection * stepSize;
     	        }
 
-    	        // Siguranță: limitează pulse-ul
     	        if (currentPulse > 2000) {
     	            currentPulse = 2000;
     	        }
