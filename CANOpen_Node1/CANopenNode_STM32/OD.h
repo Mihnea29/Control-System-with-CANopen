@@ -16,7 +16,7 @@
 
         Created:      6/10/2025 10:20:31 PM
         Created By:   
-        Modified:     6/23/2025 6:12:00 PM
+        Modified:     6/24/2025 10:06:50 PM
         Modified By:  
 
     Device Info:
@@ -193,7 +193,7 @@ typedef struct {
     } x1A01_TPDOMappingParameter;
     uint32_t x6000_LED_CONTROL;
     uint32_t x6001_POT_VALUE_r;
-    uint32_t x6002_WIPER_SPPED;
+    uint32_t x6002_WIPER_SPEED;
 } OD_PERSIST_COMM_t;
 
 typedef struct {
@@ -296,7 +296,7 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[28]
 #define OD_ENTRY_H6000_LED_CONTROL &OD->list[29]
 #define OD_ENTRY_H6001_POT_VALUE_r &OD->list[30]
-#define OD_ENTRY_H6002_WIPER_SPPED &OD->list[31]
+#define OD_ENTRY_H6002_WIPER_SPEED &OD->list[31]
 
 
 /*******************************************************************************

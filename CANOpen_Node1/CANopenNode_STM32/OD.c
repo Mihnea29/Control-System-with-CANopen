@@ -153,7 +153,7 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     },
     .x6000_LED_CONTROL = 0x00000000,
     .x6001_POT_VALUE_r = 0x00000000,
-    .x6002_WIPER_SPPED = 0x00000000
+    .x6002_WIPER_SPEED = 0x00000000
 };
 
 OD_ATTR_RAM OD_RAM_t OD_RAM = {
@@ -206,7 +206,7 @@ typedef struct {
     OD_obj_record_t o_1A01_TPDOMappingParameter[9];
     OD_obj_var_t o_6000_LED_CONTROL;
     OD_obj_var_t o_6001_POT_VALUE_r;
-    OD_obj_var_t o_6002_WIPER_SPPED;
+    OD_obj_var_t o_6002_WIPER_SPEED;
 } ODObjs_t;
 
 static CO_PROGMEM ODObjs_t ODObjs = {
@@ -896,8 +896,8 @@ static CO_PROGMEM ODObjs_t ODObjs = {
         .attribute = ODA_SDO_RW | ODA_RPDO | ODA_MB,
         .dataLength = 4
     },
-    .o_6002_WIPER_SPPED = {
-        .dataOrig = &OD_PERSIST_COMM.x6002_WIPER_SPPED,
+    .o_6002_WIPER_SPEED = {
+        .dataOrig = &OD_PERSIST_COMM.x6002_WIPER_SPEED,
         .attribute = ODA_SDO_RW | ODA_TPDO | ODA_MB,
         .dataLength = 4
     }
@@ -939,7 +939,7 @@ static OD_ATTR_OD OD_entry_t ODList[] = {
     {0x1A01, 0x09, ODT_REC, &ODObjs.o_1A01_TPDOMappingParameter, NULL},
     {0x6000, 0x01, ODT_VAR, &ODObjs.o_6000_LED_CONTROL, NULL},
     {0x6001, 0x01, ODT_VAR, &ODObjs.o_6001_POT_VALUE_r, NULL},
-    {0x6002, 0x01, ODT_VAR, &ODObjs.o_6002_WIPER_SPPED, NULL},
+    {0x6002, 0x01, ODT_VAR, &ODObjs.o_6002_WIPER_SPEED, NULL},
     {0x0000, 0x00, 0, NULL, NULL}
 };
 
