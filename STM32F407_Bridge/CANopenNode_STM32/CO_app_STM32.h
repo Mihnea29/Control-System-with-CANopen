@@ -68,7 +68,7 @@ void canopen_app_process();
 void canopen_app_interrupt(void);
 
 void ProcessTxMessage(CAN_TxHeaderTypeDef tx_hdr, CO_CANtx_t* buffer);
-
+void GetCANopenTimeStamp(uint32_t *ms, uint16_t *days);
 void ProcessRxMessage(CO_CANrxMsg_t rcvMsg);
 #ifdef __cplusplus
 }

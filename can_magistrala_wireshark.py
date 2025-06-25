@@ -48,5 +48,5 @@ def read_uart_and_send_to_vcan(uart_port, baudrate=115200):
             bus.shutdown()
 
 if __name__ == "__main__":
-    read_uart_and_send_to_vcan(uart_port='/dev/ttyUSB0', baudrate=115200)
+    read_uart_and_send_to_vcan(uart_port='/dev/ttyUSB1', baudrate=115200)
 

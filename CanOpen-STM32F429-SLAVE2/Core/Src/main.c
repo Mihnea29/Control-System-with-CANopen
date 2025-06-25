@@ -60,6 +60,8 @@ volatile int targetPulse = 2000;
 volatile int stepSize = 0;
 volatile int stepInterval = 1;
 volatile int stepDirection = 1;
+volatile int currentPulseNeg = 1000;
+volatile int targetPulseNeg = 2000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -82,39 +84,37 @@ HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     }
 
     if (htim->Instance == TIM2) {
-    	static uint16_t interruptCounter = 0;
-    	interruptCounter++;
+        static uint16_t interruptCounter = 0;
+        interruptCounter++;
 
-    	if (interruptCounter >= stepInterval) {
-    	    interruptCounter = 0;
+        if (interruptCounter >= stepInterval) {
+            interruptCounter = 0;
 
-    	    if (currentPulse != targetPulse) {
+            if (currentPulse != targetPulse) {
 
-    	        if (abs(targetPulse - currentPulse) <= stepSize) {
-    	            currentPulse = targetPulse;
-    	        } else {
-    	            currentPulse += stepDirection * stepSize;
-    	        }
+                if (abs(targetPulse - currentPulse) <= stepSize) {
+                    currentPulse = targetPulse;
+                } else {
+                    currentPulse += stepDirection * stepSize;
+                }
 
-    	        if (currentPulse > 2000) {
-    	            currentPulse = 2000;
-    	        }
-    	        if (currentPulse < 1000) {
-    	            currentPulse = 1000;
-    	        }
+                if (currentPulse > 2000) currentPulse = 2000;
+                if (currentPulse < 1000) currentPulse = 1000;
 
-    	        __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulse);
-    	    }
-    	    else {
-    	        if (targetPulse == 2000) {
-    	            targetPulse = 1000;
-    	        }
-    	        else {
-    	            targetPulse = 2000;
-    	        }
-    	        stepDirection = (targetPulse > currentPulse) ? 1 : -1;
-    	    }
-    	}
+                currentPulseNeg = 3000 - currentPulse;
+
+                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulse);
+                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, currentPulseNeg);
+            }
+            else {
+                if (targetPulse == 2000) {
+                    targetPulse = 1000;
+                } else {
+                    targetPulse = 2000;
+                }
+                stepDirection = (targetPulse > currentPulse) ? 1 : -1;
+            }
+        }
     }
 }
 
@@ -168,6 +168,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_ADC_Start_IT(&hadc1);
   CANopenNodeSTM32 canOpenNodeSTM32;
@@ -190,6 +191,10 @@ int main(void)
 	  //stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
 	  if (stepSize != OD_PERSIST_COMM.x6001_WIPER_SPEED_r) {
 		  stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
+	  }
+	  if (stepSize == 0) {
+		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 2000);
+		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
 	  }
     /* USER CODE END WHILE */
 
@@ -381,6 +386,10 @@ static void MX_TIM2_Init(void)
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
   }
