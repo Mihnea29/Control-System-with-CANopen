@@ -60,8 +60,9 @@ volatile int targetPulse = 2000;
 volatile int stepSize = 0;
 volatile int stepInterval = 1;
 volatile int stepDirection = 1;
-volatile int currentPulseNeg = 1000;
-volatile int targetPulseNeg = 2000;
+volatile int currentPulseNeg = 2000;
+volatile int targetPulseNeg = 1000;
+uint8_t restStep = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,7 +86,26 @@ HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 
     if (htim->Instance == TIM2) {
         static uint16_t interruptCounter = 0;
+        static uint16_t restPulse = 1000;
+
         interruptCounter++;
+
+        if (stepSize == 0) {
+            if (currentPulse < restPulse) {
+                currentPulse += restStep;
+                if (currentPulse > restPulse) currentPulse = restPulse;
+            } else if (currentPulse > restPulse) {
+                currentPulse -= restStep;
+                if (currentPulse < restPulse) currentPulse = restPulse;
+            }
+
+            currentPulseNeg = 3000 - currentPulse;
+
+            __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulseNeg);
+            __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, currentPulse);
+
+            return;
+        }
 
         if (interruptCounter >= stepInterval) {
             interruptCounter = 0;
@@ -103,10 +123,9 @@ HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 
                 currentPulseNeg = 3000 - currentPulse;
 
-                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulse);
-                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, currentPulseNeg);
-            }
-            else {
+                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, currentPulseNeg);
+                __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, currentPulse);
+            } else {
                 if (targetPulse == 2000) {
                     targetPulse = 1000;
                 } else {
@@ -115,6 +134,7 @@ HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
                 stepDirection = (targetPulse > currentPulse) ? 1 : -1;
             }
         }
+        restStep = stepSize;
     }
 }
 
@@ -191,10 +211,6 @@ int main(void)
 	  //stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
 	  if (stepSize != OD_PERSIST_COMM.x6001_WIPER_SPEED_r) {
 		  stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
-	  }
-	  if (stepSize == 0) {
-		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 2000);
-		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
 	  }
     /* USER CODE END WHILE */
 
