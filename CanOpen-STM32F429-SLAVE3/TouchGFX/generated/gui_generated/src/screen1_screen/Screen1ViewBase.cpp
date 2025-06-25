@@ -4,16 +4,33 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_240X320_METEOR_RAIN_ID));
-    add(image1);
+    image_bg.setXY(0, 0);
+    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_240X320_PUZZLE_ID));
+    add(image_bg);
+
+    label_Aplication.setPosition(16, 13, 289, 85);
+    label_Aplication.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    label_Aplication.setLinespacing(0);
+    label_Aplication.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    label_Aplication.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GXKT));
+    add(label_Aplication);
+
+    buttoNext.setXY(204, 284);
+    buttoNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
+    buttoNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_0KU0));
+    buttoNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttoNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttoNext.setAction(buttonCallback);
+    add(buttoNext);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -24,4 +41,15 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttoNext)
+    {
+        //Scrren1Next
+        //When buttoNext clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards East
+        application().gotoScreen2ScreenWipeTransitionEast();
+    }
 }

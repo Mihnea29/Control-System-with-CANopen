@@ -4,16 +4,33 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 800);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
-    add(image1);
+    image_bg.setXY(0, 0);
+    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
+    add(image_bg);
+
+    butonNext.setXY(444, 764);
+    butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
+    butonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_56FK));
+    butonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    butonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    butonNext.setAction(buttonCallback);
+    add(butonNext);
+
+    label_Aplication.setPosition(11, 118, 451, 220);
+    label_Aplication.setColor(touchgfx::Color::getColorFromRGB(12, 10, 51));
+    label_Aplication.setLinespacing(0);
+    label_Aplication.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    label_Aplication.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PF79));
+    add(label_Aplication);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -24,4 +41,15 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &butonNext)
+    {
+        //Scrren1Next
+        //When butonNext clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards East
+        application().gotoScreen2ScreenSlideTransitionEast();
+    }
 }

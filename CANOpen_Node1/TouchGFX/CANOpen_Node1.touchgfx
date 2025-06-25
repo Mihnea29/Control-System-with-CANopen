@@ -6,13 +6,348 @@
         "Components": [
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "image_bg",
             "Width": 480,
             "Height": 800,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonNext",
+            "X": 444,
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_56FK",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label_Aplication",
+            "X": 11,
+            "Y": 118,
+            "Width": 451,
+            "Height": 220,
+            "TextId": "__SingleUse_PF79",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 12,
+              "Green": 10,
+              "Blue": 51
+            },
+            "WideTextAction": 1
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Scrren1Next",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonPrev",
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_RTJH",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonNext",
+            "X": 444,
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_6EK0",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "AnalogClock",
+            "Name": "analogClock",
+            "X": 10,
+            "Y": 100,
+            "Width": 460,
+            "Height": 460,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_large_plain_dark.png",
+            "RotationCenterX": 230,
+            "RotationCenterY": 230,
+            "Preset": "alternate_theme\\presets\\analogclock\\large_plain_dark.json",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "ClockHands": [
+              {
+                "Type": "HourClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_large_hour_plain_dark.png",
+                "RotationCenterX": 13,
+                "RotationCenterY": 109
+              },
+              {
+                "Type": "MinuteClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_large_minute_plain_dark.png",
+                "RotationCenterX": 14,
+                "RotationCenterY": 153
+              },
+              {
+                "Type": "SecondClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_large_second_plain_dark.png",
+                "RotationCenterX": 2,
+                "RotationCenterY": 168
+              }
+            ],
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 142,
+            "Y": 592,
+            "Width": 196,
+            "Height": 52,
+            "TextId": "__SingleUse_1MXR",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textData",
+            "Y": 33,
+            "Width": 480,
+            "Height": 52,
+            "TextId": "__SingleUse_7BBX",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_QLKQ",
+              "UseBuffer": true,
+              "BufferSize": 40
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Scrren2Next",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen3"
+            }
+          },
+          {
+            "InteractionName": "Screen2Prev",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonPrev"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonPrev",
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_IFSU",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonNext",
+            "X": 444,
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_5MCB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Screen3Next",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen4"
+            }
+          },
+          {
+            "InteractionName": "Screen3Prev",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonPrev"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen4",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "butonPrev",
+            "Y": 764,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_C4WK",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Screen4Prev",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "butonPrev"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen3"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
