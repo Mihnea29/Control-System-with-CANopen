@@ -143,7 +143,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if(hadc->Instance == ADC1)
 	{
 		test = HAL_ADC_GetValue(hadc);
-		adcValue = (100 *HAL_ADC_GetValue(hadc)) / 980;
+		adcValue = (100 *HAL_ADC_GetValue(hadc)) / 3945;
 		if (adcValue > 100)
 		{
 			adcValue = 100;
@@ -207,7 +207,7 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
-	  //OD_PERSIST_COMM.x6000_POT_VALUE = adcValue;
+	  OD_PERSIST_COMM.x6000_POT_VALUE = adcValue;
 	  //stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
 	  if (stepSize != OD_PERSIST_COMM.x6001_WIPER_SPEED_r) {
 		  stepSize = OD_PERSIST_COMM.x6001_WIPER_SPEED_r;
@@ -285,8 +285,8 @@ static void MX_ADC1_Init(void)
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-  hadc1.Init.Resolution = ADC_RESOLUTION_10B;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.ScanConvMode = DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
