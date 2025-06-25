@@ -276,7 +276,7 @@
       "Height": 320
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "Screen2",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
