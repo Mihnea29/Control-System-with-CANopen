@@ -16,7 +16,7 @@
 
         Created:      6/10/2025 10:20:31 PM
         Created By:   
-        Modified:     6/24/2025 10:06:50 PM
+        Modified:     6/27/2025 2:53:29 PM
         Modified By:  
 
     Device Info:
@@ -45,7 +45,7 @@
 #define OD_CNT_SDO_SRV 1
 #define OD_CNT_SDO_CLI 1
 #define OD_CNT_RPDO 4
-#define OD_CNT_TPDO 2
+#define OD_CNT_TPDO 4
 
 
 /*******************************************************************************
@@ -170,6 +170,22 @@ typedef struct {
         uint8_t SYNCStartValue;
     } x1801_TPDOCommunicationParameter;
     struct {
+        uint8_t highestSub_indexSupported;
+        uint32_t COB_IDUsedByTPDO;
+        uint8_t transmissionType;
+        uint16_t inhibitTime;
+        uint16_t eventTimer;
+        uint8_t SYNCStartValue;
+    } x1802_TPDOCommunicationParameter;
+    struct {
+        uint8_t highestSub_indexSupported;
+        uint32_t COB_IDUsedByTPDO;
+        uint8_t transmissionType;
+        uint16_t inhibitTime;
+        uint16_t eventTimer;
+        uint8_t SYNCStartValue;
+    } x1803_TPDOCommunicationParameter;
+    struct {
         uint8_t numberOfMappedApplicationObjectsInPDO;
         uint32_t applicationObject1;
         uint32_t applicationObject2;
@@ -191,8 +207,29 @@ typedef struct {
         uint32_t applicationObject7;
         uint32_t applicationObject8;
     } x1A01_TPDOMappingParameter;
+    struct {
+        uint8_t numberOfMappedApplicationObjectsInPDO;
+        uint32_t applicationObject1;
+        uint32_t applicationObject2;
+        uint32_t applicationObject3;
+        uint32_t applicationObject4;
+        uint32_t applicationObject5;
+        uint32_t applicationObject6;
+        uint32_t applicationObject7;
+        uint32_t applicationObject8;
+    } x1A02_TPDOMappingParameter;
+    struct {
+        uint8_t numberOfMappedApplicationObjectsInPDO;
+        uint32_t applicationObject1;
+        uint32_t applicationObject2;
+        uint32_t applicationObject3;
+        uint32_t applicationObject4;
+        uint32_t applicationObject5;
+        uint32_t applicationObject6;
+        uint32_t applicationObject7;
+        uint32_t applicationObject8;
+    } x1A03_TPDOMappingParameter;
     uint32_t x6000_LED_CONTROL;
-    uint32_t x6001_POT_VALUE_r;
     uint32_t x6002_WIPER_SPEED;
 } OD_PERSIST_COMM_t;
 
@@ -255,11 +292,14 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1603 &OD->list[24]
 #define OD_ENTRY_H1800 &OD->list[25]
 #define OD_ENTRY_H1801 &OD->list[26]
-#define OD_ENTRY_H1A00 &OD->list[27]
-#define OD_ENTRY_H1A01 &OD->list[28]
-#define OD_ENTRY_H6000 &OD->list[29]
-#define OD_ENTRY_H6001 &OD->list[30]
-#define OD_ENTRY_H6002 &OD->list[31]
+#define OD_ENTRY_H1802 &OD->list[27]
+#define OD_ENTRY_H1803 &OD->list[28]
+#define OD_ENTRY_H1A00 &OD->list[29]
+#define OD_ENTRY_H1A01 &OD->list[30]
+#define OD_ENTRY_H1A02 &OD->list[31]
+#define OD_ENTRY_H1A03 &OD->list[32]
+#define OD_ENTRY_H6000 &OD->list[33]
+#define OD_ENTRY_H6002 &OD->list[34]
 
 
 /*******************************************************************************
@@ -292,11 +332,14 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1603_RPDOMappingParameter &OD->list[24]
 #define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[25]
 #define OD_ENTRY_H1801_TPDOCommunicationParameter &OD->list[26]
-#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[27]
-#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[28]
-#define OD_ENTRY_H6000_LED_CONTROL &OD->list[29]
-#define OD_ENTRY_H6001_POT_VALUE_r &OD->list[30]
-#define OD_ENTRY_H6002_WIPER_SPEED &OD->list[31]
+#define OD_ENTRY_H1802_TPDOCommunicationParameter &OD->list[27]
+#define OD_ENTRY_H1803_TPDOCommunicationParameter &OD->list[28]
+#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[29]
+#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[30]
+#define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[31]
+#define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[32]
+#define OD_ENTRY_H6000_LED_CONTROL &OD->list[33]
+#define OD_ENTRY_H6002_WIPER_SPEED &OD->list[34]
 
 
 /*******************************************************************************

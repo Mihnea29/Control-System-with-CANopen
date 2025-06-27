@@ -1,31 +1,33 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-Model::Model() : modelListener(0)
-{
+extern "C" {
+#include "stm32f7xx_hal.h"
+#include "stm32f7xx_hal_rtc.h"
+extern RTC_HandleTypeDef hrtc;
 
 }
 
-void getCANOpenTimeAndDate(uint8_t* hours, uint8_t* minutes, uint8_t* secs, uint8_t* day, uint8_t* date, uint8_t* mounth, uint8_t* year)
+Model::Model() : modelListener(nullptr)
 {
-	static uint16_t CANOpentime = 1000, CANOpenDate = 250;
-
-    *secs = CANOpentime % 60;
-    *minutes = (CANOpentime % 3600) / 60;
-    *hours = CANOpentime / 3600;
-
-    *day = 6;
-    *date = 24;
-    *mounth = 7;
-    *year = 16+25;
-
-	CANOpentime++;
 }
 
 void Model::tick()
 {
-	uint8_t hours, minutes, secs, day, date, mounth, year;
-	getCANOpenTimeAndDate(&hours, &minutes, &secs, &day, &date, &mounth, &year);
-	modelListener->updateTime(hours, minutes, secs);
-	modelListener->updateData(day, date, mounth, year);
+    RTC_TimeTypeDef sTime;
+    RTC_DateTypeDef sDate;
+    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+    modelListener->updateTime(
+        sTime.Hours,
+        sTime.Minutes,
+        sTime.Seconds
+    );
+    modelListener->updateData(
+        sDate.WeekDay,
+        sDate.Date,
+        sDate.Month,
+        sDate.Year
+    );
 }

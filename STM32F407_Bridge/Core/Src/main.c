@@ -45,8 +45,6 @@
 /* Private variables ---------------------------------------------------------*/
 CAN_HandleTypeDef hcan2;
 
-RTC_HandleTypeDef hrtc;
-
 SPI_HandleTypeDef hspi1;
 
 TIM_HandleTypeDef htim14;
@@ -64,7 +62,6 @@ static void MX_SPI1_Init(void);
 static void MX_TIM14_Init(void);
 static void MX_CAN2_Init(void);
 static void MX_USART6_UART_Init(void);
-static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
 void RTC_Monitor(void);
 /* USER CODE END PFP */
@@ -113,7 +110,6 @@ int main(void)
   MX_TIM14_Init();
   MX_CAN2_Init();
   MX_USART6_UART_Init();
-  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
   CANopenNodeSTM32 canOpenNodeSTM32;
   canOpenNodeSTM32.CANHandle = &hcan2;
@@ -131,7 +127,6 @@ int main(void)
 	  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
-	  RTC_Monitor();
 	  ProcessUartQueue();
     /* USER CODE END WHILE */
 
@@ -157,9 +152,8 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;
@@ -220,107 +214,6 @@ static void MX_CAN2_Init(void)
   /* USER CODE BEGIN CAN2_Init 2 */
 
   /* USER CODE END CAN2_Init 2 */
-
-}
-
-/**
-  * @brief RTC Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_RTC_Init(void)
-{
-
-  /* USER CODE BEGIN RTC_Init 0 */
-
-  /* USER CODE END RTC_Init 0 */
-
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-
-  /* USER CODE BEGIN RTC_Init 1 */
-
-  /* USER CODE END RTC_Init 1 */
-
-  /** Initialize RTC Only
-  */
-  hrtc.Instance = RTC;
-  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
-  hrtc.Init.AsynchPrediv = 127;
-  hrtc.Init.SynchPrediv = 255;
-  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
-  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
-  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
-  if (HAL_RTC_Init(&hrtc) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /* USER CODE BEGIN Check_RTC_BKUP */
-
-  /* USER CODE END Check_RTC_BKUP */
-
-  /** Initialize RTC and set the Time and Date
-  */
-  sTime.Hours = 0;
-  sTime.Minutes = 0;
-  sTime.Seconds = 0;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
-  sDate.Month = RTC_MONTH_JANUARY;
-  sDate.Date = 1;
-  sDate.Year = 0;
-
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN RTC_Init 2 */
-  /* Parse time string */
-   sTime.Hours = ((__TIME__[0] - '0') * 10) + (__TIME__[1] - '0');
-   sTime.Minutes = ((__TIME__[3] - '0') * 10) + (__TIME__[4] - '0');
-   sTime.Seconds = ((__TIME__[6] - '0') * 10) + (__TIME__[7] - '0');
-   /* Parse date string - Month */
-   if (__DATE__[0] == 'J' && __DATE__[1] == 'a' && __DATE__[2] == 'n') sDate.Month = RTC_MONTH_JANUARY;
-   else if (__DATE__[0] == 'F') sDate.Month = RTC_MONTH_FEBRUARY;
-   else if (__DATE__[0] == 'M' && __DATE__[1] == 'a' && __DATE__[2] == 'r') sDate.Month = RTC_MONTH_MARCH;
-   else if (__DATE__[0] == 'A' && __DATE__[1] == 'p') sDate.Month = RTC_MONTH_APRIL;
-   else if (__DATE__[0] == 'M' && __DATE__[1] == 'a' && __DATE__[2] == 'y') sDate.Month = RTC_MONTH_MAY;
-   else if (__DATE__[0] == 'J' && __DATE__[1] == 'u' && __DATE__[2] == 'n') sDate.Month = RTC_MONTH_JUNE;
-   else if (__DATE__[0] == 'J' && __DATE__[1] == 'u' && __DATE__[2] == 'l') sDate.Month = RTC_MONTH_JULY;
-   else if (__DATE__[0] == 'A' && __DATE__[1] == 'u') sDate.Month = RTC_MONTH_AUGUST;
-   else if (__DATE__[0] == 'S') sDate.Month = RTC_MONTH_SEPTEMBER;
-   else if (__DATE__[0] == 'O') sDate.Month = RTC_MONTH_OCTOBER;
-   else if (__DATE__[0] == 'N') sDate.Month = RTC_MONTH_NOVEMBER;
-   else if (__DATE__[0] == 'D') sDate.Month = RTC_MONTH_DECEMBER;
-   /* Parse date string - Day */
-   if (__DATE__[4] == ' ')
-     sDate.Date = __DATE__[5] - '0';
-   else
-     sDate.Date = ((__DATE__[4] - '0') * 10) + (__DATE__[5] - '0');
-   /* Parse date string */
-   sDate.Year = ((__DATE__[9] - '0') * 10) + (__DATE__[10] - '0');
-   /* Set appropriate weekday */
-   sDate.WeekDay = RTC_WEEKDAY_MONDAY; /* Placeholder, can be calculated properly if needed */
-   /* Set RTC time */
-   if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-   {
- 	log_printf("RTC set time failed\r\n");
-     Error_Handler();
-   }
-   /* Set RTC date */
-   if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-   {
-     log_printf("RTC set date failed\r\n");
-     Error_Handler();
-   }
-   log_printf("RTC initialized with build time: %s %s\r\n", __DATE__, __TIME__);
-  /* USER CODE END RTC_Init 2 */
 
 }
 
@@ -590,24 +483,6 @@ int _write(int file, char *ptr, int len) {
 	}
 	return len;
 }
-
-void RTC_Monitor(void)
-{
-  static uint32_t lastPrintTime = 0;
-  uint32_t currentTime = HAL_GetTick();
-  if (currentTime - lastPrintTime >= 1000)
-  {
-    lastPrintTime = currentTime;
-    RTC_TimeTypeDef sTime;
-    RTC_DateTypeDef sDate;
-    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-    log_printf("Current time: %02d:%02d:%02d  Date: %02d-%02d-20%02d\r\n",
-              sTime.Hours, sTime.Minutes, sTime.Seconds,
-              sDate.Date, sDate.Month, sDate.Year);
-  }
-}
-
 /* USER CODE END 4 */
 
 /**

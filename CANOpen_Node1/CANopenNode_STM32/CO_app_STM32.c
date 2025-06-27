@@ -47,11 +47,12 @@ CANopenNodeSTM32*
 #define SDO_CLI_TIMEOUT_TIME 500
 #define SDO_CLI_BLOCK        false
 #define OD_STATUS_BITS       NULL
-
+#define TIME_PRODUCER_INTERVAL_MS 1000
 /* Global variables and objects */
 CO_t* CO = NULL; /* CANopen object */
 
 // Global variables
+extern RTC_HandleTypeDef hrtc;
 uint32_t time_old, time_current;
 CO_ReturnError_t err;
 
@@ -107,6 +108,12 @@ canopen_app_init(CANopenNodeSTM32* _canopenNodeSTM32) {
 #endif
 
     canopen_app_resetCommunication();
+
+    uint32_t ms;
+    uint16_t days;
+    GetCANopenTimeStamp(&ms, &days);
+    log_printf("TIME message sent: %u ms, %u days\n", ms, days);
+    CO_TIME_set(CO->TIME, ms, days, TIME_PRODUCER_INTERVAL_MS);
 
     return 0;
 }
@@ -213,6 +220,7 @@ canopen_app_process() {
         reset_status = CO_process(CO, false, timeDifference_us, NULL);
         canopenNodeSTM32->outStatusLEDRed = CO_LED_RED(CO->LEDs, CO_LED_CANopen);
         canopenNodeSTM32->outStatusLEDGreen = CO_LED_GREEN(CO->LEDs, CO_LED_CANopen);
+
         if (reset_status == CO_RESET_COMM) {
             /* delete objects from memory */
         	HAL_TIM_Base_Stop_IT(canopenNodeSTM32->timerHandle);
@@ -249,4 +257,37 @@ canopen_app_interrupt(void) {
         /* Further I/O or nonblocking application code may go here. */
     }
     CO_UNLOCK_OD(CO->CANmodule);
+}
+
+void GetCANopenTimeStamp(uint32_t *ms, uint16_t *days)
+{
+  RTC_TimeTypeDef sTime;
+  RTC_DateTypeDef sDate;
+  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+  *ms = ((sTime.Hours * 3600UL) +
+        (sTime.Minutes * 60UL) +
+         sTime.Seconds) * 1000UL;
+  uint16_t year = 2000 + sDate.Year;
+  uint32_t days_count = 0;
+  for (uint16_t y = 1984; y < year; y++)
+  {
+    if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0))
+      days_count += 366;
+    else
+      days_count += 365;
+  }
+  const uint8_t days_in_month[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  uint8_t feb_days = days_in_month[2];
+  if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+    feb_days = 29;
+  for (uint8_t m = 1; m < sDate.Month; m++)
+  {
+    if (m == 2)
+      days_count += feb_days;
+    else
+      days_count += days_in_month[m];
+  }
+  days_count += sDate.Date - 1;
+  *days = days_count;
 }
