@@ -24,6 +24,24 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonPrev.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonPrev.setAction(buttonCallback);
     add(buttonPrev);
+
+    textArea1.setXY(18, 38);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_22DE).getText());
+    textArea1.setWildcard(textArea1Buffer);
+    textArea1.resizeToCurrentText();
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FQIF));
+    add(textArea1);
+
+    textArea2.setXY(18, 75);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_DYKV).getText());
+    textArea2.setWildcard(textArea2Buffer);
+    textArea2.resizeToCurrentText();
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5MA8));
+    add(textArea2);
 }
 
 Screen3ViewBase::~Screen3ViewBase()

@@ -6,10 +6,10 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_QLKQ" Alignment="Left" TypographyId="TextDigClock">
+      <Text Id="__SingleUse_QLKQ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Duminica, 1 ian 1984</Translation>
       </Text>
-      <Text Id="__SingleUse_7BBX" Alignment="Center" TypographyId="TextDigClock">
+      <Text Id="__SingleUse_7BBX" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_1MXR" Alignment="Left" TypographyId="TextDigClock">

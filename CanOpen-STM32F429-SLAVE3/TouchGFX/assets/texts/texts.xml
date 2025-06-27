@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_DYKV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">disable</Translation>
+      </Text>
+      <Text Id="__SingleUse_5MA8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Heartbeat: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_22DE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">123</Translation>
+      </Text>
+      <Text Id="__SingleUse_FQIF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">CAN-ID: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_AJTZ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Duminica, 1 ian 1984</Translation>
       </Text>
