@@ -66,7 +66,6 @@ int canopen_app_resetCommunication();
 void canopen_app_process();
 /* Thread function executes in constant intervals, this function can be called from FreeRTOS tasks or Timers ********/
 void canopen_app_interrupt(void);
-
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

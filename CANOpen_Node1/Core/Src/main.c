@@ -39,7 +39,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define log_printf(macropar_message, ...) printf(macropar_message, ##__VA_ARGS__)
 #define REFRESH_COUNT        1834
 #define SDRAM_TIMEOUT                            ((uint32_t)0xFFFF)
 #define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
@@ -139,6 +139,8 @@ extern void TouchGFX_Task(void *argument);
 void canopen_task(void *argument);
 
 /* USER CODE BEGIN PFP */
+uint8_t CalculZiSapt(uint8_t day, uint8_t month, uint16_t year);
+void RTC_Monitor(void);
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
 
 static uint8_t QSPI_ResetMemory(QSPI_HandleTypeDef *hqspi);
@@ -886,7 +888,47 @@ static void MX_RTC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN RTC_Init 2 */
+  sTime.Hours = ((__TIME__[0] - '0') * 10) + (__TIME__[1] - '0');
+  sTime.Minutes = ((__TIME__[3] - '0') * 10) + (__TIME__[4] - '0');
+  sTime.Seconds = ((__TIME__[6] - '0') * 10) + (__TIME__[7] - '0');
+  /* Parse date string - Month */
+  if (__DATE__[0] == 'J' && __DATE__[1] == 'a' && __DATE__[2] == 'n') sDate.Month = RTC_MONTH_JANUARY;
+  else if (__DATE__[0] == 'F') sDate.Month = RTC_MONTH_FEBRUARY;
+  else if (__DATE__[0] == 'M' && __DATE__[1] == 'a' && __DATE__[2] == 'r') sDate.Month = RTC_MONTH_MARCH;
+  else if (__DATE__[0] == 'A' && __DATE__[1] == 'p') sDate.Month = RTC_MONTH_APRIL;
+  else if (__DATE__[0] == 'M' && __DATE__[1] == 'a' && __DATE__[2] == 'y') sDate.Month = RTC_MONTH_MAY;
+  else if (__DATE__[0] == 'J' && __DATE__[1] == 'u' && __DATE__[2] == 'n') sDate.Month = RTC_MONTH_JUNE;
+  else if (__DATE__[0] == 'J' && __DATE__[1] == 'u' && __DATE__[2] == 'l') sDate.Month = RTC_MONTH_JULY;
+  else if (__DATE__[0] == 'A' && __DATE__[1] == 'u') sDate.Month = RTC_MONTH_AUGUST;
+  else if (__DATE__[0] == 'S') sDate.Month = RTC_MONTH_SEPTEMBER;
+  else if (__DATE__[0] == 'O') sDate.Month = RTC_MONTH_OCTOBER;
+  else if (__DATE__[0] == 'N') sDate.Month = RTC_MONTH_NOVEMBER;
+  else if (__DATE__[0] == 'D') sDate.Month = RTC_MONTH_DECEMBER;
+  /* Parse date string - Day */
+  if (__DATE__[4] == ' ')
+    sDate.Date = __DATE__[5] - '0';
+  else
+    sDate.Date = ((__DATE__[4] - '0') * 10) + (__DATE__[5] - '0');
+  /* Parse date string */
+  sDate.Year = ((__DATE__[9] - '0') * 10) + (__DATE__[10] - '0');
+  /* Set appropriate weekday */
+  uint16_t fullYear = 2000 + sDate.Year;
 
+  /* Calculate actual weekday */
+  sDate.WeekDay = CalculZiSapt(sDate.Date, sDate.Month, fullYear);
+  /* Set RTC time */
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+  {
+	log_printf("RTC set time failed\r\n");
+    Error_Handler();
+  }
+  /* Set RTC date */
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+  {
+    log_printf("RTC set date failed\r\n");
+    Error_Handler();
+  }
+  log_printf("RTC initialized with build time: %s %s\r\n", __DATE__, __TIME__);
   /* USER CODE END RTC_Init 2 */
 
 }
@@ -1113,7 +1155,62 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint8_t CalculZiSapt(uint8_t day, uint8_t month, uint16_t year)
+{
+    if (month < 3)
+    {
+        month += 12;
+        year -= 1;
+    }
 
+    uint16_t k = year % 100;
+    uint16_t j = year / 100;
+
+    uint8_t h = (day + (13 * (month + 1)) / 5 + k + (k / 4) + (j / 4) + (5 * j)) % 7;
+
+    uint8_t weekday = ((h + 5) % 7) + 1;
+    return weekday;
+}
+
+
+__STATIC_INLINE uint32_t My_ITM_SendChar (uint32_t ch)
+{
+  if (((ITM->TCR & ITM_TCR_ITMENA_Msk) != 0UL) &&      /* ITM enabled */
+      ((ITM->TER & 1UL               ) != 0UL)   )     /* ITM Port #0 enabled */
+  {
+    while (ITM->PORT[0].u32 == 0UL)
+    {
+      __NOP();
+    }
+    ITM->PORT[0].u8 = (uint8_t)ch;
+  }
+  return (ch);
+}
+
+int _write(int file, char *ptr, int len) {
+	int i;
+	for(i = 0; i < len; i++) {
+		My_ITM_SendChar(*ptr++);
+	}
+	return len;
+}
+
+void RTC_Monitor(void)
+{
+  static uint32_t lastPrintTime = 0;
+  uint32_t currentTime = HAL_GetTick();
+  if (currentTime - lastPrintTime >= 1000)
+  {
+    lastPrintTime = currentTime;
+    RTC_TimeTypeDef sTime;
+    RTC_DateTypeDef sDate;
+    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+    log_printf("Current time: %02d:%02d:%02d  Date: %02d-%02d-20%02d\r\n",
+              sTime.Hours, sTime.Minutes, sTime.Seconds,
+              sDate.Date, sDate.Month, sDate.Year);
+  }
+}
     /**************************** LINK OTM8009A (Display driver) ******************/
     /**
      * @brief  OTM8009A delay
@@ -1776,6 +1873,7 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
   for(;;)
   {
+	RTC_Monitor();
     osDelay(100);
   }
   /* USER CODE END 5 */
@@ -1808,8 +1906,7 @@ void canopen_task(void *argument)
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDGreen);
 	HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_5, !canOpenNodeSTM32.outStatusLEDRed);
 	canopen_app_process();
-
-	//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 2
+		//Verificam daca s-a schimbat starea, daca da retrimitem noua stare prin PDO catre nodul 2
 	if(OD_PERSIST_COMM.x6000_LED_CONTROL != OLD_STATE_LEDS) {
 		CO_TPDOsendRequest(&canOpenNodeSTM32.canOpenStack->TPDO[0]);
 		OLD_STATE_LEDS = OD_PERSIST_COMM.x6000_LED_CONTROL;

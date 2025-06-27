@@ -1,36 +1,75 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
+extern "C" {
+#include "CANopen.h"
+extern CO_t *CO;
+}
 
 #include <stm32f4xx_hal.h>
+
+static bool bisect(uint16_t y) {
+    return (y % 4 == 0) && (y % 100 != 0 || y % 400 == 0);
+}
+
+void ConvertDaysSince1984(uint32_t daysSince1984,
+                         uint8_t* yearOffset,
+                         uint8_t* month,
+                         uint8_t* date,
+                         uint8_t* weekday)
+{
+    // 1.1.1984 e duminica => weekday = 0
+    const uint8_t baseWeekday = 0;
+
+    uint32_t days = daysSince1984;
+    uint16_t fullYear = 1984;
+    while (true) {
+        uint16_t dy = bisect(fullYear) ? 366 : 365;
+        if (days < dy) break;
+        days -= dy;
+        ++fullYear;
+    }
+
+    static uint8_t monthLen[12] = {
+        31,28,31,30,31,30,31,31,30,31,30,31
+    };
+    uint8_t m = 1;
+    for (int i = 0; i < 12; i++) {
+        uint8_t ml = monthLen[i];
+        if (i == 1 && bisect(fullYear)) ml = 29;
+        if (days < ml) break;
+        days -= ml;
+        ++m;
+    }
+
+    uint8_t d = days + 1;
+
+    uint8_t w = (baseWeekday + daysSince1984) % 7;
+
+    *yearOffset = (fullYear >= 1984) ? (fullYear - 1984) : 0;
+    *month = m;
+    *date = d;
+    *weekday = w;
+}
 
 Model::Model() : modelListener(0)
 {
 
 }
 
-void getCANOpenTimeAndDate(uint8_t* hours, uint8_t* minutes, uint8_t* secs, uint8_t* day, uint8_t* date, uint8_t* mounth, uint8_t* year)
-{
-	static uint16_t CANOpentime = 1000, CANOpenDate = 250;
-
-    *secs = CANOpentime % 60;
-    *minutes = (CANOpentime % 3600) / 60;
-    *hours = CANOpentime / 3600;
-
-    *day = 6;
-    *date = 24;
-    *mounth = 7;
-    *year = 16+25;
-
-	CANOpentime++;
-}
-
-
-
 void Model::tick()
 {
-	uint8_t hours, minutes, secs, day, date, mounth, year;
-	getCANOpenTimeAndDate(&hours, &minutes, &secs, &day, &date, &mounth, &year);
-	modelListener->updateTime(hours, minutes, secs);
-	modelListener->updateData(day, date, mounth, year);
+    uint32_t ms = CO->TIME->ms;   // ms de la miezul noptii
+    uint32_t days = CO->TIME->days; // zile de la 1.1.1984
+
+    uint8_t hours = ms / 3600000;
+    uint8_t minutes = (ms % 3600000) / 60000;
+    uint8_t seconds = (ms % 60000) / 1000;
+
+    uint8_t yearOffset;
+    uint8_t month, date, weekday;
+    ConvertDaysSince1984(days, &yearOffset, &month, &date, &weekday);
+
+    modelListener->updateTime(hours, minutes, seconds);
+    modelListener->updateData(weekday, date, month, yearOffset);
 }
