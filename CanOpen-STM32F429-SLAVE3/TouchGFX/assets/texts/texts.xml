@@ -7,10 +7,10 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
       <Text Id="__SingleUse_DYKV" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">disable</Translation>
+        <Translation Language="GB">0 ms</Translation>
       </Text>
-      <Text Id="__SingleUse_5MA8" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Heartbeat: &lt;value&gt;</Translation>
+      <Text Id="__SingleUse_5MA8" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Heartbeat time: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_22DE" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">123</Translation>

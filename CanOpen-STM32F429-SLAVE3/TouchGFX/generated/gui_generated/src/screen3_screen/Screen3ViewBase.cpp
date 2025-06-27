@@ -25,7 +25,7 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonPrev.setAction(buttonCallback);
     add(buttonPrev);
 
-    textArea1.setXY(18, 38);
+    textArea1.setXY(27, 68);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_22DE).getText());
@@ -34,12 +34,12 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FQIF));
     add(textArea1);
 
-    textArea2.setXY(18, 75);
+    textArea2.setPosition(18, 143, 167, 52);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
+    textArea2.setWideTextAction(WIDE_TEXT_WORDWRAP);
     Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_DYKV).getText());
     textArea2.setWildcard(textArea2Buffer);
-    textArea2.resizeToCurrentText();
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5MA8));
     add(textArea2);
 }

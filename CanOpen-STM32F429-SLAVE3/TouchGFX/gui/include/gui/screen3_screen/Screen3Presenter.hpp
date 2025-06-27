@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen3Presenter() {}
 
+    virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime);
+
 private:
     Screen3Presenter();
 

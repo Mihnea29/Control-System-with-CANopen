@@ -50,17 +50,6 @@ void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionWestImpl()
 
 // Screen2
 
-void FrontendApplicationBase::gotoScreen2ScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen2ScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreen2ScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<Screen2View, Screen2Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
 void FrontendApplicationBase::gotoScreen2ScreenWipeTransitionEast()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen2ScreenWipeTransitionEastImpl);
@@ -84,6 +73,17 @@ void FrontendApplicationBase::gotoScreen2ScreenWipeTransitionWestImpl()
 }
 
 // Screen3
+
+void FrontendApplicationBase::gotoScreen3ScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen3ScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreen3ScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Screen3View, Screen3Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
 
 void FrontendApplicationBase::gotoScreen3ScreenWipeTransitionEast()
 {

@@ -16,3 +16,8 @@ void Screen3Presenter::deactivate()
 {
 
 }
+
+void Screen3Presenter::updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime)
+{
+	view.updateHeartbeatTime(CAN_ID, HeartbeatTime);
+}

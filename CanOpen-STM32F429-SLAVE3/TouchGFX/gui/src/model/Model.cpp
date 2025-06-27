@@ -62,14 +62,21 @@ void Model::tick()
     uint32_t ms = CO->TIME->ms;   // ms de la miezul noptii
     uint32_t days = CO->TIME->days; // zile de la 1.1.1984
 
-    uint8_t hours = ms / 3600000;
-    uint8_t minutes = (ms % 3600000) / 60000;
-    uint8_t seconds = (ms % 60000) / 1000;
+    static uint8_t prev_hours = 0, prev_minutes = 0, prev_seconds = 0;
+    uint8_t yearOffset,  month, date, weekday;
+    uint8_t hours, minutes, seconds;
 
-    uint8_t yearOffset;
-    uint8_t month, date, weekday;
+    hours = ms / 3600000;
+    minutes = (ms % 3600000) / 60000;
+    seconds = (ms % 60000) / 1000;
+    if( (prev_hours != hours || prev_minutes != minutes) || prev_seconds != seconds)
+    {
+        modelListener->updateTime(hours, minutes, seconds);
+        prev_hours = hours; prev_minutes = minutes; prev_seconds = seconds;
+    }
+
     ConvertDaysSince1984(days, &yearOffset, &month, &date, &weekday);
-
-    modelListener->updateTime(hours, minutes, seconds);
     modelListener->updateData(weekday, date, month, yearOffset);
+
+    modelListener->updateHeartbeatTime(10, 1020);
 }
