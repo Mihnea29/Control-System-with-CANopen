@@ -55,7 +55,7 @@ char HBconsumer_state_Text_[][20] = { "Unconfigured",
                                             "Timeout" };
 uint8_t HBconsumer_state_colorRGB[][3] = { {0, 0, 0},     // R, G, B
                                            {127, 127, 127},
-                                           {0, , 255, 0},
+                                           {0, 255, 0},
 										   {237, 127, 16}      };
 
 char* HBconsumer_state2Text(CO_HBconsumer_state_t state)
