@@ -40,11 +40,6 @@ Screen3View::Screen3View()
 void Screen3View::setupScreen()
 {
     Screen3ViewBase::setupScreen();
-    setNodeInfo( 0, 3, CO_HBconsumer_ACTIVE, CO_NMT_OPERATIONAL);
-    setNodeInfo( 1, 1, CO_HBconsumer_TIMEOUT, CO_NMT_UNKNOWN);
-    setNodeInfo( 2, 2, CO_HBconsumer_ACTIVE, CO_NMT_PRE_OPERATIONAL);
-    setNodeInfo( 3, 4, CO_HBconsumer_UNCONFIGURED, CO_NMT_INITIALIZING);
-
 }
 
 void Screen3View::tearDownScreen()
@@ -53,6 +48,12 @@ void Screen3View::tearDownScreen()
 }
 
 
+//typedef enum {
+//    CO_HBconsumer_UNCONFIGURED = 0x00U, /**< Consumer entry inactive */
+//    CO_HBconsumer_UNKNOWN = 0x01U,      /**< Consumer enabled, but no heartbeat received yet */
+//    CO_HBconsumer_ACTIVE = 0x02U,       /**< Heartbeat received within set time */
+//    CO_HBconsumer_TIMEOUT = 0x03U,      /**< No heatbeat received for set time */
+//} CO_HBconsumer_state_t;
 
 char HBconsumer_state_Text_[][20] = { "Unconfigured",
                                             "Unknown",
@@ -70,6 +71,14 @@ char* HBconsumer_state2Text(CO_HBconsumer_state_t state)
     return HBconsumer_state_Text_[CO_HBconsumer_UNKNOWN];
 }
 
+
+//typedef enum {
+//    CO_NMT_UNKNOWN = -1,           /**< -1, Device state is unknown (for heartbeat consumer) */
+//    CO_NMT_INITIALIZING = 0,      /**< 0, Device is initializing */
+//    CO_NMT_PRE_OPERATIONAL = 127,   /**< 127, Device is in pre-operational state */
+//    CO_NMT_OPERATIONAL = 5,       /**< 5, Device is in operational state */
+//    CO_NMT_STOPPED = 4            /**< 4, Device is stopped */
+//} CO_NMT_internalState_t;
 
 char CO_NMT_internalState_Text_[][20] = { "Unknown",
                                             "Initializing",
@@ -96,14 +105,31 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
     return CO_NMT_internalState_Text_[index];
 }
 
+#define NODE_NMTSTATE_SIZE  10
+#define NODE_CANID_SIZE     10
 
 void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
 {
-    Unicode::snprintf(NodeNMTStateBuffer[index], NODE_NMTSTATE_SIZE, "%s", CO_NMT_internalState2Text(NMTstate));
-    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
-    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[HBstate][0],
-    																	HBconsumer_state_colorRGB[HBstate][1],
-																		HBconsumer_state_colorRGB[HBstate][2]) );
+	Unicode::UnicodeChar bufferNMTstate[20];
+
+	if( CAN_ID != 0 && CAN_ID != 0x100 )
+	{
+	    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[HBstate][0],
+	    																	HBconsumer_state_colorRGB[HBstate][1],
+																			HBconsumer_state_colorRGB[HBstate][2]) );
+	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
+
+    	Unicode::strncpy(bufferNMTstate, CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), 20);
+    	Unicode::snprintf(NodeNMTStateBuffer[index], NODE_NMTSTATE_SIZE, "%s", bufferNMTstate);
+	    NodeNMTState[index]->setVisible(true);
+	    NodeStatus[index]->setVisible(true);
+	}
+	else
+	{
+	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%s", "not used");
+	    NodeNMTState[index]->setVisible(false);
+	    NodeStatus[index]->setVisible(false);
+	}
 
     NodeNMTState[index]->invalidate();
     NodeCANID[index]->invalidate();

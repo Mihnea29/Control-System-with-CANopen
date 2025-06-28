@@ -27,6 +27,7 @@ public:
 
     virtual ~Screen3Presenter() {}
 
+    virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate);
 private:
     Screen3Presenter();
 

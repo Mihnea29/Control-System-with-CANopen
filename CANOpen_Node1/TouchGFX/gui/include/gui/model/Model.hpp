@@ -1,7 +1,13 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+extern "C" {
+#include "CANopen.h"
+}
+
 class ModelListener;
+
+#define HB_CONS_NODES 8
 
 class Model
 {
@@ -14,6 +20,7 @@ public:
     }
 
     void tick();
+
 protected:
     ModelListener* modelListener;
 };
