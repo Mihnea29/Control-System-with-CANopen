@@ -40,6 +40,11 @@ Screen3View::Screen3View()
 void Screen3View::setupScreen()
 {
     Screen3ViewBase::setupScreen();
+    setNodeInfo( 0, 3, CO_HBconsumer_ACTIVE, CO_NMT_OPERATIONAL);
+    setNodeInfo( 1, 1, CO_HBconsumer_TIMEOUT, CO_NMT_UNKNOWN);
+    setNodeInfo( 2, 2, CO_HBconsumer_ACTIVE, CO_NMT_PRE_OPERATIONAL);
+    setNodeInfo( 3, 4, CO_HBconsumer_UNCONFIGURED, CO_NMT_INITIALIZING);
+
 }
 
 void Screen3View::tearDownScreen()
