@@ -217,6 +217,7 @@
       },
       {
         "Name": "Screen3",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
@@ -269,6 +270,434 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node7NMTState",
+            "X": 203,
+            "Y": 455,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_JOIY",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_JCSK",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node7CANID",
+            "X": 101,
+            "Y": 455,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_F127",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_OZAG",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node7Status",
+            "X": 36,
+            "Y": 447,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node6NMTState",
+            "X": 204,
+            "Y": 408,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_VC0F",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_BKAX",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node6CANID",
+            "X": 101,
+            "Y": 408,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_KBZE",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ENRP",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node6Status",
+            "X": 36,
+            "Y": 400,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node5NMTState",
+            "X": 204,
+            "Y": 356,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_QUCF",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZWHH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node5CANID",
+            "X": 101,
+            "Y": 356,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_8LVA",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_2D2W",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node5Status",
+            "X": 36,
+            "Y": 348,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node4NMTState",
+            "X": 204,
+            "Y": 310,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_0HH7",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_RHJ8",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node4CANID",
+            "X": 101,
+            "Y": 310,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_UKW9",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_99DY",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node4Status",
+            "X": 36,
+            "Y": 302,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node3NMTState",
+            "X": 204,
+            "Y": 263,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_IOU7",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_EDRN",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node3CANID",
+            "X": 101,
+            "Y": 263,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_ZJE7",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_5AGB",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node3Status",
+            "X": 36,
+            "Y": 255,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node2NMTState",
+            "X": 204,
+            "Y": 213,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_K0W9",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_D8EL",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node2CANID",
+            "X": 101,
+            "Y": 213,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_LNGC",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_TZG9",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node2Status",
+            "X": 36,
+            "Y": 205,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node1NMTState",
+            "X": 204,
+            "Y": 166,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_0POE",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_SIL5",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node1CANID",
+            "X": 101,
+            "Y": 166,
+            "Width": 80,
+            "Height": 24,
+            "TextId": "__SingleUse_7LX8",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9BTJ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node1Status",
+            "X": 36,
+            "Y": 158,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node0NMTState",
+            "X": 204,
+            "Y": 118,
+            "Width": 206,
+            "Height": 24,
+            "TextId": "__SingleUse_H2O5",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_P6PC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node0CANID",
+            "X": 101,
+            "Y": 118,
+            "Width": 80,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_KZIP",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_VWZC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "Node0Status",
+            "X": 36,
+            "Y": 110,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 36,
+            "Y": 78,
+            "Width": 214,
+            "Height": 24,
+            "TextId": "__SingleUse_M378",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCANID",
+            "X": 36,
+            "Y": 37,
+            "Width": 130,
+            "Height": 24,
+            "TextId": "__SingleUse_88K3",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_QVOL",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [

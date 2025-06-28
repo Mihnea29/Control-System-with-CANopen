@@ -51,7 +51,7 @@ Screen2ViewBase::Screen2ViewBase() :
     digitalClock.setTime24Hour(10, 10, 0);
     add(digitalClock);
 
-    textData.setPosition(0, 33, 480, 52);
+    textData.setPosition(0, 33, 480, 29);
     textData.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textData.setLinespacing(0);
     Unicode::snprintf(textDataBuffer, TEXTDATA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QLKQ).getText());
