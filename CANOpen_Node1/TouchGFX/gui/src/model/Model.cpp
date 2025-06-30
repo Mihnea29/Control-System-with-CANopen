@@ -44,7 +44,7 @@ void Model::tick()
    for(int i = 0 ; i < HB_CONS_NODES ; i++)
    {
 	   modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate , CO->HBconsMonitoredNodes[i].NMTstate);
-//	   modelListener->setHBconsumerTimeout(i, 1500);
+	   modelListener->setHBconsumerTimeout(i, 1500);
    }
 
    modelListener->setHBconsumerTimeout(7, 1500);

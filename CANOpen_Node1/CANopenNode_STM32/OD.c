@@ -29,8 +29,8 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     .x1014_COB_ID_EMCY = 0x00000080,
     .x1015_inhibitTimeEMCY = 0x0000,
     .x1016_consumerHeartbeatTime_sub0 = 0x08,
-    .x1016_consumerHeartbeatTime = {0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    .x1017_producerHeartbeatTime = 0x03E8,
+    .x1016_consumerHeartbeatTime = {0x000205DC, 0x000305DC, 0x000405DC, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
+    .x1017_producerHeartbeatTime = 0x0000,
     .x1018_identity = {
         .highestSub_indexSupported = 0x04,
         .vendor_ID = 0x00000000,
@@ -38,7 +38,6 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
         .revisionNumber = 0x00000000,
         .serialNumber = 0x00000000
     },
-    .x1019_synchronousCounterOverflowValue = 0x00,
     .x1280_SDOClientParameter = {
         .highestSub_indexSupported = 0x03,
         .COB_IDClientToServerTx = 0x80000000,
@@ -226,7 +225,6 @@ typedef struct {
     OD_obj_array_t o_1016_consumerHeartbeatTime;
     OD_obj_var_t o_1017_producerHeartbeatTime;
     OD_obj_record_t o_1018_identity[5];
-    OD_obj_var_t o_1019_synchronousCounterOverflowValue;
     OD_obj_record_t o_1200_SDOServerParameter[3];
     OD_obj_record_t o_1280_SDOClientParameter[4];
     OD_obj_record_t o_1400_RPDOCommunicationParameter[4];
@@ -358,11 +356,6 @@ static CO_PROGMEM ODObjs_t ODObjs = {
             .attribute = ODA_SDO_R | ODA_MB,
             .dataLength = 4
         }
-    },
-    .o_1019_synchronousCounterOverflowValue = {
-        .dataOrig = &OD_PERSIST_COMM.x1019_synchronousCounterOverflowValue,
-        .attribute = ODA_SDO_RW,
-        .dataLength = 1
     },
     .o_1200_SDOServerParameter = {
         {
@@ -1145,7 +1138,6 @@ static OD_ATTR_OD OD_entry_t ODList[] = {
     {0x1016, 0x09, ODT_ARR, &ODObjs.o_1016_consumerHeartbeatTime, NULL},
     {0x1017, 0x01, ODT_VAR, &ODObjs.o_1017_producerHeartbeatTime, NULL},
     {0x1018, 0x05, ODT_REC, &ODObjs.o_1018_identity, NULL},
-    {0x1019, 0x01, ODT_VAR, &ODObjs.o_1019_synchronousCounterOverflowValue, NULL},
     {0x1200, 0x03, ODT_REC, &ODObjs.o_1200_SDOServerParameter, NULL},
     {0x1280, 0x04, ODT_REC, &ODObjs.o_1280_SDOClientParameter, NULL},
     {0x1400, 0x04, ODT_REC, &ODObjs.o_1400_RPDOCommunicationParameter, NULL},

@@ -41,7 +41,7 @@ CANopenNodeSTM32*
 /* default values for CO_CANopenInit() */
 #define NMT_CONTROL                                                                                                    \
     CO_NMT_STARTUP_TO_OPERATIONAL                                                                                      \
-    | CO_NMT_ERR_ON_ERR_REG | CO_ERR_REG_GENERIC_ERR | CO_ERR_REG_COMMUNICATION
+    | CO_NMT_ERR_ON_ERR_REG | CO_ERR_REG_GENERIC_ERR //| CO_ERR_REG_COMMUNICATION
 #define FIRST_HB_TIME        500
 #define SDO_SRV_TIMEOUT_TIME 1000
 #define SDO_CLI_TIMEOUT_TIME 500

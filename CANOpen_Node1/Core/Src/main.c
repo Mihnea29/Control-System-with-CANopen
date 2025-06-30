@@ -155,7 +155,7 @@ CANopenNodeSTM32 canOpenNodeSTM32;
 uint32_t elapsed = 0;
 uint32_t lastTick = 0;
 uint16_t HB_TIME = 5000;
-uint16_t HB_VALUE = 0;
+uint16_t HB_VALUE = 5000;
 size_t bytesRead = 0;
 //Valori vechi PDO lumini
 uint8_t OLD_STATE_LEDS, OLD_STATE_WIPERS;
@@ -1889,8 +1889,8 @@ void StartDefaultTask(void *argument)
 void canopen_task(void *argument)
 {
   /* USER CODE BEGIN canopen_task */
-	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
-	read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
+//	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_TIME, sizeof(HB_TIME));
+//	read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, 2, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
   /* Infinite loop */
   for(;;)
   {

@@ -15,7 +15,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-27" fileModificationTime="14:53:29.9779272+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModifiedBy="" fileModificationDate="2025-06-30" fileModificationTime="11:59:49.4244309+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <q1:DeviceIdentity>
         <q1:vendorName></q1:vendorName>
         <q1:vendorID></q1:vendorID>
@@ -903,17 +903,17 @@ The life time factor multiplied with the guard time gives the life time for the 
           <q1:parameter uniqueID="UID_SUB_101601" access="readWrite">
             <label lang="en">Consumer heartbeat time</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x205DC" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_101602" access="readWrite">
             <label lang="en">Consumer heartbeat time</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x305DC" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_101603" access="readWrite">
             <label lang="en">Consumer heartbeat time</label>
             <UDINT />
-            <q1:defaultValue value="0x00000000" />
+            <q1:defaultValue value="0x405DC" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_SUB_101604" access="readWrite">
             <label lang="en">Consumer heartbeat time</label>
@@ -943,7 +943,7 @@ The life time factor multiplied with the guard time gives the life time for the 
           <q1:parameter uniqueID="UID_OBJ_1017" access="readWrite">
             <description lang="en">Heartbeat producer time in ms (0 = disable transmission).</description>
             <UINT />
-            <q1:defaultValue value="0x03E8" />
+            <q1:defaultValue value="0" />
             <q1:property name="CO_countLabel" value="HB_PROD" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
           </q1:parameter>
@@ -981,15 +981,6 @@ The life time factor multiplied with the guard time gives the life time for the 
             <label lang="en">Serial number</label>
             <UDINT />
             <q1:defaultValue value="0x00000000" />
-          </q1:parameter>
-          <q1:parameter uniqueID="UID_OBJ_1019" access="readWrite">
-            <description lang="en">* Value 0: SYNC message is transmitted with data length 0.
-* Value 1: reserved.
-* Value 2-240: SYNC message has one data byte, which contains the counter.
-* Value 241-255: reserved.</description>
-            <USINT />
-            <q1:defaultValue value="0" />
-            <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_OBJ_1020">
             <label lang="en">Verify configuration</label>
@@ -2265,7 +2256,7 @@ The life time factor multiplied with the guard time gives the life time for the 
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-27" fileModificationTime="14:53:29.9779272+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="DS301_profile.xpd" fileCreator="" fileCreationDate="2025-06-10" fileCreationTime="22:20:31.0000000+03:00" fileModificationDate="2025-06-30" fileModificationTime="11:59:49.4244309+03:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <ApplicationLayers>
         <q2:CANopenObjectList>
           <CANopenObject index="1000" name="Device type" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1000" />
@@ -2335,7 +2326,6 @@ The life time factor multiplied with the guard time gives the life time for the 
             <CANopenSubObject subIndex="03" name="Revision number" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_101803" />
             <CANopenSubObject subIndex="04" name="Serial number" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_101804" />
           </CANopenObject>
-          <CANopenObject index="1019" name="Synchronous counter overflow value" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1019" />
           <CANopenObject index="1020" name="Verify configuration" objectType="8" uniqueIDRef="UID_OBJ_1020" subNumber="3">
             <CANopenSubObject subIndex="00" name="Highest sub-index supported" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_102000" />
             <CANopenSubObject subIndex="01" name="Configuration date" objectType="7" PDOmapping="no" uniqueIDRef="UID_SUB_102001" />
