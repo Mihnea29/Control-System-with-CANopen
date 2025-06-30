@@ -5,14 +5,20 @@
 extern "C" {
 #include "stm32f7xx_hal.h"
 #include "stm32f7xx_hal_rtc.h"
+#include "CO_app_STM32.h"
+extern CO_SDO_abortCode_t
+read_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subIndex, uint8_t* buf, size_t bufSize,
+		size_t* readSize);
+extern CO_SDO_abortCode_t
+write_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subIndex, uint8_t* data, size_t dataSize);
 extern RTC_HandleTypeDef hrtc;
+extern CANopenNodeSTM32 canOpenNodeSTM32;
 extern CO_t *CO;
 }
 
 
 uint32_t LED_CONTROL = 0; // 1   2  4   6  8  16
 uint16_t HBconsTimeout =1500;
-
 uint16_t HBprodTime = 0;
 bool HBprodTimeValid = false;
 
@@ -51,46 +57,47 @@ Model::Model() : modelListener(nullptr)
 void Model::tick()
 {
 	static uint32_t counter = 0;
-    RTC_TimeTypeDef sTime;
-    RTC_DateTypeDef sDate;
+	RTC_TimeTypeDef sTime;
+	RTC_DateTypeDef sDate;
 
 
-    if(counter == 0) 		// @ start-up
-    {
-//    	   for(int i = 0 ; i < HB_CONS_NODES ; i++)
-//    	   {
-    		   modelListener->setHBconsumerTimeout(7, HBconsTimeout);
-//    	   }
-    }
+	if(counter == 0) 		// @ start-up
+	{
+		modelListener->updateCANID(CO->NMT->nodeId);
+		//    	   for(int i = 0 ; i < HB_CONS_NODES ; i++)
+		//    	   {
+		modelListener->setHBconsumerTimeout(7, HBconsTimeout);
+		//    	   }
+	}
 
-    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-    modelListener->updateTime(
-        sTime.Hours,
-        sTime.Minutes,
-        sTime.Seconds
-    );
-    modelListener->updateData(
-        sDate.WeekDay,
-        sDate.Date,
-        sDate.Month,
-        sDate.Year
-    );
+	modelListener->updateTime(
+			sTime.Hours,
+			sTime.Minutes,
+			sTime.Seconds
+	);
+	modelListener->updateData(
+			sDate.WeekDay,
+			sDate.Date,
+			sDate.Month,
+			sDate.Year
+	);
 
-   for(int i = 0 ; i < HB_CONS_NODES ; i++)
-   {
-	   modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate , CO->HBconsMonitoredNodes[i].NMTstate);
-   }
+	for(int i = 0 ; i < HB_CONS_NODES ; i++)
+	{
+		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate , CO->HBconsMonitoredNodes[i].NMTstate);
+	}
 
-   if(counter%100 == 0)
-	   modelListener->setLight( GET_LUMINI_POZITII( LED_CONTROL ),
-		   (GET_SEMNALIZARE_STINGA(LED_CONTROL) & ((counter % 200) / 100)),
-		   (GET_SEMNALIZARE_DREAPTA(LED_CONTROL) & ((counter % 200) / 100)),
-		   GET_FAZA_LUNGA_FLASH(LED_CONTROL) ? (GET_FAZA_LUNGA_FLASH(LED_CONTROL) & ((counter % 500) / 250))
-		   	   	   	   	   	   	   : GET_FAZA_LUNGA(LED_CONTROL)    );
+	if(counter%100 == 0)
+		modelListener->setLight( GET_LUMINI_POZITII( LED_CONTROL ),
+				(GET_SEMNALIZARE_STINGA(LED_CONTROL) & ((counter % 200) / 100)),
+				(GET_SEMNALIZARE_DREAPTA(LED_CONTROL) & ((counter % 200) / 100)),
+				GET_FAZA_LUNGA_FLASH(LED_CONTROL) ? (GET_FAZA_LUNGA_FLASH(LED_CONTROL) & ((counter % 500) / 250))
+						: GET_FAZA_LUNGA(LED_CONTROL)    );
 
-   counter++;
+	counter++;
 }
 
 
@@ -110,34 +117,40 @@ void Model::HBconsTimeoutDec(int index)
 
 void Model::getHBprodTime(int index)
 {
+	size_t bytesRead = 0;
+	uint16_t HB_VALUE = 0;
 	// SDO read
-	// ........
-	HBprodTime = 1000;
-	HBprodTimeValid = true;
-	modelListener->updateHBprodTime(index, HBprodTime);
+	read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
+	if(bytesRead == 2) {
+		HBprodTime = HB_VALUE;
+		HBprodTimeValid = true;
+		modelListener->updateHBprodTime(index, HBprodTime);
+	}
+
 }
 
 void Model::setHBprodTime(int index)
 {
-   //SDE write
-   //..........
+	//SDE write
+	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HBprodTime, sizeof(HBprodTime));
+	//..........
 }
 
 
 void Model::HBprodTimeInc(int index)
 {
-    if( HBprodTimeValid )
-    {
-	    HBprodTime +=100;
-	    modelListener->updateHBprodTime(index, HBprodTime);
-    }
+	if( HBprodTimeValid )
+	{
+		HBprodTime +=100;
+		modelListener->updateHBprodTime(index, HBprodTime);
+	}
 }
 
 void Model::HBprodTimeDec(int index)
 {
-	  if( HBprodTimeValid && HBprodTime >=100 )
-	  {
-		  HBprodTime -=100;
-		  modelListener->updateHBprodTime(index, HBprodTime);
-	  }
+	if( HBprodTimeValid && HBprodTime >=100 )
+	{
+		HBprodTime -=100;
+		modelListener->updateHBprodTime(index, HBprodTime);
+	}
 }

@@ -53,7 +53,7 @@ TIM_HandleTypeDef htim7;
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
-uint8_t leftSignal, rightSignal, high_beam, flash;
+uint8_t leftSignal, rightSignal, flash;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,7 +64,7 @@ static void MX_CAN1_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM7_Init(void);
 /* USER CODE BEGIN PFP */
-
+void LEDControl(uint32_t ledControlValue);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -135,46 +135,7 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, !canOpenNodeSTM32.outStatusLEDGreen);
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, !canOpenNodeSTM32.outStatusLEDRed);
 	  canopen_app_process();
-	  switch( OD_PERSIST_COMM.x6000_LED_CONTROL_r )
-	  {
-		  case 1:
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_SET);
-			  leftSignal = 0;
-			  rightSignal = 0;
-			  break;
-		  case 2:
-			  leftSignal = 1;
-			  rightSignal = 0;
-			  break;
-		  case 3:
-			  leftSignal = 0;
-			  rightSignal = 1;
-			  break;
-		  case 4:
-			  leftSignal = 1;
-			  rightSignal = 1;
-			  break;
-		  case 5:
-			  leftSignal = 0;
-			  rightSignal = 0;
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-			  high_beam = 1;
-			  break;
-		  case 6:
-			  high_beam = 0;
-			  flash = 1;
-			  break;
-		  case 7:
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET);
-			  high_beam = 0;
-			  flash = 0;
-			  leftSignal = 0;
-			  rightSignal = 0;
-			  break;
-	  }
+	  LEDControl(OD_PERSIST_COMM.x6000_LED_CONTROL_r);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -539,6 +500,35 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void LEDControl(uint32_t ledControlValue) {
+    leftSignal = 0;
+    rightSignal = 0;
+    flash = 0;
+
+    if (ledControlValue & LED_HEADLIGHT_MASK) {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+    }
+
+    if (ledControlValue & LED_LEFT_SIGNAL_MASK) {
+        leftSignal = 1;
+    }
+
+    if (ledControlValue & LED_RIGHT_SIGNAL_MASK) {
+        rightSignal = 1;
+    }
+
+    if (ledControlValue & LED_HIGH_BEAM_MASK) {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
+    }
+
+    if (ledControlValue & LED_FLASH_MASK) {
+        flash = 1;
+    }
+}
+
 __STATIC_INLINE uint32_t My_ITM_SendChar (uint32_t ch)
 {
   if (((ITM->TCR & ITM_TCR_ITMENA_Msk) != 0UL) &&      /* ITM enabled */

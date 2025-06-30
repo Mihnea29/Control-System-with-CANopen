@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
- 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -182,41 +182,49 @@ void EXTI0_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
   currentTime = HAL_GetTick();
-  	if(currentTime - previousTime >5)
-  	{
-  		counter++;
-  		switch (counter) {
-  			case 1:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0001, false);
-  				break;
-  			case 2:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0010, false);
-  				break;
-  			case 3:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0011, false);
-  				break;
-  			case 4:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 0b0100, false);
-  				break;
-  			case 5:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 5, false);
-  				break;
-  			case 6:
-  				OD_set_u32(OD_find(OD, 0x6000), 0x00, 6, false);
-  				break;
- 			case 7:
- 				OD_set_u32(OD_find(OD, 0x6000), 0x00, 7, false);
-  				OD_set_u32(OD_find(OD, 0x6002), 0x00, 25, false);
-  				break;
- 			case 8:
-  				OD_set_u32(OD_find(OD, 0x6002), 0x00, 50, false);
-  				break;
-  			case 9:
-  				OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
-  				counter = 0;
-  				break;
-  		}
+  if(currentTime - previousTime > 5)
+  {
+      counter++;
 
+      // Use bitwise operations for setting LED control values
+      switch (counter) {
+          case 1:
+              // Faruri fata: bit 4 = 1, restul = 0 (0b10000 = 16)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_HEADLIGHT_MASK, false);
+              break;
+          case 2:
+              // Semnal stanga: bit 0 = 1 (0b00001 = 1)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_LEFT_SIGNAL_MASK, false);
+              break;
+          case 3:
+              // Semnal dreapta: bit 1 = 1 (0b00010 = 2)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_RIGHT_SIGNAL_MASK, false);
+              break;
+          case 4:
+              // Avarii (stanga + dreapta): bits 0,1 = 1 (0b00011 = 3)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_LEFT_SIGNAL_MASK | LED_RIGHT_SIGNAL_MASK, false);
+              break;
+          case 5:
+              // Faza lunga bit 2 = 1 (0b00100 = 4)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_HIGH_BEAM_MASK, false);
+              break;
+          case 6:
+              // Flash: bit 3 = 1 (0b01000 = 8)
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_FLASH_MASK, false);
+              break;
+          case 7:
+              // off
+              OD_set_u32(OD_find(OD, 0x6000), 0x00, 0, false);
+              OD_set_u32(OD_find(OD, 0x6002), 0x00, 25, false);
+              break;
+          case 8:
+              OD_set_u32(OD_find(OD, 0x6002), 0x00, 50, false);
+        	  break;
+          case 9:
+              OD_set_u32(OD_find(OD, 0x6002), 0x00, 0, false);
+              counter = 0;
+        	  break;
+      }
   		previousTime = currentTime;
   	}
   /* USER CODE END EXTI0_IRQn 1 */

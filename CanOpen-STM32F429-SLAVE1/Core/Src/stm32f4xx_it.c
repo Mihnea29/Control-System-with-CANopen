@@ -294,21 +294,20 @@ void TIM4_IRQHandler(void)
         newMode = MODE_RIGHT;
     else if(leftSignal == 1 && rightSignal == 1)
         newMode = MODE_HAZARD;
-    else if (high_beam == 1)
-    	newMode = MODE_HIGHBEAM;
     else if (flash == 1)
     	newMode = MODE_FLASH;
     else
         newMode = MODE_OFF;
     if(newMode != currentMode)
     {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
         currentMode = newMode;
     }
 
-    // Handle blinking based on current mode
     if(currentMode == MODE_LEFT)
     {
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
@@ -321,10 +320,6 @@ void TIM4_IRQHandler(void)
     {
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-    }
-    else if(currentMode == MODE_HIGHBEAM)
-    {
-    	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
     }
 
   /* USER CODE END TIM4_IRQn 0 */

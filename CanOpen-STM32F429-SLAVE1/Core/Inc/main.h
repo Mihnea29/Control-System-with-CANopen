@@ -118,6 +118,19 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 #define ITM_CHANNEL 0U
+// Pozitii
+#define LED_LEFT_SIGNAL_BIT     0  // Bit 0: Semnalizare stanga
+#define LED_RIGHT_SIGNAL_BIT    1  // Bit 1: Semnalizare dreapta
+#define LED_HIGH_BEAM_BIT       2  // Bit 2: Faza Lunga
+#define LED_FLASH_BIT           3  // Bit 3: Flash
+#define LED_HEADLIGHT_BIT       4  // Bit 4: Faruri
+
+// Masca
+#define LED_LEFT_SIGNAL_MASK    (1 << LED_LEFT_SIGNAL_BIT)     // 0b00001
+#define LED_RIGHT_SIGNAL_MASK   (1 << LED_RIGHT_SIGNAL_BIT)    // 0b00010
+#define LED_HIGH_BEAM_MASK      (1 << LED_HIGH_BEAM_BIT)       // 0b00100
+#define LED_FLASH_MASK          (1 << LED_FLASH_BIT)           // 0b01000
+#define LED_HEADLIGHT_MASK      (1 << LED_HEADLIGHT_BIT)       // 0b10000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

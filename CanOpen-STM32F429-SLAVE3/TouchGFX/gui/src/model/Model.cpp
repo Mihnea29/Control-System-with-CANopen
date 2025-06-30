@@ -78,5 +78,5 @@ void Model::tick()
     ConvertDaysSince1984(days, &yearOffset, &month, &date, &weekday);
     modelListener->updateData(weekday, date, month, yearOffset);
 
-    modelListener->updateHeartbeatTime(10, 1020);
+    modelListener->updateHeartbeatTime(CO->NMT->nodeId, CO->NMT->HBproducerTime_us / 1000);
 }
