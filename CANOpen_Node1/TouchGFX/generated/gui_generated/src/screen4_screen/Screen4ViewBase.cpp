@@ -69,7 +69,7 @@ Screen4ViewBase::Screen4ViewBase() :
     lumini_poz_dr.setRadius(20);
     lumini_poz_dr.setLineWidth(0);
     lumini_poz_dr.setArc(0, 360);
-    lumini_poz_drPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    lumini_poz_drPainter.setColor(touchgfx::Color::getColorFromRGB(191, 191, 191));
     lumini_poz_dr.setPainter(lumini_poz_drPainter);
     add(lumini_poz_dr);
 

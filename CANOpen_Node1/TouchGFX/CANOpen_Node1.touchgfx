@@ -221,6 +221,13 @@
         "CanvasBufferSize": 7200,
         "Components": [
           {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
             "Type": "ButtonWithLabel",
             "Name": "butonPrev",
             "X": 15,
@@ -242,13 +249,6 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
-          },
-          {
-            "Type": "Image",
-            "Name": "image_bg",
-            "Width": 480,
-            "Height": 800,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
           },
           {
             "Type": "ButtonWithLabel",
@@ -628,11 +628,10 @@
             "Name": "Node0NMTState",
             "X": 204,
             "Y": 121,
-            "Width": 206,
-            "Height": 24,
+            "Width": 265,
+            "Height": 27,
             "TextId": "__SingleUse_H2O5",
             "TextRotation": "0",
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_P6PC",
               "UseBuffer": true,

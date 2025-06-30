@@ -16,6 +16,10 @@ Screen3ViewBase::Screen3ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
+    image_bg.setXY(0, 0);
+    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
+    add(image_bg);
+
     butonPrev.setXY(15, 746);
     butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonPrev.setLabelText(touchgfx::TypedText(T___SINGLEUSE_IFSU));
@@ -23,10 +27,6 @@ Screen3ViewBase::Screen3ViewBase() :
     butonPrev.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     butonPrev.setAction(buttonCallback);
     add(butonPrev);
-
-    image_bg.setXY(0, 0);
-    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
-    add(image_bg);
 
     butonNext.setXY(426, 746);
     butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
@@ -225,12 +225,11 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1Status.setPainter(Node1StatusPainter);
     add(Node1Status);
 
-    Node0NMTState.setXY(204, 121);
+    Node0NMTState.setPosition(204, 121, 265, 27);
     Node0NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node0NMTState.setLinespacing(0);
     Unicode::snprintf(Node0NMTStateBuffer, NODE0NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_P6PC).getText());
     Node0NMTState.setWildcard(Node0NMTStateBuffer);
-    Node0NMTState.resizeToCurrentText();
     Node0NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_H2O5));
     add(Node0NMTState);
 

@@ -8,8 +8,8 @@
 #include <mvp/View.hpp>
 #include <gui/screen3_screen/Screen3Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -43,8 +43,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ButtonWithLabel butonPrev;
     touchgfx::Image image_bg;
+    touchgfx::ButtonWithLabel butonPrev;
     touchgfx::ButtonWithLabel butonNext;
     touchgfx::TextAreaWithOneWildcard Node7NMTState;
     touchgfx::TextAreaWithOneWildcard Node7CANID;
