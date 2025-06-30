@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen4Presenter() {}
 
+    virtual void setLight(bool LUMINI_POZITII, bool SEMNALIZARE_STINGA, bool SEMNALIZARE_DREAPTA, bool FAZA_LUNGA );
+
 private:
     Screen4Presenter();
 

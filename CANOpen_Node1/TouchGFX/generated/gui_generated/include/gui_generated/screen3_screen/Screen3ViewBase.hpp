@@ -8,8 +8,8 @@
 #include <mvp/View.hpp>
 #include <gui/screen3_screen/Screen3Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -43,8 +43,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonPrev;
+    touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonNext;
     touchgfx::TextAreaWithOneWildcard Node7NMTState;
     touchgfx::TextAreaWithOneWildcard Node7CANID;
@@ -76,9 +76,9 @@ protected:
     touchgfx::PainterRGB565 Node1StatusPainter;
     touchgfx::TextAreaWithOneWildcard Node0NMTState;
     touchgfx::TextAreaWithOneWildcard Node0CANID;
+    touchgfx::TextArea textArea1;
     touchgfx::Circle Node0Status;
     touchgfx::PainterRGB565 Node0StatusPainter;
-    touchgfx::TextArea textArea1;
     touchgfx::TextAreaWithOneWildcard textCANID;
     touchgfx::TextAreaWithOneWildcard Node7HBconsTimeout;
     touchgfx::ButtonWithLabel buttonNode7HBTInc;
@@ -87,35 +87,35 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t NODE7NMTSTATE_SIZE = 10;
+    static const uint16_t NODE7NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node7NMTStateBuffer[NODE7NMTSTATE_SIZE];
     static const uint16_t NODE7CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node7CANIDBuffer[NODE7CANID_SIZE];
-    static const uint16_t NODE6NMTSTATE_SIZE = 10;
+    static const uint16_t NODE6NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node6NMTStateBuffer[NODE6NMTSTATE_SIZE];
     static const uint16_t NODE6CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node6CANIDBuffer[NODE6CANID_SIZE];
-    static const uint16_t NODE5NMTSTATE_SIZE = 10;
+    static const uint16_t NODE5NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node5NMTStateBuffer[NODE5NMTSTATE_SIZE];
     static const uint16_t NODE5CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node5CANIDBuffer[NODE5CANID_SIZE];
-    static const uint16_t NODE4NMTSTATE_SIZE = 10;
+    static const uint16_t NODE4NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node4NMTStateBuffer[NODE4NMTSTATE_SIZE];
     static const uint16_t NODE4CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node4CANIDBuffer[NODE4CANID_SIZE];
-    static const uint16_t NODE3NMTSTATE_SIZE = 10;
+    static const uint16_t NODE3NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node3NMTStateBuffer[NODE3NMTSTATE_SIZE];
     static const uint16_t NODE3CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node3CANIDBuffer[NODE3CANID_SIZE];
-    static const uint16_t NODE2NMTSTATE_SIZE = 10;
+    static const uint16_t NODE2NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node2NMTStateBuffer[NODE2NMTSTATE_SIZE];
     static const uint16_t NODE2CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node2CANIDBuffer[NODE2CANID_SIZE];
-    static const uint16_t NODE1NMTSTATE_SIZE = 10;
+    static const uint16_t NODE1NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node1NMTStateBuffer[NODE1NMTSTATE_SIZE];
     static const uint16_t NODE1CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node1CANIDBuffer[NODE1CANID_SIZE];
-    static const uint16_t NODE0NMTSTATE_SIZE = 10;
+    static const uint16_t NODE0NMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar Node0NMTStateBuffer[NODE0NMTSTATE_SIZE];
     static const uint16_t NODE0CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node0CANIDBuffer[NODE0CANID_SIZE];

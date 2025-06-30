@@ -16,11 +16,7 @@ Screen3ViewBase::Screen3ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image_bg.setXY(0, 0);
-    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
-    add(image_bg);
-
-    butonPrev.setXY(0, 764);
+    butonPrev.setXY(15, 746);
     butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonPrev.setLabelText(touchgfx::TypedText(T___SINGLEUSE_IFSU));
     butonPrev.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -28,7 +24,11 @@ Screen3ViewBase::Screen3ViewBase() :
     butonPrev.setAction(buttonCallback);
     add(butonPrev);
 
-    butonNext.setXY(444, 764);
+    image_bg.setXY(0, 0);
+    image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
+    add(image_bg);
+
+    butonNext.setXY(426, 746);
     butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5MCB));
     butonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -36,7 +36,7 @@ Screen3ViewBase::Screen3ViewBase() :
     butonNext.setAction(buttonCallback);
     add(butonNext);
 
-    Node7NMTState.setXY(203, 455);
+    Node7NMTState.setXY(204, 482);
     Node7NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node7NMTState.setLinespacing(0);
     Unicode::snprintf(Node7NMTStateBuffer, NODE7NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JCSK).getText());
@@ -54,7 +54,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node7CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F127));
     add(Node7CANID);
 
-    Node7Status.setPosition(36, 447, 30, 30);
+    Node7Status.setPosition(36, 452, 30, 30);
     Node7Status.setCenter(15, 15);
     Node7Status.setRadius(15);
     Node7Status.setLineWidth(0);
@@ -81,7 +81,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node6CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KBZE));
     add(Node6CANID);
 
-    Node6Status.setPosition(36, 400, 30, 30);
+    Node6Status.setPosition(36, 405, 30, 30);
     Node6Status.setCenter(15, 15);
     Node6Status.setRadius(15);
     Node6Status.setLineWidth(0);
@@ -108,7 +108,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node5CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8LVA));
     add(Node5CANID);
 
-    Node5Status.setPosition(36, 348, 30, 30);
+    Node5Status.setPosition(36, 353, 30, 30);
     Node5Status.setCenter(15, 15);
     Node5Status.setRadius(15);
     Node5Status.setLineWidth(0);
@@ -135,7 +135,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node4CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UKW9));
     add(Node4CANID);
 
-    Node4Status.setPosition(36, 302, 30, 30);
+    Node4Status.setPosition(36, 304, 30, 30);
     Node4Status.setCenter(15, 15);
     Node4Status.setRadius(15);
     Node4Status.setLineWidth(0);
@@ -162,7 +162,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node3CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZJE7));
     add(Node3CANID);
 
-    Node3Status.setPosition(36, 255, 30, 30);
+    Node3Status.setPosition(36, 257, 30, 30);
     Node3Status.setCenter(15, 15);
     Node3Status.setRadius(15);
     Node3Status.setLineWidth(0);
@@ -189,7 +189,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node2CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LNGC));
     add(Node2CANID);
 
-    Node2Status.setPosition(36, 205, 30, 30);
+    Node2Status.setPosition(36, 207, 30, 30);
     Node2Status.setCenter(15, 15);
     Node2Status.setRadius(15);
     Node2Status.setLineWidth(0);
@@ -216,7 +216,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7LX8));
     add(Node1CANID);
 
-    Node1Status.setPosition(36, 158, 30, 30);
+    Node1Status.setPosition(36, 160, 30, 30);
     Node1Status.setCenter(15, 15);
     Node1Status.setRadius(15);
     Node1Status.setLineWidth(0);
@@ -225,7 +225,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1Status.setPainter(Node1StatusPainter);
     add(Node1Status);
 
-    Node0NMTState.setXY(204, 118);
+    Node0NMTState.setXY(204, 121);
     Node0NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node0NMTState.setLinespacing(0);
     Unicode::snprintf(Node0NMTStateBuffer, NODE0NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_P6PC).getText());
@@ -243,7 +243,13 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KZIP));
     add(Node0CANID);
 
-    Node0Status.setPosition(41, 115, 30, 30);
+    textArea1.setXY(36, 78);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M378));
+    add(textArea1);
+
+    Node0Status.setPosition(36, 118, 30, 30);
     Node0Status.setCenter(15, 15);
     Node0Status.setRadius(15);
     Node0Status.setLineWidth(0);
@@ -251,12 +257,6 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0StatusPainter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Node0Status.setPainter(Node0StatusPainter);
     add(Node0Status);
-
-    textArea1.setXY(36, 78);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M378));
-    add(textArea1);
 
     textCANID.setXY(36, 37);
     textCANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));

@@ -17,7 +17,7 @@ Screen2ViewBase::Screen2ViewBase() :
     image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
     add(image_bg);
 
-    butonPrev.setXY(0, 764);
+    butonPrev.setXY(16, 746);
     butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonPrev.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RTJH));
     butonPrev.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -25,7 +25,7 @@ Screen2ViewBase::Screen2ViewBase() :
     butonPrev.setAction(buttonCallback);
     add(butonPrev);
 
-    butonNext.setXY(444, 764);
+    butonNext.setXY(425, 746);
     butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6EK0));
     butonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

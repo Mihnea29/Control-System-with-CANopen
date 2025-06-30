@@ -11,6 +11,9 @@ public:
     virtual ~Screen4View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void setLight(bool LUMINI_POZITII, bool SEMNALIZARE_STINGA, bool SEMNALIZARE_DREAPTA, bool FAZA_LUNGA );
+
 protected:
 };
 

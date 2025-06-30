@@ -14,8 +14,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "butonNext",
-            "X": 444,
-            "Y": 764,
+            "X": 426,
+            "Y": 749,
             "Width": 36,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
@@ -80,7 +80,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "butonPrev",
-            "Y": 764,
+            "X": 16,
+            "Y": 746,
             "Width": 36,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
@@ -102,8 +103,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "butonNext",
-            "X": 444,
-            "Y": 764,
+            "X": 425,
+            "Y": 746,
             "Width": 36,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
@@ -220,16 +221,10 @@
         "CanvasBufferSize": 7200,
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image_bg",
-            "Width": 480,
-            "Height": 800,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
-          },
-          {
             "Type": "ButtonWithLabel",
             "Name": "butonPrev",
-            "Y": 764,
+            "X": 15,
+            "Y": 746,
             "Width": 36,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
@@ -249,10 +244,17 @@
             "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
           },
           {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
+          },
+          {
             "Type": "ButtonWithLabel",
             "Name": "butonNext",
-            "X": 444,
-            "Y": 764,
+            "X": 426,
+            "Y": 746,
             "Width": 36,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
@@ -274,8 +276,8 @@
           {
             "Type": "TextArea",
             "Name": "Node7NMTState",
-            "X": 203,
-            "Y": 455,
+            "X": 204,
+            "Y": 482,
             "Width": 206,
             "Height": 24,
             "TextId": "__SingleUse_JOIY",
@@ -284,7 +286,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_JCSK",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -334,7 +336,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_BKAX",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -384,7 +386,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZWHH",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -434,7 +436,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_RHJ8",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -484,7 +486,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_EDRN",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -534,7 +536,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_D8EL",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -584,7 +586,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_SIL5",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -625,7 +627,7 @@
             "Type": "TextArea",
             "Name": "Node0NMTState",
             "X": 204,
-            "Y": 118,
+            "Y": 121,
             "Width": 206,
             "Height": 24,
             "TextId": "__SingleUse_H2O5",
@@ -634,7 +636,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_P6PC",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           },
           {
@@ -655,10 +657,21 @@
             }
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 36,
+            "Y": 78,
+            "Width": 214,
+            "Height": 24,
+            "TextId": "__SingleUse_M378",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "Circle",
             "Name": "Node0Status",
             "X": 36,
-            "Y": 115,
+            "Y": 118,
             "Width": 30,
             "Height": 30,
             "Color": {
@@ -671,17 +684,6 @@
             "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 36,
-            "Y": 78,
-            "Width": 214,
-            "Height": 24,
-            "TextId": "__SingleUse_M378",
-            "TextRotation": "0",
-            "AutoSize": true
           },
           {
             "Type": "TextArea",
@@ -795,6 +797,7 @@
       },
       {
         "Name": "Screen4",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
@@ -806,11 +809,12 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "butonPrev",
-            "Y": 764,
-            "Width": 36,
-            "Height": 36,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "X": 13,
+            "Y": 727,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_C4WK",
             "ReleasedColor": {
               "Red": 255,
@@ -823,7 +827,187 @@
               "Blue": 255
             },
             "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\tiny_fill_disabled.json"
+          },
+          {
+            "Type": "Circle",
+            "Name": "semnalizare_fata_st",
+            "X": 73,
+            "Y": 341,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 102,
+              "Green": 77,
+              "Blue": 7
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "semnalizare_fata_dr",
+            "X": 63,
+            "Y": 97,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 102,
+              "Green": 77,
+              "Blue": 7
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "semnalizare_spate_st",
+            "X": 359,
+            "Y": 334,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 102,
+              "Green": 77,
+              "Blue": 7
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "semnalizare_spate_dr",
+            "X": 359,
+            "Y": 97,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 102,
+              "Green": 77,
+              "Blue": 7
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "lumini_poz_dr",
+            "X": 43,
+            "Y": 137,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 191,
+              "Green": 191,
+              "Blue": 191
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "faza_lunga_dr",
+            "X": 23,
+            "Y": 177,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "faza_lunga_st",
+            "X": 23,
+            "Y": 262,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "lumini_poz_st",
+            "X": 43,
+            "Y": 302,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "poz_dr",
+            "X": 399,
+            "Y": 129,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "poz_st",
+            "X": 399,
+            "Y": 294,
+            "Width": 40,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
           }
         ],
         "Interactions": [

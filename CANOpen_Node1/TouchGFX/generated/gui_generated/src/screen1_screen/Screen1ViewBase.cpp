@@ -17,7 +17,7 @@ Screen1ViewBase::Screen1ViewBase() :
     image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
     add(image_bg);
 
-    butonNext.setXY(444, 764);
+    butonNext.setXY(426, 749);
     butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
     butonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_56FK));
     butonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

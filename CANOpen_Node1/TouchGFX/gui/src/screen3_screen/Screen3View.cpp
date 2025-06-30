@@ -105,8 +105,8 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
     return CO_NMT_internalState_Text_[index];
 }
 
-#define NODE_NMTSTATE_SIZE  10
-#define NODE_CANID_SIZE     10
+#define NODE_NMTSTATE_SIZE  20
+#define NODE_CANID_SIZE     20
 
 void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
 {
