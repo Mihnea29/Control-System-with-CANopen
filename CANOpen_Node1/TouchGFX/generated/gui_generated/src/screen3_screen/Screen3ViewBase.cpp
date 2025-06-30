@@ -20,23 +20,23 @@ Screen3ViewBase::Screen3ViewBase() :
     image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
     add(image_bg);
 
-    butonPrev.setXY(15, 746);
-    butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
+    butonPrev.setXY(16, 722);
+    butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID));
     butonPrev.setLabelText(touchgfx::TypedText(T___SINGLEUSE_IFSU));
     butonPrev.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     butonPrev.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     butonPrev.setAction(buttonCallback);
     add(butonPrev);
 
-    butonNext.setXY(426, 746);
-    butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_DISABLED_ID));
+    butonNext.setXY(402, 722);
+    butonNext.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID));
     butonNext.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5MCB));
     butonNext.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     butonNext.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     butonNext.setAction(buttonCallback);
     add(butonNext);
 
-    Node7NMTState.setXY(204, 482);
+    Node7NMTState.setXY(373, 468);
     Node7NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node7NMTState.setLinespacing(0);
     Unicode::snprintf(Node7NMTStateBuffer, NODE7NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JCSK).getText());
@@ -45,7 +45,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node7NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOIY));
     add(Node7NMTState);
 
-    Node7CANID.setXY(101, 455);
+    Node7CANID.setXY(16, 467);
     Node7CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node7CANID.setLinespacing(0);
     Unicode::snprintf(Node7CANIDBuffer, NODE7CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_OZAG).getText());
@@ -54,7 +54,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node7CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F127));
     add(Node7CANID);
 
-    Node7Status.setPosition(36, 452, 30, 30);
+    Node7Status.setPosition(53, 469, 30, 30);
     Node7Status.setCenter(15, 15);
     Node7Status.setRadius(15);
     Node7Status.setLineWidth(0);
@@ -63,7 +63,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node7Status.setPainter(Node7StatusPainter);
     add(Node7Status);
 
-    Node6NMTState.setXY(204, 408);
+    Node6NMTState.setXY(373, 424);
     Node6NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node6NMTState.setLinespacing(0);
     Unicode::snprintf(Node6NMTStateBuffer, NODE6NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_BKAX).getText());
@@ -72,7 +72,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node6NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VC0F));
     add(Node6NMTState);
 
-    Node6CANID.setXY(101, 408);
+    Node6CANID.setXY(16, 426);
     Node6CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node6CANID.setLinespacing(0);
     Unicode::snprintf(Node6CANIDBuffer, NODE6CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ENRP).getText());
@@ -81,7 +81,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node6CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KBZE));
     add(Node6CANID);
 
-    Node6Status.setPosition(36, 405, 30, 30);
+    Node6Status.setPosition(53, 421, 30, 30);
     Node6Status.setCenter(15, 15);
     Node6Status.setRadius(15);
     Node6Status.setLineWidth(0);
@@ -90,7 +90,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node6Status.setPainter(Node6StatusPainter);
     add(Node6Status);
 
-    Node5NMTState.setXY(204, 356);
+    Node5NMTState.setXY(373, 375);
     Node5NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node5NMTState.setLinespacing(0);
     Unicode::snprintf(Node5NMTStateBuffer, NODE5NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZWHH).getText());
@@ -99,7 +99,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node5NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QUCF));
     add(Node5NMTState);
 
-    Node5CANID.setXY(101, 356);
+    Node5CANID.setXY(16, 374);
     Node5CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node5CANID.setLinespacing(0);
     Unicode::snprintf(Node5CANIDBuffer, NODE5CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2D2W).getText());
@@ -108,7 +108,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node5CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8LVA));
     add(Node5CANID);
 
-    Node5Status.setPosition(36, 353, 30, 30);
+    Node5Status.setPosition(53, 369, 30, 30);
     Node5Status.setCenter(15, 15);
     Node5Status.setRadius(15);
     Node5Status.setLineWidth(0);
@@ -117,7 +117,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node5Status.setPainter(Node5StatusPainter);
     add(Node5Status);
 
-    Node4NMTState.setXY(204, 310);
+    Node4NMTState.setXY(373, 326);
     Node4NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node4NMTState.setLinespacing(0);
     Unicode::snprintf(Node4NMTStateBuffer, NODE4NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RHJ8).getText());
@@ -126,7 +126,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node4NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0HH7));
     add(Node4NMTState);
 
-    Node4CANID.setXY(101, 310);
+    Node4CANID.setXY(16, 328);
     Node4CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node4CANID.setLinespacing(0);
     Unicode::snprintf(Node4CANIDBuffer, NODE4CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_99DY).getText());
@@ -135,7 +135,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node4CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UKW9));
     add(Node4CANID);
 
-    Node4Status.setPosition(36, 304, 30, 30);
+    Node4Status.setPosition(53, 320, 30, 30);
     Node4Status.setCenter(15, 15);
     Node4Status.setRadius(15);
     Node4Status.setLineWidth(0);
@@ -144,7 +144,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node4Status.setPainter(Node4StatusPainter);
     add(Node4Status);
 
-    Node3NMTState.setXY(204, 263);
+    Node3NMTState.setXY(373, 276);
     Node3NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node3NMTState.setLinespacing(0);
     Unicode::snprintf(Node3NMTStateBuffer, NODE3NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EDRN).getText());
@@ -153,7 +153,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node3NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IOU7));
     add(Node3NMTState);
 
-    Node3CANID.setXY(101, 263);
+    Node3CANID.setXY(22, 275);
     Node3CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node3CANID.setLinespacing(0);
     Unicode::snprintf(Node3CANIDBuffer, NODE3CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_5AGB).getText());
@@ -162,7 +162,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node3CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZJE7));
     add(Node3CANID);
 
-    Node3Status.setPosition(36, 257, 30, 30);
+    Node3Status.setPosition(53, 275, 30, 30);
     Node3Status.setCenter(15, 15);
     Node3Status.setRadius(15);
     Node3Status.setLineWidth(0);
@@ -171,7 +171,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node3Status.setPainter(Node3StatusPainter);
     add(Node3Status);
 
-    Node2NMTState.setXY(204, 213);
+    Node2NMTState.setXY(373, 229);
     Node2NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node2NMTState.setLinespacing(0);
     Unicode::snprintf(Node2NMTStateBuffer, NODE2NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_D8EL).getText());
@@ -180,7 +180,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node2NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K0W9));
     add(Node2NMTState);
 
-    Node2CANID.setXY(101, 213);
+    Node2CANID.setXY(21, 216);
     Node2CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node2CANID.setLinespacing(0);
     Unicode::snprintf(Node2CANIDBuffer, NODE2CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_TZG9).getText());
@@ -189,7 +189,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node2CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LNGC));
     add(Node2CANID);
 
-    Node2Status.setPosition(36, 207, 30, 30);
+    Node2Status.setPosition(53, 223, 30, 30);
     Node2Status.setCenter(15, 15);
     Node2Status.setRadius(15);
     Node2Status.setLineWidth(0);
@@ -198,7 +198,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node2Status.setPainter(Node2StatusPainter);
     add(Node2Status);
 
-    Node1NMTState.setXY(204, 166);
+    Node1NMTState.setXY(373, 179);
     Node1NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node1NMTState.setLinespacing(0);
     Unicode::snprintf(Node1NMTStateBuffer, NODE1NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SIL5).getText());
@@ -207,7 +207,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0POE));
     add(Node1NMTState);
 
-    Node1CANID.setXY(101, 166);
+    Node1CANID.setXY(21, 178);
     Node1CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node1CANID.setLinespacing(0);
     Unicode::snprintf(Node1CANIDBuffer, NODE1CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9BTJ).getText());
@@ -216,7 +216,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7LX8));
     add(Node1CANID);
 
-    Node1Status.setPosition(36, 160, 30, 30);
+    Node1Status.setPosition(53, 176, 30, 30);
     Node1Status.setCenter(15, 15);
     Node1Status.setRadius(15);
     Node1Status.setLineWidth(0);
@@ -225,7 +225,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node1Status.setPainter(Node1StatusPainter);
     add(Node1Status);
 
-    Node0NMTState.setPosition(204, 121, 265, 27);
+    Node0NMTState.setPosition(373, 134, 100, 27);
     Node0NMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node0NMTState.setLinespacing(0);
     Unicode::snprintf(Node0NMTStateBuffer, NODE0NMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_P6PC).getText());
@@ -233,7 +233,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0NMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_H2O5));
     add(Node0NMTState);
 
-    Node0CANID.setXY(101, 118);
+    Node0CANID.setXY(21, 136);
     Node0CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node0CANID.setLinespacing(0);
     Unicode::snprintf(Node0CANIDBuffer, NODE0CANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VWZC).getText());
@@ -242,13 +242,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0CANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KZIP));
     add(Node0CANID);
 
-    textArea1.setXY(36, 78);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M378));
-    add(textArea1);
-
-    Node0Status.setPosition(36, 118, 30, 30);
+    Node0Status.setPosition(53, 135, 30, 30);
     Node0Status.setCenter(15, 15);
     Node0Status.setRadius(15);
     Node0Status.setLineWidth(0);
@@ -257,16 +251,7 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0Status.setPainter(Node0StatusPainter);
     add(Node0Status);
 
-    textCANID.setXY(36, 37);
-    textCANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textCANID.setLinespacing(0);
-    Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QVOL).getText());
-    textCANID.setWildcard(textCANIDBuffer);
-    textCANID.resizeToCurrentText();
-    textCANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_88K3));
-    add(textCANID);
-
-    Node7HBconsTimeout.setXY(141, 523);
+    Node7HBconsTimeout.setXY(113, 469);
     Node7HBconsTimeout.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node7HBconsTimeout.setLinespacing(0);
     Unicode::snprintf(Node7HBconsTimeoutBuffer, NODE7HBCONSTIMEOUT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_0NYJ).getText());
@@ -275,21 +260,119 @@ Screen3ViewBase::Screen3ViewBase() :
     Node7HBconsTimeout.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SAID));
     add(Node7HBconsTimeout);
 
-    buttonNode7HBTInc.setXY(444, 517);
-    buttonNode7HBTInc.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
-    buttonNode7HBTInc.setLabelText(touchgfx::TypedText(T___SINGLEUSE_1SUC));
-    buttonNode7HBTInc.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    buttonNode7HBTInc.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    buttonNode7HBTInc.setAction(buttonCallback);
-    add(buttonNode7HBTInc);
+    Node7HBprodTime.setXY(248, 513);
+    Node7HBprodTime.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Node7HBprodTime.setLinespacing(0);
+    Unicode::snprintf(Node7HBprodTimeBuffer, NODE7HBPRODTIME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RXBO).getText());
+    Node7HBprodTime.setWildcard(Node7HBprodTimeBuffer);
+    Node7HBprodTime.resizeToCurrentText();
+    Node7HBprodTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LX0V));
+    add(Node7HBprodTime);
 
-    buttonNode7HBTDec.setXY(400, 517);
-    buttonNode7HBTDec.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
-    buttonNode7HBTDec.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZFMV));
-    buttonNode7HBTDec.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    buttonNode7HBTDec.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    buttonNode7HBTDec.setAction(buttonCallback);
-    add(buttonNode7HBTDec);
+    buttonNode7HBcTInc.setXY(165, 463);
+    buttonNode7HBcTInc.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
+    buttonNode7HBcTInc.setLabelText(touchgfx::TypedText(T___SINGLEUSE_1SUC));
+    buttonNode7HBcTInc.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBcTInc.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBcTInc.setAction(buttonCallback);
+    add(buttonNode7HBcTInc);
+
+    buttonNode7HBcTDec.setXY(83, 462);
+    buttonNode7HBcTDec.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
+    buttonNode7HBcTDec.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZFMV));
+    buttonNode7HBcTDec.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBcTDec.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBcTDec.setAction(buttonCallback);
+    add(buttonNode7HBcTDec);
+
+    buttonNode7HBpTInc.setXY(300, 507);
+    buttonNode7HBpTInc.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
+    buttonNode7HBpTInc.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RVOT));
+    buttonNode7HBpTInc.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBpTInc.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBpTInc.setAction(buttonCallback);
+    add(buttonNode7HBpTInc);
+
+    buttonNode7HBpTDec.setXY(211, 507);
+    buttonNode7HBpTDec.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
+    buttonNode7HBpTDec.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZMNU));
+    buttonNode7HBpTDec.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBpTDec.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    buttonNode7HBpTDec.setAction(buttonCallback);
+    add(buttonNode7HBpTDec);
+
+    textArea1.setPosition(12, 67, 441, 30);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M378));
+    add(textArea1);
+
+    textCANID.setXY(36, 11);
+    textCANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCANID.setLinespacing(0);
+    Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QVOL).getText());
+    textCANID.setWildcard(textCANIDBuffer);
+    textCANID.resizeToCurrentText();
+    textCANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_88K3));
+    add(textCANID);
+
+    buttonNode7HBpTGet.setXY(232, 461);
+    buttonNode7HBpTGet.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
+    buttonNode7HBpTGet.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6HSG));
+    buttonNode7HBpTGet.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNode7HBpTGet.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNode7HBpTGet.setAction(buttonCallback);
+    add(buttonNode7HBpTGet);
+
+    buttonNode7HBpTSet.setXY(229, 550);
+    buttonNode7HBpTSet.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
+    buttonNode7HBpTSet.setLabelText(touchgfx::TypedText(T___SINGLEUSE_B4SN));
+    buttonNode7HBpTSet.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNode7HBpTSet.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNode7HBpTSet.setAction(buttonCallback);
+    add(buttonNode7HBpTSet);
+
+    textArea2.setPosition(17, 97, 441, 28);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WBV8));
+    add(textArea2);
+
+    line1.setPosition(39, 67, 20, 470);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(5, 5, 5));
+    line1.setPainter(line1Painter);
+    line1.setStart(2, 1);
+    line1.setEnd(2, 450);
+    line1.setLineWidth(2);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1);
+
+    line1_1.setPosition(83, 134, 20, 400);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(5, 5, 5));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(2, 1);
+    line1_1.setEnd(2, 390);
+    line1_1.setLineWidth(2);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1);
+
+    line1_1_1.setPosition(201, 125, 20, 400);
+    line1_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(5, 5, 5));
+    line1_1_1.setPainter(line1_1_1Painter);
+    line1_1_1.setStart(2, 1);
+    line1_1_1.setEnd(2, 390);
+    line1_1_1.setLineWidth(2);
+    line1_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1_1);
+
+    line1_1_1_1.setPosition(361, 120, 20, 400);
+    line1_1_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(5, 5, 5));
+    line1_1_1_1.setPainter(line1_1_1_1Painter);
+    line1_1_1_1.setStart(2, 1);
+    line1_1_1_1.setEnd(2, 390);
+    line1_1_1_1.setLineWidth(2);
+    line1_1_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1_1_1);
 }
 
 Screen3ViewBase::~Screen3ViewBase()
@@ -318,18 +401,46 @@ void Screen3ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Go to Screen2 with screen transition towards West
         application().gotoScreen2ScreenSlideTransitionWest();
     }
-    if (&src == &buttonNode7HBTInc)
+    if (&src == &buttonNode7HBcTInc)
     {
         //buttonNode7HBTinc
-        //When buttonNode7HBTInc clicked call virtual function
-        //Call buttonNodeXHBTinc
-        buttonNodeXHBTinc();
+        //When buttonNode7HBcTInc clicked execute C++ code
+        //Execute C++ code
+        presenter->buttonNodeXHBTinc(7);
     }
-    if (&src == &buttonNode7HBTDec)
+    if (&src == &buttonNode7HBcTDec)
     {
         //buttonNode7HBTiDec
-        //When buttonNode7HBTDec clicked call virtual function
-        //Call buttonNodeXHBTiDec
-        buttonNodeXHBTiDec();
+        //When buttonNode7HBcTDec clicked execute C++ code
+        //Execute C++ code
+        presenter->buttonNodeXHBTdec(7);
+    }
+    if (&src == &buttonNode7HBpTGet)
+    {
+        //Interaction1
+        //When buttonNode7HBpTGet clicked execute C++ code
+        //Execute C++ code
+        presenter->getHBprodTime(7);
+    }
+    if (&src == &buttonNode7HBpTSet)
+    {
+        //Interaction2
+        //When buttonNode7HBpTSet clicked execute C++ code
+        //Execute C++ code
+        presenter->setHBprodTime(7);
+    }
+    if (&src == &buttonNode7HBpTInc)
+    {
+        //Interaction3
+        //When buttonNode7HBpTInc clicked execute C++ code
+        //Execute C++ code
+        presenter->HBprodTimeInc(7);
+    }
+    if (&src == &buttonNode7HBpTDec)
+    {
+        //Interaction4
+        //When buttonNode7HBpTDec clicked execute C++ code
+        //Execute C++ code
+        presenter->HBprodTimeDec(7);
     }
 }

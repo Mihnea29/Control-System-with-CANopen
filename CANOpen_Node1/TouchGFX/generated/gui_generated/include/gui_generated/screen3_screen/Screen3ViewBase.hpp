@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
 
 class Screen3ViewBase : public touchgfx::View<Screen3Presenter>
 {
@@ -21,18 +22,6 @@ public:
     Screen3ViewBase();
     virtual ~Screen3ViewBase();
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void buttonNodeXHBTinc()
-    {
-        // Override and implement this function in Screen3
-    }
-    virtual void buttonNodeXHBTiDec()
-    {
-        // Override and implement this function in Screen3
-    }
 
 protected:
     FrontendApplication& application() {
@@ -76,13 +65,27 @@ protected:
     touchgfx::PainterRGB565 Node1StatusPainter;
     touchgfx::TextAreaWithOneWildcard Node0NMTState;
     touchgfx::TextAreaWithOneWildcard Node0CANID;
-    touchgfx::TextArea textArea1;
     touchgfx::Circle Node0Status;
     touchgfx::PainterRGB565 Node0StatusPainter;
-    touchgfx::TextAreaWithOneWildcard textCANID;
     touchgfx::TextAreaWithOneWildcard Node7HBconsTimeout;
-    touchgfx::ButtonWithLabel buttonNode7HBTInc;
-    touchgfx::ButtonWithLabel buttonNode7HBTDec;
+    touchgfx::TextAreaWithOneWildcard Node7HBprodTime;
+    touchgfx::ButtonWithLabel buttonNode7HBcTInc;
+    touchgfx::ButtonWithLabel buttonNode7HBcTDec;
+    touchgfx::ButtonWithLabel buttonNode7HBpTInc;
+    touchgfx::ButtonWithLabel buttonNode7HBpTDec;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textCANID;
+    touchgfx::ButtonWithLabel buttonNode7HBpTGet;
+    touchgfx::ButtonWithLabel buttonNode7HBpTSet;
+    touchgfx::TextArea textArea2;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Line line1_1;
+    touchgfx::PainterRGB565 line1_1Painter;
+    touchgfx::Line line1_1_1;
+    touchgfx::PainterRGB565 line1_1_1Painter;
+    touchgfx::Line line1_1_1_1;
+    touchgfx::PainterRGB565 line1_1_1_1Painter;
 
     /*
      * Wildcard Buffers
@@ -119,10 +122,12 @@ protected:
     touchgfx::Unicode::UnicodeChar Node0NMTStateBuffer[NODE0NMTSTATE_SIZE];
     static const uint16_t NODE0CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node0CANIDBuffer[NODE0CANID_SIZE];
-    static const uint16_t TEXTCANID_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textCANIDBuffer[TEXTCANID_SIZE];
     static const uint16_t NODE7HBCONSTIMEOUT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node7HBconsTimeoutBuffer[NODE7HBCONSTIMEOUT_SIZE];
+    static const uint16_t NODE7HBPRODTIME_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Node7HBprodTimeBuffer[NODE7HBPRODTIME_SIZE];
+    static const uint16_t TEXTCANID_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCANIDBuffer[TEXTCANID_SIZE];
 
 private:
 

@@ -21,6 +21,16 @@ public:
 
     void tick();
 
+
+
+    void HBconsTimeoutInc(int index);
+    void HBconsTimeoutDec(int index);
+    void HBprodTimeInc(int index);
+    void HBprodTimeDec(int index);
+
+
+    void getHBprodTime(int index);
+    void setHBprodTime(int index);
 protected:
     ModelListener* modelListener;
 };

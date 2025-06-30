@@ -10,8 +10,11 @@ extern CO_t *CO;
 }
 
 
-uint32_t LED_CONTROL = 0;
+uint32_t LED_CONTROL = 0; // 1   2  4   6  8  16
+uint16_t HBconsTimeout =1500;
 
+uint16_t HBprodTime = 0;
+bool HBprodTimeValid = false;
 
 #define POZ_LUMINI_POZITII 			0
 #define POZ_SEMNALIZARE_STINGA 		1
@@ -50,6 +53,16 @@ void Model::tick()
 	static uint32_t counter = 0;
     RTC_TimeTypeDef sTime;
     RTC_DateTypeDef sDate;
+
+
+    if(counter == 0) 		// @ start-up
+    {
+//    	   for(int i = 0 ; i < HB_CONS_NODES ; i++)
+//    	   {
+    		   modelListener->setHBconsumerTimeout(7, HBconsTimeout);
+//    	   }
+    }
+
     HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
     HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
@@ -68,10 +81,7 @@ void Model::tick()
    for(int i = 0 ; i < HB_CONS_NODES ; i++)
    {
 	   modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate , CO->HBconsMonitoredNodes[i].NMTstate);
-	   modelListener->setHBconsumerTimeout(i, 1500);
    }
-
-   modelListener->setHBconsumerTimeout(7, 1500);
 
    if(counter%100 == 0)
 	   modelListener->setLight( GET_LUMINI_POZITII( LED_CONTROL ),
@@ -81,4 +91,53 @@ void Model::tick()
 		   	   	   	   	   	   	   : GET_FAZA_LUNGA(LED_CONTROL)    );
 
    counter++;
+}
+
+
+
+void Model::HBconsTimeoutInc(int index)
+{
+	HBconsTimeout += 100;
+	modelListener->setHBconsumerTimeout(7, HBconsTimeout);
+}
+
+void Model::HBconsTimeoutDec(int index)
+{
+	if(HBconsTimeout > 100)
+		HBconsTimeout -= 100;
+	modelListener->setHBconsumerTimeout(7, HBconsTimeout);
+}
+
+void Model::getHBprodTime(int index)
+{
+	// SDO read
+	// ........
+	HBprodTime = 1000;
+	HBprodTimeValid = true;
+	modelListener->updateHBprodTime(index, HBprodTime);
+}
+
+void Model::setHBprodTime(int index)
+{
+   //SDE write
+   //..........
+}
+
+
+void Model::HBprodTimeInc(int index)
+{
+    if( HBprodTimeValid )
+    {
+	    HBprodTime +=100;
+	    modelListener->updateHBprodTime(index, HBprodTime);
+    }
+}
+
+void Model::HBprodTimeDec(int index)
+{
+	  if( HBprodTimeValid && HBprodTime >=100 )
+	  {
+		  HBprodTime -=100;
+		  modelListener->updateHBprodTime(index, HBprodTime);
+	  }
 }

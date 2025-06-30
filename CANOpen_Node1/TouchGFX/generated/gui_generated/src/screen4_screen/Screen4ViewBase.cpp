@@ -20,7 +20,7 @@ Screen4ViewBase::Screen4ViewBase() :
     image_bg.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X800_PUZZLE_ID));
     add(image_bg);
 
-    butonPrev.setXY(13, 727);
+    butonPrev.setXY(16, 722);
     butonPrev.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_TINY_FILL_DISABLED_ID));
     butonPrev.setLabelText(touchgfx::TypedText(T___SINGLEUSE_C4WK));
     butonPrev.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

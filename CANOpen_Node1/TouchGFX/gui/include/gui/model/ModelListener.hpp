@@ -16,10 +16,13 @@ public:
         model = m;
     }
 
+    virtual void updateCANID(uint8_t CAN_ID){};
+
     virtual void updateTime(uint8_t Hours, uint8_t Minutes, uint8_t Seconds) {};
     virtual void updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8_t Year) {};
     virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate) {}
     virtual void setHBconsumerTimeout( int index, uint16_t timeoutTime) {}
+    virtual void updateHBprodTime(int index, uint16_t HBprodTime) {}
 
     virtual void setLight(bool LUMINI_POZITII, bool SEMNALIZARE_STINGA, bool SEMNALIZARE_DREAPTA, bool FAZA_LUNGA) {}
 

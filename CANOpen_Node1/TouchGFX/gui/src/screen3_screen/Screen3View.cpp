@@ -47,6 +47,11 @@ void Screen3View::tearDownScreen()
     Screen3ViewBase::tearDownScreen();
 }
 
+void Screen3View::updateCANID(uint8_t CAN_ID)
+{
+	Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%d", CAN_ID);
+	textCANID.invalidate();
+}
 
 //typedef enum {
 //    CO_HBconsumer_UNCONFIGURED = 0x00U, /**< Consumer entry inactive */
@@ -140,4 +145,10 @@ void Screen3View::setHBconsumerTimeout( int index, uint16_t timeoutTime)
 {
     Unicode::snprintf(Node7HBconsTimeoutBuffer, NODE7HBCONSTIMEOUT_SIZE, "%d", timeoutTime);
     Node7HBconsTimeout.invalidate();
+}
+
+void Screen3View::updateHBprodTime(int index, uint16_t HBprodTime)
+{
+	Unicode::snprintf(Node7HBprodTimeBuffer, NODE7HBPRODTIME_SIZE, "%d", HBprodTime);
+	Node7HBprodTime.invalidate();
 }

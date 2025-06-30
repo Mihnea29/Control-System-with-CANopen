@@ -6,6 +6,27 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_WBV8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">ID status Timeout  </Translation>
+      </Text>
+      <Text Id="__SingleUse_B4SN" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Set</Translation>
+      </Text>
+      <Text Id="__SingleUse_6HSG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Get</Translation>
+      </Text>
+      <Text Id="__SingleUse_RVOT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZMNU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RXBO" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1500</Translation>
+      </Text>
+      <Text Id="__SingleUse_LX0V" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_ZFMV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;</Translation>
       </Text>
@@ -16,106 +37,106 @@
         <Translation Language="GB">1500</Translation>
       </Text>
       <Text Id="__SingleUse_SAID" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">HBconsTimeout &lt;value&gt; ms</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JCSK" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_JOIY" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZWHH" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_QUCF" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_RHJ8" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_0HH7" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_EDRN" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_IOU7" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_BKAX" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_VC0F" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_D8EL" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_K0W9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_SIL5" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_0POE" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ENRP" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">6</Translation>
       </Text>
       <Text Id="__SingleUse_KBZE" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_OZAG" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">7</Translation>
       </Text>
       <Text Id="__SingleUse_F127" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2D2W" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">5</Translation>
       </Text>
       <Text Id="__SingleUse_8LVA" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_99DY" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">4</Translation>
       </Text>
       <Text Id="__SingleUse_UKW9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_5AGB" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">3</Translation>
       </Text>
       <Text Id="__SingleUse_ZJE7" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_TZG9" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">2</Translation>
       </Text>
       <Text Id="__SingleUse_LNGC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_9BTJ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_7LX8" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_P6PC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
       <Text Id="__SingleUse_H2O5" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMTState: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_VWZC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_KZIP" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Node: &lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_M378" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Heartbeat consumer:</Translation>
+        <Translation Language="GB">      HB consumer  HB producer  NMT</Translation>
       </Text>
       <Text Id="__SingleUse_QVOL" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">111</Translation>
