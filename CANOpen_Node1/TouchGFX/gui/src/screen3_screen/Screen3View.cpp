@@ -110,7 +110,7 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
 
 void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
 {
-	Unicode::UnicodeChar bufferNMTstate[20];
+	Unicode::UnicodeChar bufferTemp[20];
 
 	if( CAN_ID != 0 && CAN_ID != 0x100 )
 	{
@@ -119,14 +119,14 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 																			HBconsumer_state_colorRGB[HBstate][2]) );
 	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
 
-    	Unicode::strncpy(bufferNMTstate, CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), 20);
-    	Unicode::snprintf(NodeNMTStateBuffer[index], NODE_NMTSTATE_SIZE, "%s", bufferNMTstate);
+    	Unicode::strncpy(bufferTemp, CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), 20);
+    	Unicode::snprintf(NodeNMTStateBuffer[index], NODE_NMTSTATE_SIZE, "%s", bufferTemp);
 	    NodeNMTState[index]->setVisible(true);
 	    NodeStatus[index]->setVisible(true);
 	}
 	else
 	{
-	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%s", "not used");
+    	Unicode::strncpy(NodeCANIDBuffer[index], "not used", NODE_CANID_SIZE);
 	    NodeNMTState[index]->setVisible(false);
 	    NodeStatus[index]->setVisible(false);
 	}
@@ -134,4 +134,10 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
     NodeNMTState[index]->invalidate();
     NodeCANID[index]->invalidate();
     NodeStatus[index]->invalidate();
+}
+
+void Screen3View::setHBconsumerTimeout( int index, uint16_t timeoutTime)
+{
+    Unicode::snprintf(Node7HBconsTimeoutBuffer, NODE7HBCONSTIMEOUT_SIZE, "%d", timeoutTime);
+    Node7HBconsTimeout.invalidate();
 }

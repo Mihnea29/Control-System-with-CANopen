@@ -19,6 +19,7 @@ public:
     virtual void tearDownScreen();
 
     virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate);
+    virtual void setHBconsumerTimeout( int index, uint16_t timeoutTime);
 protected:
 
     touchgfx::TextAreaWithOneWildcard* NodeNMTState[HB_CONS_NODES];

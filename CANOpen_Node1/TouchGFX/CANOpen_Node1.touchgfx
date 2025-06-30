@@ -307,17 +307,17 @@
             "Type": "Circle",
             "Name": "Node7Status",
             "X": 36,
-            "Y": 447,
-            "Width": 40,
-            "Height": 40,
+            "Y": 452,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -357,17 +357,17 @@
             "Type": "Circle",
             "Name": "Node6Status",
             "X": 36,
-            "Y": 400,
-            "Width": 40,
-            "Height": 40,
+            "Y": 405,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -407,17 +407,17 @@
             "Type": "Circle",
             "Name": "Node5Status",
             "X": 36,
-            "Y": 348,
-            "Width": 40,
-            "Height": 40,
+            "Y": 353,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -457,17 +457,17 @@
             "Type": "Circle",
             "Name": "Node4Status",
             "X": 36,
-            "Y": 302,
-            "Width": 40,
-            "Height": 40,
+            "Y": 304,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -507,17 +507,17 @@
             "Type": "Circle",
             "Name": "Node3Status",
             "X": 36,
-            "Y": 255,
-            "Width": 40,
-            "Height": 40,
+            "Y": 257,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -557,17 +557,17 @@
             "Type": "Circle",
             "Name": "Node2Status",
             "X": 36,
-            "Y": 205,
-            "Width": 40,
-            "Height": 40,
+            "Y": 207,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -607,17 +607,17 @@
             "Type": "Circle",
             "Name": "Node1Status",
             "X": 36,
-            "Y": 158,
-            "Width": 40,
-            "Height": 40,
+            "Y": 160,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -658,17 +658,17 @@
             "Type": "Circle",
             "Name": "Node0Status",
             "X": 36,
-            "Y": 110,
-            "Width": 40,
-            "Height": 40,
+            "Y": 115,
+            "Width": 30,
+            "Height": 30,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 15.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },
@@ -698,6 +698,48 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Node7HBconsTimeout",
+            "X": 141,
+            "Y": 523,
+            "Width": 250,
+            "Height": 24,
+            "TextId": "__SingleUse_SAID",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0NYJ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNode7HBTInc",
+            "X": 444,
+            "Y": 517,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
+            "TextId": "__SingleUse_1SUC",
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNode7HBTDec",
+            "X": 400,
+            "Y": 517,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
+            "TextId": "__SingleUse_ZFMV",
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
           }
         ],
         "Interactions": [
@@ -725,6 +767,28 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "buttonNode7HBTinc",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNode7HBTInc"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonNodeXHBTinc"
+            }
+          },
+          {
+            "InteractionName": "buttonNode7HBTiDec",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNode7HBTDec"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonNodeXHBTiDec"
             }
           }
         ]

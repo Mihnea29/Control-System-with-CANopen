@@ -22,6 +22,18 @@ public:
     virtual ~Screen3ViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonNodeXHBTinc()
+    {
+        // Override and implement this function in Screen3
+    }
+    virtual void buttonNodeXHBTiDec()
+    {
+        // Override and implement this function in Screen3
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -68,6 +80,9 @@ protected:
     touchgfx::PainterRGB565 Node0StatusPainter;
     touchgfx::TextArea textArea1;
     touchgfx::TextAreaWithOneWildcard textCANID;
+    touchgfx::TextAreaWithOneWildcard Node7HBconsTimeout;
+    touchgfx::ButtonWithLabel buttonNode7HBTInc;
+    touchgfx::ButtonWithLabel buttonNode7HBTDec;
 
     /*
      * Wildcard Buffers
@@ -106,6 +121,8 @@ protected:
     touchgfx::Unicode::UnicodeChar Node0CANIDBuffer[NODE0CANID_SIZE];
     static const uint16_t TEXTCANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textCANIDBuffer[TEXTCANID_SIZE];
+    static const uint16_t NODE7HBCONSTIMEOUT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Node7HBconsTimeoutBuffer[NODE7HBCONSTIMEOUT_SIZE];
 
 private:
 

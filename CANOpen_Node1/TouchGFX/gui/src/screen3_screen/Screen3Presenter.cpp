@@ -21,3 +21,10 @@ void Screen3Presenter::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_stat
 {
 	view.setNodeInfo(index, CAN_ID, HBstate, NMTstate);
 }
+
+
+void Screen3Presenter::setHBconsumerTimeout( int index, uint16_t timeoutTime)
+{
+	view.setHBconsumerTimeout(index, timeoutTime);
+}
+
