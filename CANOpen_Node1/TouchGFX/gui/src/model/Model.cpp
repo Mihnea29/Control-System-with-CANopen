@@ -60,15 +60,11 @@ void Model::tick()
 	RTC_TimeTypeDef sTime;
 	RTC_DateTypeDef sDate;
 
-
-	if(counter == 0) 		// @ start-up
-	{
-		modelListener->updateCANID(CO->NMT->nodeId);
-		//    	   for(int i = 0 ; i < HB_CONS_NODES ; i++)
-		//    	   {
-		modelListener->setHBconsumerTimeout(7, HBconsTimeout);
-		//    	   }
-	}
+	modelListener->updateCANID(CO->NMT->nodeId);
+	//    	   for(int i = 0 ; i < HB_CONS_NODES ; i++)
+	//    	   {
+	modelListener->setHBconsumerTimeout(7, HBconsTimeout);
+	//    	   }
 
 	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
