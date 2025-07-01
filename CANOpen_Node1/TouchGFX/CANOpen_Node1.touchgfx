@@ -888,6 +888,7 @@
             "Name": "image_bg",
             "Width": 480,
             "Height": 800,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
           },
           {
@@ -926,6 +927,50 @@
           },
           {
             "Type": "ToggleButton",
+            "Name": "toggleAvarii",
+            "X": 170,
+            "Y": 321,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "togglePozitii",
+            "X": 170,
+            "Y": 394,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleFaza",
+            "X": 170,
+            "Y": 451,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleFlash",
+            "X": 170,
+            "Y": 512,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
+          },
+          {
+            "Type": "ToggleButton",
             "Name": "toggleSemnalizareDreapta",
             "X": 297,
             "Y": 219,
@@ -954,6 +999,50 @@
             "Width": 208,
             "Height": 24,
             "TextId": "__SingleUse_94DN",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 97,
+            "Y": 334,
+            "Width": 57,
+            "Height": 24,
+            "TextId": "__SingleUse_0Z1E",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 97,
+            "Y": 407,
+            "Width": 58,
+            "Height": 24,
+            "TextId": "__SingleUse_QCEY",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 97,
+            "Y": 464,
+            "Width": 53,
+            "Height": 24,
+            "TextId": "__SingleUse_8D5U",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 100,
+            "Y": 525,
+            "Width": 52,
+            "Height": 24,
+            "TextId": "__SingleUse_J4AD",
             "TextRotation": "0",
             "AutoSize": true
           }
@@ -993,6 +1082,50 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Code": "presenter->toggleButton(2);"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleAvarii"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->toggleButton(3);"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "togglePozitii"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->toggleButton(4);"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleFaza"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->toggleButton(5);"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleFlash"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->toggleButton(6);"
             }
           }
         ]

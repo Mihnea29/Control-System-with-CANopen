@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_J4AD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Flash</Translation>
+      </Text>
+      <Text Id="__SingleUse_8D5U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Faza </Translation>
+      </Text>
+      <Text Id="__SingleUse_QCEY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Pozitii</Translation>
+      </Text>
+      <Text Id="__SingleUse_0Z1E" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Avarii</Translation>
+      </Text>
       <Text Id="__SingleUse_94DN" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Semnalizare dreapta</Translation>
       </Text>

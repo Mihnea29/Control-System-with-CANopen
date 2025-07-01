@@ -32,9 +32,17 @@ protected:
     touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonPrev;
     touchgfx::ToggleButton toggleSemnalizareStanga;
+    touchgfx::ToggleButton toggleAvarii;
+    touchgfx::ToggleButton togglePozitii;
+    touchgfx::ToggleButton toggleFaza;
+    touchgfx::ToggleButton toggleFlash;
     touchgfx::ToggleButton toggleSemnalizareDreapta;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea3;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea5;
+    touchgfx::TextArea textArea6;
 
 private:
 

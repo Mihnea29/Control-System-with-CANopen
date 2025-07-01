@@ -30,6 +30,26 @@ Screen4ViewBase::Screen4ViewBase() :
     toggleSemnalizareStanga.setAction(buttonCallback);
     add(toggleSemnalizareStanga);
 
+    toggleAvarii.setXY(170, 321);
+    toggleAvarii.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_ON_NORMAL_ID));
+    toggleAvarii.setAction(buttonCallback);
+    add(toggleAvarii);
+
+    togglePozitii.setXY(170, 394);
+    togglePozitii.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_ON_NORMAL_ID));
+    togglePozitii.setAction(buttonCallback);
+    add(togglePozitii);
+
+    toggleFaza.setXY(170, 451);
+    toggleFaza.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_ON_NORMAL_ID));
+    toggleFaza.setAction(buttonCallback);
+    add(toggleFaza);
+
+    toggleFlash.setXY(170, 512);
+    toggleFlash.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_ON_NORMAL_ID));
+    toggleFlash.setAction(buttonCallback);
+    add(toggleFlash);
+
     toggleSemnalizareDreapta.setXY(297, 219);
     toggleSemnalizareDreapta.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_ON_NORMAL_ID));
     toggleSemnalizareDreapta.setAction(buttonCallback);
@@ -46,6 +66,30 @@ Screen4ViewBase::Screen4ViewBase() :
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_94DN));
     add(textArea2);
+
+    textArea3.setXY(97, 334);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0Z1E));
+    add(textArea3);
+
+    textArea4.setXY(97, 407);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QCEY));
+    add(textArea4);
+
+    textArea5.setXY(97, 464);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8D5U));
+    add(textArea5);
+
+    textArea6.setXY(100, 525);
+    textArea6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea6.setLinespacing(0);
+    textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J4AD));
+    add(textArea6);
 }
 
 Screen4ViewBase::~Screen4ViewBase()
@@ -80,5 +124,33 @@ void Screen4ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When toggleSemnalizareDreapta clicked execute C++ code
         //Execute C++ code
         presenter->toggleButton(2);
+    }
+    if (&src == &toggleAvarii)
+    {
+        //Interaction3
+        //When toggleAvarii clicked execute C++ code
+        //Execute C++ code
+        presenter->toggleButton(3);
+    }
+    if (&src == &togglePozitii)
+    {
+        //Interaction4
+        //When togglePozitii clicked execute C++ code
+        //Execute C++ code
+        presenter->toggleButton(4);
+    }
+    if (&src == &toggleFaza)
+    {
+        //Interaction5
+        //When toggleFaza clicked execute C++ code
+        //Execute C++ code
+        presenter->toggleButton(5);
+    }
+    if (&src == &toggleFlash)
+    {
+        //Interaction6
+        //When toggleFlash clicked execute C++ code
+        //Execute C++ code
+        presenter->toggleButton(6);
     }
 }
