@@ -42,15 +42,6 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 volatile uint8_t uart_tx_busy = 0;
-typedef enum {
-    MODE_OFF,
-    MODE_LEFT,
-    MODE_RIGHT,
-    MODE_HAZARD,
-	MODE_HIGHBEAM,
-	MODE_FLASH
-} LightMode;
-LightMode currentMode = MODE_OFF;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -285,48 +276,26 @@ void CAN1_SCE_IRQHandler(void)
   */
 void TIM4_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM4_IRQn 0 */
-    LightMode newMode;
+    /* USER CODE BEGIN TIM4_IRQn 0 */
 
-    if(leftSignal == 1 && rightSignal == 0)
-        newMode = MODE_LEFT;
-    else if(leftSignal == 0 && rightSignal == 1)
-        newMode = MODE_RIGHT;
-    else if(leftSignal == 1 && rightSignal == 1)
-        newMode = MODE_HAZARD;
-    else if (flash == 1)
-    	newMode = MODE_FLASH;
-    else
-        newMode = MODE_OFF;
-    if(newMode != currentMode)
-    {
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
+    if (leftSignal == 1 && rightSignal == 1) {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    } else if (leftSignal == 1 && rightSignal == 0) {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+    } else if (leftSignal == 0 && rightSignal == 1) {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+    } else {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-        currentMode = newMode;
     }
 
-    if(currentMode == MODE_LEFT)
-    {
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-    }
-    else if(currentMode == MODE_RIGHT)
-    {
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-    }
-    else if(currentMode == MODE_HAZARD)
-    {
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-    }
-
-  /* USER CODE END TIM4_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim4);
-  /* USER CODE BEGIN TIM4_IRQn 1 */
-
-  /* USER CODE END TIM4_IRQn 1 */
+    /* USER CODE END TIM4_IRQn 0 */
+    HAL_TIM_IRQHandler(&htim4);
+    /* USER CODE BEGIN TIM4_IRQn 1 */
+    /* USER CODE END TIM4_IRQn 1 */
 }
 
 /**
@@ -348,16 +317,16 @@ void TIM8_TRG_COM_TIM14_IRQHandler(void)
   */
 void TIM7_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM7_IRQn 0 */
-	if(currentMode == MODE_FLASH)
-	    {
-	        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-	    }
-  /* USER CODE END TIM7_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim7);
-  /* USER CODE BEGIN TIM7_IRQn 1 */
+    /* USER CODE BEGIN TIM7_IRQn 0 */
 
-  /* USER CODE END TIM7_IRQn 1 */
+    // Flash blinking - same logic as your working flash
+    if (flash == 1) {
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+    }
+    /* USER CODE END TIM7_IRQn 0 */
+    HAL_TIM_IRQHandler(&htim7);
+    /* USER CODE BEGIN TIM7_IRQn 1 */
+    /* USER CODE END TIM7_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

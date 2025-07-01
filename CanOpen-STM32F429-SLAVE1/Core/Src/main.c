@@ -501,31 +501,35 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void LEDControl(uint32_t ledControlValue) {
-    leftSignal = 0;
-    rightSignal = 0;
-    flash = 0;
-
     if (ledControlValue & LED_HEADLIGHT_MASK) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_SET);
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+    } else {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
     }
-
-    if (ledControlValue & LED_LEFT_SIGNAL_MASK) {
-        leftSignal = 1;
-    }
-
-    if (ledControlValue & LED_RIGHT_SIGNAL_MASK) {
-        rightSignal = 1;
-    }
-
-    if (ledControlValue & LED_HIGH_BEAM_MASK) {
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-    }
-
     if (ledControlValue & LED_FLASH_MASK) {
         flash = 1;
+    }
+    else
+    {
+    	flash = 0;
+    }
+
+    if ((ledControlValue & LED_HIGH_BEAM_MASK) && !(ledControlValue & LED_FLASH_MASK)) {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
+    } else if (!(ledControlValue & LED_FLASH_MASK)) {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
+    }
+
+    bool hasLeftSignal = (ledControlValue & LED_LEFT_SIGNAL_MASK) != 0;
+    bool hasRightSignal = (ledControlValue & LED_RIGHT_SIGNAL_MASK) != 0;
+    if (hasLeftSignal && hasRightSignal) {
+        leftSignal = 1;
+        rightSignal = 1;
+    } else {
+        leftSignal = hasLeftSignal ? 1 : 0;
+        rightSignal = hasRightSignal ? 1 : 0;
     }
 }
 

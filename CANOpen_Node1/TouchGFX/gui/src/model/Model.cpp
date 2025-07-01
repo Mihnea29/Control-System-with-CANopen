@@ -152,10 +152,39 @@ void Model::HBprodTimeDec(int index)
 }
 
 
-void Model::toggleButton(int index)
+void Model::toggleButton(int buttonNumber)
 {
-	if(index == 1)
-	{
-        OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_LEFT_SIGNAL_MASK, false);
-	}
+    static uint32_t current_leds = 0;
+    static uint32_t saved_signals = 0;
+
+    switch(buttonNumber) {
+        case 1:
+            current_leds ^= LED_LEFT_SIGNAL_MASK;
+            break;
+        case 2:
+            current_leds ^= LED_RIGHT_SIGNAL_MASK;
+            break;
+        case 3:
+            if ((current_leds & LED_LEFT_SIGNAL_MASK) && (current_leds & LED_RIGHT_SIGNAL_MASK)) {
+                current_leds &= ~(LED_LEFT_SIGNAL_MASK | LED_RIGHT_SIGNAL_MASK);
+                current_leds |= saved_signals;
+            } else {
+                saved_signals = current_leds & (LED_LEFT_SIGNAL_MASK | LED_RIGHT_SIGNAL_MASK);
+                current_leds |= (LED_LEFT_SIGNAL_MASK | LED_RIGHT_SIGNAL_MASK);
+            }
+            break;
+        case 4:
+            current_leds ^= LED_HEADLIGHT_MASK;
+            break;
+        case 5:
+            current_leds ^= LED_HIGH_BEAM_MASK;
+            break;
+        case 6:
+            current_leds ^= LED_FLASH_MASK;
+            break;
+        default:
+            return;
+    }
+
+    OD_set_u32(OD_find(OD, 0x6000), 0x00, current_leds, false);
 }
