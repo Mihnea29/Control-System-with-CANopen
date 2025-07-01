@@ -6,6 +6,9 @@ extern "C" {
 #include "stm32f7xx_hal.h"
 #include "stm32f7xx_hal_rtc.h"
 #include "CO_app_STM32.h"
+#include "main.h"
+#include "CANopen.h"
+#include "OD.h"
 extern CO_SDO_abortCode_t
 read_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subIndex, uint8_t* buf, size_t bufSize,
 		size_t* readSize);
@@ -151,5 +154,8 @@ void Model::HBprodTimeDec(int index)
 
 void Model::toggleButton(int index)
 {
-
+	if(index == 1)
+	{
+        OD_set_u32(OD_find(OD, 0x6000), 0x00, LED_LEFT_SIGNAL_MASK, false);
+	}
 }
