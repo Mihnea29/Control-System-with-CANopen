@@ -18,16 +18,15 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void updateCANID(uint8_t CAN_ID);
+    virtual void setCANID(uint8_t CAN_ID);
+    virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate);
+    virtual void setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
+    		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid );
 
-    virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate);
-    virtual void setHBconsumerTimeout( int index, uint16_t timeoutTime);
-    virtual void updateHBprodTime(int index, uint16_t HBprodTime);
+    virtual void indexChangeValue(int value);
 
 protected:
 
-    touchgfx::TextAreaWithOneWildcard* NodeNMTState[HB_CONS_NODES];
-    touchgfx::Unicode::UnicodeChar* NodeNMTStateBuffer[HB_CONS_NODES];
     touchgfx::TextAreaWithOneWildcard* NodeCANID[HB_CONS_NODES];
     touchgfx::Unicode::UnicodeChar* NodeCANIDBuffer[HB_CONS_NODES];
     touchgfx::Circle* NodeStatus[HB_CONS_NODES];

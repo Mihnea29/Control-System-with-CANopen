@@ -17,8 +17,7 @@ void Screen4Presenter::deactivate()
 
 }
 
-
-void Screen4Presenter::setLight(bool LUMINI_POZITII, bool SEMNALIZARE_STINGA, bool SEMNALIZARE_DREAPTA, bool FAZA_LUNGA)
+void Screen4Presenter::toggleButton(int index)
 {
-	view.setLight(LUMINI_POZITII, SEMNALIZARE_STINGA, SEMNALIZARE_DREAPTA, FAZA_LUNGA );
+	model->toggleButton(index);
 }

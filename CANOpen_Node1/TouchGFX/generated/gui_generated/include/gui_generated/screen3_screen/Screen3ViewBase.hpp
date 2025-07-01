@@ -14,7 +14,8 @@
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/containers/Slider.hpp>
+extern int idx;
 
 class Screen3ViewBase : public touchgfx::View<Screen3Presenter>
 {
@@ -22,6 +23,14 @@ public:
     Screen3ViewBase();
     virtual ~Screen3ViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void indexChangeValue(int value)
+    {
+        // Override and implement this function in Screen3
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,97 +44,68 @@ protected:
     touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonPrev;
     touchgfx::ButtonWithLabel butonNext;
-    touchgfx::TextAreaWithOneWildcard Node7NMTState;
     touchgfx::TextAreaWithOneWildcard Node7CANID;
     touchgfx::Circle Node7Status;
     touchgfx::PainterRGB565 Node7StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node6NMTState;
     touchgfx::TextAreaWithOneWildcard Node6CANID;
     touchgfx::Circle Node6Status;
     touchgfx::PainterRGB565 Node6StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node5NMTState;
     touchgfx::TextAreaWithOneWildcard Node5CANID;
     touchgfx::Circle Node5Status;
     touchgfx::PainterRGB565 Node5StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node4NMTState;
     touchgfx::TextAreaWithOneWildcard Node4CANID;
     touchgfx::Circle Node4Status;
     touchgfx::PainterRGB565 Node4StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node3NMTState;
     touchgfx::TextAreaWithOneWildcard Node3CANID;
     touchgfx::Circle Node3Status;
     touchgfx::PainterRGB565 Node3StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node2NMTState;
     touchgfx::TextAreaWithOneWildcard Node2CANID;
     touchgfx::Circle Node2Status;
     touchgfx::PainterRGB565 Node2StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node1NMTState;
     touchgfx::TextAreaWithOneWildcard Node1CANID;
     touchgfx::Circle Node1Status;
     touchgfx::PainterRGB565 Node1StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node0NMTState;
     touchgfx::TextAreaWithOneWildcard Node0CANID;
     touchgfx::Circle Node0Status;
     touchgfx::PainterRGB565 Node0StatusPainter;
-    touchgfx::TextAreaWithOneWildcard Node7HBconsTimeout;
-    touchgfx::TextAreaWithOneWildcard Node7HBprodTime;
-    touchgfx::ButtonWithLabel buttonNode7HBcTInc;
-    touchgfx::ButtonWithLabel buttonNode7HBcTDec;
-    touchgfx::ButtonWithLabel buttonNode7HBpTInc;
-    touchgfx::ButtonWithLabel buttonNode7HBpTDec;
+    touchgfx::TextAreaWithOneWildcard NodeXNMTState;
+    touchgfx::TextAreaWithOneWildcard NodeXHBconsTimeout;
+    touchgfx::TextAreaWithOneWildcard NodeXHBprodTime;
+    touchgfx::ButtonWithLabel buttonNodeXHBcTInc;
+    touchgfx::ButtonWithLabel buttonNodeXHBcTDec;
+    touchgfx::ButtonWithLabel buttonNodeXHBpTInc;
     touchgfx::TextArea textArea1;
+    touchgfx::ButtonWithLabel buttonNodeXHBpTDec;
+    touchgfx::ButtonWithLabel buttonNodeXHBpTGet;
+    touchgfx::ButtonWithLabel buttonNodeXHBpTSet;
     touchgfx::TextAreaWithOneWildcard textCANID;
-    touchgfx::ButtonWithLabel buttonNode7HBpTGet;
-    touchgfx::ButtonWithLabel buttonNode7HBpTSet;
-    touchgfx::TextArea textArea2;
-    touchgfx::Line line1;
-    touchgfx::PainterRGB565 line1Painter;
-    touchgfx::Line line1_1;
-    touchgfx::PainterRGB565 line1_1Painter;
-    touchgfx::Line line1_1_1;
-    touchgfx::PainterRGB565 line1_1_1Painter;
-    touchgfx::Line line1_1_1_1;
-    touchgfx::PainterRGB565 line1_1_1_1Painter;
+    touchgfx::Slider sliderIndex;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t NODE7NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node7NMTStateBuffer[NODE7NMTSTATE_SIZE];
     static const uint16_t NODE7CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node7CANIDBuffer[NODE7CANID_SIZE];
-    static const uint16_t NODE6NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node6NMTStateBuffer[NODE6NMTSTATE_SIZE];
     static const uint16_t NODE6CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node6CANIDBuffer[NODE6CANID_SIZE];
-    static const uint16_t NODE5NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node5NMTStateBuffer[NODE5NMTSTATE_SIZE];
     static const uint16_t NODE5CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node5CANIDBuffer[NODE5CANID_SIZE];
-    static const uint16_t NODE4NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node4NMTStateBuffer[NODE4NMTSTATE_SIZE];
     static const uint16_t NODE4CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node4CANIDBuffer[NODE4CANID_SIZE];
-    static const uint16_t NODE3NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node3NMTStateBuffer[NODE3NMTSTATE_SIZE];
     static const uint16_t NODE3CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node3CANIDBuffer[NODE3CANID_SIZE];
-    static const uint16_t NODE2NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node2NMTStateBuffer[NODE2NMTSTATE_SIZE];
     static const uint16_t NODE2CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node2CANIDBuffer[NODE2CANID_SIZE];
-    static const uint16_t NODE1NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node1NMTStateBuffer[NODE1NMTSTATE_SIZE];
     static const uint16_t NODE1CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node1CANIDBuffer[NODE1CANID_SIZE];
-    static const uint16_t NODE0NMTSTATE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar Node0NMTStateBuffer[NODE0NMTSTATE_SIZE];
     static const uint16_t NODE0CANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Node0CANIDBuffer[NODE0CANID_SIZE];
-    static const uint16_t NODE7HBCONSTIMEOUT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Node7HBconsTimeoutBuffer[NODE7HBCONSTIMEOUT_SIZE];
-    static const uint16_t NODE7HBPRODTIME_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Node7HBprodTimeBuffer[NODE7HBPRODTIME_SIZE];
+    static const uint16_t NODEXNMTSTATE_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar NodeXNMTStateBuffer[NODEXNMTSTATE_SIZE];
+    static const uint16_t NODEXHBCONSTIMEOUT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar NodeXHBconsTimeoutBuffer[NODEXHBCONSTIMEOUT_SIZE];
+    static const uint16_t NODEXHBPRODTIME_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar NodeXHBprodTimeBuffer[NODEXHBPRODTIME_SIZE];
     static const uint16_t TEXTCANID_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textCANIDBuffer[TEXTCANID_SIZE];
 
@@ -141,11 +121,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen3ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen3ViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
 
 };
 

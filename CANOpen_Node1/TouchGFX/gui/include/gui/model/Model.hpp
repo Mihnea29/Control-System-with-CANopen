@@ -21,16 +21,22 @@ public:
 
     void tick();
 
-
+    //SCREEN3
+    int current_idx;
+    uint16_t HBconsTimeout[HB_CONS_NODES];
+    uint16_t HBprodTime[HB_CONS_NODES];
+    bool HBprodTimeValid[HB_CONS_NODES];
 
     void HBconsTimeoutInc(int index);
     void HBconsTimeoutDec(int index);
     void HBprodTimeInc(int index);
     void HBprodTimeDec(int index);
 
-
     void getHBprodTime(int index);
     void setHBprodTime(int index);
+
+    //SCREEN4
+    void toggleButton(int index);
 protected:
     ModelListener* modelListener;
 };

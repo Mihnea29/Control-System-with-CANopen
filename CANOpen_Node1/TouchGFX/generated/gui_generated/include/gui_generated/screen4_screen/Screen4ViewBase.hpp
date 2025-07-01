@@ -10,8 +10,8 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/canvas/Circle.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Screen4ViewBase : public touchgfx::View<Screen4Presenter>
 {
@@ -31,34 +31,12 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonPrev;
-    touchgfx::Circle semnalizare_fata_st;
-    touchgfx::PainterRGB565 semnalizare_fata_stPainter;
-    touchgfx::Circle semnalizare_fata_dr;
-    touchgfx::PainterRGB565 semnalizare_fata_drPainter;
-    touchgfx::Circle semnalizare_spate_st;
-    touchgfx::PainterRGB565 semnalizare_spate_stPainter;
-    touchgfx::Circle semnalizare_spate_dr;
-    touchgfx::PainterRGB565 semnalizare_spate_drPainter;
-    touchgfx::Circle lumini_poz_dr;
-    touchgfx::PainterRGB565 lumini_poz_drPainter;
-    touchgfx::Circle faza_lunga_dr;
-    touchgfx::PainterRGB565 faza_lunga_drPainter;
-    touchgfx::Circle faza_lunga_st;
-    touchgfx::PainterRGB565 faza_lunga_stPainter;
-    touchgfx::Circle lumini_poz_st;
-    touchgfx::PainterRGB565 lumini_poz_stPainter;
-    touchgfx::Circle poz_dr;
-    touchgfx::PainterRGB565 poz_drPainter;
-    touchgfx::Circle poz_st;
-    touchgfx::PainterRGB565 poz_stPainter;
+    touchgfx::ToggleButton toggleSemnalizareStanga;
+    touchgfx::ToggleButton toggleSemnalizareDreapta;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea2;
 
 private:
-
-    /*
-     * Canvas Buffer Size
-     */
-    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
-    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
     /*
      * Callback Declarations

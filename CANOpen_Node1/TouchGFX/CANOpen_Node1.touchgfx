@@ -9,6 +9,7 @@
             "Name": "image_bg",
             "Width": 480,
             "Height": 800,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
           },
           {
@@ -18,6 +19,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_56FK",
@@ -41,6 +43,7 @@
             "Y": 118,
             "Width": 451,
             "Height": 220,
+            "LockPosition": true,
             "TextId": "__SingleUse_PF79",
             "TextRotation": "0",
             "Color": {
@@ -75,6 +78,7 @@
             "Name": "image_bg",
             "Width": 480,
             "Height": 800,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x800_puzzle.png"
           },
           {
@@ -84,6 +88,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_RTJH",
@@ -107,6 +112,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_6EK0",
@@ -130,6 +136,7 @@
             "Y": 100,
             "Width": 460,
             "Height": 460,
+            "LockPosition": true,
             "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_large_plain_dark.png",
             "RotationCenterX": 230,
             "RotationCenterY": 230,
@@ -166,6 +173,7 @@
             "Y": 592,
             "Width": 196,
             "Height": 52,
+            "LockPosition": true,
             "TextId": "__SingleUse_1MXR",
             "DisplaySeconds": true,
             "DisplayLeadingZeroForHourIndicator": true,
@@ -178,6 +186,7 @@
             "Y": 33,
             "Width": 480,
             "Height": 29,
+            "LockPosition": true,
             "TextId": "__SingleUse_7BBX",
             "TextRotation": "0",
             "Wildcard1": {
@@ -235,6 +244,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_IFSU",
@@ -258,6 +268,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_5MCB",
@@ -276,27 +287,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node7NMTState",
-            "X": 373,
-            "Y": 468,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_JOIY",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_JCSK",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node7CANID",
-            "X": 16,
-            "Y": 467,
+            "X": 415,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_F127",
             "TextRotation": "0",
             "AutoSize": true,
@@ -309,10 +305,11 @@
           {
             "Type": "Circle",
             "Name": "Node7Status",
-            "X": 53,
-            "Y": 469,
+            "X": 401,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -326,27 +323,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node6NMTState",
-            "X": 373,
-            "Y": 424,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_VC0F",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_BKAX",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node6CANID",
-            "X": 16,
-            "Y": 426,
+            "X": 351,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_KBZE",
             "TextRotation": "0",
             "AutoSize": true,
@@ -359,10 +341,11 @@
           {
             "Type": "Circle",
             "Name": "Node6Status",
-            "X": 53,
-            "Y": 421,
+            "X": 342,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -376,27 +359,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node5NMTState",
-            "X": 373,
-            "Y": 375,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_QUCF",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_ZWHH",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node5CANID",
-            "X": 16,
-            "Y": 374,
+            "X": 296,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_8LVA",
             "TextRotation": "0",
             "AutoSize": true,
@@ -409,10 +377,11 @@
           {
             "Type": "Circle",
             "Name": "Node5Status",
-            "X": 53,
-            "Y": 369,
+            "X": 287,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -426,27 +395,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node4NMTState",
-            "X": 373,
-            "Y": 326,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_0HH7",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_RHJ8",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node4CANID",
-            "X": 16,
-            "Y": 328,
+            "X": 248,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_UKW9",
             "TextRotation": "0",
             "AutoSize": true,
@@ -459,10 +413,11 @@
           {
             "Type": "Circle",
             "Name": "Node4Status",
-            "X": 53,
-            "Y": 320,
+            "X": 238,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -476,27 +431,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node3NMTState",
-            "X": 373,
-            "Y": 276,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_IOU7",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_EDRN",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node3CANID",
-            "X": 22,
-            "Y": 275,
+            "X": 190,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_ZJE7",
             "TextRotation": "0",
             "AutoSize": true,
@@ -509,10 +449,11 @@
           {
             "Type": "Circle",
             "Name": "Node3Status",
-            "X": 53,
-            "Y": 275,
+            "X": 184,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -526,27 +467,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node2NMTState",
-            "X": 373,
-            "Y": 229,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_K0W9",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_D8EL",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node2CANID",
-            "X": 21,
-            "Y": 216,
+            "X": 146,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_LNGC",
             "TextRotation": "0",
             "AutoSize": true,
@@ -559,10 +485,11 @@
           {
             "Type": "Circle",
             "Name": "Node2Status",
-            "X": 53,
-            "Y": 223,
+            "X": 137,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -576,27 +503,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node1NMTState",
-            "X": 373,
-            "Y": 179,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_0POE",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_SIL5",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node1CANID",
-            "X": 21,
-            "Y": 178,
+            "X": 98,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_7LX8",
             "TextRotation": "0",
             "AutoSize": true,
@@ -609,10 +521,11 @@
           {
             "Type": "Circle",
             "Name": "Node1Status",
-            "X": 53,
-            "Y": 176,
+            "X": 89,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -626,26 +539,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node0NMTState",
-            "X": 373,
-            "Y": 134,
-            "Width": 100,
-            "Height": 27,
-            "TextId": "__SingleUse_H2O5",
-            "TextRotation": "0",
-            "Wildcard1": {
-              "TextId": "__SingleUse_P6PC",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Node0CANID",
-            "X": 21,
-            "Y": 136,
+            "X": 49,
+            "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_KZIP",
             "TextRotation": "0",
             "AutoSize": true,
@@ -658,10 +557,11 @@
           {
             "Type": "Circle",
             "Name": "Node0Status",
-            "X": 53,
-            "Y": 135,
+            "X": 40,
+            "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -675,11 +575,28 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node7HBconsTimeout",
-            "X": 113,
-            "Y": 469,
-            "Width": 52,
+            "Name": "NodeXNMTState",
+            "X": 31,
+            "Y": 414,
+            "Width": 259,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_JOIY",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_JCSK",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "NodeXHBconsTimeout",
+            "X": 31,
+            "Y": 454,
+            "Width": 326,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_SAID",
             "TextRotation": "0",
             "AutoSize": true,
@@ -691,11 +608,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Node7HBprodTime",
-            "X": 248,
-            "Y": 513,
-            "Width": 52,
+            "Name": "NodeXHBprodTime",
+            "X": 267,
+            "Y": 495,
+            "Width": 88,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_LX0V",
             "TextRotation": "0",
             "AutoSize": true,
@@ -707,11 +625,12 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBcTInc",
-            "X": 165,
-            "Y": 463,
+            "Name": "buttonNodeXHBcTInc",
+            "X": 426,
+            "Y": 448,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_1SUC",
@@ -720,11 +639,12 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBcTDec",
-            "X": 83,
-            "Y": 462,
+            "Name": "buttonNodeXHBcTDec",
+            "X": 372,
+            "Y": 448,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZFMV",
@@ -733,11 +653,12 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBpTInc",
-            "X": 300,
-            "Y": 507,
+            "Name": "buttonNodeXHBpTInc",
+            "X": 426,
+            "Y": 491,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_RVOT",
@@ -745,12 +666,25 @@
             "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 31,
+            "Y": 492,
+            "Width": 125,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_ZSWV",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBpTDec",
-            "X": 211,
-            "Y": 507,
+            "Name": "buttonNodeXHBpTDec",
+            "X": 372,
+            "Y": 491,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZMNU",
@@ -758,38 +692,13 @@
             "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
           },
           {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 12,
-            "Y": 67,
-            "Width": 441,
-            "Height": 30,
-            "TextId": "__SingleUse_M378",
-            "TextRotation": "0"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textCANID",
-            "X": 36,
-            "Y": 11,
-            "Width": 130,
-            "Height": 24,
-            "TextId": "__SingleUse_88K3",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_QVOL",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBpTGet",
-            "X": 232,
-            "Y": 461,
+            "Name": "buttonNodeXHBpTGet",
+            "X": 162,
+            "Y": 486,
             "Width": 100,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_6HSG",
@@ -808,11 +717,12 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNode7HBpTSet",
-            "X": 229,
-            "Y": 550,
+            "Name": "buttonNodeXHBpTSet",
+            "X": 367,
+            "Y": 536,
             "Width": 100,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_B4SN",
@@ -831,89 +741,36 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 17,
-            "Y": 97,
-            "Width": 441,
-            "Height": 28,
-            "TextId": "__SingleUse_WBV8",
-            "TextRotation": "0"
+            "Name": "textCANID",
+            "X": 46,
+            "Y": 86,
+            "Width": 130,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_88K3",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_QVOL",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
-            "Type": "Line",
-            "Name": "line1",
-            "X": 39,
-            "Y": 67,
-            "Width": 20,
-            "Height": 470,
-            "Color": {
-              "Red": 5,
-              "Green": 5,
-              "Blue": 5
-            },
-            "StartX": 2.0,
-            "StartY": 1.0,
-            "EndX": 2.0,
-            "EndY": 450.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line1_1",
-            "X": 83,
-            "Y": 134,
-            "Width": 20,
-            "Height": 400,
-            "Color": {
-              "Red": 5,
-              "Green": 5,
-              "Blue": 5
-            },
-            "StartX": 2.0,
-            "StartY": 1.0,
-            "EndX": 2.0,
-            "EndY": 390.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line1_1_1",
-            "X": 201,
-            "Y": 125,
-            "Width": 20,
-            "Height": 400,
-            "Color": {
-              "Red": 5,
-              "Green": 5,
-              "Blue": 5
-            },
-            "StartX": 2.0,
-            "StartY": 1.0,
-            "EndX": 2.0,
-            "EndY": 390.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line1_1_1_1",
-            "X": 361,
-            "Y": 120,
-            "Width": 20,
-            "Height": 400,
-            "Color": {
-              "Red": 5,
-              "Green": 5,
-              "Blue": 5
-            },
-            "StartX": 2.0,
-            "StartY": 1.0,
-            "EndX": 2.0,
-            "EndY": 390.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
+            "Type": "Slider",
+            "Name": "sliderIndex",
+            "X": 40,
+            "Y": 290,
+            "Width": 312,
+            "Height": 24,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_round_light.png",
+            "BackgroundX": 12,
+            "BackgroundY": 9,
+            "IndicatorMax": 7,
+            "ValueMax": 7
           }
         ],
         "Interactions": [
@@ -944,76 +801,87 @@
             }
           },
           {
-            "InteractionName": "buttonNode7HBTinc",
+            "InteractionName": "buttonNodeXHBTinc",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBcTInc"
+              "TriggerComponent": "buttonNodeXHBcTInc"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->buttonNodeXHBTinc(7);"
+              "Includes": "extern int idx;",
+              "Code": "presenter->buttonNodeXHBTinc(idx);"
             }
           },
           {
-            "InteractionName": "buttonNode7HBTiDec",
+            "InteractionName": "buttonNodeXHBTDec",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBcTDec"
+              "TriggerComponent": "buttonNodeXHBcTDec"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->buttonNodeXHBTdec(7);"
+              "Code": "presenter->buttonNodeXHBTdec(idx);"
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "buttonNodeXHBpTGet",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBpTGet"
+              "TriggerComponent": "buttonNodeXHBpTGet"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->getHBprodTime(7);"
+              "Code": "presenter->getHBprodTime(idx);"
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "buttonNodeXHBpTSet",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBpTSet"
+              "TriggerComponent": "buttonNodeXHBpTSet"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->setHBprodTime(7);"
+              "Code": "presenter->setHBprodTime(idx);"
             }
           },
           {
-            "InteractionName": "Interaction3",
+            "InteractionName": "buttonNodeXHBpTInc",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBpTInc"
+              "TriggerComponent": "buttonNodeXHBpTInc"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->HBprodTimeInc(7);"
+              "Code": "presenter->HBprodTimeInc(idx);"
             }
           },
           {
-            "InteractionName": "Interaction4",
+            "InteractionName": "buttonNodeXHBpTDec",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNode7HBpTDec"
+              "TriggerComponent": "buttonNodeXHBpTDec"
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "presenter->HBprodTimeDec(7);"
+              "Code": "presenter->HBprodTimeDec(idx);"
+            }
+          },
+          {
+            "InteractionName": "indexChangeValue",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderIndex"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "indexChangeValue"
             }
           }
         ]
       },
       {
         "Name": "Screen4",
-        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
@@ -1046,184 +914,48 @@
             "Preset": "alternate_theme\\presets\\button\\icon\\round\\tiny_fill_disabled.json"
           },
           {
-            "Type": "Circle",
-            "Name": "semnalizare_fata_st",
-            "X": 73,
-            "Y": 341,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 102,
-              "Green": 77,
-              "Blue": 7
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
+            "Type": "ToggleButton",
+            "Name": "toggleSemnalizareStanga",
+            "X": 60,
+            "Y": 219,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
           },
           {
-            "Type": "Circle",
-            "Name": "semnalizare_fata_dr",
-            "X": 63,
-            "Y": 97,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 102,
-              "Green": 77,
-              "Blue": 7
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
+            "Type": "ToggleButton",
+            "Name": "toggleSemnalizareDreapta",
+            "X": 297,
+            "Y": 219,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
           },
           {
-            "Type": "Circle",
-            "Name": "semnalizare_spate_st",
-            "X": 359,
-            "Y": 334,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 102,
-              "Green": 77,
-              "Blue": 7
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 16,
+            "Y": 185,
+            "Width": 198,
+            "Height": 24,
+            "TextId": "__SingleUse_9D4B",
+            "TextRotation": "0",
+            "AutoSize": true
           },
           {
-            "Type": "Circle",
-            "Name": "semnalizare_spate_dr",
-            "X": 359,
-            "Y": 97,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 102,
-              "Green": 77,
-              "Blue": 7
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "lumini_poz_dr",
-            "X": 43,
-            "Y": 137,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 191,
-              "Green": 191,
-              "Blue": 191
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "faza_lunga_dr",
-            "X": 23,
-            "Y": 177,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "faza_lunga_st",
-            "X": 23,
-            "Y": 262,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "lumini_poz_st",
-            "X": 43,
-            "Y": 302,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "poz_dr",
-            "X": 399,
-            "Y": 129,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "poz_st",
-            "X": 399,
-            "Y": 294,
-            "Width": 40,
-            "Height": 40,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "CenterX": 20.0,
-            "CenterY": 20.0,
-            "Radius": 20.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt"
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 256,
+            "Y": 185,
+            "Width": 208,
+            "Height": 24,
+            "TextId": "__SingleUse_94DN",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1238,6 +970,29 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Screen3"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleSemnalizareStanga"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "",
+              "Code": "presenter->toggleButton(1);"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleSemnalizareDreapta"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->toggleButton(2);"
             }
           }
         ]

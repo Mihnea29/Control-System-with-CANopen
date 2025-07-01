@@ -1,20 +1,12 @@
 #include <gui/screen3_screen/Screen3View.hpp>
 #include <touchgfx/Color.hpp>
 
-#define NodeXNMTState(i)    		Node##i##NMTState
-#define NodeXNMTStateBuffer(i)    	Node##i##NMTStateBuffer
-#define NodeXCANID(i)   			Node##i##CANID
-#define NodeXCANIDBuffer(i)    		Node##i##CANIDBuffer
-#define NodeXStatus(i)    			Node##i##Status
-#define NodeXStatusPainter(i)    	Node##i##StatusPainter
-
-#define InitPointers(i)             NodeNMTState[i] = &(Node##i##NMTState); \
-                                    NodeNMTStateBuffer[i] = Node##i##NMTStateBuffer; \
-                                    NodeCANID[i] = &(Node##i##CANID); \
+#define InitPointers(i)             NodeCANID[i] = &(Node##i##CANID); \
                                     NodeCANIDBuffer[i] = Node##i##CANIDBuffer; \
                                     NodeStatus[i] = &(Node##i##Status); \
                                     NodeStatusPainter[i] = &(Node##i##StatusPainter);
 
+int idx = 0;
 
 Screen3View::Screen3View()
 {
@@ -26,15 +18,6 @@ Screen3View::Screen3View()
 	InitPointers(5);
 	InitPointers(6);
 	InitPointers(7);
-
- /*    int i = 0;
-         NodeNMTState[i] = &(NodeXNMTState(0));
-         NodeNMTStateBuffer[i] = NodeXNMTStateBuffer(0);
-         NodeCANID[i] = &(NodeXCANID(0));
-         NodeCANIDBuffer[i] = NodeXCANIDBuffer(0);
-         NodeStatus[i] = &(NodeXStatus(0));
-         NodeStatusPainter[i] = &(NodeXStatusPainter(0));  i++;
-*/
 }
 
 void Screen3View::setupScreen()
@@ -47,11 +30,13 @@ void Screen3View::tearDownScreen()
     Screen3ViewBase::tearDownScreen();
 }
 
-void Screen3View::updateCANID(uint8_t CAN_ID)
+void Screen3View::setCANID(uint8_t CAN_ID)
 {
 	Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%d", CAN_ID);
 	textCANID.invalidate();
 }
+
+
 
 //typedef enum {
 //    CO_HBconsumer_UNCONFIGURED = 0x00U, /**< Consumer entry inactive */
@@ -64,10 +49,13 @@ char HBconsumer_state_Text_[][20] = { "Unconfigured",
                                             "Unknown",
                                             "Active",
                                             "Timeout" };
-uint8_t HBconsumer_state_colorRGB[][3] = { {0, 0, 0},     // R, G, B
-                                           {127, 127, 127},
-                                           {0, 255, 0},
-										   {237, 127, 16}      };
+
+										//    R,   G,   B
+uint8_t HBconsumer_state_colorRGB[][3] = { {  0,   0,   0},     // black
+                                           {127, 127, 127},     // gray
+                                           {  0, 255,   0},     // green
+										   {237, 127,  16}      // orange
+										};
 
 char* HBconsumer_state2Text(CO_HBconsumer_state_t state)
 {
@@ -110,45 +98,68 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
     return CO_NMT_internalState_Text_[index];
 }
 
-#define NODE_NMTSTATE_SIZE  20
 #define NODE_CANID_SIZE     20
-
-void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
+void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate)
 {
-	Unicode::UnicodeChar bufferTemp[20];
-
 	if( CAN_ID != 0 && CAN_ID != 0x100 )
 	{
+	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
 	    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[HBstate][0],
 	    																	HBconsumer_state_colorRGB[HBstate][1],
 																			HBconsumer_state_colorRGB[HBstate][2]) );
-	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
-
-    	Unicode::strncpy(bufferTemp, CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), 20);
-    	Unicode::snprintf(NodeNMTStateBuffer[index], NODE_NMTSTATE_SIZE, "%s", bufferTemp);
-	    NodeNMTState[index]->setVisible(true);
-	    NodeStatus[index]->setVisible(true);
 	}
 	else
 	{
-    	Unicode::strncpy(NodeCANIDBuffer[index], "not used", NODE_CANID_SIZE);
-	    NodeNMTState[index]->setVisible(false);
-	    NodeStatus[index]->setVisible(false);
+    	Unicode::strncpy(NodeCANIDBuffer[index], "*", NODE_CANID_SIZE);
+	    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[0][0],
+	    																	HBconsumer_state_colorRGB[0][1],
+																			HBconsumer_state_colorRGB[0][2]) );
 	}
 
-    NodeNMTState[index]->invalidate();
     NodeCANID[index]->invalidate();
     NodeStatus[index]->invalidate();
 }
 
-void Screen3View::setHBconsumerTimeout( int index, uint16_t timeoutTime)
+
+#define NODE_NMTSTATE_SIZE  20
+
+void Screen3View::setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
+		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid )
 {
-    Unicode::snprintf(Node7HBconsTimeoutBuffer, NODE7HBCONSTIMEOUT_SIZE, "%d", timeoutTime);
-    Node7HBconsTimeout.invalidate();
+	idx  = index;
+	sliderIndex.setValue(index);
+	Unicode::strncpy(NodeXNMTStateBuffer,
+			CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), NODEXNMTSTATE_SIZE);
+
+	if( HBprodTimeValid )
+    {
+        Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%d", HBprodTime);
+        NodeXHBprodTime.setVisible(true);
+        buttonNodeXHBpTInc.setVisible(true);
+        buttonNodeXHBpTDec.setVisible(true);
+        buttonNodeXHBpTSet.setVisible(true);
+    }
+    else
+    {
+        NodeXHBprodTime.setVisible(false);
+        buttonNodeXHBpTInc.setVisible(false);
+        buttonNodeXHBpTDec.setVisible(false);
+        buttonNodeXHBpTSet.setVisible(false);
+    }
+
+    sliderIndex.invalidate();
+    NodeXNMTState.invalidate();
+    NodeXHBconsTimeout.invalidate();
+    NodeXHBprodTime.invalidate();
+    buttonNodeXHBpTInc.invalidate();
+	buttonNodeXHBpTDec.invalidate();
+	buttonNodeXHBpTSet.invalidate();
 }
 
-void Screen3View::updateHBprodTime(int index, uint16_t HBprodTime)
+
+void Screen3View::indexChangeValue(int value)
 {
-	Unicode::snprintf(Node7HBprodTimeBuffer, NODE7HBPRODTIME_SIZE, "%d", HBprodTime);
-	Node7HBprodTime.invalidate();
+    // Override and implement this function in Screen3
+	idx  = value;
+//	presenter->getNodeXHBparameter(idx);
 }

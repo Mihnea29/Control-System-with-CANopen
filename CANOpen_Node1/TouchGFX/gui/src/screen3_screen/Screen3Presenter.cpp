@@ -17,27 +17,24 @@ void Screen3Presenter::deactivate()
 
 }
 
-void Screen3Presenter::updateCANID(uint8_t CAN_ID)
+void Screen3Presenter::setCANID(uint8_t CAN_ID)
 {
-	view.updateCANID(CAN_ID);
+	view.setCANID(CAN_ID);
 }
 
 
-void Screen3Presenter::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
+void Screen3Presenter::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate)
 {
-	view.setNodeInfo(index, CAN_ID, HBstate, NMTstate);
+	view.setNodeInfo(index, CAN_ID, HBstate);
 }
 
 
-void Screen3Presenter::setHBconsumerTimeout( int index, uint16_t timeoutTime)
+void Screen3Presenter::setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
+		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid )
 {
-	view.setHBconsumerTimeout(index, timeoutTime);
+	view.setNodeInfoDetail(index, HBstate, NMTstate, timeoutTime, HBprodTime, HBprodTimeValid );
 }
 
-void Screen3Presenter::updateHBprodTime(int index, uint16_t HBprodTime)
-{
-	view.updateHBprodTime(index, HBprodTime);
-}
 
 void Screen3Presenter::buttonNodeXHBTinc(int index)
 {
