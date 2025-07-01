@@ -14,12 +14,13 @@ write_SDO(CO_SDOclient_t* SDO_C, uint8_t nodeId, uint16_t index, uint8_t subInde
 extern RTC_HandleTypeDef hrtc;
 extern CANopenNodeSTM32 canOpenNodeSTM32;
 extern CO_t *CO;
+#define log_printf(macropar_message, ...) printf(macropar_message, ##__VA_ARGS__)
 }
 
 
 Model::Model() : modelListener(nullptr)
 {
-	current_idx = 0;
+	current_idx = 7;
 	for(int i = 0 ; i < HB_CONS_NODES; i++)
 	{
 	    HBconsTimeout[i] = 2500;
@@ -115,7 +116,7 @@ void Model::getHBprodTime(int index)
 void Model::setHBprodTime(int index)
 {
 	//SDE write
-	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HBprodTime, sizeof(HBprodTime));
+	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HBprodTime[index], sizeof(HBprodTime[index]));
 }
 
 
