@@ -66,7 +66,6 @@ void Model::tick()
 //			HBconsTimeout[current_idx],
 //			HBprodTime[current_idx],
 //			HBprodTimeValid[current_idx] );
-
 }
 
 

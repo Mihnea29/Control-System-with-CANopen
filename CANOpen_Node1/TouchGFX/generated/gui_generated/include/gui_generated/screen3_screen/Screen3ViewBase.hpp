@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/Slider.hpp>
 extern int idx;
@@ -68,7 +69,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard Node0CANID;
     touchgfx::Circle Node0Status;
     touchgfx::PainterRGB565 Node0StatusPainter;
+    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextAreaWithOneWildcard NodeXNMTState;
+    touchgfx::TextAreaWithOneWildcard NodeXCANID;
+    touchgfx::TextAreaWithOneWildcard NodeXHBconsState;
     touchgfx::TextAreaWithOneWildcard NodeXHBconsTimeout;
     touchgfx::TextAreaWithOneWildcard NodeXHBprodTime;
     touchgfx::ButtonWithLabel buttonNodeXHBcTInc;
@@ -77,9 +81,11 @@ protected:
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonNodeXHBpTDec;
     touchgfx::ButtonWithLabel buttonNodeXHBpTGet;
+    touchgfx::ButtonWithLabel buttonNodeXRefresh;
     touchgfx::ButtonWithLabel buttonNodeXHBpTSet;
     touchgfx::TextAreaWithOneWildcard textCANID;
     touchgfx::Slider sliderIndex;
+    touchgfx::TextArea textArea2;
 
     /*
      * Wildcard Buffers
@@ -102,6 +108,10 @@ protected:
     touchgfx::Unicode::UnicodeChar Node0CANIDBuffer[NODE0CANID_SIZE];
     static const uint16_t NODEXNMTSTATE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar NodeXNMTStateBuffer[NODEXNMTSTATE_SIZE];
+    static const uint16_t NODEXCANID_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar NodeXCANIDBuffer[NODEXCANID_SIZE];
+    static const uint16_t NODEXHBCONSSTATE_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar NodeXHBconsStateBuffer[NODEXHBCONSSTATE_SIZE];
     static const uint16_t NODEXHBCONSTIMEOUT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar NodeXHBconsTimeoutBuffer[NODEXHBCONSTIMEOUT_SIZE];
     static const uint16_t NODEXHBPRODTIME_SIZE = 10;

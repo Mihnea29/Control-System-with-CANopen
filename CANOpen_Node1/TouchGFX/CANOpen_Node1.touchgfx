@@ -288,11 +288,10 @@
           {
             "Type": "TextArea",
             "Name": "Node7CANID",
-            "X": 415,
+            "X": 372,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_F127",
             "TextRotation": "0",
             "AutoSize": true,
@@ -305,11 +304,10 @@
           {
             "Type": "Circle",
             "Name": "Node7Status",
-            "X": 401,
+            "X": 363,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -324,11 +322,10 @@
           {
             "Type": "TextArea",
             "Name": "Node6CANID",
-            "X": 351,
+            "X": 332,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_KBZE",
             "TextRotation": "0",
             "AutoSize": true,
@@ -341,11 +338,10 @@
           {
             "Type": "Circle",
             "Name": "Node6Status",
-            "X": 342,
+            "X": 323,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -360,11 +356,10 @@
           {
             "Type": "TextArea",
             "Name": "Node5CANID",
-            "X": 296,
+            "X": 291,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_8LVA",
             "TextRotation": "0",
             "AutoSize": true,
@@ -377,11 +372,10 @@
           {
             "Type": "Circle",
             "Name": "Node5Status",
-            "X": 287,
+            "X": 283,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -396,11 +390,10 @@
           {
             "Type": "TextArea",
             "Name": "Node4CANID",
-            "X": 248,
+            "X": 257,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_UKW9",
             "TextRotation": "0",
             "AutoSize": true,
@@ -413,11 +406,10 @@
           {
             "Type": "Circle",
             "Name": "Node4Status",
-            "X": 238,
+            "X": 248,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -432,11 +424,10 @@
           {
             "Type": "TextArea",
             "Name": "Node3CANID",
-            "X": 190,
+            "X": 217,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_ZJE7",
             "TextRotation": "0",
             "AutoSize": true,
@@ -449,11 +440,10 @@
           {
             "Type": "Circle",
             "Name": "Node3Status",
-            "X": 184,
+            "X": 208,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -468,11 +458,10 @@
           {
             "Type": "TextArea",
             "Name": "Node2CANID",
-            "X": 146,
+            "X": 177,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_LNGC",
             "TextRotation": "0",
             "AutoSize": true,
@@ -485,11 +474,10 @@
           {
             "Type": "Circle",
             "Name": "Node2Status",
-            "X": 137,
+            "X": 168,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -504,11 +492,10 @@
           {
             "Type": "TextArea",
             "Name": "Node1CANID",
-            "X": 98,
+            "X": 136,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_7LX8",
             "TextRotation": "0",
             "AutoSize": true,
@@ -521,11 +508,10 @@
           {
             "Type": "Circle",
             "Name": "Node1Status",
-            "X": 89,
+            "X": 127,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -540,11 +526,10 @@
           {
             "Type": "TextArea",
             "Name": "Node0CANID",
-            "X": 49,
+            "X": 97,
             "Y": 234,
             "Width": 13,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_KZIP",
             "TextRotation": "0",
             "AutoSize": true,
@@ -557,11 +542,10 @@
           {
             "Type": "Circle",
             "Name": "Node0Status",
-            "X": 40,
+            "X": 88,
             "Y": 187,
             "Width": 30,
             "Height": 30,
-            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -574,13 +558,32 @@
             "CapPrecision": "Butt"
           },
           {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 53,
+            "Y": 276,
+            "Width": 369,
+            "Height": 326,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 11,
+              "Green": 76,
+              "Blue": 99
+            },
+            "BorderSize": 5,
+            "Alpha": 40
+          },
+          {
             "Type": "TextArea",
             "Name": "NodeXNMTState",
-            "X": 31,
-            "Y": 414,
+            "X": 72,
+            "Y": 400,
             "Width": 259,
             "Height": 27,
-            "LockPosition": true,
             "TextId": "__SingleUse_JOIY",
             "TextRotation": "0",
             "Wildcard1": {
@@ -591,12 +594,41 @@
           },
           {
             "Type": "TextArea",
+            "Name": "NodeXCANID",
+            "X": 71,
+            "Y": 331,
+            "Width": 199,
+            "Height": 24,
+            "TextId": "__SingleUse_32KA",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_JAKH",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "NodeXHBconsState",
+            "X": 72,
+            "Y": 365,
+            "Width": 325,
+            "Height": 28,
+            "TextId": "__SingleUse_LVG4",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_YN6U",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
             "Name": "NodeXHBconsTimeout",
-            "X": 31,
-            "Y": 454,
+            "X": 72,
+            "Y": 439,
             "Width": 326,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_SAID",
             "TextRotation": "0",
             "AutoSize": true,
@@ -609,11 +641,10 @@
           {
             "Type": "TextArea",
             "Name": "NodeXHBprodTime",
-            "X": 267,
-            "Y": 495,
+            "X": 310,
+            "Y": 511,
             "Width": 88,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_LX0V",
             "TextRotation": "0",
             "AutoSize": true,
@@ -626,11 +657,10 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBcTInc",
-            "X": 426,
-            "Y": 448,
+            "X": 362,
+            "Y": 463,
             "Width": 36,
             "Height": 36,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_1SUC",
@@ -640,11 +670,10 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBcTDec",
-            "X": 372,
-            "Y": 448,
+            "X": 313,
+            "Y": 463,
             "Width": 36,
             "Height": 36,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZFMV",
@@ -654,11 +683,10 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBpTInc",
-            "X": 426,
-            "Y": 491,
+            "X": 362,
+            "Y": 546,
             "Width": 36,
             "Height": 36,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_RVOT",
@@ -668,11 +696,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 31,
-            "Y": 492,
+            "X": 72,
+            "Y": 511,
             "Width": 125,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_ZSWV",
             "TextRotation": "0",
             "AutoSize": true
@@ -680,11 +707,10 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBpTDec",
-            "X": 372,
-            "Y": 491,
+            "X": 313,
+            "Y": 546,
             "Width": 36,
             "Height": 36,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZMNU",
@@ -694,11 +720,10 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBpTGet",
-            "X": 162,
-            "Y": 486,
+            "X": 202,
+            "Y": 505,
             "Width": 100,
             "Height": 36,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_6HSG",
@@ -717,12 +742,34 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNodeXHBpTSet",
-            "X": 367,
-            "Y": 536,
+            "Name": "buttonNodeXRefresh",
+            "X": 298,
+            "Y": 326,
             "Width": 100,
             "Height": 36,
-            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
+            "TextId": "__SingleUse_8LNQ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNodeXHBpTSet",
+            "X": 201,
+            "Y": 546,
+            "Width": 100,
+            "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_B4SN",
@@ -744,9 +791,8 @@
             "Name": "textCANID",
             "X": 46,
             "Y": 86,
-            "Width": 130,
+            "Width": 308,
             "Height": 24,
-            "LockPosition": true,
             "TextId": "__SingleUse_88K3",
             "TextRotation": "0",
             "AutoSize": true,
@@ -759,8 +805,8 @@
           {
             "Type": "Slider",
             "Name": "sliderIndex",
-            "X": 40,
-            "Y": 290,
+            "X": 81,
+            "Y": 291,
             "Width": 312,
             "Height": 24,
             "IsHorizontalSlider": true,
@@ -771,6 +817,17 @@
             "BackgroundY": 9,
             "IndicatorMax": 7,
             "ValueMax": 7
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 36,
+            "Y": 151,
+            "Width": 399,
+            "Height": 24,
+            "TextId": "__SingleUse_8XBK",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -876,6 +933,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "indexChangeValue"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNodeXRefresh"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "presenter->getNodeInfoDetail(idx);"
             }
           }
         ]

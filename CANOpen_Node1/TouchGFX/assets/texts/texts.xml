@@ -6,6 +6,24 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_8LNQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Refresh</Translation>
+      </Text>
+      <Text Id="__SingleUse_YN6U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_LVG4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HB consumer state: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JAKH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">127</Translation>
+      </Text>
+      <Text Id="__SingleUse_32KA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Node CANID: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8XBK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HeartBeat consumer - starea nodurilor:</Translation>
+      </Text>
       <Text Id="__SingleUse_J4AD" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Flash</Translation>
       </Text>
@@ -118,7 +136,7 @@
         <Translation Language="GB">111</Translation>
       </Text>
       <Text Id="__SingleUse_88K3" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">CAN-ID: &lt;value&gt;</Translation>
+        <Translation Language="GB">Nod Coordonator CAN-ID: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_QLKQ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Duminica, 1 ian 1984</Translation>
