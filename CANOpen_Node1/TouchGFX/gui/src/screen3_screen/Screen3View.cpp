@@ -23,7 +23,6 @@ Screen3View::Screen3View()
 void Screen3View::setupScreen()
 {
     Screen3ViewBase::setupScreen();
-    presenter->getNodeInfoDetail(idx);
 }
 
 void Screen3View::tearDownScreen()
