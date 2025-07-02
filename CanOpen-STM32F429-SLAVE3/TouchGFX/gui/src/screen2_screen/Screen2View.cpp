@@ -69,10 +69,10 @@ void Screen2View::updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8
 
 void Screen2View::changeScreen(int ecran)
 {
-	if( ecran == 0)
-		application().gotoScreen1ScreenWipeTransitionWest();
 	if( ecran == 1)
+		application().gotoScreen1ScreenWipeTransitionWest();
+	if( ecran == 2)
 	    application().gotoScreen2ScreenWipeTransitionWest();
-//	if( ecran == 2)
-//	    application().gotoScreen3ScreenWipeTransitionWest();
+	if( ecran == 3)
+	    application().gotoScreen3ScreenNoTransition();
 }

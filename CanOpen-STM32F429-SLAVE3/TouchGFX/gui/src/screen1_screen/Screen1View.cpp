@@ -18,10 +18,10 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::changeScreen(int ecran)
 {
-	if( ecran == 0)
-		application().gotoScreen1ScreenWipeTransitionWest();
 	if( ecran == 1)
+		application().gotoScreen1ScreenWipeTransitionWest();
+	if( ecran == 2)
 	    application().gotoScreen2ScreenWipeTransitionWest();
-//	if( ecran == 2)
-//	    application().gotoScreen3ScreenWipeTransitionWest();
+	if( ecran == 3)
+	    application().gotoScreen3ScreenNoTransition();
 }

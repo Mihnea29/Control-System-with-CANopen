@@ -26,10 +26,10 @@ void Screen3View::updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime)
 
 void Screen3View::changeScreen(int ecran)
 {
-	if( ecran == 0)
-		application().gotoScreen1ScreenWipeTransitionWest();
 	if( ecran == 1)
+		application().gotoScreen1ScreenWipeTransitionWest();
+	if( ecran == 2)
 	    application().gotoScreen2ScreenWipeTransitionWest();
-//	if( ecran == 2)
-//	    application().gotoScreen3ScreenWipeTransitionWest();
+	if( ecran == 3)
+	    application().gotoScreen3ScreenNoTransition();
 }

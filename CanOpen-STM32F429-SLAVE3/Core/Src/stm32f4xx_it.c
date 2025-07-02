@@ -42,8 +42,15 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+
+// control ecran din buton
 extern int ecran;
 extern int prev_ecran;
+
+//Variabile de debouce buton
+uint32_t currentTime = 0;
+uint32_t previousTime = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -169,12 +176,17 @@ void DebugMon_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
-  prev_ecran = ecran;
-  ecran = (ecran+1) % 3;
+
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-
+  currentTime = HAL_GetTick();
+  if(currentTime - previousTime > 5)
+  {
+	  prev_ecran = ecran;
+	  ecran = (ecran+1) % 3;
+	  previousTime = currentTime;
+  }
   /* USER CODE END EXTI0_IRQn 1 */
 }
 
