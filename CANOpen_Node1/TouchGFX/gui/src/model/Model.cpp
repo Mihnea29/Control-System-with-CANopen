@@ -61,14 +61,24 @@ void Model::tick()
 		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate);
 	}
 
+//	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
+//			CO->HBconsMonitoredNodes[current_idx].NMTstate,
+//			HBconsTimeout[current_idx],
+//			HBprodTime[current_idx],
+//			HBprodTimeValid[current_idx] );
+
+}
+
+
+void Model::getNodeInfoDetail(int index)
+{
+	current_idx = index;
 	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
 			CO->HBconsMonitoredNodes[current_idx].NMTstate,
 			HBconsTimeout[current_idx],
 			HBprodTime[current_idx],
 			HBprodTimeValid[current_idx] );
-
 }
-
 
 
 void Model::HBconsTimeoutInc(int index)

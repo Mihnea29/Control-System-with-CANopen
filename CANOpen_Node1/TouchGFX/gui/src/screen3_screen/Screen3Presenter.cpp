@@ -65,3 +65,9 @@ void Screen3Presenter::HBprodTimeDec(int index)
 {
 	model->HBprodTimeDec(index);
 }
+
+void Screen3Presenter::getNodeInfoDetail(int index)
+{
+	model->getNodeInfoDetail(index);
+}
+

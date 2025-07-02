@@ -27,6 +27,8 @@ public:
     uint16_t HBprodTime[HB_CONS_NODES];
     bool HBprodTimeValid[HB_CONS_NODES];
 
+    void getNodeInfoDetail(int index);
+
     void HBconsTimeoutInc(int index);
     void HBconsTimeoutDec(int index);
     void HBprodTimeInc(int index);

@@ -23,6 +23,7 @@ Screen3View::Screen3View()
 void Screen3View::setupScreen()
 {
     Screen3ViewBase::setupScreen();
+    presenter->getNodeInfoDetail(idx);
 }
 
 void Screen3View::tearDownScreen()
@@ -161,5 +162,5 @@ void Screen3View::indexChangeValue(int value)
 {
     // Override and implement this function in Screen3
 	idx  = value;
-//	presenter->getNodeXHBparameter(idx);
+	presenter->getNodeInfoDetail(idx);
 }

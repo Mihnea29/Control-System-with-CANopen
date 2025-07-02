@@ -32,6 +32,8 @@ public:
     virtual void setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
     		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid );
 
+    void getNodeInfoDetail(int index);
+
     void buttonNodeXHBTinc(int index);
     void buttonNodeXHBTdec(int index);
 
