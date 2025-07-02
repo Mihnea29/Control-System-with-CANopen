@@ -26,3 +26,8 @@ void Screen2Presenter::updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, 
 {
 	view.updateData(WeekDay, Date, Month, Year);
 }
+
+void Screen2Presenter::changeScreen(int ecran)
+{
+     view.changeScreen(ecran);
+}

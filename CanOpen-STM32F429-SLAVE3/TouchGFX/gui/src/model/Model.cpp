@@ -4,6 +4,9 @@
 extern "C" {
 #include "CANopen.h"
 extern CO_t *CO;
+
+extern int ecran;
+extern int prev_ecran;
 }
 
 #include <stm32f4xx_hal.h>
@@ -59,7 +62,13 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
-    uint32_t ms = CO->TIME->ms;   // ms de la miezul noptii
+	if( prev_ecran != ecran)
+	{
+		modelListener->changeScreen(ecran+1);
+		prev_ecran = ecran;
+	}
+
+	uint32_t ms = CO->TIME->ms;   // ms de la miezul noptii
     uint32_t days = CO->TIME->days; // zile de la 1.1.1984
 
     static uint8_t prev_hours = 0, prev_minutes = 0, prev_seconds = 0;

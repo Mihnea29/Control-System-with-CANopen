@@ -21,3 +21,9 @@ void Screen3Presenter::updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTim
 {
 	view.updateHeartbeatTime(CAN_ID, HeartbeatTime);
 }
+
+void Screen3Presenter::changeScreen(int ecran)
+{
+     view.changeScreen(ecran);
+}
+

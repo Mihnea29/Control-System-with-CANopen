@@ -66,3 +66,13 @@ void Screen2View::updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8
 	Unicode::snprintf(textDataBuffer, TEXTDATA_SIZE, "%s, %2d %s %4d", bufferDayOfWeek, (int)Date, bufferMonthOfYear, (int)(Year+1984));
 	textData.invalidate();
 }
+
+void Screen2View::changeScreen(int ecran)
+{
+	if( ecran == 0)
+		application().gotoScreen1ScreenWipeTransitionWest();
+	if( ecran == 1)
+	    application().gotoScreen2ScreenWipeTransitionWest();
+//	if( ecran == 2)
+//	    application().gotoScreen3ScreenWipeTransitionWest();
+}

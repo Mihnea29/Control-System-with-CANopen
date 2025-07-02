@@ -16,6 +16,10 @@ public:
         model = m;
     }
 
+    virtual void changeScreen(int ecran)
+    {
+    }
+
     virtual void updateTime(uint8_t Hours, uint8_t Minutes, uint8_t Seconds)
     {}   // dummy implementation, not implemented in Screen1 and Screen3
     virtual void updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8_t Year)

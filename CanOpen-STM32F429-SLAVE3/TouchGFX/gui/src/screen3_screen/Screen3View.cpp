@@ -23,3 +23,13 @@ void Screen3View::updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime)
     Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%d", HeartbeatTime);
 	textArea2.invalidate();
 }
+
+void Screen3View::changeScreen(int ecran)
+{
+	if( ecran == 0)
+		application().gotoScreen1ScreenWipeTransitionWest();
+	if( ecran == 1)
+	    application().gotoScreen2ScreenWipeTransitionWest();
+//	if( ecran == 2)
+//	    application().gotoScreen3ScreenWipeTransitionWest();
+}

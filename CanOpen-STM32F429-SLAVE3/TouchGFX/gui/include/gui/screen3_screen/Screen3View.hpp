@@ -12,6 +12,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void changeScreen(int ecran);
+
     virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime);
 protected:
 

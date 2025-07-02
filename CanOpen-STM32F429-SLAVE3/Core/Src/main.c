@@ -103,6 +103,9 @@ const osThreadAttr_t CANTask_attributes = {
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
 CANopenNodeSTM32 canOpenNodeSTM32;
+
+int ecran = 0;
+int prev_ecran = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

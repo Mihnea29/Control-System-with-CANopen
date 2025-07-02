@@ -16,3 +16,8 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter::changeScreen(int ecran)
+{
+     view.changeScreen(ecran);
+}

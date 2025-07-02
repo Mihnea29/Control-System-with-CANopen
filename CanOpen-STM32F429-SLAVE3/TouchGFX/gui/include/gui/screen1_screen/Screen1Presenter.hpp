@@ -27,6 +27,7 @@ public:
 
     virtual ~Screen1Presenter() {}
 
+    virtual void changeScreen(int ecran);
 private:
     Screen1Presenter();
 

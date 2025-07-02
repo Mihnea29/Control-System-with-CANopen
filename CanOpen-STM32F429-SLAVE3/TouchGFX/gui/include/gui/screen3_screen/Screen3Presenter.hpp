@@ -29,6 +29,8 @@ public:
 
     virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime);
 
+    virtual void changeScreen(int ecran);
+
 private:
     Screen3Presenter();
 
