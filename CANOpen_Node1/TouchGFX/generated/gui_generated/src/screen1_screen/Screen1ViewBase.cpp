@@ -25,12 +25,39 @@ Screen1ViewBase::Screen1ViewBase() :
     butonNext.setAction(buttonCallback);
     add(butonNext);
 
-    label_Aplication.setPosition(11, 118, 451, 220);
+    label_Aplication.setPosition(11, 73, 451, 28);
     label_Aplication.setColor(touchgfx::Color::getColorFromRGB(12, 10, 51));
     label_Aplication.setLinespacing(0);
     label_Aplication.setWideTextAction(WIDE_TEXT_WORDWRAP);
     label_Aplication.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PF79));
     add(label_Aplication);
+
+    label_Autor1.setPosition(30, 245, 365, 28);
+    label_Autor1.setColor(touchgfx::Color::getColorFromRGB(12, 10, 51));
+    label_Autor1.setLinespacing(0);
+    label_Autor1.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    label_Autor1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_74ZU));
+    add(label_Autor1);
+
+    label_Autor2.setPosition(30, 289, 365, 28);
+    label_Autor2.setColor(touchgfx::Color::getColorFromRGB(12, 10, 51));
+    label_Autor2.setLinespacing(0);
+    label_Autor2.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    label_Autor2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4WOW));
+    add(label_Autor2);
+
+    label_Indrumator.setPosition(29, 341, 365, 28);
+    label_Indrumator.setColor(touchgfx::Color::getColorFromRGB(12, 10, 51));
+    label_Indrumator.setLinespacing(0);
+    label_Indrumator.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    label_Indrumator.setTypedText(touchgfx::TypedText(T___SINGLEUSE_826X));
+    add(label_Indrumator);
+
+    textETTI.setPosition(30, 739, 362, 27);
+    textETTI.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textETTI.setLinespacing(0);
+    textETTI.setTypedText(touchgfx::TypedText(T___SINGLEUSE_INTI));
+    add(textETTI);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

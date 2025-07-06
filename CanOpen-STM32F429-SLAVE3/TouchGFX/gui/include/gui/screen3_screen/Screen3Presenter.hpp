@@ -27,7 +27,8 @@ public:
 
     virtual ~Screen3Presenter() {}
 
-    virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime);
+    void getNodeInfo();
+    virtual void updateHeartbeatTime(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate, uint32_t HeartbeatTime);
 
     virtual void changeScreen(int ecran);
 

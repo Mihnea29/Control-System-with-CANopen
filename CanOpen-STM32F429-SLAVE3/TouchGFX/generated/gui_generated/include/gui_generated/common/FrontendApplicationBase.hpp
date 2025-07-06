@@ -17,10 +17,12 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoScreen3ScreenNoTransition();
+        gotoScreen1ScreenNoTransition();
     }
 
     // Screen1
+    void gotoScreen1ScreenNoTransition();
+
     void gotoScreen1ScreenWipeTransitionWest();
 
     // Screen2
@@ -29,8 +31,6 @@ public:
     void gotoScreen2ScreenWipeTransitionWest();
 
     // Screen3
-    void gotoScreen3ScreenNoTransition();
-
     void gotoScreen3ScreenWipeTransitionEast();
 
 protected:
@@ -39,6 +39,8 @@ protected:
     Model& model;
 
     // Screen1
+    void gotoScreen1ScreenNoTransitionImpl();
+
     void gotoScreen1ScreenWipeTransitionWestImpl();
 
     // Screen2
@@ -47,8 +49,6 @@ protected:
     void gotoScreen2ScreenWipeTransitionWestImpl();
 
     // Screen3
-    void gotoScreen3ScreenNoTransitionImpl();
-
     void gotoScreen3ScreenWipeTransitionEastImpl();
 };
 

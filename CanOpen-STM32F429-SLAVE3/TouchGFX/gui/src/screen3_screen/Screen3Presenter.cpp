@@ -17,9 +17,14 @@ void Screen3Presenter::deactivate()
 
 }
 
-void Screen3Presenter::updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime)
+void Screen3Presenter::getNodeInfo()
 {
-	view.updateHeartbeatTime(CAN_ID, HeartbeatTime);
+    model->getNodeInfo();
+}
+
+void Screen3Presenter::updateHeartbeatTime(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate, uint32_t HeartbeatTime)
+{
+	view.updateHeartbeatTime(CAN_ID, NMTstate, HeartbeatTime);
 }
 
 void Screen3Presenter::changeScreen(int ecran)

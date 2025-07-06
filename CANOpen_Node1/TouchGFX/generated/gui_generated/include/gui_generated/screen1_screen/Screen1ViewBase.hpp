@@ -31,6 +31,10 @@ protected:
     touchgfx::Image image_bg;
     touchgfx::ButtonWithLabel butonNext;
     touchgfx::TextArea label_Aplication;
+    touchgfx::TextArea label_Autor1;
+    touchgfx::TextArea label_Autor2;
+    touchgfx::TextArea label_Indrumator;
+    touchgfx::TextArea textETTI;
 
 private:
 

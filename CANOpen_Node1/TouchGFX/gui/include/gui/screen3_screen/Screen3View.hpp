@@ -18,9 +18,9 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void setCANID(uint8_t CAN_ID);
+    virtual void setCANID(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate);
     virtual void setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate);
-    virtual void setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
+    virtual void setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
     		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid );
 
     virtual void indexChangeValue(int value);

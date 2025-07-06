@@ -6,6 +6,24 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_O324" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">stud. Tomulscu Tudor </Translation>
+      </Text>
+      <Text Id="__SingleUse_QTJB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">sl.Maiorescu V.Andrei </Translation>
+      </Text>
+      <Text Id="__SingleUse_JS9Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">stud. Dorcu Mihnea</Translation>
+      </Text>
+      <Text Id="__SingleUse_PMK7" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Licenta TUIASI, ETTI, MON, 2025</Translation>
+      </Text>
+      <Text Id="__SingleUse_YIIL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_JWII" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">NMT state &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_DYKV" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -39,8 +57,8 @@
       <Text Id="__SingleUse_0KU0" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_GXKT" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">SLAVE 3 - Demo TIMESTAMP, HEARTBEAT, SDO</Translation>
+      <Text Id="__SingleUse_GXKT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">SLAVE 3</Translation>
       </Text>
     </TextGroup>
   </Texts>

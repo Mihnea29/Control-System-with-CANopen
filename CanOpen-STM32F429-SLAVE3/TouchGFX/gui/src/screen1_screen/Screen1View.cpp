@@ -23,5 +23,5 @@ void Screen1View::changeScreen(int ecran)
 	if( ecran == 2)
 	    application().gotoScreen2ScreenWipeTransitionWest();
 	if( ecran == 3)
-	    application().gotoScreen3ScreenNoTransition();
+	    application().gotoScreen3ScreenWipeTransitionEast();
 }

@@ -2,7 +2,10 @@
 #include <gui/model/ModelListener.hpp>
 
 extern "C" {
+#include "CO_app_STM32.h"
+#include "main.h"
 #include "CANopen.h"
+#include "OD.h"
 extern CO_t *CO;
 
 extern int ecran;
@@ -87,5 +90,29 @@ void Model::tick()
     ConvertDaysSince1984(days, &yearOffset, &month, &date, &weekday);
     modelListener->updateData(weekday, date, month, yearOffset);
 
-    modelListener->updateHeartbeatTime(CO->NMT->nodeId, CO->NMT->HBproducerTime_us / 1000);
+    modelListener->updateHeartbeatTime(CO->NMT->nodeId, CO->NMT->operatingState, CO->NMT->HBproducerTime_us / 1000);
+}
+
+
+void Model::getTimeDate()
+{
+	uint32_t ms = CO->TIME->ms;   // ms de la miezul noptii
+    uint32_t days = CO->TIME->days; // zile de la 1.1.1984
+
+    uint8_t yearOffset,  month, date, weekday;
+    uint8_t hours, minutes, seconds;
+
+    hours = ms / 3600000;
+    minutes = (ms % 3600000) / 60000;
+    seconds = (ms % 60000) / 1000;
+
+    modelListener->updateTime(hours, minutes, seconds);
+
+    ConvertDaysSince1984(days, &yearOffset, &month, &date, &weekday);
+    modelListener->updateData(weekday, date, month, yearOffset);
+}
+
+void Model::getNodeInfo()
+{
+    modelListener->updateHeartbeatTime(CO->NMT->nodeId, CO->NMT->operatingState, CO->NMT->HBproducerTime_us / 1000);
 }

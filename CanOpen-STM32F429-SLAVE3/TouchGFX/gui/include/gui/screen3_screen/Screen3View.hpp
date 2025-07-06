@@ -14,7 +14,7 @@ public:
 
     virtual void changeScreen(int ecran);
 
-    virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime);
+    virtual void updateHeartbeatTime(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate, uint32_t HeartbeatTime);
 protected:
 
 };

@@ -25,7 +25,7 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonPrev.setAction(buttonCallback);
     add(buttonPrev);
 
-    textArea1.setXY(27, 68);
+    textArea1.setXY(14, 47);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_22DE).getText());
@@ -34,7 +34,7 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FQIF));
     add(textArea1);
 
-    textArea2.setPosition(18, 143, 167, 52);
+    textArea2.setPosition(14, 160, 167, 52);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setWideTextAction(WIDE_TEXT_WORDWRAP);
@@ -42,6 +42,15 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea2.setWildcard(textArea2Buffer);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5MA8));
     add(textArea2);
+
+    textArea3.setPosition(14, 100, 213, 27);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YIIL).getText());
+    textArea3.setWildcard(textArea3Buffer);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JWII));
+    add(textArea3);
 }
 
 Screen3ViewBase::~Screen3ViewBase()

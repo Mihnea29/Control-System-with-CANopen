@@ -1,6 +1,10 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+extern "C" {
+#include "CANopen.h"
+}
+
 class ModelListener;
 
 class Model
@@ -14,6 +18,10 @@ public:
     }
 
     void tick();
+
+    void getTimeDate();
+
+    void getNodeInfo();
 protected:
     ModelListener* modelListener;
 };

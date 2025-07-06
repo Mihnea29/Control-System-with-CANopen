@@ -33,6 +33,7 @@ Model::Model() : modelListener(nullptr)
 
 void Model::tick()
 {
+    static uint8_t prev_hours = 0, prev_minutes = 0, prev_seconds = 0;
 	RTC_TimeTypeDef sTime;
 	RTC_DateTypeDef sDate;
 
@@ -40,11 +41,15 @@ void Model::tick()
 	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-	modelListener->updateTime(
-			sTime.Hours,
-			sTime.Minutes,
-			sTime.Seconds
-	);
+    if( (prev_hours != sTime.Hours || prev_minutes != sTime.Minutes) || prev_seconds != sTime.Seconds)
+    {
+    	modelListener->updateTime(
+    			sTime.Hours,
+    			sTime.Minutes,
+    			sTime.Seconds
+    	);
+        prev_hours = sTime.Hours; prev_minutes = sTime.Minutes; prev_seconds = sTime.Seconds;
+    }
 	modelListener->updateData(
 			sDate.WeekDay,
 			sDate.Date,
@@ -54,7 +59,7 @@ void Model::tick()
 
 
 	//Screen3 - HEARTBEAT
-	modelListener->setCANID(CO->NMT->nodeId);
+	modelListener->setCANID(CO->NMT->nodeId, CO->NMT->operatingState);
 	for(int i = 0 ; i < HB_CONS_NODES ; i++)
 	{
 		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate);
@@ -62,10 +67,36 @@ void Model::tick()
 
 }
 
+void Model::getTimeDate()
+{
+	RTC_TimeTypeDef sTime;
+	RTC_DateTypeDef sDate;
+
+	//Screen2 - CLOCK & TIMESTAMP
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+    modelListener->updateTime(
+    		sTime.Hours,
+    		sTime.Minutes,
+    		sTime.Seconds
+    );
+	modelListener->updateData(
+			sDate.WeekDay,
+			sDate.Date,
+			sDate.Month,
+			sDate.Year
+	);
+
+
+}
+
 
 void Model::getNodeInfoDetail(int index)
 {
-	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+	modelListener->setNodeInfoDetail( index,
+			CO->HBconsMonitoredNodes[index].nodeId,
+			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
 			HBconsTimeout[index],
 			HBprodTime[index],
@@ -76,18 +107,21 @@ void Model::getNodeInfoDetail(int index)
 void Model::HBconsTimeoutInc(int index)
 {
 	HBconsTimeout[index] += 100;
-	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+	modelListener->setNodeInfoDetail( index,
+			CO->HBconsMonitoredNodes[index].nodeId,
+			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
 			HBconsTimeout[index],
 			HBprodTime[index],
-			HBprodTimeValid[index] );
-}
+			HBprodTimeValid[index] );}
 
 void Model::HBconsTimeoutDec(int index)
 {
 	if(HBconsTimeout[index] > 100)
 		HBconsTimeout[index] -= 100;
-    	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+	    modelListener->setNodeInfoDetail( index,
+			CO->HBconsMonitoredNodes[index].nodeId,
+			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
 			HBconsTimeout[index],
 			HBprodTime[index],
@@ -105,7 +139,9 @@ void Model::getHBprodTime(int index)
 	if(bytesRead == 2) {
 		HBprodTime[index] = HB_VALUE;
 		HBprodTimeValid[index] = true;
-		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+		modelListener->setNodeInfoDetail( index,
+				CO->HBconsMonitoredNodes[index].nodeId,
+				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
 				HBconsTimeout[index],
 				HBprodTime[index],
@@ -126,7 +162,9 @@ void Model::HBprodTimeInc(int index)
 	if( HBprodTimeValid[index] )
 	{
 		HBprodTime[index] +=100;
-		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+		modelListener->setNodeInfoDetail( index,
+				CO->HBconsMonitoredNodes[index].nodeId,
+				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
 				HBconsTimeout[index],
 				HBprodTime[index],
@@ -139,7 +177,9 @@ void Model::HBprodTimeDec(int index)
 	if( HBprodTimeValid[index] && HBprodTime[index] >=100 )
 	{
 		HBprodTime[index] -=100;
-		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+		modelListener->setNodeInfoDetail( index,
+				CO->HBconsMonitoredNodes[index].nodeId,
+				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
 				HBconsTimeout[index],
 				HBprodTime[index],

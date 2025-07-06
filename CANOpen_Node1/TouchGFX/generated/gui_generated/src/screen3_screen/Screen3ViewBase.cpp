@@ -37,6 +37,12 @@ Screen3ViewBase::Screen3ViewBase() :
     butonNext.setAction(buttonCallback);
     add(butonNext);
 
+    textArea2.setXY(36, 151);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8XBK));
+    add(textArea2);
+
     Node7CANID.setXY(372, 234);
     Node7CANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Node7CANID.setLinespacing(0);
@@ -181,22 +187,14 @@ Screen3ViewBase::Screen3ViewBase() :
     Node0Status.setPainter(Node0StatusPainter);
     add(Node0Status);
 
-    boxWithBorder1.setPosition(53, 276, 369, 326);
+    boxWithBorder1.setPosition(54, 270, 369, 326);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(11, 76, 99));
     boxWithBorder1.setBorderSize(5);
     boxWithBorder1.setAlpha(40);
     add(boxWithBorder1);
 
-    NodeXNMTState.setPosition(72, 400, 259, 27);
-    NodeXNMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    NodeXNMTState.setLinespacing(0);
-    Unicode::snprintf(NodeXNMTStateBuffer, NODEXNMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JCSK).getText());
-    NodeXNMTState.setWildcard(NodeXNMTStateBuffer);
-    NodeXNMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOIY));
-    add(NodeXNMTState);
-
-    NodeXCANID.setPosition(71, 331, 199, 24);
+    NodeXCANID.setPosition(72, 331, 199, 24);
     NodeXCANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NodeXCANID.setLinespacing(0);
     Unicode::snprintf(NodeXCANIDBuffer, NODEXCANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JAKH).getText());
@@ -212,6 +210,14 @@ Screen3ViewBase::Screen3ViewBase() :
     NodeXHBconsState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LVG4));
     add(NodeXHBconsState);
 
+    NodeXNMTState.setPosition(72, 400, 259, 27);
+    NodeXNMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    NodeXNMTState.setLinespacing(0);
+    Unicode::snprintf(NodeXNMTStateBuffer, NODEXNMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JCSK).getText());
+    NodeXNMTState.setWildcard(NodeXNMTStateBuffer);
+    NodeXNMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOIY));
+    add(NodeXNMTState);
+
     NodeXHBconsTimeout.setXY(72, 439);
     NodeXHBconsTimeout.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NodeXHBconsTimeout.setLinespacing(0);
@@ -220,15 +226,6 @@ Screen3ViewBase::Screen3ViewBase() :
     NodeXHBconsTimeout.resizeToCurrentText();
     NodeXHBconsTimeout.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SAID));
     add(NodeXHBconsTimeout);
-
-    NodeXHBprodTime.setXY(310, 511);
-    NodeXHBprodTime.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    NodeXHBprodTime.setLinespacing(0);
-    Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RXBO).getText());
-    NodeXHBprodTime.setWildcard(NodeXHBprodTimeBuffer);
-    NodeXHBprodTime.resizeToCurrentText();
-    NodeXHBprodTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LX0V));
-    add(NodeXHBprodTime);
 
     buttonNodeXHBcTInc.setXY(362, 463);
     buttonNodeXHBcTInc.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
@@ -246,6 +243,22 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonNodeXHBcTDec.setAction(buttonCallback);
     add(buttonNodeXHBcTDec);
 
+    textArea1.setPosition(72, 511, 126, 53);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setWideTextAction(WIDE_TEXT_WORDWRAP);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZSWV));
+    add(textArea1);
+
+    NodeXHBprodTime.setXY(310, 511);
+    NodeXHBprodTime.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    NodeXHBprodTime.setLinespacing(0);
+    Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RXBO).getText());
+    NodeXHBprodTime.setWildcard(NodeXHBprodTimeBuffer);
+    NodeXHBprodTime.resizeToCurrentText();
+    NodeXHBprodTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LX0V));
+    add(NodeXHBprodTime);
+
     buttonNodeXHBpTInc.setXY(362, 546);
     buttonNodeXHBpTInc.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
     buttonNodeXHBpTInc.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RVOT));
@@ -253,12 +266,6 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonNodeXHBpTInc.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
     buttonNodeXHBpTInc.setAction(buttonCallback);
     add(buttonNodeXHBpTInc);
-
-    textArea1.setXY(72, 511);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZSWV));
-    add(textArea1);
 
     buttonNodeXHBpTDec.setXY(313, 546);
     buttonNodeXHBpTDec.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_OUTLINE_PRESSED_ID));
@@ -268,7 +275,7 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonNodeXHBpTDec.setAction(buttonCallback);
     add(buttonNodeXHBpTDec);
 
-    buttonNodeXHBpTGet.setXY(202, 505);
+    buttonNodeXHBpTGet.setXY(206, 505);
     buttonNodeXHBpTGet.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
     buttonNodeXHBpTGet.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6HSG));
     buttonNodeXHBpTGet.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -276,15 +283,7 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonNodeXHBpTGet.setAction(buttonCallback);
     add(buttonNodeXHBpTGet);
 
-    buttonNodeXRefresh.setXY(298, 326);
-    buttonNodeXRefresh.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
-    buttonNodeXRefresh.setLabelText(touchgfx::TypedText(T___SINGLEUSE_8LNQ));
-    buttonNodeXRefresh.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonNodeXRefresh.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonNodeXRefresh.setAction(buttonCallback);
-    add(buttonNodeXRefresh);
-
-    buttonNodeXHBpTSet.setXY(201, 546);
+    buttonNodeXHBpTSet.setXY(205, 546);
     buttonNodeXHBpTSet.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
     buttonNodeXHBpTSet.setLabelText(touchgfx::TypedText(T___SINGLEUSE_B4SN));
     buttonNodeXHBpTSet.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -292,7 +291,22 @@ Screen3ViewBase::Screen3ViewBase() :
     buttonNodeXHBpTSet.setAction(buttonCallback);
     add(buttonNodeXHBpTSet);
 
-    textCANID.setXY(46, 86);
+    sliderIndex.setXY(81, 291);
+    sliderIndex.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_ROUND_LIGHT_ID));
+    sliderIndex.setupHorizontalSlider(12, 9, 0, 0, 300);
+    sliderIndex.setValueRange(0, 7);
+    sliderIndex.setValue(0);
+    sliderIndex.setNewValueCallback(sliderValueChangedCallback);
+    add(sliderIndex);
+
+    boxWithBorder2.setPosition(54, 29, 369, 102);
+    boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(11, 76, 99));
+    boxWithBorder2.setBorderSize(5);
+    boxWithBorder2.setAlpha(40);
+    add(boxWithBorder2);
+
+    textCANID.setXY(68, 48);
     textCANID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textCANID.setLinespacing(0);
     Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QVOL).getText());
@@ -301,19 +315,13 @@ Screen3ViewBase::Screen3ViewBase() :
     textCANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_88K3));
     add(textCANID);
 
-    sliderIndex.setXY(81, 291);
-    sliderIndex.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THIN_ROUND_LIGHT_ID));
-    sliderIndex.setupHorizontalSlider(12, 9, 0, 0, 7);
-    sliderIndex.setValueRange(0, 7);
-    sliderIndex.setValue(0);
-    sliderIndex.setNewValueCallback(sliderValueChangedCallback);
-    add(sliderIndex);
-
-    textArea2.setXY(36, 151);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8XBK));
-    add(textArea2);
+    textNMTState.setPosition(69, 85, 259, 27);
+    textNMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textNMTState.setLinespacing(0);
+    Unicode::snprintf(textNMTStateBuffer, TEXTNMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8VWM).getText());
+    textNMTState.setWildcard(textNMTStateBuffer);
+    textNMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8B5Z));
+    add(textNMTState);
 }
 
 Screen3ViewBase::~Screen3ViewBase()
@@ -383,13 +391,6 @@ void Screen3ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonNodeXHBpTDec clicked execute C++ code
         //Execute C++ code
         presenter->HBprodTimeDec(idx);
-    }
-    if (&src == &buttonNodeXRefresh)
-    {
-        //Interaction1
-        //When buttonNodeXRefresh clicked execute C++ code
-        //Execute C++ code
-        presenter->getNodeInfoDetail(idx);
     }
 }
 

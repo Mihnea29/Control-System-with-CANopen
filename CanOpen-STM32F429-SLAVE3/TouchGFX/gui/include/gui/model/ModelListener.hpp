@@ -25,7 +25,7 @@ public:
     virtual void updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8_t Year)
     {}
 
-    virtual void updateHeartbeatTime(uint8_t CAN_ID, uint32_t HeartbeatTime)
+    virtual void updateHeartbeatTime(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate, uint32_t HeartbeatTime)
     {}   // dummy implementation, not implemented in Screen1 and Screen2
 
 protected:

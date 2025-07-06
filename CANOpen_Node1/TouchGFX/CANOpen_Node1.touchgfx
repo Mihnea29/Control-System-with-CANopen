@@ -40,9 +40,9 @@
             "Type": "TextArea",
             "Name": "label_Aplication",
             "X": 11,
-            "Y": 118,
+            "Y": 73,
             "Width": 451,
-            "Height": 220,
+            "Height": 28,
             "LockPosition": true,
             "TextId": "__SingleUse_PF79",
             "TextRotation": "0",
@@ -52,6 +52,68 @@
               "Blue": 51
             },
             "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label_Autor1",
+            "X": 30,
+            "Y": 245,
+            "Width": 365,
+            "Height": 28,
+            "LockPosition": true,
+            "TextId": "__SingleUse_74ZU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 12,
+              "Green": 10,
+              "Blue": 51
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label_Autor2",
+            "X": 30,
+            "Y": 289,
+            "Width": 365,
+            "Height": 28,
+            "LockPosition": true,
+            "TextId": "__SingleUse_4WOW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 12,
+              "Green": 10,
+              "Blue": 51
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label_Indrumator",
+            "X": 29,
+            "Y": 341,
+            "Width": 365,
+            "Height": 28,
+            "LockPosition": true,
+            "TextId": "__SingleUse_826X",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 12,
+              "Green": 10,
+              "Blue": 51
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textETTI",
+            "X": 30,
+            "Y": 739,
+            "Width": 362,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_INTI",
+            "TextRotation": "0"
           }
         ],
         "Interactions": [
@@ -287,11 +349,24 @@
           },
           {
             "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 36,
+            "Y": 151,
+            "Width": 399,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_8XBK",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "Node7CANID",
             "X": 372,
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_F127",
             "TextRotation": "0",
             "AutoSize": true,
@@ -308,6 +383,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -326,6 +402,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_KBZE",
             "TextRotation": "0",
             "AutoSize": true,
@@ -342,6 +419,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -360,6 +438,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_8LVA",
             "TextRotation": "0",
             "AutoSize": true,
@@ -376,6 +455,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -394,6 +474,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_UKW9",
             "TextRotation": "0",
             "AutoSize": true,
@@ -410,6 +491,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -428,6 +510,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_ZJE7",
             "TextRotation": "0",
             "AutoSize": true,
@@ -444,6 +527,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -462,6 +546,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_LNGC",
             "TextRotation": "0",
             "AutoSize": true,
@@ -478,6 +563,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -496,6 +582,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_7LX8",
             "TextRotation": "0",
             "AutoSize": true,
@@ -512,6 +599,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -530,6 +618,7 @@
             "Y": 234,
             "Width": 13,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_KZIP",
             "TextRotation": "0",
             "AutoSize": true,
@@ -546,6 +635,7 @@
             "Y": 187,
             "Width": 30,
             "Height": 30,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -560,10 +650,11 @@
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
-            "X": 53,
-            "Y": 276,
+            "X": 54,
+            "Y": 270,
             "Width": 369,
             "Height": 326,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -579,26 +670,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "NodeXNMTState",
-            "X": 72,
-            "Y": 400,
-            "Width": 259,
-            "Height": 27,
-            "TextId": "__SingleUse_JOIY",
-            "TextRotation": "0",
-            "Wildcard1": {
-              "TextId": "__SingleUse_JCSK",
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "NodeXCANID",
-            "X": 71,
+            "X": 72,
             "Y": 331,
             "Width": 199,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_32KA",
             "TextRotation": "0",
             "Wildcard1": {
@@ -614,10 +691,27 @@
             "Y": 365,
             "Width": 325,
             "Height": 28,
+            "LockPosition": true,
             "TextId": "__SingleUse_LVG4",
             "TextRotation": "0",
             "Wildcard1": {
               "TextId": "__SingleUse_YN6U",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "NodeXNMTState",
+            "X": 72,
+            "Y": 400,
+            "Width": 259,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_JOIY",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_JCSK",
               "UseBuffer": true,
               "BufferSize": 20
             }
@@ -629,27 +723,12 @@
             "Y": 439,
             "Width": 326,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_SAID",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0NYJ",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "NodeXHBprodTime",
-            "X": 310,
-            "Y": 511,
-            "Width": 88,
-            "Height": 24,
-            "TextId": "__SingleUse_LX0V",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_RXBO",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -661,6 +740,7 @@
             "Y": 463,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_1SUC",
@@ -674,22 +754,10 @@
             "Y": 463,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZFMV",
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonNodeXHBpTInc",
-            "X": 362,
-            "Y": 546,
-            "Width": 36,
-            "Height": 36,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
-            "TextId": "__SingleUse_RVOT",
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
           },
@@ -698,11 +766,43 @@
             "Name": "textArea1",
             "X": 72,
             "Y": 511,
-            "Width": 125,
-            "Height": 24,
+            "Width": 126,
+            "Height": 53,
+            "LockPosition": true,
             "TextId": "__SingleUse_ZSWV",
             "TextRotation": "0",
-            "AutoSize": true
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "NodeXHBprodTime",
+            "X": 310,
+            "Y": 511,
+            "Width": 88,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_LX0V",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_RXBO",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNodeXHBpTInc",
+            "X": 362,
+            "Y": 546,
+            "Width": 36,
+            "Height": 36,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
+            "TextId": "__SingleUse_RVOT",
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_action.json"
           },
           {
             "Type": "ButtonWithLabel",
@@ -711,6 +811,7 @@
             "Y": 546,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_action.png",
             "TextId": "__SingleUse_ZMNU",
@@ -720,10 +821,11 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBpTGet",
-            "X": 202,
+            "X": 206,
             "Y": 505,
             "Width": 100,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_6HSG",
@@ -742,34 +844,12 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonNodeXRefresh",
-            "X": 298,
-            "Y": 326,
-            "Width": 100,
-            "Height": 36,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
-            "TextId": "__SingleUse_8LNQ",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
             "Name": "buttonNodeXHBpTSet",
-            "X": 201,
+            "X": 205,
             "Y": 546,
             "Width": 100,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
             "TextId": "__SingleUse_B4SN",
@@ -787,12 +867,51 @@
             "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
           },
           {
+            "Type": "Slider",
+            "Name": "sliderIndex",
+            "X": 81,
+            "Y": 291,
+            "Width": 324,
+            "Height": 24,
+            "LockPosition": true,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_round_light.png",
+            "BackgroundX": 12,
+            "BackgroundY": 9,
+            "IndicatorMax": 300,
+            "ValueMax": 7
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 54,
+            "Y": 29,
+            "Width": 369,
+            "Height": 102,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 11,
+              "Green": 76,
+              "Blue": 99
+            },
+            "BorderSize": 5,
+            "Alpha": 40
+          },
+          {
             "Type": "TextArea",
             "Name": "textCANID",
-            "X": 46,
-            "Y": 86,
+            "X": 68,
+            "Y": 48,
             "Width": 308,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_88K3",
             "TextRotation": "0",
             "AutoSize": true,
@@ -803,31 +922,20 @@
             }
           },
           {
-            "Type": "Slider",
-            "Name": "sliderIndex",
-            "X": 81,
-            "Y": 291,
-            "Width": 312,
-            "Height": 24,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
-            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_round_light.png",
-            "BackgroundX": 12,
-            "BackgroundY": 9,
-            "IndicatorMax": 7,
-            "ValueMax": 7
-          },
-          {
             "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 36,
-            "Y": 151,
-            "Width": 399,
-            "Height": 24,
-            "TextId": "__SingleUse_8XBK",
+            "Name": "textNMTState",
+            "X": 69,
+            "Y": 85,
+            "Width": 259,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_8B5Z",
             "TextRotation": "0",
-            "AutoSize": true
+            "Wildcard1": {
+              "TextId": "__SingleUse_8VWM",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
           }
         ],
         "Interactions": [
@@ -934,17 +1042,6 @@
               "Type": "ActionCustom",
               "FunctionName": "indexChangeValue"
             }
-          },
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonNodeXRefresh"
-            },
-            "Action": {
-              "Type": "ActionExecuteCode",
-              "Code": "presenter->getNodeInfoDetail(idx);"
-            }
           }
         ]
       },
@@ -966,6 +1063,7 @@
             "Y": 722,
             "Width": 60,
             "Height": 60,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_disabled.png",
             "TextId": "__SingleUse_C4WK",
@@ -989,6 +1087,7 @@
             "Y": 219,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1000,6 +1099,7 @@
             "Y": 321,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1011,6 +1111,7 @@
             "Y": 394,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1022,6 +1123,7 @@
             "Y": 451,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1033,6 +1135,7 @@
             "Y": 512,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1044,6 +1147,7 @@
             "Y": 219,
             "Width": 110,
             "Height": 50,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_on_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_off_light.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round.json"
@@ -1055,6 +1159,7 @@
             "Y": 185,
             "Width": 198,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_9D4B",
             "TextRotation": "0",
             "AutoSize": true
@@ -1066,6 +1171,7 @@
             "Y": 185,
             "Width": 208,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_94DN",
             "TextRotation": "0",
             "AutoSize": true
@@ -1077,6 +1183,7 @@
             "Y": 334,
             "Width": 57,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_0Z1E",
             "TextRotation": "0",
             "AutoSize": true
@@ -1088,6 +1195,7 @@
             "Y": 407,
             "Width": 58,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_QCEY",
             "TextRotation": "0",
             "AutoSize": true
@@ -1099,6 +1207,7 @@
             "Y": 464,
             "Width": 53,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_8D5U",
             "TextRotation": "0",
             "AutoSize": true
@@ -1110,6 +1219,7 @@
             "Y": 525,
             "Width": 52,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_J4AD",
             "TextRotation": "0",
             "AutoSize": true

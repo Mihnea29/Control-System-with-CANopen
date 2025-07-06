@@ -17,6 +17,11 @@ void Screen2Presenter::deactivate()
 
 }
 
+void Screen2Presenter::getTimeDate()
+{
+	model->getTimeDate();
+}
+
 void Screen2Presenter::updateTime(uint8_t hour, uint8_t minute, uint8_t second)
 {
 	view.updateTime(hour, minute, second);

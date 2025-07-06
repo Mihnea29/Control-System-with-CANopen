@@ -27,6 +27,7 @@ public:
 
     virtual ~Screen2Presenter() {}
 
+    void getTimeDate();
     void updateTime(uint8_t hour, uint8_t minute, uint8_t second);
     void updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8_t Year);
 

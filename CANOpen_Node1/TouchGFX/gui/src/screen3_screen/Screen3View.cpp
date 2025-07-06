@@ -32,13 +32,6 @@ void Screen3View::tearDownScreen()
     Screen3ViewBase::tearDownScreen();
 }
 
-void Screen3View::setCANID(uint8_t CAN_ID)
-{
-	Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%d", CAN_ID);
-	textCANID.invalidate();
-}
-
-
 
 //typedef enum {
 //    CO_HBconsumer_UNCONFIGURED = 0x00U, /**< Consumer entry inactive */
@@ -46,19 +39,16 @@ void Screen3View::setCANID(uint8_t CAN_ID)
 //    CO_HBconsumer_ACTIVE = 0x02U,       /**< Heartbeat received within set time */
 //    CO_HBconsumer_TIMEOUT = 0x03U,      /**< No heatbeat received for set time */
 //} CO_HBconsumer_state_t;
-
 char HBconsumer_state_Text_[][20] = { "Unconfigured",
                                             "Unknown",
                                             "Active",
                                             "Timeout" };
-
 										//    R,   G,   B
 uint8_t HBconsumer_state_colorRGB[][3] = { {  0,   0,   0},     // black
                                            {127, 127, 127},     // gray
                                            {  0, 255,   0},     // green
 										   {237, 127,  16}      // orange
 										};
-
 char* HBconsumer_state2Text(CO_HBconsumer_state_t state)
 {
     if ((state >= CO_HBconsumer_UNCONFIGURED) && (state <= CO_HBconsumer_TIMEOUT))
@@ -74,13 +64,11 @@ char* HBconsumer_state2Text(CO_HBconsumer_state_t state)
 //    CO_NMT_OPERATIONAL = 5,       /**< 5, Device is in operational state */
 //    CO_NMT_STOPPED = 4            /**< 4, Device is stopped */
 //} CO_NMT_internalState_t;
-
 char CO_NMT_internalState_Text_[][20] = { "Unknown",
                                             "Initializing",
                                             "Pre Operational",
                                             "Operational",
                                             "Stoped" };
-
 char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
 {
     int index;
@@ -100,12 +88,22 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
     return CO_NMT_internalState_Text_[index];
 }
 
+
+void Screen3View::setCANID(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate)
+{
+	Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%d", CAN_ID);
+    Unicode::snprintf(textNMTStateBuffer, TEXTNMTSTATE_SIZE, "%s", CO_NMT_internalState2Text(NMTstate));
+
+	textCANID.invalidate();
+	textNMTState.invalidate();
+}
+
 #define NODE_CANID_SIZE     20
 void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate)
 {
-	if( CAN_ID != 0 && CAN_ID != 0x100 )
+	if( CAN_ID != 0 && CAN_ID < 0x100 )
 	{
-	    Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
+		Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
 	    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[HBstate][0],
 	    																	HBconsumer_state_colorRGB[HBstate][1],
 																			HBconsumer_state_colorRGB[HBstate][2]) );
@@ -125,31 +123,54 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 
 #define NODE_NMTSTATE_SIZE  20
 
-void Screen3View::setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
+void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
 		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid )
 {
+	bool bVisible1 = false, bVisible2 = false;
 	idx  = index;
-	Unicode::strncpy(NodeXNMTStateBuffer,
-			CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), NODEXNMTSTATE_SIZE);
 
-	if( HBprodTimeValid )
+    if(CANID != 0 && CANID <= 0x100)
     {
-        Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%d", HBprodTime);
-        NodeXHBprodTime.setVisible(true);
-        buttonNodeXHBpTInc.setVisible(true);
-        buttonNodeXHBpTDec.setVisible(true);
-        buttonNodeXHBpTSet.setVisible(true);
+        Unicode::snprintf(NodeXCANIDBuffer, NODEXCANID_SIZE, "%d", CANID);
+        Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", HBconsumer_state2Text(HBstate));
+    	Unicode::strncpy(NodeXNMTStateBuffer,
+    			CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), NODEXNMTSTATE_SIZE);
+    	bVisible1 = true;
+
+		if( HBprodTimeValid )
+		{
+			Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%d", HBprodTime);
+			bVisible2 = true;
+		}
     }
     else
     {
-        NodeXHBprodTime.setVisible(false);
-        buttonNodeXHBpTInc.setVisible(false);
-        buttonNodeXHBpTDec.setVisible(false);
-        buttonNodeXHBpTSet.setVisible(false);
+    	Unicode::strncpy(NodeXCANIDBuffer, "*", NODEXCANID_SIZE);
     }
 
+	NodeXHBconsState.setVisible(bVisible1);
+    NodeXNMTState.setVisible(bVisible1);
+    NodeXHBconsTimeout.setVisible(bVisible1);
+    buttonNodeXHBcTDec.setVisible(bVisible1);
+	buttonNodeXHBcTInc.setVisible(bVisible1);
+	textArea1.setVisible(bVisible1);
+	buttonNodeXHBpTGet.setVisible(bVisible1);
+
+    NodeXHBprodTime.setVisible(bVisible2);
+    buttonNodeXHBpTInc.setVisible(bVisible2);
+	buttonNodeXHBpTDec.setVisible(bVisible2);
+	buttonNodeXHBpTSet.setVisible(bVisible2);
+
+	NodeXCANID.invalidate();
+
+	NodeXHBconsState.invalidate();
     NodeXNMTState.invalidate();
     NodeXHBconsTimeout.invalidate();
+    buttonNodeXHBcTDec.invalidate();
+	buttonNodeXHBcTInc.invalidate();
+
+	textArea1.invalidate();
+	buttonNodeXHBpTGet.invalidate();
     NodeXHBprodTime.invalidate();
     buttonNodeXHBpTInc.invalidate();
 	buttonNodeXHBpTDec.invalidate();

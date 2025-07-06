@@ -9,6 +9,7 @@
             "Name": "image_bg",
             "Width": 240,
             "Height": 320,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
           },
           {
@@ -16,8 +17,9 @@
             "Name": "label_Aplication",
             "X": 16,
             "Y": 13,
-            "Width": 289,
-            "Height": 85,
+            "Width": 206,
+            "Height": 27,
+            "LockPosition": true,
             "TextId": "__SingleUse_GXKT",
             "TextRotation": "0",
             "WideTextAction": 1
@@ -29,6 +31,7 @@
             "Y": 284,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "TextId": "__SingleUse_0KU0",
@@ -44,6 +47,51 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textETTI",
+            "X": 12,
+            "Y": 266,
+            "Width": 178,
+            "Height": 53,
+            "LockPosition": true,
+            "TextId": "__SingleUse_PMK7",
+            "TextRotation": "0",
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAutor1",
+            "X": 10,
+            "Y": 100,
+            "Width": 195,
+            "Height": 24,
+            "TextId": "__SingleUse_JS9Q",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAutor2",
+            "X": 10,
+            "Y": 204,
+            "Width": 220,
+            "Height": 24,
+            "TextId": "__SingleUse_QTJB",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textIndrumator",
+            "X": 10,
+            "Y": 142,
+            "Width": 219,
+            "Height": 24,
+            "TextId": "__SingleUse_O324",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -70,6 +118,7 @@
             "Name": "image_bg",
             "Width": 240,
             "Height": 320,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
           },
           {
@@ -79,6 +128,7 @@
             "Y": 284,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "TextId": "__SingleUse_GEQ6",
@@ -101,6 +151,7 @@
             "Y": 284,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "TextId": "__SingleUse_M0WT",
@@ -123,6 +174,7 @@
             "Y": 40,
             "Width": 240,
             "Height": 240,
+            "LockPosition": true,
             "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.png",
             "RotationCenterX": 120,
             "RotationCenterY": 120,
@@ -159,6 +211,7 @@
             "Y": 290,
             "Width": 100,
             "Height": 25,
+            "LockPosition": true,
             "TextColor": {
               "Red": 12,
               "Green": 27,
@@ -176,6 +229,7 @@
             "Y": 8,
             "Width": 240,
             "Height": 28,
+            "LockPosition": true,
             "TextId": "__SingleUse_BMUD",
             "TextRotation": "0",
             "Color": {
@@ -227,6 +281,7 @@
             "Name": "image_bg",
             "Width": 240,
             "Height": 320,
+            "LockPosition": true,
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
           },
           {
@@ -235,6 +290,7 @@
             "Y": 284,
             "Width": 36,
             "Height": 36,
+            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
             "TextId": "__SingleUse_XI1F",
@@ -254,10 +310,11 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 27,
-            "Y": 68,
+            "X": 14,
+            "Y": 47,
             "Width": 130,
             "Height": 24,
+            "LockPosition": true,
             "TextId": "__SingleUse_FQIF",
             "TextRotation": "0",
             "AutoSize": true,
@@ -270,16 +327,34 @@
           {
             "Type": "TextArea",
             "Name": "textArea2",
-            "X": 18,
-            "Y": 143,
+            "X": 14,
+            "Y": 160,
             "Width": 167,
             "Height": 52,
+            "LockPosition": true,
             "TextId": "__SingleUse_5MA8",
             "TextRotation": "0",
             "Wildcard1": {
               "TextId": "__SingleUse_DYKV",
               "UseBuffer": true,
               "BufferSize": 10
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 14,
+            "Y": 100,
+            "Width": 213,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_JWII",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_YIIL",
+              "UseBuffer": true,
+              "BufferSize": 15
             },
             "WideTextAction": 1
           }
@@ -308,7 +383,7 @@
       "Height": 320
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen3",
+    "StartupScreenName": "Screen1",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
