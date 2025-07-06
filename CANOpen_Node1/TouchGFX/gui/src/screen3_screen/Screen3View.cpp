@@ -23,6 +23,8 @@ Screen3View::Screen3View()
 void Screen3View::setupScreen()
 {
     Screen3ViewBase::setupScreen();
+    sliderIndex.setValue(idx);
+	presenter->getNodeInfoDetail(idx);
 }
 
 void Screen3View::tearDownScreen()
@@ -127,7 +129,6 @@ void Screen3View::setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, C
 		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid )
 {
 	idx  = index;
-	sliderIndex.setValue(index);
 	Unicode::strncpy(NodeXNMTStateBuffer,
 			CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), NODEXNMTSTATE_SIZE);
 
@@ -147,7 +148,6 @@ void Screen3View::setNodeInfoDetail( int index, CO_HBconsumer_state_t HBstate, C
         buttonNodeXHBpTSet.setVisible(false);
     }
 
-    sliderIndex.invalidate();
     NodeXNMTState.invalidate();
     NodeXHBconsTimeout.invalidate();
     NodeXHBprodTime.invalidate();

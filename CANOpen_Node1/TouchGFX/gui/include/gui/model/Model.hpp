@@ -22,7 +22,6 @@ public:
     void tick();
 
     //SCREEN3
-    int current_idx;
     uint16_t HBconsTimeout[HB_CONS_NODES];
     uint16_t HBprodTime[HB_CONS_NODES];
     bool HBprodTimeValid[HB_CONS_NODES];

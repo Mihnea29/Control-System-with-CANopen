@@ -23,7 +23,6 @@ extern CO_t *CO;
 
 Model::Model() : modelListener(nullptr)
 {
-	current_idx = 7;
 	for(int i = 0 ; i < HB_CONS_NODES; i++)
 	{
 	    HBconsTimeout[i] = 2500;
@@ -61,46 +60,38 @@ void Model::tick()
 		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate);
 	}
 
-//	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-//			CO->HBconsMonitoredNodes[current_idx].NMTstate,
-//			HBconsTimeout[current_idx],
-//			HBprodTime[current_idx],
-//			HBprodTimeValid[current_idx] );
 }
 
 
 void Model::getNodeInfoDetail(int index)
 {
-	current_idx = index;
-	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-			CO->HBconsMonitoredNodes[current_idx].NMTstate,
-			HBconsTimeout[current_idx],
-			HBprodTime[current_idx],
-			HBprodTimeValid[current_idx] );
+	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+			CO->HBconsMonitoredNodes[index].NMTstate,
+			HBconsTimeout[index],
+			HBprodTime[index],
+			HBprodTimeValid[index] );
 }
 
 
 void Model::HBconsTimeoutInc(int index)
 {
-	current_idx = index;
-	HBconsTimeout[current_idx] += 100;
-	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-			CO->HBconsMonitoredNodes[current_idx].NMTstate,
-			HBconsTimeout[current_idx],
-			HBprodTime[current_idx],
-			HBprodTimeValid[current_idx] );
+	HBconsTimeout[index] += 100;
+	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+			CO->HBconsMonitoredNodes[index].NMTstate,
+			HBconsTimeout[index],
+			HBprodTime[index],
+			HBprodTimeValid[index] );
 }
 
 void Model::HBconsTimeoutDec(int index)
 {
-	current_idx = index;
-	if(HBconsTimeout[current_idx] > 100)
-		HBconsTimeout[current_idx] -= 100;
-	modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-			CO->HBconsMonitoredNodes[current_idx].NMTstate,
-			HBconsTimeout[current_idx],
-			HBprodTime[current_idx],
-			HBprodTimeValid[current_idx] );
+	if(HBconsTimeout[index] > 100)
+		HBconsTimeout[index] -= 100;
+    	modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+			CO->HBconsMonitoredNodes[index].NMTstate,
+			HBconsTimeout[index],
+			HBprodTime[index],
+			HBprodTimeValid[index] );
 }
 
 void Model::getHBprodTime(int index)
@@ -108,55 +99,51 @@ void Model::getHBprodTime(int index)
 	size_t bytesRead = 0;
 	uint16_t HB_VALUE = 0;
 
-	current_idx = index;
-
 	// SDO read
 	read_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HB_VALUE, sizeof(HB_VALUE), &bytesRead);
 
 	if(bytesRead == 2) {
-		HBprodTime[current_idx] = HB_VALUE;
-		HBprodTimeValid[current_idx] = true;
-		modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-				CO->HBconsMonitoredNodes[current_idx].NMTstate,
-				HBconsTimeout[current_idx],
-				HBprodTime[current_idx],
-				HBprodTimeValid[current_idx] );
+		HBprodTime[index] = HB_VALUE;
+		HBprodTimeValid[index] = true;
+		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+				CO->HBconsMonitoredNodes[index].NMTstate,
+				HBconsTimeout[index],
+				HBprodTime[index],
+				HBprodTimeValid[index] );
 	}
-
 }
 
 void Model::setHBprodTime(int index)
 {
 	//SDE write
-	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017, 0x00, (uint8_t*)&HBprodTime[index], sizeof(HBprodTime[index]));
+	write_SDO(canOpenNodeSTM32.canOpenStack->SDOclient, CO->HBconsMonitoredNodes[index].nodeId, 0x1017,
+			0x00, (uint8_t*)&(HBprodTime[index]), sizeof(HBprodTime[index]));
 }
 
 
 void Model::HBprodTimeInc(int index)
 {
-	current_idx = index;
-	if( HBprodTimeValid[current_idx] )
+	if( HBprodTimeValid[index] )
 	{
-		HBprodTime[current_idx] +=100;
-		modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-				CO->HBconsMonitoredNodes[current_idx].NMTstate,
-				HBconsTimeout[current_idx],
-				HBprodTime[current_idx],
-				HBprodTimeValid[current_idx] );
+		HBprodTime[index] +=100;
+		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+				CO->HBconsMonitoredNodes[index].NMTstate,
+				HBconsTimeout[index],
+				HBprodTime[index],
+				HBprodTimeValid[index] );
 	}
 }
 
 void Model::HBprodTimeDec(int index)
 {
-	current_idx = index;
-	if( HBprodTimeValid[current_idx] && HBprodTime[current_idx] >=100 )
+	if( HBprodTimeValid[index] && HBprodTime[index] >=100 )
 	{
-		HBprodTime[current_idx] -=100;
-		modelListener->setNodeInfoDetail( current_idx, CO->HBconsMonitoredNodes[current_idx].HBstate ,
-				CO->HBconsMonitoredNodes[current_idx].NMTstate,
-				HBconsTimeout[current_idx],
-				HBprodTime[current_idx],
-				HBprodTimeValid[current_idx] );
+		HBprodTime[index] -=100;
+		modelListener->setNodeInfoDetail( index, CO->HBconsMonitoredNodes[index].HBstate ,
+				CO->HBconsMonitoredNodes[index].NMTstate,
+				HBconsTimeout[index],
+				HBprodTime[index],
+				HBprodTimeValid[index] );
 	}
 }
 
