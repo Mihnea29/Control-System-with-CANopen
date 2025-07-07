@@ -34,7 +34,7 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FQIF));
     add(textArea1);
 
-    textArea2.setPosition(14, 160, 167, 52);
+    textArea2.setPosition(14, 206, 213, 24);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setWideTextAction(WIDE_TEXT_WORDWRAP);
@@ -43,7 +43,7 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5MA8));
     add(textArea2);
 
-    textArea3.setPosition(14, 100, 213, 27);
+    textArea3.setPosition(14, 135, 213, 25);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea3.setLinespacing(0);
     textArea3.setWideTextAction(WIDE_TEXT_WORDWRAP);
@@ -51,6 +51,18 @@ Screen3ViewBase::Screen3ViewBase() :
     textArea3.setWildcard(textArea3Buffer);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JWII));
     add(textArea3);
+
+    textArea4.setXY(14, 104);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MBNW));
+    add(textArea4);
+
+    textArea5.setXY(14, 171);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_61GS));
+    add(textArea5);
 }
 
 Screen3ViewBase::~Screen3ViewBase()

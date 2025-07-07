@@ -688,7 +688,7 @@
             "Name": "NodeXHBconsState",
             "X": 72,
             "Y": 365,
-            "Width": 325,
+            "Width": 342,
             "Height": 28,
             "LockPosition": true,
             "TextId": "__SingleUse_LVG4",
@@ -704,8 +704,8 @@
             "Name": "NodeXNMTState",
             "X": 72,
             "Y": 400,
-            "Width": 304,
-            "Height": 26,
+            "Width": 342,
+            "Height": 25,
             "LockPosition": true,
             "TextId": "__SingleUse_JOIY",
             "TextRotation": "0",
@@ -714,6 +714,17 @@
               "UseBuffer": true,
               "BufferSize": 20
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 73,
+            "Y": 434,
+            "Width": 292,
+            "Height": 24,
+            "TextId": "__SingleUse_LQWV",
+            "TextRotation": "0",
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
@@ -926,17 +937,6 @@
               "UseBuffer": true,
               "BufferSize": 20
             }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea3",
-            "X": 73,
-            "Y": 434,
-            "Width": 292,
-            "Height": 24,
-            "TextId": "__SingleUse_LQWV",
-            "TextRotation": "0",
-            "AutoSize": true
           }
         ],
         "Interactions": [

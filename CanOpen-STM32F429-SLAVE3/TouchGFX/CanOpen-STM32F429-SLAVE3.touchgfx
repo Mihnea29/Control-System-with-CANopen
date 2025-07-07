@@ -328,10 +328,9 @@
             "Type": "TextArea",
             "Name": "textArea2",
             "X": 14,
-            "Y": 160,
-            "Width": 167,
-            "Height": 52,
-            "LockPosition": true,
+            "Y": 206,
+            "Width": 213,
+            "Height": 24,
             "TextId": "__SingleUse_5MA8",
             "TextRotation": "0",
             "Wildcard1": {
@@ -345,18 +344,39 @@
             "Type": "TextArea",
             "Name": "textArea3",
             "X": 14,
-            "Y": 100,
+            "Y": 135,
             "Width": 213,
-            "Height": 27,
-            "LockPosition": true,
+            "Height": 25,
             "TextId": "__SingleUse_JWII",
             "TextRotation": "0",
             "Wildcard1": {
               "TextId": "__SingleUse_YIIL",
               "UseBuffer": true,
-              "BufferSize": 15
+              "BufferSize": 20
             },
             "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 14,
+            "Y": 104,
+            "Width": 110,
+            "Height": 24,
+            "TextId": "__SingleUse_MBNW",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 14,
+            "Y": 171,
+            "Width": 221,
+            "Height": 24,
+            "TextId": "__SingleUse_61GS",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [

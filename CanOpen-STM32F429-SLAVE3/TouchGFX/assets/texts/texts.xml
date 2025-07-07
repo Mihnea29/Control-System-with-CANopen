@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_61GS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Heartbeat time [ms]: </Translation>
+      </Text>
+      <Text Id="__SingleUse_MBNW" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">NMT state:</Translation>
+      </Text>
       <Text Id="__SingleUse_O324" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">stud. Tomulscu Tudor </Translation>
       </Text>
@@ -21,14 +27,14 @@
       <Text Id="__SingleUse_YIIL" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>
       </Text>
-      <Text Id="__SingleUse_JWII" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">NMT state &lt;value&gt;</Translation>
+      <Text Id="__SingleUse_JWII" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_DYKV" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_5MA8" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Heartbeat time: &lt;value&gt; ms</Translation>
+      <Text Id="__SingleUse_5MA8" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_22DE" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">123</Translation>

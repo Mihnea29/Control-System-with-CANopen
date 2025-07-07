@@ -74,6 +74,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard NodeXCANID;
     touchgfx::TextAreaWithOneWildcard NodeXHBconsState;
     touchgfx::TextAreaWithOneWildcard NodeXNMTState;
+    touchgfx::TextArea textArea3;
     touchgfx::TextAreaWithOneWildcard NodeXHBconsTimeout;
     touchgfx::ButtonWithLabel buttonNodeXHBcTInc;
     touchgfx::ButtonWithLabel buttonNodeXHBcTDec;
@@ -87,7 +88,6 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder2;
     touchgfx::TextAreaWithOneWildcard textCANID;
     touchgfx::TextAreaWithOneWildcard textNMTState;
-    touchgfx::TextArea textArea3;
 
     /*
      * Wildcard Buffers

@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Screen3ViewBase : public touchgfx::View<Screen3Presenter>
 {
@@ -33,6 +34,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textArea1;
     touchgfx::TextAreaWithOneWildcard textArea2;
     touchgfx::TextAreaWithOneWildcard textArea3;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea5;
 
     /*
      * Wildcard Buffers
@@ -41,7 +44,7 @@ protected:
     touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
     static const uint16_t TEXTAREA2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
-    static const uint16_t TEXTAREA3_SIZE = 15;
+    static const uint16_t TEXTAREA3_SIZE = 20;
     touchgfx::Unicode::UnicodeChar textArea3Buffer[TEXTAREA3_SIZE];
 
 private:

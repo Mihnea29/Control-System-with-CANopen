@@ -202,7 +202,7 @@ Screen3ViewBase::Screen3ViewBase() :
     NodeXCANID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_32KA));
     add(NodeXCANID);
 
-    NodeXHBconsState.setPosition(72, 365, 325, 28);
+    NodeXHBconsState.setPosition(72, 365, 342, 28);
     NodeXHBconsState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NodeXHBconsState.setLinespacing(0);
     Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YN6U).getText());
@@ -210,13 +210,19 @@ Screen3ViewBase::Screen3ViewBase() :
     NodeXHBconsState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LVG4));
     add(NodeXHBconsState);
 
-    NodeXNMTState.setPosition(72, 400, 304, 26);
+    NodeXNMTState.setPosition(72, 400, 342, 25);
     NodeXNMTState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NodeXNMTState.setLinespacing(0);
     Unicode::snprintf(NodeXNMTStateBuffer, NODEXNMTSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JCSK).getText());
     NodeXNMTState.setWildcard(NodeXNMTStateBuffer);
     NodeXNMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOIY));
     add(NodeXNMTState);
+
+    textArea3.setXY(73, 434);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LQWV));
+    add(textArea3);
 
     NodeXHBconsTimeout.setXY(298, 478);
     NodeXHBconsTimeout.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -322,12 +328,6 @@ Screen3ViewBase::Screen3ViewBase() :
     textNMTState.setWildcard(textNMTStateBuffer);
     textNMTState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8B5Z));
     add(textNMTState);
-
-    textArea3.setXY(73, 434);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea3.setLinespacing(0);
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LQWV));
-    add(textArea3);
 }
 
 Screen3ViewBase::~Screen3ViewBase()

@@ -146,15 +146,15 @@ void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_sta
     if(CANID != 0 && CANID <= 0x100)
     {
         Unicode::snprintf(NodeXCANIDBuffer, NODEXCANID_SIZE, "%d", CANID);
-        Unicode::strncpy(NodeXHBconsStateBuffer, HBconsumer_state2Text(HBstate), NODEXHBCONSSTATE_SIZE);
-    	bVisible1 = true;
 
+        bVisible1 = true;
+        Unicode::strncpy(NodeXHBconsStateBuffer, HBconsumer_state2Text(HBstate), NODEXHBCONSSTATE_SIZE);
     	Unicode::strncpy( NodeXNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), NODEXNMTSTATE_SIZE );
     	if( HBstate == CO_HBconsumer_ACTIVE )
     	{
     		bVisible3 = true;
     	}
-
+    	Unicode::snprintf( NodeXHBconsTimeoutBuffer, NODEXHBCONSTIMEOUT_SIZE, "%d", timeoutTime);
 		if( HBprodTimeValid )
 		{
 			Unicode::snprintf(NodeXHBprodTimeBuffer, NODEXHBPRODTIME_SIZE, "%d", HBprodTime);
@@ -167,6 +167,7 @@ void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_sta
     }
 
 	NodeXHBconsState.setVisible(bVisible1);
+	textArea3.setVisible(bVisible1);
     NodeXHBconsTimeout.setVisible(bVisible1);
     buttonNodeXHBcTDec.setVisible(bVisible1);
 	buttonNodeXHBcTInc.setVisible(bVisible1);

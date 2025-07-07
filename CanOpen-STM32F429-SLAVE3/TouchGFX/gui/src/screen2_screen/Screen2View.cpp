@@ -28,7 +28,7 @@ void Screen2View::updateTime(uint8_t hour, uint8_t minute, uint8_t second)
 
 
 const char DayOfWeek[8][20] = {
-		"Unknown",
+		"Duminica",
 		"Luni",
 		"Marti",
 		"Miercuri",

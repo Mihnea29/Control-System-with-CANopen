@@ -17,7 +17,7 @@ void Screen2View::tearDownScreen()
 }
 
 const char DayOfWeek[8][20] = {
-		"Unknown",
+		"Duminica",
 		"Luni",
 		"Marti",
 		"Miercuri",
@@ -59,8 +59,6 @@ void Screen2View::updateData(uint8_t WeekDay, uint8_t Date, uint8_t Month, uint8
 	Unicode::UnicodeChar bufferDayOfWeek[20];
 	Unicode::UnicodeChar bufferMonthOfYear[20];
 
-	if(WeekDay==0)
-		WeekDay+=7;
 	Unicode::strncpy(bufferDayOfWeek, DayOfWeek[WeekDay], 20);
 	Unicode::strncpy(bufferMonthOfYear, MonthOfYear[Month], 20);
 
