@@ -25,7 +25,6 @@ Model::Model() : modelListener(nullptr)
 {
 	for(int i = 0 ; i < HB_CONS_NODES; i++)
 	{
-	    HBconsTimeout[i] = 2500;
 	    HBprodTime[i] = 0;
 	    HBprodTimeValid[i] = false;
 	}
@@ -99,7 +98,7 @@ void Model::getNodeInfoDetail(int index)
 			CO->HBconsMonitoredNodes[index].nodeId,
 			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
-			HBconsTimeout[index],
+			CO->HBconsMonitoredNodes[index].time_us/1000,
 			HBprodTime[index],
 			HBprodTimeValid[index] );
 }
@@ -107,24 +106,28 @@ void Model::getNodeInfoDetail(int index)
 
 void Model::HBconsTimeoutInc(int index)
 {
-	HBconsTimeout[index] += 100;
+	CO->HBconsMonitoredNodes[index].time_us += 10000;
 	modelListener->setNodeInfoDetail( index,
 			CO->HBconsMonitoredNodes[index].nodeId,
 			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
-			HBconsTimeout[index],
+			CO->HBconsMonitoredNodes[index].time_us/1000,
 			HBprodTime[index],
-			HBprodTimeValid[index] );}
+			HBprodTimeValid[index] );
+}
 
 void Model::HBconsTimeoutDec(int index)
 {
-	if(HBconsTimeout[index] > 100)
-		HBconsTimeout[index] -= 100;
-	    modelListener->setNodeInfoDetail( index,
+	if(CO->HBconsMonitoredNodes[index].time_us > 10000)
+	{
+		CO->HBconsMonitoredNodes[index].time_us -= 10000;
+		CO->HBconsMonitoredNodes[index].timeoutTimer = 0;
+	}
+	modelListener->setNodeInfoDetail( index,
 			CO->HBconsMonitoredNodes[index].nodeId,
 			CO->HBconsMonitoredNodes[index].HBstate ,
 			CO->HBconsMonitoredNodes[index].NMTstate,
-			HBconsTimeout[index],
+			CO->HBconsMonitoredNodes[index].time_us/1000,
 			HBprodTime[index],
 			HBprodTimeValid[index] );
 }
@@ -144,7 +147,7 @@ void Model::getHBprodTime(int index)
 				CO->HBconsMonitoredNodes[index].nodeId,
 				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
-				HBconsTimeout[index],
+				CO->HBconsMonitoredNodes[index].time_us/1000,
 				HBprodTime[index],
 				HBprodTimeValid[index] );
 	}
@@ -167,7 +170,7 @@ void Model::HBprodTimeInc(int index)
 				CO->HBconsMonitoredNodes[index].nodeId,
 				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
-				HBconsTimeout[index],
+				CO->HBconsMonitoredNodes[index].time_us/1000,
 				HBprodTime[index],
 				HBprodTimeValid[index] );
 	}
@@ -182,7 +185,7 @@ void Model::HBprodTimeDec(int index)
 				CO->HBconsMonitoredNodes[index].nodeId,
 				CO->HBconsMonitoredNodes[index].HBstate ,
 				CO->HBconsMonitoredNodes[index].NMTstate,
-				HBconsTimeout[index],
+				CO->HBconsMonitoredNodes[index].time_us/1000,
 				HBprodTime[index],
 				HBprodTimeValid[index] );
 	}
