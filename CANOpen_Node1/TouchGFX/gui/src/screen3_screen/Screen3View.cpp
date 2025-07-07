@@ -116,7 +116,10 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 	    	if( HBstate == CO_HBconsumer_ACTIVE )
 	    	{
 	    		bVisible3 = true;
+	    		NodeXNMTState.setVisible(bVisible3);
 	    	}
+    		NodeXHBconsState.invalidate();
+    	    NodeXNMTState.invalidate();
 	    }
 	}
 	else
@@ -127,14 +130,8 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 																			HBconsumer_state_colorRGB[0][2]) );
 	}
 
-    NodeXNMTState.setVisible(bVisible3);
-
-
     NodeCANID[index]->invalidate();
     NodeStatus[index]->invalidate();
-
-	NodeXHBconsState.invalidate();
-    NodeXNMTState.invalidate();
 }
 
 
