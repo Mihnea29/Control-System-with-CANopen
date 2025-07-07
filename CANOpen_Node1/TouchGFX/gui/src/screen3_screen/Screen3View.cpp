@@ -92,7 +92,7 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
 void Screen3View::setCANID(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate)
 {
 	Unicode::snprintf(textCANIDBuffer, TEXTCANID_SIZE, "%d", CAN_ID);
-    Unicode::snprintf(textNMTStateBuffer, TEXTNMTSTATE_SIZE, "%s", CO_NMT_internalState2Text(NMTstate));
+	Unicode::strncpy(textNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), TEXTNMTSTATE_SIZE);
 
 	textCANID.invalidate();
 	textNMTState.invalidate();
@@ -111,7 +111,7 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 																			HBconsumer_state_colorRGB[HBstate][2]) );
 	    if( idx == index )
 	    {
-	        Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", HBconsumer_state2Text(HBstate));
+	    	Unicode::strncpy(NodeXHBconsStateBuffer, HBconsumer_state2Text(HBstate), NODEXHBCONSSTATE_SIZE);
 	    	Unicode::strncpy( NodeXNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), NODEXNMTSTATE_SIZE );
 	    	if( HBstate == CO_HBconsumer_ACTIVE )
 	    	{
@@ -149,7 +149,7 @@ void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_sta
     if(CANID != 0 && CANID <= 0x100)
     {
         Unicode::snprintf(NodeXCANIDBuffer, NODEXCANID_SIZE, "%d", CANID);
-        Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", HBconsumer_state2Text(HBstate));
+        Unicode::strncpy(NodeXHBconsStateBuffer, HBconsumer_state2Text(HBstate), NODEXHBCONSSTATE_SIZE);
     	bVisible1 = true;
 
     	Unicode::strncpy( NodeXNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), NODEXNMTSTATE_SIZE );

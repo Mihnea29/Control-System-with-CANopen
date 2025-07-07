@@ -54,7 +54,7 @@ char* CO_NMT_internalState2Text(CO_NMT_internalState_t state)
 void Screen3View::updateHeartbeatTime(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate, uint32_t HeartbeatTime)
 {
 	Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d", CAN_ID);
-	Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", CO_NMT_internalState2Text(NMTstate));
+	Unicode::strncpy(textArea3Buffer, CO_NMT_internalState2Text(NMTstate), TEXTAREA3_SIZE);
 	Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%d", HeartbeatTime);
 
 	textArea1.invalidate();
