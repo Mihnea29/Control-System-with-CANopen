@@ -62,7 +62,8 @@ void Model::tick()
 	modelListener->setCANID(CO->NMT->nodeId, CO->NMT->operatingState);
 	for(int i = 0 ; i < HB_CONS_NODES ; i++)
 	{
-		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId, CO->HBconsMonitoredNodes[i].HBstate);
+		modelListener->setNodeInfo( i, CO->HBconsMonitoredNodes[i].nodeId,
+				CO->HBconsMonitoredNodes[i].HBstate, CO->HBconsMonitoredNodes[i].NMTstate);
 	}
 
 }

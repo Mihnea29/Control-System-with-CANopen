@@ -87,6 +87,7 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder2;
     touchgfx::TextAreaWithOneWildcard textCANID;
     touchgfx::TextAreaWithOneWildcard textNMTState;
+    touchgfx::TextArea textArea3;
 
     /*
      * Wildcard Buffers

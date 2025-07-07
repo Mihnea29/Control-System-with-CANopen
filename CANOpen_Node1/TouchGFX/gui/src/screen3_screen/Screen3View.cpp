@@ -99,14 +99,25 @@ void Screen3View::setCANID(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate)
 }
 
 #define NODE_CANID_SIZE     20
-void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate)
+void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
 {
+	bool bVisible3 = false;
+
 	if( CAN_ID != 0 && CAN_ID < 0x100 )
 	{
 		Unicode::snprintf(NodeCANIDBuffer[index], NODE_CANID_SIZE, "%d", CAN_ID);
 	    NodeStatusPainter[index]->setColor(touchgfx::Color::getColorFromRGB(HBconsumer_state_colorRGB[HBstate][0],
 	    																	HBconsumer_state_colorRGB[HBstate][1],
 																			HBconsumer_state_colorRGB[HBstate][2]) );
+	    if( idx == index )
+	    {
+	        Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", HBconsumer_state2Text(HBstate));
+	    	Unicode::strncpy( NodeXNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), NODEXNMTSTATE_SIZE );
+	    	if( HBstate == CO_HBconsumer_ACTIVE )
+	    	{
+	    		bVisible3 = true;
+	    	}
+	    }
 	}
 	else
 	{
@@ -116,8 +127,14 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 																			HBconsumer_state_colorRGB[0][2]) );
 	}
 
+    NodeXNMTState.setVisible(bVisible3);
+
+
     NodeCANID[index]->invalidate();
     NodeStatus[index]->invalidate();
+
+	NodeXHBconsState.invalidate();
+    NodeXNMTState.invalidate();
 }
 
 
@@ -126,16 +143,20 @@ void Screen3View::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t H
 void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate,
 		uint16_t timeoutTime, uint16_t HBprodTime, bool HBprodTimeValid )
 {
-	bool bVisible1 = false, bVisible2 = false;
+	bool bVisible1 = false, bVisible2 = false, bVisible3 = false;
 	idx  = index;
 
     if(CANID != 0 && CANID <= 0x100)
     {
         Unicode::snprintf(NodeXCANIDBuffer, NODEXCANID_SIZE, "%d", CANID);
         Unicode::snprintf(NodeXHBconsStateBuffer, NODEXHBCONSSTATE_SIZE, "%s", HBconsumer_state2Text(HBstate));
-    	Unicode::strncpy(NodeXNMTStateBuffer,
-    			CO_NMT_internalState2Text(HBstate == CO_HBconsumer_ACTIVE? NMTstate : CO_NMT_UNKNOWN), NODEXNMTSTATE_SIZE);
     	bVisible1 = true;
+
+    	Unicode::strncpy( NodeXNMTStateBuffer, CO_NMT_internalState2Text(NMTstate), NODEXNMTSTATE_SIZE );
+    	if( HBstate == CO_HBconsumer_ACTIVE )
+    	{
+    		bVisible3 = true;
+    	}
 
 		if( HBprodTimeValid )
 		{
@@ -149,12 +170,13 @@ void Screen3View::setNodeInfoDetail( int index, uint8_t CANID, CO_HBconsumer_sta
     }
 
 	NodeXHBconsState.setVisible(bVisible1);
-    NodeXNMTState.setVisible(bVisible1);
     NodeXHBconsTimeout.setVisible(bVisible1);
     buttonNodeXHBcTDec.setVisible(bVisible1);
 	buttonNodeXHBcTInc.setVisible(bVisible1);
 	textArea1.setVisible(bVisible1);
 	buttonNodeXHBpTGet.setVisible(bVisible1);
+
+    NodeXNMTState.setVisible(bVisible3);
 
     NodeXHBprodTime.setVisible(bVisible2);
     buttonNodeXHBpTInc.setVisible(bVisible2);

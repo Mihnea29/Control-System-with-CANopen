@@ -6,6 +6,9 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_LQWV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HB consumer Timeout [ms]: </Translation>
+      </Text>
       <Text Id="__SingleUse_826X" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">indrumator: Maiorescu Victor Andrei</Translation>
       </Text>
@@ -61,7 +64,7 @@
         <Translation Language="GB">&lt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZSWV" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">HB producer Time:</Translation>
+        <Translation Language="GB">HB producer Time [ms]:</Translation>
       </Text>
       <Text Id="__SingleUse_B4SN" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Set</Translation>
@@ -79,7 +82,7 @@
         <Translation Language="GB">1500</Translation>
       </Text>
       <Text Id="__SingleUse_LX0V" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; ms</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZFMV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;</Translation>
@@ -91,7 +94,7 @@
         <Translation Language="GB">1500</Translation>
       </Text>
       <Text Id="__SingleUse_SAID" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">HB consumer Timeout: &lt;value&gt; ms</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JCSK" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">unknown</Translation>

@@ -23,9 +23,9 @@ void Screen3Presenter::setCANID(uint8_t CAN_ID, CO_NMT_internalState_t NMTstate)
 }
 
 
-void Screen3Presenter::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate)
+void Screen3Presenter::setNodeInfo(int index, uint8_t CAN_ID, CO_HBconsumer_state_t HBstate, CO_NMT_internalState_t NMTstate)
 {
-	view.setNodeInfo(index, CAN_ID, HBstate);
+	view.setNodeInfo(index, CAN_ID, HBstate, NMTstate);
 }
 
 
