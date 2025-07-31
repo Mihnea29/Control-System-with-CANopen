@@ -1,10 +1,14 @@
 # Sistem de Control Automotive CANopen
 
+<img width="926" height="526" alt="image" src="https://github.com/user-attachments/assets/b1c47cdc-992f-4ff7-9157-de5abc93271a" />
+
 Un prototip de sistem de control automotive distribuit care implementează protocolul CANopen pe microcontrolere STM32 pentru gestionarea diverselor subsisteme ale vehiculului (lumini, ștergătoare) și display grafic.
 
 ## Prezentare generală
 
 Acest proiect demonstrează o arhitectură electronică automotive modernă utilizând protocolul CANopen pentru comunicația între module. Sistemul simulează funcționalitatea reală a ECU-urilor (Electronic Control Unit) regăsită în vehiculele moderne.
+
+<img width="2119" height="1420" alt="Picture1" src="https://github.com/user-attachments/assets/a1c95d20-64fc-4e4b-83f3-66b3956721d2" />
 
 ### Caracteristici principale
 
@@ -48,6 +52,8 @@ Acest proiect demonstrează o arhitectură electronică automotive modernă util
 - Configurare SDO dinamică a nodurilor remote
 - HMI TouchGFX pentru interacțiunea cu utilizatorul
 - Transmisia TPDO pentru controlul sistemului
+ 
+<img width="960" height="644" alt="image" src="https://github.com/user-attachments/assets/a935c19f-6a2a-4ec3-a867-ad1142eab127" />
 
 ### 2. Modul control iluminat (Nodul 2)
 
@@ -79,6 +85,8 @@ Acest proiect demonstrează o arhitectură electronică automotive modernă util
 - Interfață TouchGFX pentru starea sistemului
 - Vizualizare în timp real a stării sistemului
 
+<img width="590" height="736" alt="image" src="https://github.com/user-attachments/assets/c323ec31-1f0e-43c5-ac61-72184fbddcfd" />
+
 ### 5. Nod monitorizare (STM32F407G)
 
 **Rol**: Instrument diagnostic și analiză
@@ -88,6 +96,8 @@ Acest proiect demonstrează o arhitectură electronică automotive modernă util
 - Bridge UART către PC pentru analiza Wireshark
 - Monitorizare non-intruzivă (mod doar ascultare)
 - Logging date în timp real
+
+<img width="798" height="986" alt="image" src="https://github.com/user-attachments/assets/d67cbff9-448d-4f7c-9650-0db1e4bda081" />
 
 ## Setup pentru dezvoltare
 
@@ -220,3 +230,12 @@ wireshark
 - **Management sistem ștergătoare**: Control servo cu viteză variabilă
 - **Monitorizare în timp real**: Diagnostice complete sistem
 - **Interfață om-mașină**: Panou de control bazat pe TouchGFX
+
+## Demo lumini
+
+https://github.com/user-attachments/assets/905b185d-f67a-4171-b013-ccdfb30d7154
+
+## Demo timp
+
+https://github.com/user-attachments/assets/d5313a8e-7275-47bd-83d5-c225f1a954e4
+
