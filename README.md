@@ -1,4 +1,4 @@
-# Sistem de Control Automotive CANopen
+# Sistem de Control cu CANopen
 
 <img width="926" height="526" alt="image" src="https://github.com/user-attachments/assets/b1c47cdc-992f-4ff7-9157-de5abc93271a" />
 
