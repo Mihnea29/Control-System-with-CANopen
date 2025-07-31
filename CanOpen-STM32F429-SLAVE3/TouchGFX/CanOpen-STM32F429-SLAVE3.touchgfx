@@ -1,0 +1,459 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 240,
+            "Height": 320,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label_Aplication",
+            "X": 16,
+            "Y": 13,
+            "Width": 206,
+            "Height": 27,
+            "LockPosition": true,
+            "TextId": "__SingleUse_GXKT",
+            "TextRotation": "0",
+            "WideTextAction": 1
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttoNext",
+            "X": 204,
+            "Y": 284,
+            "Width": 36,
+            "Height": 36,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_0KU0",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textETTI",
+            "X": 12,
+            "Y": 266,
+            "Width": 178,
+            "Height": 53,
+            "LockPosition": true,
+            "TextId": "__SingleUse_PMK7",
+            "TextRotation": "0",
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAutor1",
+            "X": 10,
+            "Y": 100,
+            "Width": 195,
+            "Height": 24,
+            "TextId": "__SingleUse_JS9Q",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAutor2",
+            "X": 10,
+            "Y": 204,
+            "Width": 220,
+            "Height": 24,
+            "TextId": "__SingleUse_QTJB",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textIndrumator",
+            "X": 10,
+            "Y": 142,
+            "Width": 219,
+            "Height": 24,
+            "TextId": "__SingleUse_O324",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Scrren1Next",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttoNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 240,
+            "Height": 320,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNext",
+            "X": 204,
+            "Y": 284,
+            "Width": 36,
+            "Height": 36,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_GEQ6",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonPrev",
+            "Y": 284,
+            "Width": 36,
+            "Height": 36,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_M0WT",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "AnalogClock",
+            "Name": "analogClock",
+            "Y": 40,
+            "Width": 240,
+            "Height": 240,
+            "LockPosition": true,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.png",
+            "RotationCenterX": 120,
+            "RotationCenterY": 120,
+            "Preset": "alternate_theme\\presets\\analogclock\\small_plain_dark.json",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "ClockHands": [
+              {
+                "Type": "HourClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.png",
+                "RotationCenterX": 9,
+                "RotationCenterY": 69
+              },
+              {
+                "Type": "MinuteClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.png",
+                "RotationCenterX": 10,
+                "RotationCenterY": 87
+              },
+              {
+                "Type": "SecondClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.png",
+                "RotationCenterX": 2,
+                "RotationCenterY": 100
+              }
+            ],
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 70,
+            "Y": 290,
+            "Width": 100,
+            "Height": 25,
+            "LockPosition": true,
+            "TextColor": {
+              "Red": 12,
+              "Green": 27,
+              "Blue": 55
+            },
+            "TextId": "__SingleUse_L5NI",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textData",
+            "Y": 8,
+            "Width": 240,
+            "Height": 28,
+            "LockPosition": true,
+            "TextId": "__SingleUse_BMUD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 12,
+              "Green": 27,
+              "Blue": 55
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_AJTZ",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Screen2Prev",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonPrev"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Screen2Next",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNext"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen3"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_bg",
+            "Width": 240,
+            "Height": 320,
+            "LockPosition": true,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_puzzle.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonPrev",
+            "Y": 284,
+            "Width": 36,
+            "Height": 36,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_disabled.png",
+            "TextId": "__SingleUse_XI1F",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 14,
+            "Y": 47,
+            "Width": 130,
+            "Height": 24,
+            "LockPosition": true,
+            "TextId": "__SingleUse_FQIF",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_22DE",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 14,
+            "Y": 206,
+            "Width": 213,
+            "Height": 24,
+            "TextId": "__SingleUse_5MA8",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_DYKV",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 14,
+            "Y": 135,
+            "Width": 213,
+            "Height": 25,
+            "TextId": "__SingleUse_JWII",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_YIIL",
+              "UseBuffer": true,
+              "BufferSize": 20
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 14,
+            "Y": 104,
+            "Width": 110,
+            "Height": 24,
+            "TextId": "__SingleUse_MBNW",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 14,
+            "Y": 171,
+            "Width": 221,
+            "Height": 24,
+            "TextId": "__SingleUse_61GS",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Screen3Prev",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonPrev"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "CanOpen-STM32F429-SLAVE3",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

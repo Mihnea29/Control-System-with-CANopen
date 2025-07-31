@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_LQWV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HB consumer Timeout [ms]: </Translation>
+      </Text>
+      <Text Id="__SingleUse_826X" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">indrumator: Maiorescu Victor Andrei</Translation>
+      </Text>
+      <Text Id="__SingleUse_4WOW" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">student: Tomulescu Tudor</Translation>
+      </Text>
+      <Text Id="__SingleUse_74ZU" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">student: Dorcu Mihnea</Translation>
+      </Text>
+      <Text Id="__SingleUse_INTI" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">LIcenta TUIASI, ETTI, MON, 2025</Translation>
+      </Text>
+      <Text Id="__SingleUse_8VWM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_8B5Z" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">NMT state: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YN6U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_LVG4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HB consumer state: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JAKH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">127</Translation>
+      </Text>
+      <Text Id="__SingleUse_32KA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Node CANID: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8XBK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">HeartBeat consumer - starea nodurilor:</Translation>
+      </Text>
+      <Text Id="__SingleUse_J4AD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Flash</Translation>
+      </Text>
+      <Text Id="__SingleUse_8D5U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Faza </Translation>
+      </Text>
+      <Text Id="__SingleUse_QCEY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Pozitii</Translation>
+      </Text>
+      <Text Id="__SingleUse_0Z1E" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Avarii</Translation>
+      </Text>
+      <Text Id="__SingleUse_94DN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Semnalizare dreapta</Translation>
+      </Text>
+      <Text Id="__SingleUse_9D4B" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Semnalizare stanga</Translation>
+      </Text>
+      <Text Id="__SingleUse_C4WK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZSWV" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">HB producer Time [ms]:</Translation>
+      </Text>
+      <Text Id="__SingleUse_B4SN" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Set</Translation>
+      </Text>
+      <Text Id="__SingleUse_6HSG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Get</Translation>
+      </Text>
+      <Text Id="__SingleUse_RVOT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZMNU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RXBO" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1500</Translation>
+      </Text>
+      <Text Id="__SingleUse_LX0V" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFMV" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1SUC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0NYJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1500</Translation>
+      </Text>
+      <Text Id="__SingleUse_SAID" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JCSK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_JOIY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">NMT state: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ENRP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_KBZE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OZAG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">7</Translation>
+      </Text>
+      <Text Id="__SingleUse_F127" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2D2W" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_8LVA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_99DY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_UKW9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5AGB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZJE7" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TZG9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_LNGC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_9BTJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_7LX8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VWZC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_KZIP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_QVOL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">111</Translation>
+      </Text>
+      <Text Id="__SingleUse_88K3" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Nod Coordonator CAN-ID: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_QLKQ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Duminica, 1 ian 1984</Translation>
+      </Text>
+      <Text Id="__SingleUse_7BBX" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1MXR" Alignment="Left" TypographyId="TextDigClock">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_PF79" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">NODE1 - COORDONATOR</Translation>
+      </Text>
+      <Text Id="__SingleUse_RTJH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_IFSU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5MCB" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6EK0" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_56FK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x0-0xFF" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="TextDigClock" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
+  </Typographies>
+</TextDatabase>

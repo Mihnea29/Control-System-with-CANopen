@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_61GS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Heartbeat time [ms]: </Translation>
+      </Text>
+      <Text Id="__SingleUse_MBNW" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">NMT state:</Translation>
+      </Text>
+      <Text Id="__SingleUse_O324" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">stud. Tomulscu Tudor </Translation>
+      </Text>
+      <Text Id="__SingleUse_QTJB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">sl.Maiorescu V.Andrei </Translation>
+      </Text>
+      <Text Id="__SingleUse_JS9Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">stud. Dorcu Mihnea</Translation>
+      </Text>
+      <Text Id="__SingleUse_PMK7" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Licenta TUIASI, ETTI, MON, 2025</Translation>
+      </Text>
+      <Text Id="__SingleUse_YIIL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">unknown</Translation>
+      </Text>
+      <Text Id="__SingleUse_JWII" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DYKV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_5MA8" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_22DE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">123</Translation>
+      </Text>
+      <Text Id="__SingleUse_FQIF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">CAN-ID: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AJTZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Duminica, 1 ian 1984</Translation>
+      </Text>
+      <Text Id="__SingleUse_BMUD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_L5NI" Alignment="Left" TypographyId="TextDigClock">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GEQ6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XI1F" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_M0WT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0KU0" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GXKT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">SLAVE 3</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x0-0xFF" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="TextDigClock" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
+  </Typographies>
+</TextDatabase>
