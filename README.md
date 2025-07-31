@@ -1,144 +1,144 @@
-# Sistem de Control Automotive cu CANopen
+# Automotive Control System with CANopen
 
 <img width="926" height="526" alt="image" src="https://github.com/user-attachments/assets/b1c47cdc-992f-4ff7-9157-de5abc93271a" />
 
-Un prototip de sistem de control automotive distribuit care implementează protocolul CANopen pe microcontrolere STM32 pentru gestionarea diverselor subsisteme ale vehiculului (lumini, ștergătoare) și display grafic.
+A distributed automotive control system prototype that implements the CANopen protocol on STM32 microcontrollers for managing various vehicle subsystems (lights, wipers) and graphic display.
 
-## Prezentare generală
+## Overview
 
-Acest proiect demonstrează o arhitectură electronică automotive modernă utilizând protocolul CANopen pentru comunicația între module. Sistemul simulează funcționalitatea reală a ECU-urilor (Electronic Control Unit) regăsită în vehiculele moderne.
+This project demonstrates a modern automotive electronic architecture using the CANopen protocol for inter-module communication. The system simulates real ECU (Electronic Control Unit) functionality found in modern vehicles.
 
 <img width="2119" height="1420" alt="Picture1" src="https://github.com/user-attachments/assets/a1c95d20-64fc-4e4b-83f3-66b3956721d2" />
 
-### Caracteristici principale
+### Key Features
 
-- **Arhitectură de control distribuită**: Multiple noduri ECU care comunică prin CANopen
-- **Monitorizare în timp real**: Analiza live a traficului pe magistrala CAN folosind Wireshark
-- **Interfață TouchGFX**: Pentru controlul și starea sistemului
-- **Integrare hardware**: Design PCB personalizat pentru magistralea CAN
-- **Protocol de nivel automotive**: Implementare completă CANopen cu suport PDO/SDO
+- **Distributed control architecture**: Multiple ECU nodes communicating via CANopen
+- **Real-time monitoring**: Live CAN bus traffic analysis using Wireshark
+- **TouchGFX interface**: For system control and status
+- **Hardware integration**: Custom PCB design for CAN bus
+- **Automotive-grade protocol**: Complete CANopen implementation with PDO/SDO support
 
-## Arhitectura sistemului
+## System Architecture
 
-### Componente hardware
+### Hardware Components
 
-| Componentă | Rol | Specificații |
-|------------|-----|-------------|
-| STM32F769I-Discovery | Nod coordonator (BCM) | Cortex-M7, TouchGFX |
-| STM32F429-Discovery | Noduri de execuție (ECU) | Cortex-M4, Multiple instanțe |
-| STM32F407G-DISC1 | Nod de monitorizare | Cortex-M4, Bridge UART |
-| Transceivere CAN MCP2561 | Comunicație la nivel fizic | Semnalizare diferențială |
-| PCB | Magistrală CAN | 
-| Servomotoare | Actuatori ștergătoare | Control PWM precizie |
-| Array-uri LED | Indicatori iluminat | Multiple canale |
+| Component | Role | Specifications |
+|-----------|------|---------------|
+| STM32F769I-Discovery | Coordinator node (BCM) | Cortex-M7, TouchGFX |
+| STM32F429-Discovery | Execution nodes (ECU) | Cortex-M4, Multiple instances |
+| STM32F407G-DISC1 | Monitoring node | Cortex-M4, UART Bridge |
+| CAN Transceivers MCP2561 | Physical layer communication | Differential signaling |
+| PCB | CAN Bus | 
+| Servomotors | Wiper actuators | Precision PWM control |
+| LED Arrays | Lighting indicators | Multiple channels |
 
-### Stack software
+### Software Stack
 
-- **FreeRTOS**: Sistem de operare în timp real
-- **CANopenNode**: Stack CANopen open-source
-- **TouchGFX**: Framework GUI profesional
-- **STM32CubeIDE**: Mediu de dezvoltare
-- **SocketCAN + Wireshark**: Monitorizare magistrală CAN
+- **FreeRTOS**: Real-time operating system
+- **CANopenNode**: Open-source CANopen stack
+- **TouchGFX**: Professional GUI framework
+- **STM32CubeIDE**: Development environment
+- **SocketCAN + Wireshark**: CAN bus monitoring
 
-## Nodurile sistemului
+## System Nodes
 
-### 1. Nod coordonator (STM32F769I)
+### 1. Coordinator Node (STM32F769I)
 
-**Rol**: Echivalent Body Control Module (BCM)
+**Role**: Body Control Module (BCM) equivalent
 
-**Funcții**:
-- Producător timestamp pentru sincronizarea sistemului
-- Managementul rețelei și monitorizarea nodurilor
-- Configurare SDO dinamică a nodurilor remote
-- HMI TouchGFX pentru interacțiunea cu utilizatorul
-- Transmisia TPDO pentru controlul sistemului
+**Functions**:
+- Timestamp producer for system synchronization
+- Network management and node monitoring
+- Dynamic SDO configuration of remote nodes
+- TouchGFX HMI for user interaction
+- TPDO transmission for system control
  
 <img width="960" height="644" alt="image" src="https://github.com/user-attachments/assets/a935c19f-6a2a-4ec3-a867-ad1142eab127" />
 
-### 2. Modul control iluminat (Nodul 2)
+### 2. Lighting Control Module (Node 2)
 
-**Rol**: ECU iluminat exterior
+**Role**: Exterior lighting ECU
 
-**Funcții**:
-- Lumini de poziție, semnalizare, fază lungă
-- Funcționalitate flash cu management de prioritate
-- Alternare bazată pe timer (0.75s pentru semnalizare, 0.1s pentru flash)
-- Consumul RPDO pentru controlul stării luminilor
+**Functions**:
+- Position lights, turn signals, high beam
+- Flash functionality with priority management
+- Timer-based alternation (0.75s for turn signals, 0.1s for flash)
+- RPDO consumption for light state control
 
-### 3. Modul control ștergătoare (Nodul 3)
+### 3. Wiper Control Module (Node 3)
 
-**Rol**: ECU sistem ștergătoare parbriz
+**Role**: Windshield wiper system ECU
 
-**Funcții**:
-- Mișcare ștergătoare controlată cu servo
-- Control viteză variabilă (sistem cu 2 viteze)
-- Control precizie poziție (range PWM 1000-2000μs)
-- Tranziții graduale pentru prevenirea stresului mecanic
+**Functions**:
+- Servo-controlled wiper movement
+- Variable speed control (2-speed system)
+- Precision position control (PWM range 1000-2000μs)
+- Gradual transitions to prevent mechanical stress
 
-### 4. Terminal afișaj (Nodul 4)
+### 4. Display Terminal (Node 4)
 
-**Rol**: Afișaj informații și monitorizare
+**Role**: Information display and monitoring
 
-**Funcții**:
-- Consumer timestamp cu conversie calendar
-- Monitorizare heartbeat pentru toate nodurile
-- Interfață TouchGFX pentru starea sistemului
-- Vizualizare în timp real a stării sistemului
+**Functions**:
+- Timestamp consumer with calendar conversion
+- Heartbeat monitoring for all nodes
+- TouchGFX interface for system status
+- Real-time system state visualization
 
 <img width="590" height="736" alt="image" src="https://github.com/user-attachments/assets/c323ec31-1f0e-43c5-ac61-72184fbddcfd" />
 
-### 5. Nod monitorizare (STM32F407G)
+### 5. Monitoring Node (STM32F407G)
 
-**Rol**: Instrument diagnostic și analiză
+**Role**: Diagnostic instrument and analysis
 
-**Funcții**:
-- Capturarea completă a traficului pe magistrala CAN
-- Bridge UART către PC pentru analiza Wireshark
-- Monitorizare non-intruzivă (mod doar ascultare)
-- Logging date în timp real
+**Functions**:
+- Complete CAN bus traffic capture
+- UART bridge to PC for Wireshark analysis
+- Non-intrusive monitoring (listen-only mode)
+- Real-time data logging
 
 <img width="798" height="986" alt="image" src="https://github.com/user-attachments/assets/d67cbff9-448d-4f7c-9650-0db1e4bda081" />
 
-## Setup pentru dezvoltare
+## Development Setup
 
-### Cerințe preliminare
+### Prerequisites
 
-1. **STM32CubeIDE** - Mediul principal de dezvoltare
-2. **Ubuntu 22.04** (sau orice distribuție Linux cu SocketCAN)
-3. **Wireshark** - Pentru analiza magistralei CAN
-4. **Wine** - Pentru rularea CANopenEditor pe Linux
-5. **Python 3** cu bibliotecile necesare
+1. **STM32CubeIDE** - Primary development environment
+2. **Ubuntu 22.04** (or any Linux distribution with SocketCAN)
+3. **Wireshark** - For CAN bus analysis
+4. **Wine** - For running CANopenEditor on Linux
+5. **Python 3** with required libraries
 
-### Pași de instalare
+### Installation Steps
 
-#### 1. Clonarea repository-ului
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/canopen-automotive-system.git
 cd canopen-automotive-system
 ```
 
-#### 2. Descărcarea bibliotecilor CANopenNode
+#### 2. Download CANopenNode libraries
 
 ```bash
 git clone https://github.com/CANopenNode/CANopenNode.git
 git clone https://github.com/CANopenNode/CanOpenSTM32.git
 ```
 
-#### 3. Instalarea dependențelor de sistem
+#### 3. Install system dependencies
 
 ```bash
 sudo apt update
 sudo apt install python3 wireshark wine
 ```
 
-#### 4. Instalarea dependențelor Python
+#### 4. Install Python dependencies
 
 ```bash
 pip3 install pyserial python-can
 ```
 
-#### 5. Setup interfață CAN virtuală
+#### 5. Setup virtual CAN interface
 
 ```bash
 sudo modprobe vcan
@@ -146,96 +146,97 @@ sudo ip link add dev vcan0 type vcan
 sudo ip link set up vcan0
 ```
 
-#### 6. Descărcarea CANopenEditor
+#### 6. Download CANopenEditor
 
 ```bash
 wget https://github.com/CANopenNode/CANopenEditor/releases/download/v4.2.3/CANopenEditor-build-v4.2.3-0-gc1071a1.zip
 unzip CANopenEditor-build-v4.2.3-0-gc1071a1.zip
 ```
 
-## Utilizare
+## Usage
 
-### Compilare și programare
+### Compilation and Programming
 
-1. Deschideți STM32CubeIDE și importați folderele proiectului
-2. Configurați căile include pentru a indica către directoarele CANopenNode
-3. Compilați fiecare proiect de nod separat
-4. Programați pe plăcile STM32 respective folosind ST-Link
+1. Open STM32CubeIDE and import the project folders
+2. Configure include paths to point to CANopenNode directories
+3. Compile each node project separately
+4. Program onto respective STM32 boards using ST-Link
 
-### Rularea sistemului de monitorizare
+### Running the Monitoring System
 
-#### 1. Pornirea bridge-ului UART-to-CAN
+#### 1. Start the UART-to-CAN bridge
 
 ```bash
-python3 scripts/can_magistrala_wireshark.py
+python3 scripts/can_bus_wireshark.py
 ```
 
-#### 2. Lansarea Wireshark
+#### 2. Launch Wireshark
 
 ```bash
 wireshark
 ```
 
-#### 3. Configurarea Wireshark
+#### 3. Configure Wireshark
 
-- Selectați interfața `vcan0`
-- Aplicați dissector-ul CANopen:
-  - Click dreapta pe coloana Protocol
-  - Selectați "Decode As..." → "CANopen"
+- Select the `vcan0` interface
+- Apply CANopen dissector:
+  - Right-click on Protocol column
+  - Select "Decode As..." → "CANopen"
 
-### Operarea sistemului
+### System Operation
 
-1. **Pornirea tuturor nodurilor** în secvență
-2. **Nodul coordonator** va începe transmisia timestamp
-3. **Folosirea interfeței TouchGFX** pentru controlul sistemelor de iluminat și ștergătoare
-4. **Monitorizarea traficului în timp real** în Wireshark
-5. **Observarea răspunsurilor actuatorilor** pe modelul fizic
+1. **Start all nodes** in sequence
+2. **Coordinator node** will begin timestamp transmission
+3. **Use TouchGFX interface** to control lighting and wiper systems
+4. **Monitor real-time traffic** in Wireshark
+5. **Observe actuator responses** on the physical model
 
-## Configurația magistralei CAN
+## CAN Bus Configuration
 
-| Parametru | Valoare |
-|-----------|---------|
+| Parameter | Value |
+|-----------|-------|
 | **Baud Rate** | 100 kbps |
-| **Format cadru** | Standard (11-bit) și Extended (29-bit) |
-| **Terminare** | Rezistoare de 120Ω la capetele magistralei |
-| **Topologie** | Magistrală liniară cu semnalizare diferențială (CANH/CANL) |
+| **Frame Format** | Standard (11-bit) and Extended (29-bit) |
+| **Termination** | 120Ω resistors at bus ends |
+| **Topology** | Linear bus with differential signaling (CANH/CANL) |
 
-## Monitorizare și depanare
+## Monitoring and Debugging
 
-### Analiza în timp real
+### Real-time Analysis
 
-- **Integrare Wireshark**: Analiză completă la nivel de pachet
-- **Dissector CANopen**: Decodificare automată PDO/SDO/NMT
-- **Corelația timestamp**: Logging sincronizat pe toate nodurile
+- **Wireshark Integration**: Complete packet-level analysis
+- **CANopen Dissector**: Automatic PDO/SDO/NMT decoding
+- **Timestamp Correlation**: Synchronized logging across all nodes
 
-### Depanare hardware
+### Hardware Debugging
 
-- **Interfață SWD**: Debugging în timp real pe toate nodurile STM32
-- **Analizor logic**: Capabilități de analiză semnale digitale
-- **Indicatori LED de stare**: Monitorizare vizuală starea sistemului
+- **SWD Interface**: Real-time debugging on all STM32 nodes
+- **Logic Analyzer**: Digital signal analysis capabilities
+- **Status LED Indicators**: Visual system state monitoring
 
-## Structura proiectului
+## Project Structure
 
 ```
-├── CANOpen_Node1/                  # Implementare coordonator 
-├── CanOpen-STM32F429-SLAVE1/       # ECU lumini exterior 
-├── CanOpen-STM32F429-SLAVE2/       # ECU ștergătoare  
-├── CanOpen-STM32F429-SLAVE3/       # Display cu informații despre nod
-├── STM32F407_Bridge/               # Nod monitorizare
+├── CANOpen_Node1/                  # Coordinator implementation 
+├── CanOpen-STM32F429-SLAVE1/       # Exterior lighting ECU 
+├── CanOpen-STM32F429-SLAVE2/       # Wiper ECU  
+├── CanOpen-STM32F429-SLAVE3/       # Node information display
+├── STM32F407_Bridge/               # Monitoring node
 └── README.md
 ```
-## Implementarea curentă
 
-- **Control iluminat automotive**: Poziție, semnalizare, fază lungă, flash
-- **Management sistem ștergătoare**: Control servo cu viteză variabilă
-- **Monitorizare în timp real**: Diagnostice complete sistem
-- **Interfață om-mașină**: Panou de control bazat pe TouchGFX
+## Current Implementation
 
-## Demo lumini
+- **Automotive lighting control**: Position, turn signals, high beam, flash
+- **Wiper system management**: Variable speed servo control
+- **Real-time monitoring**: Complete system diagnostics
+- **Human-machine interface**: TouchGFX-based control panel
+
+## Lighting Demo
 
 https://github.com/user-attachments/assets/905b185d-f67a-4171-b013-ccdfb30d7154
 
-## Demo timp
+## Time Demo
 
 https://github.com/user-attachments/assets/d5313a8e-7275-47bd-83d5-c225f1a954e4
 
