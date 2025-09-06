@@ -114,8 +114,7 @@ This project demonstrates a modern automotive electronic architecture using the 
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/canopen-automotive-system.git
-cd canopen-automotive-system
+git clone https://github.com/Mihnea29/Control-System-with-CANopen.git
 ```
 
 #### 2. Download CANopenNode libraries
